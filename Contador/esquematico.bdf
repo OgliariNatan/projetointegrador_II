@@ -1,0 +1,135 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2016  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Intel and sold by Intel or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+*/
+(header "graphic" (version "1.4"))
+(symbol
+	(rect 352 80 472 240)
+	(text "74190" (rect 41 0 82 16)(font "Arial" (font_size 10)))
+	(text "inst" (rect 3 149 18 159)(font "Arial" (font_size 6)))
+	(port
+		(pt 0 24)
+		(input)
+		(text "LDN" (rect 20 16 49 31)(font "Arial" (font_size 9)))
+		(text "LDN" (rect 20 16 49 31)(font "Arial" (font_size 9)))
+		(line (pt 0 24)(pt 8 24))
+	)
+	(port
+		(pt 0 40)
+		(input)
+		(text "A" (rect 20 32 28 47)(font "Arial" (font_size 9)))
+		(text "A" (rect 20 32 28 47)(font "Arial" (font_size 9)))
+		(line (pt 0 40)(pt 16 40))
+	)
+	(port
+		(pt 0 72)
+		(input)
+		(text "C" (rect 20 64 30 79)(font "Arial" (font_size 9)))
+		(text "C" (rect 20 64 30 79)(font "Arial" (font_size 9)))
+		(line (pt 0 72)(pt 16 72))
+	)
+	(port
+		(pt 0 56)
+		(input)
+		(text "B" (rect 20 48 29 63)(font "Arial" (font_size 9)))
+		(text "B" (rect 20 48 29 63)(font "Arial" (font_size 9)))
+		(line (pt 0 56)(pt 16 56))
+	)
+	(port
+		(pt 0 88)
+		(input)
+		(text "D" (rect 20 80 30 95)(font "Arial" (font_size 9)))
+		(text "D" (rect 20 80 30 95)(font "Arial" (font_size 9)))
+		(line (pt 0 88)(pt 16 88))
+	)
+	(port
+		(pt 0 104)
+		(input)
+		(text "GN" (rect 20 96 41 111)(font "Arial" (font_size 9)))
+		(text "GN" (rect 20 96 41 111)(font "Arial" (font_size 9)))
+		(line (pt 0 104)(pt 8 104))
+	)
+	(port
+		(pt 0 136)
+		(input)
+		(text "CLK" (rect 20 128 48 143)(font "Arial" (font_size 9)))
+		(text "CLK" (rect 20 128 48 143)(font "Arial" (font_size 9)))
+		(line (pt 0 136)(pt 16 136))
+	)
+	(port
+		(pt 0 120)
+		(input)
+		(text "DNUP" (rect 20 112 61 127)(font "Arial" (font_size 9)))
+		(text "DNUP" (rect 20 112 61 127)(font "Arial" (font_size 9)))
+		(line (pt 0 120)(pt 16 120))
+	)
+	(port
+		(pt 120 40)
+		(output)
+		(text "QA" (rect 83 32 101 47)(font "Arial" (font_size 9)))
+		(text "QA" (rect 84 32 102 47)(font "Arial" (font_size 9)))
+		(line (pt 104 40)(pt 120 40))
+	)
+	(port
+		(pt 120 56)
+		(output)
+		(text "QB" (rect 83 48 103 63)(font "Arial" (font_size 9)))
+		(text "QB" (rect 83 48 103 63)(font "Arial" (font_size 9)))
+		(line (pt 104 56)(pt 120 56))
+	)
+	(port
+		(pt 120 88)
+		(output)
+		(text "QD" (rect 83 80 104 95)(font "Arial" (font_size 9)))
+		(text "QD" (rect 82 80 103 95)(font "Arial" (font_size 9)))
+		(line (pt 104 88)(pt 120 88))
+	)
+	(port
+		(pt 120 72)
+		(output)
+		(text "QC" (rect 83 64 104 79)(font "Arial" (font_size 9)))
+		(text "QC" (rect 82 64 103 79)(font "Arial" (font_size 9)))
+		(line (pt 104 72)(pt 120 72))
+	)
+	(port
+		(pt 120 104)
+		(output)
+		(text "MXMN" (rect 67 96 107 111)(font "Arial" (font_size 9)))
+		(text "MXMN" (rect 66 96 106 111)(font "Arial" (font_size 9)))
+		(line (pt 104 104)(pt 120 104))
+	)
+	(port
+		(pt 120 120)
+		(output)
+		(text "RCON" (rect 67 112 109 127)(font "Arial" (font_size 9)))
+		(text "RCON" (rect 72 112 114 127)(font "Arial" (font_size 9)))
+		(line (pt 112 120)(pt 120 120))
+	)
+	(drawing
+		(text "BCD COUNTER" (rect 27 145 111 159)(font "Arial" (font_size 8)))
+		(line (pt 16 144)(pt 16 16))
+		(line (pt 104 144)(pt 104 16))
+		(line (pt 16 144)(pt 104 144))
+		(line (pt 16 16)(pt 104 16))
+		(circle (rect 8 20 16 28))
+		(circle (rect 8 100 16 108))
+		(circle (rect 104 116 112 124))
+	)
+)
