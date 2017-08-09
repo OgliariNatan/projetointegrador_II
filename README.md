@@ -17,7 +17,7 @@ O projeto consiste em um sistema integrado com alguns sensores pré estabelecido
 </p>
 <h3>Softwares utilizados:</h3>
 <p>
-	<a href="http://dl.altera.com/16.1/?edition=lite">Quartus Lite Edition V16.1</a>. <br/>
+	<a href="http://dl.altera.com/16.1/?edition=lite">Quartus Lite Edition V16.1</a> <br/>
 </p>
 <h4>Contribuinte:</h4>
 <p>
