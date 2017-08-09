@@ -11,7 +11,7 @@ O projeto consiste em um sistema integrado com alguns sensores pré estabelecido
 		<li>Sensor de proximidade infravermelho.</li>
 		<li>Display de 7 segmentos ou LCD.</li>
 		<li>Controle de velocidade de um motor DC.</li>
-		<li>Controle de motor de passo,</li>
+		<li>Controle do motor de passo.</li>
 		<li>Interface homem-maquina.</li>
 	</ul>
 </p>
