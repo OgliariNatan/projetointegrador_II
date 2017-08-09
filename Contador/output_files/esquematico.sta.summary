@@ -1,0 +1,77 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'CLOCK_50'
+Slack : -4.208
+TNS   : -115.878
+
+Type  : Slow 1200mV 85C Model Setup 'divis:inst2|lpm_counter:LPM_COUNTER_component|cntr_euj:auto_generated|counter_reg_bit[0]'
+Slack : -1.004
+TNS   : -3.643
+
+Type  : Slow 1200mV 85C Model Hold 'CLOCK_50'
+Slack : -1.174
+TNS   : -11.018
+
+Type  : Slow 1200mV 85C Model Hold 'divis:inst2|lpm_counter:LPM_COUNTER_component|cntr_euj:auto_generated|counter_reg_bit[0]'
+Slack : 0.403
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -38.980
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'divis:inst2|lpm_counter:LPM_COUNTER_component|cntr_euj:auto_generated|counter_reg_bit[0]'
+Slack : -1.285
+TNS   : -14.222
+
+Type  : Slow 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -3.652
+TNS   : -100.492
+
+Type  : Slow 1200mV 0C Model Setup 'divis:inst2|lpm_counter:LPM_COUNTER_component|cntr_euj:auto_generated|counter_reg_bit[0]'
+Slack : -0.696
+TNS   : -2.432
+
+Type  : Slow 1200mV 0C Model Hold 'CLOCK_50'
+Slack : -1.108
+TNS   : -11.287
+
+Type  : Slow 1200mV 0C Model Hold 'divis:inst2|lpm_counter:LPM_COUNTER_component|cntr_euj:auto_generated|counter_reg_bit[0]'
+Slack : 0.355
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -38.980
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'divis:inst2|lpm_counter:LPM_COUNTER_component|cntr_euj:auto_generated|counter_reg_bit[0]'
+Slack : -1.285
+TNS   : -10.834
+
+Type  : Fast 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -1.576
+TNS   : -42.938
+
+Type  : Fast 1200mV 0C Model Setup 'divis:inst2|lpm_counter:LPM_COUNTER_component|cntr_euj:auto_generated|counter_reg_bit[0]'
+Slack : -0.089
+TNS   : -0.258
+
+Type  : Fast 1200mV 0C Model Hold 'CLOCK_50'
+Slack : -0.582
+TNS   : -5.171
+
+Type  : Fast 1200mV 0C Model Hold 'divis:inst2|lpm_counter:LPM_COUNTER_component|cntr_euj:auto_generated|counter_reg_bit[0]'
+Slack : 0.182
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -37.268
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'divis:inst2|lpm_counter:LPM_COUNTER_component|cntr_euj:auto_generated|counter_reg_bit[0]'
+Slack : -1.000
+TNS   : -6.046
+
+------------------------------------------------------------
