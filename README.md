@@ -6,7 +6,7 @@
 O projeto consiste em um sistema integrado com alguns sensores pré estabelecidos. <br/>
 	<ul>
 		<li>Linguagem VHDL ou Diagrama de Blocos.</li>
-		<li>Sensor de distância HCSR04.</li>
+		<li>Sensor de distância <a href="https://cdn.sparkfun.com/datasheets/Sensors/Proximity/HCSR04.pdf">HCSR04</a>.</li>
 		<li>Módulo de reconhecimento de cores TCS3200.</li>
 		<li>Sensor de proximidade infravermelho.</li>
 		<li>Display de 7 segmentos ou LCD.</li>
@@ -23,3 +23,5 @@ O projeto consiste em um sistema integrado com alguns sensores pré estabelecido
 <p>
 	<a href="https://github.com/gutovsk49">Augusto</a>. <br/>
 </p>
+
+
