@@ -40,7 +40,7 @@ agreement for further details.
 	(input)
 	(rect -40 280 128 296)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "CLOCK_50" (rect 5 0 59 17)(font "Intel Clear" ))
+	(text "CLOCK_50" (rect 5 0 58 17)(font "Intel Clear" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -250,7 +250,7 @@ agreement for further details.
 (symbol
 	(rect 160 256 304 336)
 	(text "divis" (rect 61 0 90 16)(font "Arial" (font_size 10)))
-	(text "inst2" (rect 8 64 30 81)(font "Intel Clear" ))
+	(text "inst2" (rect 8 64 31 76)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)

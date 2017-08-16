@@ -2,6 +2,7 @@ vendor_name = ModelSim
 source_file = 1, C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/Contador/esquematico.bdf
 source_file = 1, C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/Contador/divis.qip
 source_file = 1, C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/Contador/divis.v
+source_file = 1, C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/Contador/simulacao.vwf
 source_file = 1, c:/intelfpga_lite/16.1/quartus/libraries/others/maxplus2/74190.bdf
 source_file = 1, c:/intelfpga_lite/16.1/quartus/libraries/megafunctions/lpm_counter.tdf
 source_file = 1, c:/intelfpga_lite/16.1/quartus/libraries/megafunctions/lpm_constant.inc

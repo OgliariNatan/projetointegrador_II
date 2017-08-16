@@ -18,6 +18,7 @@ component divis
 	PORT
 	(
 		clock		: IN STD_LOGIC ;
+		cout		: OUT STD_LOGIC ;
 		q		: OUT STD_LOGIC_VECTOR (27 DOWNTO 0)
 	);
 end component;
