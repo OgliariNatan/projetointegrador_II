@@ -20,27 +20,36 @@ USE ieee.std_logic_unsigned.all;
 
 
 ENTITY display_7SEG IS
-	GENERIC(	freqIn			: INTEGER := 50000000;
-				delay				: INTEGER := 100;
-				defaultState	: STD_LOGIC := '0'
-	);
-	PORT(	--Sinais de entrada
-			clockIn		: IN STD_LOGIC;
-			buttonIn		: IN STD_LOGIC;
-			--Sinais de saida
-			buttonOut	: OUT STD_LOGIC
-	);
-END;
-
-ARCHITECTURE display of display_7SEG IS
-	--blá blá
-
-	PROCESS(clockin)--Para deixar o codigo em serie
-	BEGIN
-	--blá blá
+	--GENERIC(	freqIn			: INTEGER := 50000000;
+	--			delay				: INTEGER := 100;
+	--			defaultState	: STD_LOGIC := '0'
+	--);
+	--PORT(	--Sinais de entrada
+	--		clockIn		: IN STD_LOGIC;
+	--		buttonIn		: IN STD_LOGIC;
+	--		--Sinais de saida
+	--		buttonOut	: OUT STD_LOGIC
+	--);
 	
 	
-	END PROCESS
+	PORT (c, d : OUT STRING (1 TO 9));--APAGAR
+	
+END display_7SEG;
+
+ARCHITECTURE display OF display_7SEG IS
+	--blá blá
+
+	--PROCESS(clockin)--Para deixar o codigo em serie
+	--BEGIN --Começa a logica do programa
+	--blá blá
+	--END PROCESS
+	SIGNAL x : STRING (1 TO 3) := "Alo";
+	SIGNAL y : STRING (1 TO 5) := "Mundo";
+	
+	BEGIN --Começa a logica do programa
+	c <= x & " " & y;
+	d <= x (1 TO 2) & "o " & y;
+	
 END;
 
 
