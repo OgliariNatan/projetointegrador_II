@@ -26,6 +26,6 @@ clockIn => counter[22].CLK
 buttonIn => process_0.IN1
 buttonIn => process_0.IN1
 buttonIn => process_0.IN1
-buttonOut <= buttonPressed.DB_MAX_OUTPUT_PORT_TYPE
+buttonOut << buttonPressed.DB_MAX_OUTPUT_PORT_TYPE
 
 
