@@ -1,10 +1,12 @@
 <h1> Projeto Integrador 2 </h1>
 <p>Repositorio criado para a disciplina de PI_2 do curso de engenharia eletronica do IFSC - câmpus Florianópolis. <br/>
-Codinome: Equipe 2.</p>
+<p style="color: blue">Identificação junto as mentores: "Equipe 2".</p>
 
-<h2> Requisitos de projeto: </h2>
-<p>
+</p>
+
+<h2> Requisitos de projeto: </h2> <p>
 O projeto consiste em um sistema integrado com alguns sensores pré estabelecidos. <br/>
+Resumindo, uma esteira com sensor de altura e cor com um seletor de para selecionar entre duas saidas. <br/>
 	<ul>
 		<li>Linguagem VHDL ou Diagrama de Blocos.</li>
 		<li>Sensor de distância <a href="https://cdn.sparkfun.com/datasheets/Sensors/Proximity/HCSR04.pdf">HCSR04</a>.</li>
@@ -20,7 +22,7 @@ O projeto consiste em um sistema integrado com alguns sensores pré estabelecido
 <p>
 	<a href="http://dl.altera.com/16.1/?edition=lite">Quartus Lite Edition V16.1</a> <br/>
 </p>
-<h4>Contribuinte:</h4>
-<p>
-	<a href="https://github.com/gutovsk49">Augusto</a>. <br/>
-</p>
+<h4>Contribuinte:</h4> <p>
+		<a href="https://github.com/gutovsk49">Augusto</a>. <br/>
+	</p>
+<h4>Demais itens:</h4>
