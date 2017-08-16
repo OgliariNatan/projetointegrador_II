@@ -31,7 +31,7 @@ ENTITY display_7SEG IS
 	--		buttonOut	: OUT STD_LOGIC
 	--);
 	
-	
+	--PORT (CLOCK :IN );
 	PORT (c, d : OUT STRING (1 TO 9));--APAGAR
 	
 END display_7SEG;

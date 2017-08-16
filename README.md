@@ -1,8 +1,8 @@
 <h1> Projeto Integrador 2 </h1>
 <p>Repositorio criado para a disciplina de PI_2 do curso de engenharia eletronica do IFSC - câmpus Florianópolis. <br/>
-<p style="color: blue">Identificação junto as mentores: "Equipe 2".</p>
-
+Identificação junto as mentores: "Equipe 2". <br/>
 </p>
+<p style="color: blue">Identificação junto as mentores: "Equipe 2".</p> <br/>
 
 <h2> Requisitos de projeto: </h2> <p>
 O projeto consiste em um sistema integrado com alguns sensores pré estabelecidos. <br/>
