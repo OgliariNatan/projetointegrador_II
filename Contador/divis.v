@@ -39,28 +39,24 @@
 // synopsys translate_on
 module divis (
 	clock,
-	cout,
 	q);
 
 	input	  clock;
-	output	  cout;
 	output	[27:0]  q;
 
-	wire  sub_wire0;
-	wire [27:0] sub_wire1;
-	wire  cout = sub_wire0;
-	wire [27:0] q = sub_wire1[27:0];
+	wire [27:0] sub_wire0;
+	wire [27:0] q = sub_wire0[27:0];
 
 	lpm_counter	LPM_COUNTER_component (
 				.clock (clock),
-				.cout (sub_wire0),
-				.q (sub_wire1),
+				.q (sub_wire0),
 				.aclr (1'b0),
 				.aload (1'b0),
 				.aset (1'b0),
 				.cin (1'b1),
 				.clk_en (1'b1),
 				.cnt_en (1'b1),
+				.cout (),
 				.data ({28{1'b0}}),
 				.eq (),
 				.sclr (1'b0),
@@ -69,7 +65,6 @@ module divis (
 				.updown (1'b1));
 	defparam
 		LPM_COUNTER_component.lpm_direction = "UP",
-		LPM_COUNTER_component.lpm_modulus = 50000000,
 		LPM_COUNTER_component.lpm_port_updown = "PORT_UNUSED",
 		LPM_COUNTER_component.lpm_type = "LPM_COUNTER",
 		LPM_COUNTER_component.lpm_width = 28;
@@ -87,10 +82,10 @@ endmodule
 // Retrieval info: PRIVATE: CLK_EN NUMERIC "0"
 // Retrieval info: PRIVATE: CNT_EN NUMERIC "0"
 // Retrieval info: PRIVATE: CarryIn NUMERIC "0"
-// Retrieval info: PRIVATE: CarryOut NUMERIC "1"
+// Retrieval info: PRIVATE: CarryOut NUMERIC "0"
 // Retrieval info: PRIVATE: Direction NUMERIC "0"
 // Retrieval info: PRIVATE: INTENDED_DEVICE_FAMILY STRING "Cyclone IV E"
-// Retrieval info: PRIVATE: ModulusCounter NUMERIC "1"
+// Retrieval info: PRIVATE: ModulusCounter NUMERIC "0"
 // Retrieval info: PRIVATE: ModulusValue NUMERIC "50000000"
 // Retrieval info: PRIVATE: SCLR NUMERIC "0"
 // Retrieval info: PRIVATE: SLOAD NUMERIC "0"
@@ -101,15 +96,12 @@ endmodule
 // Retrieval info: PRIVATE: new_diagram STRING "1"
 // Retrieval info: LIBRARY: lpm lpm.lpm_components.all
 // Retrieval info: CONSTANT: LPM_DIRECTION STRING "UP"
-// Retrieval info: CONSTANT: LPM_MODULUS NUMERIC "50000000"
 // Retrieval info: CONSTANT: LPM_PORT_UPDOWN STRING "PORT_UNUSED"
 // Retrieval info: CONSTANT: LPM_TYPE STRING "LPM_COUNTER"
 // Retrieval info: CONSTANT: LPM_WIDTH NUMERIC "28"
 // Retrieval info: USED_PORT: clock 0 0 0 0 INPUT NODEFVAL "clock"
-// Retrieval info: USED_PORT: cout 0 0 0 0 OUTPUT NODEFVAL "cout"
 // Retrieval info: USED_PORT: q 0 0 28 0 OUTPUT NODEFVAL "q[27..0]"
 // Retrieval info: CONNECT: @clock 0 0 0 0 clock 0 0 0 0
-// Retrieval info: CONNECT: cout 0 0 0 0 @cout 0 0 0 0
 // Retrieval info: CONNECT: q 0 0 28 0 @q 0 0 28 0
 // Retrieval info: GEN_FILE: TYPE_NORMAL divis.v TRUE
 // Retrieval info: GEN_FILE: TYPE_NORMAL divis.inc FALSE

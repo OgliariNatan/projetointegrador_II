@@ -24,5 +24,3 @@ O projeto consiste em um sistema integrado com alguns sensores pré estabelecido
 <p>
 	<a href="https://github.com/gutovsk49">Augusto</a>. <br/>
 </p>
-
-<a href="http://www.mouser.com/catalog/specsheets/TCS3200-E11.pdf">TCS3200</a>
