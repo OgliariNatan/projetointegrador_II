@@ -1,5 +1,5 @@
 Analysis & Synthesis report for display_7SEG
-Wed Aug 16 14:57:05 2017
+Fri Aug 18 23:23:34 2017
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -10,13 +10,7 @@ Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Post-Synthesis Netlist Statistics for Top Partition
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Messages
 
 
 
@@ -43,20 +37,20 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Aug 16 14:57:05 2017       ;
+; Analysis & Synthesis Status        ; Failed - Fri Aug 18 23:23:34 2017           ;
 ; Quartus Prime Version              ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                      ; display_7SEG                                ;
 ; Top-level Entity Name              ; display_7SEG                                ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 0                                           ;
-;     Total combinational functions  ; 0                                           ;
-;     Dedicated logic registers      ; 0                                           ;
-; Total registers                    ; 0                                           ;
-; Total pins                         ; 144                                         ;
-; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0                                           ;
-; Embedded Multiplier 9-bit elements ; 0                                           ;
-; Total PLLs                         ; 0                                           ;
+; Total logic elements               ; N/A until Partition Merge                   ;
+;     Total combinational functions  ; N/A until Partition Merge                   ;
+;     Dedicated logic registers      ; N/A until Partition Merge                   ;
+; Total registers                    ; N/A until Partition Merge                   ;
+; Total pins                         ; N/A until Partition Merge                   ;
+; Total virtual pins                 ; N/A until Partition Merge                   ;
+; Total memory bits                  ; N/A until Partition Merge                   ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
+; Total PLLs                         ; N/A until Partition Merge                   ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -162,265 +156,23 @@ agreement for further details.
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                     ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                              ; Library ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------------+---------+
-; display_7SEG.vhd                 ; yes             ; User VHDL File  ; C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd ;         ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------------+---------+
-
-
-+--------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                  ;
-+---------------------------------------------+----------------+
-; Resource                                    ; Usage          ;
-+---------------------------------------------+----------------+
-;                                             ;                ;
-; Total combinational functions               ; 0              ;
-; Logic element usage by number of LUT inputs ;                ;
-;     -- 4 input functions                    ; 0              ;
-;     -- 3 input functions                    ; 0              ;
-;     -- <=2 input functions                  ; 0              ;
-;                                             ;                ;
-; Logic elements by mode                      ;                ;
-;     -- normal mode                          ; 0              ;
-;     -- arithmetic mode                      ; 0              ;
-;                                             ;                ;
-; Total registers                             ; 0              ;
-;     -- Dedicated logic registers            ; 0              ;
-;     -- I/O registers                        ; 0              ;
-;                                             ;                ;
-; I/O pins                                    ; 144            ;
-;                                             ;                ;
-; Embedded Multiplier 9-bit elements          ; 0              ;
-;                                             ;                ;
-; Maximum fan-out node                        ; c[9][0]~output ;
-; Maximum fan-out                             ; 1              ;
-; Total fan-out                               ; 144            ;
-; Average fan-out                             ; 0.50           ;
-+---------------------------------------------+----------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                       ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name  ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+--------------+
-; |display_7SEG              ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 144  ; 0            ; |display_7SEG       ; display_7SEG ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 0     ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; boundary_port         ; 144                         ;
-; cycloneiii_lcell_comb ; 2                           ;
-;     normal            ; 2                           ;
-;         0 data inputs ; 2                           ;
-;                       ;                             ;
-; Max LUT depth         ; 0.00                        ;
-; Average LUT depth     ; 0.00                        ;
-+-----------------------+-----------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:00     ;
-+----------------+--------------+
-
-
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
-    Info: Processing started: Wed Aug 16 14:56:40 2017
+    Info: Processing started: Fri Aug 18 23:23:06 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off display_7SEG -c display_7SEG
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
-Info (12021): Found 2 design units, including 1 entities, in source file display_7seg.vhd
-    Info (12022): Found design unit 1: display_7SEG-display File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 39
-    Info (12023): Found entity 1: display_7SEG File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 22
-Info (12127): Elaborating entity "display_7SEG" for the top level hierarchy
-Warning (10540): VHDL Signal Declaration warning at display_7SEG.vhd(46): used explicit default value for signal "x" because signal was never assigned a value File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 46
-Warning (10540): VHDL Signal Declaration warning at display_7SEG.vhd(47): used explicit default value for signal "y" because signal was never assigned a value File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 47
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "c[9][0]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[9][1]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[9][2]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[9][3]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[9][4]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[9][5]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[9][6]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[9][7]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[8][0]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[8][1]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[8][2]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[8][3]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[8][4]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[8][5]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[8][6]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[8][7]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[7][0]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[7][1]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[7][2]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[7][3]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[7][4]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[7][5]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[7][6]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[7][7]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[6][0]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[6][1]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[6][2]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[6][3]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[6][4]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[6][5]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[6][6]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[6][7]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[5][0]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[5][1]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[5][2]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[5][3]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[5][4]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[5][5]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[5][6]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[5][7]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[4][0]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[4][1]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[4][2]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[4][3]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[4][4]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[4][5]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[4][6]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[4][7]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[3][0]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[3][1]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[3][2]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[3][3]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[3][4]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[3][5]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[3][6]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[3][7]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[2][0]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[2][1]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[2][2]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[2][3]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[2][4]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[2][5]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[2][6]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[2][7]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[1][0]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[1][1]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[1][2]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[1][3]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[1][4]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[1][5]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[1][6]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "c[1][7]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[9][0]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[9][1]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[9][2]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[9][3]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[9][4]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[9][5]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[9][6]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[9][7]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[8][0]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[8][1]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[8][2]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[8][3]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[8][4]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[8][5]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[8][6]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[8][7]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[7][0]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[7][1]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[7][2]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[7][3]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[7][4]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[7][5]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[7][6]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[7][7]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[6][0]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[6][1]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[6][2]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[6][3]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[6][4]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[6][5]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[6][6]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[6][7]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[5][0]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[5][1]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[5][2]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[5][3]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[5][4]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[5][5]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[5][6]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[5][7]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[4][0]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[4][1]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[4][2]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[4][3]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[4][4]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[4][5]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[4][6]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[4][7]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[3][0]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[3][1]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[3][2]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[3][3]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[3][4]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[3][5]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[3][6]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[3][7]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[2][0]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[2][1]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[2][2]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[2][3]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[2][4]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[2][5]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[2][6]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[2][7]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[1][0]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[1][1]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[1][2]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[1][3]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[1][4]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[1][5]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[1][6]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-    Warning (13410): Pin "d[1][7]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 144 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 0 input pins
-    Info (21059): Implemented 144 output pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 148 warnings
-    Info: Peak virtual memory: 674 megabytes
-    Info: Processing ended: Wed Aug 16 14:57:05 2017
-    Info: Elapsed time: 00:00:25
-    Info: Total CPU time (on all processors): 00:00:53
+Error (10500): VHDL syntax error at display_7SEG.vhd(49) near text ")";  expecting an identifier, or a string literal, or "buffer", or "in", or "inout", or "linkage", or "out" File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 49
+Error (10523): Ignored construct display_7SEG at display_7SEG.vhd(22) due to previous errors File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 22
+Info (12021): Found 0 design units, including 0 entities, in source file display_7seg.vhd
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 2 errors, 1 warning
+    Error: Peak virtual memory: 662 megabytes
+    Error: Processing ended: Fri Aug 18 23:23:34 2017
+    Error: Elapsed time: 00:00:28
+    Error: Total CPU time (on all processors): 00:00:59
 
 

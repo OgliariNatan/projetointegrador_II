@@ -20,19 +20,34 @@ USE ieee.std_logic_unsigned.all;
 
 
 ENTITY display_7SEG IS
-	--GENERIC(	freqIn			: INTEGER := 50000000;
-	--			delay				: INTEGER := 100;
-	--			defaultState	: STD_LOGIC := '0'
-	--);
-	--PORT(	--Sinais de entrada
-	--		clockIn		: IN STD_LOGIC;
-	--		buttonIn		: IN STD_LOGIC;
-	--		--Sinais de saida
-	--		buttonOut	: OUT STD_LOGIC
-	--);
+	--Defenições genericas
+	GENERIC(	freqIn			: INTEGER := 50000000; --Frequencia da placa
+				delay				: INTEGER := 100;		  --Atraso do ruido de botão
+				defaultState	: STD_LOGIC := '0' 	  --Define dois estados "1" "0"
+	);
 	
-	--PORT (CLOCK :IN );
-	PORT (c, d : OUT STRING (1 TO 9));--APAGAR
+	PORT(	--Definições dos sinais de entrada
+			clock_50: --Entrada do clock da placa
+			--Definições dos I/O do sensor ultrasonico
+			trigger;
+			echo:
+			--Definições de botão
+			KEY;
+			SW:
+			--Definição do Sensor de cor
+			S0;
+			S1:
+			S2;
+			S3:
+			OUT_SC;
+			--Definição do display_7Segmentos
+			HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6, HEX7, HEX8: OUT STD_LOGIC_VECTOR (o to 6);
+			--Definição de saidas do led da placa 
+			LEDR: --OUT STD_LOGIC_VECTOR (0 to 6);
+			--Definição da saida do "botão virtual" de antitrepidação
+			buttonOut : BUFFER STD_LOGIC 
+		);
+	
 	
 END display_7SEG;
 
@@ -43,14 +58,14 @@ ARCHITECTURE display OF display_7SEG IS
 	--BEGIN --Começa a logica do programa
 	--blá blá
 	--END PROCESS
-	SIGNAL x : STRING (1 TO 3) := "Alo";
-	SIGNAL y : STRING (1 TO 5) := "Mundo";
+	--SIGNAL x : STRING (1 TO 3) := "Alo";
+	--SIGNAL y : STRING (1 TO 5) := "Mundo";
 	
 	BEGIN --Começa a logica do programa
-	c <= x & " " & y;
-	d <= x (1 TO 2) & "o " & y;
+	--c <= x & " " & y;
+	--d <= x (1 TO 2) & "o " & y;
 	
-END;
+END display;
 
 
 
