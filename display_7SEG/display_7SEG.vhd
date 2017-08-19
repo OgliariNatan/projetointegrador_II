@@ -27,25 +27,25 @@ ENTITY display_7SEG IS
 	);
 	
 	PORT(	--Definições dos sinais de entrada
-			clock_50: --Entrada do clock da placa
+			clock_50: 	IN STD_LOGIC;--Entrada do clock da placa
 			--Definições dos I/O do sensor ultrasonico
-			trigger;
-			echo:
-			--Definições de botão
-			KEY;
-			SW:
+			trigger: 	OUT STD_LOGIC;
+			echo: 		IN STD_LOGIC;
+			--Definições de botão de ajuste 
+			KEY: 			IN STD_LOGIC_VECTOR (2 DOWNTO 0) := "000";
+			SW: 			IN STD_LOGIC_VECTOR (2 DOWNTO 0);
 			--Definição do Sensor de cor
-			S0;
-			S1:
-			S2;
-			S3:
-			OUT_SC;
+			S0: 			OUT STD_LOGIC;
+			S1: 			OUT STD_LOGIC;
+			S2: 			OUT STD_LOGIC;
+			S3: 			OUT STD_LOGIC;
+			OUT_SC: 		IN STD_LOGIC;
 			--Definição do display_7Segmentos
-			HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6, HEX7, HEX8: OUT STD_LOGIC_VECTOR (o to 6);
+			HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6, HEX7, HEX8: OUT STD_LOGIC_VECTOR (0 TO 6);
 			--Definição de saidas do led da placa 
-			LEDR: --OUT STD_LOGIC_VECTOR (0 to 6);
+			LEDR: 		OUT STD_LOGIC_VECTOR (17 DOWNTO 0);
 			--Definição da saida do "botão virtual" de antitrepidação
-			buttonOut : BUFFER STD_LOGIC 
+			buttonOut:  BUFFER STD_LOGIC
 		);
 	
 	

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for display_7SEG
-Fri Aug 18 23:23:34 2017
+Sat Aug 19 00:41:55 2017
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -10,7 +10,14 @@ Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Parameter Settings for User Entity Instance: Top-level Entity: |display_7SEG
+ 10. Post-Synthesis Netlist Statistics for Top Partition
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
 
 
 
@@ -37,20 +44,20 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Fri Aug 18 23:23:34 2017           ;
+; Analysis & Synthesis Status        ; Successful - Sat Aug 19 00:41:55 2017       ;
 ; Quartus Prime Version              ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                      ; display_7SEG                                ;
 ; Top-level Entity Name              ; display_7SEG                                ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; N/A until Partition Merge                   ;
-;     Total combinational functions  ; N/A until Partition Merge                   ;
-;     Dedicated logic registers      ; N/A until Partition Merge                   ;
-; Total registers                    ; N/A until Partition Merge                   ;
-; Total pins                         ; N/A until Partition Merge                   ;
-; Total virtual pins                 ; N/A until Partition Merge                   ;
-; Total memory bits                  ; N/A until Partition Merge                   ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
-; Total PLLs                         ; N/A until Partition Merge                   ;
+; Total logic elements               ; 0                                           ;
+;     Total combinational functions  ; 0                                           ;
+;     Dedicated logic registers      ; 0                                           ;
+; Total registers                    ; 0                                           ;
+; Total pins                         ; 96                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -156,23 +163,244 @@ agreement for further details.
 +----------------------------+-------------+
 
 
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                     ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                              ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------------+---------+
+; display_7SEG.vhd                 ; yes             ; User VHDL File  ; C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary            ;
++---------------------------------------------+----------+
+; Resource                                    ; Usage    ;
++---------------------------------------------+----------+
+;                                             ;          ;
+; Total combinational functions               ; 0        ;
+; Logic element usage by number of LUT inputs ;          ;
+;     -- 4 input functions                    ; 0        ;
+;     -- 3 input functions                    ; 0        ;
+;     -- <=2 input functions                  ; 0        ;
+;                                             ;          ;
+; Logic elements by mode                      ;          ;
+;     -- normal mode                          ; 0        ;
+;     -- arithmetic mode                      ; 0        ;
+;                                             ;          ;
+; Total registers                             ; 0        ;
+;     -- Dedicated logic registers            ; 0        ;
+;     -- I/O registers                        ; 0        ;
+;                                             ;          ;
+; I/O pins                                    ; 96       ;
+;                                             ;          ;
+; Embedded Multiplier 9-bit elements          ; 0        ;
+;                                             ;          ;
+; Maximum fan-out node                        ; clock_50 ;
+; Maximum fan-out                             ; 1        ;
+; Total fan-out                               ; 96       ;
+; Average fan-out                             ; 0.50     ;
++---------------------------------------------+----------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                       ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name  ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+--------------+
+; |display_7SEG              ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 96   ; 0            ; |display_7SEG       ; display_7SEG ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |display_7SEG ;
++----------------+----------+--------------------------------------------------+
+; Parameter Name ; Value    ; Type                                             ;
++----------------+----------+--------------------------------------------------+
+; freqIn         ; 50000000 ; Signed Integer                                   ;
+; delay          ; 100      ; Signed Integer                                   ;
+; defaultState   ; '0'      ; Enumerated                                       ;
++----------------+----------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 96                          ;
+; cycloneiii_lcell_comb ; 1                           ;
+;     normal            ; 1                           ;
+;         0 data inputs ; 1                           ;
+;                       ;                             ;
+; Max LUT depth         ; 0.00                        ;
+; Average LUT depth     ; 0.00                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
-    Info: Processing started: Fri Aug 18 23:23:06 2017
+    Info: Processing started: Sat Aug 19 00:41:23 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off display_7SEG -c display_7SEG
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
-Error (10500): VHDL syntax error at display_7SEG.vhd(49) near text ")";  expecting an identifier, or a string literal, or "buffer", or "in", or "inout", or "linkage", or "out" File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 49
-Error (10523): Ignored construct display_7SEG at display_7SEG.vhd(22) due to previous errors File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 22
-Info (12021): Found 0 design units, including 0 entities, in source file display_7seg.vhd
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 2 errors, 1 warning
-    Error: Peak virtual memory: 662 megabytes
-    Error: Processing ended: Fri Aug 18 23:23:34 2017
-    Error: Elapsed time: 00:00:28
-    Error: Total CPU time (on all processors): 00:00:59
+Info (12021): Found 2 design units, including 1 entities, in source file display_7seg.vhd
+    Info (12022): Found design unit 1: display_7SEG-display File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 54
+    Info (12023): Found entity 1: display_7SEG File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 22
+Info (12127): Elaborating entity "display_7SEG" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at display_7SEG.vhd(32): used implicit default value for signal "trigger" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 32
+Warning (10541): VHDL Signal Declaration warning at display_7SEG.vhd(38): used implicit default value for signal "S0" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 38
+Warning (10541): VHDL Signal Declaration warning at display_7SEG.vhd(39): used implicit default value for signal "S1" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 39
+Warning (10541): VHDL Signal Declaration warning at display_7SEG.vhd(40): used implicit default value for signal "S2" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 40
+Warning (10541): VHDL Signal Declaration warning at display_7SEG.vhd(41): used implicit default value for signal "S3" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 41
+Warning (10541): VHDL Signal Declaration warning at display_7SEG.vhd(44): used implicit default value for signal "HEX0" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+Warning (10541): VHDL Signal Declaration warning at display_7SEG.vhd(44): used implicit default value for signal "HEX1" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+Warning (10541): VHDL Signal Declaration warning at display_7SEG.vhd(44): used implicit default value for signal "HEX2" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+Warning (10541): VHDL Signal Declaration warning at display_7SEG.vhd(44): used implicit default value for signal "HEX3" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+Warning (10541): VHDL Signal Declaration warning at display_7SEG.vhd(44): used implicit default value for signal "HEX4" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+Warning (10541): VHDL Signal Declaration warning at display_7SEG.vhd(44): used implicit default value for signal "HEX5" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+Warning (10541): VHDL Signal Declaration warning at display_7SEG.vhd(44): used implicit default value for signal "HEX6" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+Warning (10541): VHDL Signal Declaration warning at display_7SEG.vhd(44): used implicit default value for signal "HEX7" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+Warning (10541): VHDL Signal Declaration warning at display_7SEG.vhd(44): used implicit default value for signal "HEX8" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+Warning (10541): VHDL Signal Declaration warning at display_7SEG.vhd(46): used implicit default value for signal "LEDR" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 46
+Warning (10034): Output port "buttonOut" at display_7SEG.vhd(48) has no driver File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 48
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "trigger" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 32
+    Warning (13410): Pin "S0" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 38
+    Warning (13410): Pin "S1" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 39
+    Warning (13410): Pin "S2" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 40
+    Warning (13410): Pin "S3" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 41
+    Warning (13410): Pin "HEX0[6]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX0[5]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX0[4]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX0[3]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX0[2]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX0[1]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX0[0]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX1[6]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX1[5]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX1[4]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX1[3]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX1[2]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX1[1]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX1[0]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX2[6]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX2[5]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX2[4]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX2[3]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX2[2]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX2[1]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX2[0]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX3[6]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX3[5]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX3[4]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX3[3]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX3[2]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX3[1]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX3[0]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX4[6]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX4[5]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX4[4]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX4[3]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX4[2]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX4[1]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX4[0]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX5[6]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX5[5]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX5[4]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX5[3]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX5[2]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX5[1]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX5[0]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX6[6]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX6[5]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX6[4]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX6[3]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX6[2]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX6[1]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX6[0]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX7[6]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX7[5]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX7[4]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX7[3]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX7[2]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX7[1]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX7[0]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX8[6]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX8[5]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX8[4]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX8[3]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX8[2]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX8[1]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "HEX8[0]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 44
+    Warning (13410): Pin "LEDR[0]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 46
+    Warning (13410): Pin "LEDR[1]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 46
+    Warning (13410): Pin "LEDR[2]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 46
+    Warning (13410): Pin "LEDR[3]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 46
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 46
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 46
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 46
+    Warning (13410): Pin "LEDR[7]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 46
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 46
+    Warning (13410): Pin "LEDR[9]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 46
+    Warning (13410): Pin "LEDR[10]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 46
+    Warning (13410): Pin "LEDR[11]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 46
+    Warning (13410): Pin "LEDR[12]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 46
+    Warning (13410): Pin "LEDR[13]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 46
+    Warning (13410): Pin "LEDR[14]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 46
+    Warning (13410): Pin "LEDR[15]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 46
+    Warning (13410): Pin "LEDR[16]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 46
+    Warning (13410): Pin "LEDR[17]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 46
+    Warning (13410): Pin "buttonOut" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 48
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 9 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "clock_50" File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 30
+    Warning (15610): No output dependent on input pin "echo" File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 33
+    Warning (15610): No output dependent on input pin "KEY[0]" File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
+    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
+    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 35
+    Warning (15610): No output dependent on input pin "SW[0]" File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 36
+    Warning (15610): No output dependent on input pin "SW[1]" File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 36
+    Warning (15610): No output dependent on input pin "SW[2]" File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 36
+    Warning (15610): No output dependent on input pin "OUT_SC" File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/display_7SEG/display_7SEG.vhd Line: 42
+Info (21057): Implemented 96 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 9 input pins
+    Info (21059): Implemented 87 output pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 115 warnings
+    Info: Peak virtual memory: 678 megabytes
+    Info: Processing ended: Sat Aug 19 00:41:55 2017
+    Info: Elapsed time: 00:00:32
+    Info: Total CPU time (on all processors): 00:01:01
 
 
