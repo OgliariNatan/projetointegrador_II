@@ -1,6 +1,6 @@
 <h1> Projeto Integrador 2 </h1>
 <p>Repositorio criado para a disciplina de PI_2 do curso de engenharia eletronica do IFSC - câmpus Florianópolis. <br/>
-Identificação junto as mentores: "Equipe 2". <br/>
+Identificação junto aos mentores: "Equipe 2". <br/>
 </p>
 
 <h2> Requisitos de projeto: </h2> <p>
@@ -24,4 +24,7 @@ Resumindo, uma esteira com sensor de altura e cor com um seletor de para selecio
 <h4>Contribuinte:</h4> <p>
 		<a href="https://github.com/gutovsk49">Augusto</a>. <br/>
 	</p>
-<h4>Demais itens:</h4>
+<h4>Demais Informações relevantes para o projeto:</h4>
+<p>Para a interpretação dos dados mostrados no display de 7 segmentos, utilize a imagem abaixo:<br/>
+ <img alt="7SEG." src="http://www.twyman.org.uk/Fonts/7%20Seq-3D.jpg"/>
+</p>

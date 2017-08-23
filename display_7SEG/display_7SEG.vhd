@@ -78,6 +78,7 @@ ARCHITECTURE display OF display_7SEG IS --declaração das variaveis
 	BEGIN --Começa a logica do programa
 	--Antitrepidação *codigo do professor*
 	buttonAux <= KEY(0) WHEN defaultState = '0' ELSE (NOT KEY(0));
+<<<<<<< HEAD
 	PROCESS (CLOCK_50)
 			VARIABLE counter : INTEGER RANGE 0 TO cont_max :=0;
 	BEGIN
@@ -86,3 +87,33 @@ ARCHITECTURE display OF display_7SEG IS --declaração das variaveis
 		END IF;	
 	END PROCESS;
 END display;
+=======
+	PROCESS(CLOCK_50)
+			VARIABLE counter : INTEGER RANGE 0 TO CONT_MAX := 0;
+			
+		BEGIN
+			IF RISING_EDGE(CLOCK_50) THEN
+				IF buttonPressed = '0' AND buttonAux = '1' THEN
+					buttonPressed <= '1';
+					counter := 0;
+				ELSIF buttonPressed = '1' AND buttonAux = '1' THEN
+					counter := 0;
+				ELSIF buttonPressed = '1' AND buttonAux = '0' THEN
+					IF counter < CONT_MAX THEN
+						counter := counter + 1;
+					ELSE
+						counter := 0;
+						buttonPressed <= '0';
+					END IF;
+				END IF;
+			END IF;
+		END PROCESS;
+		buttonOut <= buttonPressed WHEN defaultState = '0' ELSE (NOT buttonPressed);
+		-- Fim Antitrepidação
+	
+	
+END display;
+
+
+
+>>>>>>> bdecb860f88261603f852e66022d83624bb6a231
