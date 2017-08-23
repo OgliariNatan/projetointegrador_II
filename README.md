@@ -26,5 +26,117 @@ Resumindo, uma esteira com sensor de altura e cor com um seletor de para selecio
 	</p>
 <h4>Demais Informações relevantes para o projeto:</h4>
 <p>Para a interpretação dos dados mostrados no display de 7 segmentos, utilize a imagem abaixo:<br/>
- <img alt="7SEG." src="http://www.twyman.org.uk/Fonts/7%20Seq-3D.jpg"/>
+ <img alt="7SEG." src="http://www.twyman.org.uk/Fonts/7%20Seq-3D.jpg"/> <br/>
+<table BORDER=0 CELLSPACING=0>
+	<tr>
+		<th>Caracteres</th>
+		<th WIDTH=150 BGCOLOR=BLUE>a</th>
+		<th WIDTH=150 BGCOLOR=BLUE>b</th>
+		<th WIDTH=150 BGCOLOR=BLUE>c</th>
+		<th WIDTH=150 BGCOLOR=BLUE>d</th>
+		<th WIDTH=150 BGCOLOR=BLUE>e</th>
+		<th WIDTH=150 BGCOLOR=BLUE>f</th>
+		<th WIDTH=150 BGCOLOR=BLUE>g</th>
+	</tr>
+	<tr>
+		<td WIDTH=150 BGCOLOR=BLUE>C</td>
+		<td>0</td>
+		<td>1</td>
+		<td>1</td>
+		<td>0</td>
+		<td>0</td>
+		<td>0</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td>O</td>
+		<td>0</td>
+		<td>0</td>
+		<td>0</td>
+		<td>0</td>
+		<td>0</td>
+		<td>0</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td WIDTH=150 BGCOLOR=BLUE>R</td>
+		<td>1</td>
+		<td>1</td>
+		<td>1</td>
+		<td>1</td>
+		<td>0</td>
+		<td>1</td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<td WIDTH=150 BGCOLOR=BLUE>E</td>
+		<td>0</td>
+		<td>1</td>
+		<td>1</td>
+		<td>0</td>
+		<td>0</td>
+		<td>0</td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<td>D</td>
+		<td>1</td>
+		<td>0</td>
+		<td>0</td>
+		<td>0</td>
+		<td>0</td>
+		<td>1</td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<td WIDTH=150 BGCOLOR=BLUE>B</td>
+		<td>1</td>
+		<td>1</td>
+		<td>0</td>
+		<td>0</td>
+		<td>0</td>
+		<td>0</td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<td WIDTH=150 BGCOLOR=BLUE>L</td>
+		<td>1</td>
+		<td>1</td>
+		<td>1</td>
+		<td>0</td>
+		<td>0</td>
+		<td>0</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td WIDTH=150 BGCOLOR=BLUE>U</td>
+		<td>1</td>
+		<td>0</td>
+		<td>0</td>
+		<td>0</td>
+		<td>0</td>
+		<td>0</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td WIDTH=150 BGCOLOR=BLUE>G</td>
+		<td>0</td>
+		<td>0</td>
+		<td>0</td>
+		<td>0</td>
+		<td>1</td>
+		<td>0</td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<td WIDTH=150 BGCOLOR=BLUE>N</td>
+		<td>1</td>
+		<td>0</td>
+		<td>1</td>
+		<td>1</td>
+		<td>1</td>
+		<td>0</td>
+		<td>0</td>
+	</tr>
+</table> <br/>
 </p>
