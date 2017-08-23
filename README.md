@@ -27,10 +27,10 @@ Resumindo, uma esteira com sensor de altura e cor com um seletor de para selecio
 <h4>Demais Informações relevantes para o projeto:</h4>
 <p>Para a interpretação dos dados mostrados no display de 7 segmentos, utilize a imagem abaixo:<br/>
  <img alt="7SEG." src="http://www.twyman.org.uk/Fonts/7%20Seq-3D.jpg"/> <br/>
-<table align='center'>
+<table>
 	<tr>
 		<th>Caracteres</th>
-		<th>a</th>
+		<th align=center>a</th>
 		<th>b</th>
 		<th>c</th>
 		<th>d</th>
