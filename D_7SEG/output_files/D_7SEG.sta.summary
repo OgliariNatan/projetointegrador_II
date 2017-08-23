@@ -3,19 +3,19 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'clock_50'
-Slack : -4.314
-TNS   : -73.739
+Slack : -4.141
+TNS   : -76.415
 
 Type  : Slow 1200mV 85C Model Setup 'buttonPressed'
-Slack : -0.438
-TNS   : -0.438
+Slack : -0.457
+TNS   : -0.457
 
 Type  : Slow 1200mV 85C Model Hold 'buttonPressed'
-Slack : 0.409
+Slack : 0.410
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'clock_50'
-Slack : 0.642
+Slack : 0.641
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clock_50'
@@ -27,19 +27,19 @@ Slack : -1.285
 TNS   : -2.570
 
 Type  : Slow 1200mV 0C Model Setup 'clock_50'
-Slack : -3.910
-TNS   : -65.557
+Slack : -3.753
+TNS   : -67.963
 
 Type  : Slow 1200mV 0C Model Setup 'buttonPressed'
-Slack : -0.302
-TNS   : -0.302
+Slack : -0.320
+TNS   : -0.320
 
 Type  : Slow 1200mV 0C Model Hold 'buttonPressed'
 Slack : 0.367
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'clock_50'
-Slack : 0.587
+Slack : 0.585
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clock_50'
@@ -51,11 +51,11 @@ Slack : -1.285
 TNS   : -2.570
 
 Type  : Fast 1200mV 0C Model Setup 'clock_50'
-Slack : -1.676
-TNS   : -22.864
+Slack : -1.532
+TNS   : -23.857
 
 Type  : Fast 1200mV 0C Model Setup 'buttonPressed'
-Slack : 0.310
+Slack : 0.300
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'buttonPressed'
@@ -68,7 +68,7 @@ TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clock_50'
 Slack : -3.000
-TNS   : -34.031
+TNS   : -34.101
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'buttonPressed'
 Slack : -1.000

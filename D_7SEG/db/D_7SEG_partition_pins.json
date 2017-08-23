@@ -4,10 +4,6 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "HEX0[6]",
-					"strict" : false
-				},
-				{
 					"name" : "HEX0[5]",
 					"strict" : false
 				},
@@ -32,10 +28,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "HEX1[5]",
-					"strict" : false
-				},
-				{
 					"name" : "HEX1[4]",
 					"strict" : false
 				},
@@ -52,7 +44,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "HEX1[0]",
+					"name" : "HEX2[6]",
 					"strict" : false
 				},
 				{
@@ -64,11 +56,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "HEX2[3]",
+					"name" : "HEX2[2]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX2[0]",
+					"name" : "HEX2[1]",
 					"strict" : false
 				},
 				{
@@ -77,6 +69,10 @@
 				},
 				{
 					"name" : "HEX3[5]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX3[4]",
 					"strict" : false
 				},
 				{

@@ -105,7 +105,7 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 	-- Decodificador display 7 seguimentos
 	PROCESS (selecao) 
 		--VARIAVEIS AUXILIARES APAGARA PARA O PROJETO FINAL
-		CONSTANT t_caixa 	: INTEGER := 15;			-- Futuro tamanho da caixa
+		CONSTANT t_caixa 	: INTEGER := 5300;			-- Futuro tamanho da caixa
 		CONSTANT cor		: INTEGER := 1;   	   -- Futura cor recebida da caixa
 		CONSTANT clk_sd	: INTEGER := 2;			-- Futuro Clock do sensor de distancia
 		CONSTANT conv_sc	: INTEGER := 1;			-- Envio da da cor para display
@@ -231,7 +231,7 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 					HEX3 <= "1111111"; --  
 					HEX2 <= "1111111"; --   
 					HEX1 <= "0110001"; -- c 
-					HEX0 <= "0110001"; -- O
+					HEX0 <= "0000001"; -- O
 					--desloca
 					HEX7 <= "1111111"; -- 
 					HEX6 <= "1111111"; -- 
@@ -239,7 +239,7 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 					HEX4 <= "1111111"; -- 
 					HEX3 <= "1111111"; --  
 					HEX2 <= "0110001"; -- C  
-					HEX1 <= "0110001"; -- O 
+					HEX1 <= "0000001"; -- O 
 					HEX0 <= "1111010"; -- R	
 					--desloca
 					HEX7 <= "1111111"; -- 
@@ -247,7 +247,7 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 					HEX5 <= "1111111"; --  
 					HEX4 <= "1111111"; -- 
 					HEX3 <= "0110001"; -- C 
-					HEX2 <= "0110001"; -- O  
+					HEX2 <= "0000001"; -- O  
 					HEX1 <= "1111010"; -- R 
 					HEX0 <= "1111111"; -- -	
 					--desloca
@@ -255,7 +255,7 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 					HEX6 <= "1111111"; -- 
 					HEX5 <= "1111111"; --  
 					HEX4 <= "0110001"; -- C
-					HEX3 <= "0110001"; -- O 
+					HEX3 <= "0000001"; -- O 
 					HEX2 <= "1111010"; -- R  
 					HEX1 <= "1111111"; -- - 
 					HEX0 <= "1111010"; -- R
@@ -263,28 +263,28 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 					HEX7 <= "1111111"; -- 
 					HEX6 <= "1111111"; -- 
 					HEX5 <= "0110001"; -- C 
-					HEX4 <= "0110001"; -- O
+					HEX4 <= "0000001"; -- O
 					HEX3 <= "1111010"; -- R 
 					HEX2 <= "1111111"; -- -  
 					HEX1 <= "1111010"; -- R 
-					HEX0 <= "1001111"; -- E
+					HEX0 <= "0110000"; -- E
 					--desloca
 					HEX7 <= "1111111"; -- 
 					HEX6 <= "0110001"; -- C
-					HEX5 <= "0110001"; -- O 
+					HEX5 <= "0000001"; -- O 
 					HEX4 <= "1111010"; -- R
 					HEX3 <= "1111111"; -- - 
 					HEX2 <= "1111010"; -- R  
-					HEX1 <= "1001111"; -- E 
-					HEX0 <= "0111101"; -- D
+					HEX1 <= "0110000"; -- E 
+					HEX0 <= "1000010"; -- D
 					--desloca
 					HEX7 <= "0110001"; -- C
-					HEX6 <= "0110001"; -- O
+					HEX6 <= "0000001"; -- O  
 					HEX5 <= "1111010"; -- R 
 					HEX4 <= "1111111"; -- -
 					HEX3 <= "1111010"; -- R 
-					HEX2 <= "1001111"; -- E  
-					HEX1 <= "0111101"; -- D 
+					HEX2 <= "0110000"; -- E  
+					HEX1 <= "1000010"; -- D 
 					HEX0 <= "1111111"; -- -
 				
 				--COR BLUE
@@ -305,7 +305,7 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 					HEX3 <= "1111111"; --  
 					HEX2 <= "1111111"; --   
 					HEX1 <= "0110001"; -- c 
-					HEX0 <= "0110001"; -- O
+					HEX0 <= "0000001"; -- O
 					--desloca
 					HEX7 <= "1111111"; -- 
 					HEX6 <= "1111111"; -- 
