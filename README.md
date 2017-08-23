@@ -42,31 +42,31 @@ Resumindo, uma esteira com sensor de altura e cor com um seletor de para selecio
 		<td>C</td>
 		<td>0</td>
 		<td>1</td>
-		<td>8</td>
-		<td>9</td>
-		<td>9</td>
-		<td>9</td>
-		<td>9</td>
+		<td>1</td>
+		<td>0</td>
+		<td>0</td>
+		<td>0</td>
+		<td>1</td>
 	</tr>
 	<tr>
 		<td>O</td>
 		<td>0</td>
+		<td>0</td>
+		<td>0</td>
+		<td>0</td>
+		<td>0</td>
+		<td>0</td>
 		<td>1</td>
-		<td>8</td>
-		<td>9</td>
-		<td>9</td>
-		<td>9</td>
-		<td>9</td>
 	</tr>
 	<tr>
 		<td>R</td>
+		<td>1</td>
+		<td>1</td>
+		<td>1</td>
+		<td>1</td>
 		<td>0</td>
 		<td>1</td>
-		<td>8</td>
-		<td>9</td>
-		<td>9</td>
-		<td>9</td>
-		<td>9</td>
+		<td>0</td>
 	</tr>
 	<tr>
 		<td>E</td>
