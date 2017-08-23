@@ -27,19 +27,19 @@ Resumindo, uma esteira com sensor de altura e cor com um seletor de para selecio
 <h4>Demais Informações relevantes para o projeto:</h4>
 <p>Para a interpretação dos dados mostrados no display de 7 segmentos, utilize a imagem abaixo:<br/>
  <img alt="7SEG." src="http://www.twyman.org.uk/Fonts/7%20Seq-3D.jpg"/> <br/>
-<table BORDER=0 CELLSPACING=0>
+<table>
 	<tr>
 		<th>Caracteres</th>
-		<th WIDTH=150 BGCOLOR=BLUE>a</th>
-		<th WIDTH=150 BGCOLOR=BLUE>b</th>
-		<th WIDTH=150 BGCOLOR=BLUE>c</th>
-		<th WIDTH=150 BGCOLOR=BLUE>d</th>
-		<th WIDTH=150 BGCOLOR=BLUE>e</th>
-		<th WIDTH=150 BGCOLOR=BLUE>f</th>
-		<th WIDTH=150 BGCOLOR=BLUE>g</th>
+		<th>a</th>
+		<th>b</th>
+		<th>c</th>
+		<th>d</th>
+		<th>e</th>
+		<th>f</th>
+		<th>g</th>
 	</tr>
 	<tr>
-		<td WIDTH=150 BGCOLOR=BLUE>C</td>
+		<td>C</td>
 		<td>0</td>
 		<td>1</td>
 		<td>1</td>
@@ -59,7 +59,7 @@ Resumindo, uma esteira com sensor de altura e cor com um seletor de para selecio
 		<td>1</td>
 	</tr>
 	<tr>
-		<td WIDTH=150 BGCOLOR=BLUE>R</td>
+		<td>R</td>
 		<td>1</td>
 		<td>1</td>
 		<td>1</td>
@@ -69,7 +69,7 @@ Resumindo, uma esteira com sensor de altura e cor com um seletor de para selecio
 		<td>0</td>
 	</tr>
 	<tr>
-		<td WIDTH=150 BGCOLOR=BLUE>E</td>
+		<td>E</td>
 		<td>0</td>
 		<td>1</td>
 		<td>1</td>
@@ -89,7 +89,7 @@ Resumindo, uma esteira com sensor de altura e cor com um seletor de para selecio
 		<td>0</td>
 	</tr>
 	<tr>
-		<td WIDTH=150 BGCOLOR=BLUE>B</td>
+		<td>B</td>
 		<td>1</td>
 		<td>1</td>
 		<td>0</td>
@@ -99,7 +99,7 @@ Resumindo, uma esteira com sensor de altura e cor com um seletor de para selecio
 		<td>0</td>
 	</tr>
 	<tr>
-		<td WIDTH=150 BGCOLOR=BLUE>L</td>
+		<td>L</td>
 		<td>1</td>
 		<td>1</td>
 		<td>1</td>
@@ -109,7 +109,7 @@ Resumindo, uma esteira com sensor de altura e cor com um seletor de para selecio
 		<td>1</td>
 	</tr>
 	<tr>
-		<td WIDTH=150 BGCOLOR=BLUE>U</td>
+		<td>U</td>
 		<td>1</td>
 		<td>0</td>
 		<td>0</td>
@@ -119,7 +119,7 @@ Resumindo, uma esteira com sensor de altura e cor com um seletor de para selecio
 		<td>1</td>
 	</tr>
 	<tr>
-		<td WIDTH=150 BGCOLOR=BLUE>G</td>
+		<td>G</td>
 		<td>0</td>
 		<td>0</td>
 		<td>0</td>
@@ -129,7 +129,7 @@ Resumindo, uma esteira com sensor de altura e cor com um seletor de para selecio
 		<td>0</td>
 	</tr>
 	<tr>
-		<td WIDTH=150 BGCOLOR=BLUE>N</td>
+		<td>N</td>
 		<td>1</td>
 		<td>0</td>
 		<td>1</td>
