@@ -30,7 +30,7 @@ Resumindo, uma esteira com sensor de altura e cor com um seletor de para selecio
 <table>
 	<tr>
 		<th>Caracteres</th>
-		<th align=center>a</th>
+		<th>a</th>
 		<th>b</th>
 		<th>c</th>
 		<th>d</th>
@@ -49,7 +49,7 @@ Resumindo, uma esteira com sensor de altura e cor com um seletor de para selecio
 		<td>1</td>
 	</tr>
 	<tr>
-		<td>O</td>
+		<td align=center>O</td>
 		<td>0</td>
 		<td>0</td>
 		<td>0</td>
@@ -59,7 +59,7 @@ Resumindo, uma esteira com sensor de altura e cor com um seletor de para selecio
 		<td>1</td>
 	</tr>
 	<tr>
-		<td>R</td>
+		<td align=center>R</td>
 		<td>1</td>
 		<td>1</td>
 		<td>1</td>
@@ -69,7 +69,7 @@ Resumindo, uma esteira com sensor de altura e cor com um seletor de para selecio
 		<td>0</td>
 	</tr>
 	<tr>
-		<td>E</td>
+		<td align=center>E</td>
 		<td>0</td>
 		<td>1</td>
 		<td>1</td>
@@ -79,7 +79,7 @@ Resumindo, uma esteira com sensor de altura e cor com um seletor de para selecio
 		<td>0</td>
 	</tr>
 	<tr>
-		<td>D</td>
+		<td align=center>D</td>
 		<td>1</td>
 		<td>0</td>
 		<td>0</td>
@@ -89,7 +89,7 @@ Resumindo, uma esteira com sensor de altura e cor com um seletor de para selecio
 		<td>0</td>
 	</tr>
 	<tr>
-		<td>B</td>
+		<td align=center>B</td>
 		<td>1</td>
 		<td>1</td>
 		<td>0</td>
@@ -99,7 +99,7 @@ Resumindo, uma esteira com sensor de altura e cor com um seletor de para selecio
 		<td>0</td>
 	</tr>
 	<tr>
-		<td>L</td>
+		<td align=center>L</td>
 		<td>1</td>
 		<td>1</td>
 		<td>1</td>
@@ -109,7 +109,7 @@ Resumindo, uma esteira com sensor de altura e cor com um seletor de para selecio
 		<td>1</td>
 	</tr>
 	<tr>
-		<td>U</td>
+		<td align=center>U</td>
 		<td>1</td>
 		<td>0</td>
 		<td>0</td>
@@ -119,7 +119,7 @@ Resumindo, uma esteira com sensor de altura e cor com um seletor de para selecio
 		<td>1</td>
 	</tr>
 	<tr>
-		<td>G</td>
+		<td align=center>G</td>
 		<td>0</td>
 		<td>0</td>
 		<td>0</td>
@@ -129,7 +129,7 @@ Resumindo, uma esteira com sensor de altura e cor com um seletor de para selecio
 		<td>0</td>
 	</tr>
 	<tr>
-		<td>N</td>
+		<td align=center>N</td>
 		<td>1</td>
 		<td>0</td>
 		<td>1</td>
