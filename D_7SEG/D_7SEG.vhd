@@ -3,7 +3,7 @@
 --"correndo os dados"
 --chip: EP4CE115F29C7N
 --
---DISPLAY 7SEGMENTOS
+--DISPLAY 7SEGMENTOS (Ativo em nivel logico BAIXO "abcdefg")
 --Segmentos do  display=Pino do display
 --a=0         a
 --b=1       ----
@@ -108,7 +108,7 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 		CONSTANT t_caixa 	: INTEGER := 15;			-- Futuro tamanho da caixa
 		CONSTANT cor		: INTEGER := 1;   	   -- Futura cor da caixa
 		CONSTANT clk_sd	: INTEGER := 2;
-		CONSTANT conv_sc	: INTEGER := 5;
+		CONSTANT conv_sc	: INTEGER := 2;
 		--FIM das variaveis auxiliares APAGAR
 		
 		-- Sensor de distancia
@@ -212,37 +212,131 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 		-- Fim altura
 				
 		-- Cor
-			ELSIF (selecao = 0) THEN	
-				IF (cor  <= 1) THEN
-					HEX7 <= "0110001"; -- C
+			ELSIF (selecao = 0) THEN
+				--COR RED
+				IF (cor  <= 1) THEN 
+					HEX7 <= "1111111"; -- 
 					HEX6 <= "1111111"; -- 
 					HEX5 <= "1111111"; --  
 					HEX4 <= "1111111"; -- 
 					HEX3 <= "1111111"; --  
+					HEX2 <= "1111111"; --  
+					HEX1 <= "1111111"; --  
+					HEX0 <= "0110001"; -- C	
+					--desloca
+					HEX7 <= "1111111"; -- 
+					HEX6 <= "1111111"; -- 
+					HEX5 <= "1111111"; --  
+					HEX4 <= "1111111"; -- 
+					HEX3 <= "1111111"; --  
+					HEX2 <= "1111111"; --   
+					HEX1 <= "0110001"; -- c 
+					HEX0 <= "0110001"; -- O
+					--desloca
+					HEX7 <= "1111111"; -- 
+					HEX6 <= "1111111"; -- 
+					HEX5 <= "1111111"; --  
+					HEX4 <= "1111111"; -- 
+					HEX3 <= "1111111"; --  
+					HEX2 <= "0110001"; -- C  
+					HEX1 <= "0110001"; -- O 
+					HEX0 <= "1111010"; -- R	
+					--desloca
+					HEX7 <= "1111111"; -- 
+					HEX6 <= "1111111"; -- 
+					HEX5 <= "1111111"; --  
+					HEX4 <= "1111111"; -- 
+					HEX3 <= "0110001"; -- C 
+					HEX2 <= "0110001"; -- O  
+					HEX1 <= "1111010"; -- R 
+					HEX0 <= "1111111"; -- -	
+					--desloca
+					HEX7 <= "1111111"; -- 
+					HEX6 <= "1111111"; -- 
+					HEX5 <= "1111111"; --  
+					HEX4 <= "0110001"; -- C
+					HEX3 <= "0110001"; -- O 
 					HEX2 <= "1111010"; -- R  
-					HEX1 <= "0110000"; -- E  
-					HEX0 <= "1000010"; -- D 
+					HEX1 <= "1111111"; -- - 
+					HEX0 <= "1111010"; -- R
+					--desloca
+					HEX7 <= "1111111"; -- 
+					HEX6 <= "1111111"; -- 
+					HEX5 <= "0110001"; -- C 
+					HEX4 <= "0110001"; -- O
+					HEX3 <= "1111010"; -- R 
+					HEX2 <= "1111111"; -- -  
+					HEX1 <= "1111010"; -- R 
+					HEX0 <= "1001111"; -- E
+					--desloca
+					HEX7 <= "1111111"; -- 
+					HEX6 <= "0110001"; -- C
+					HEX5 <= "0110001"; -- O 
+					HEX4 <= "1111010"; -- R
+					HEX3 <= "1111111"; -- - 
+					HEX2 <= "1111010"; -- R  
+					HEX1 <= "1001111"; -- E 
+					HEX0 <= "0111101"; -- D
+					--desloca
+					HEX7 <= "0110001"; -- C
+					HEX6 <= "0110001"; -- O
+					HEX5 <= "1111010"; -- R 
+					HEX4 <= "1111111"; -- -
+					HEX3 <= "1111010"; -- R 
+					HEX2 <= "1001111"; -- E  
+					HEX1 <= "0111101"; -- D 
+					HEX0 <= "1111111"; -- -
 				
-			
+				--COR BLUE
 				ELSIF (cor = 2) THEN
-					HEX7 <= "0110001"; -- C
+					HEX7 <= "1111111"; -- 
 					HEX6 <= "1111111"; -- 
-					HEX5 <= "1111111"; --
+					HEX5 <= "1111111"; --  
 					HEX4 <= "1111111"; -- 
-					HEX3 <= "1100000"; -- B  
-					HEX2 <= "1110001"; -- L 
-					HEX1 <= "1000001"; -- U  
-					HEX0 <= "0110000"; -- E 
+					HEX3 <= "1111111"; --  
+					HEX2 <= "1111111"; --  
+					HEX1 <= "1111111"; --  
+					HEX0 <= "0110001"; -- C	
+					--desloca
+					HEX7 <= "1111111"; -- 
+					HEX6 <= "1111111"; -- 
+					HEX5 <= "1111111"; --  
+					HEX4 <= "1111111"; -- 
+					HEX3 <= "1111111"; --  
+					HEX2 <= "1111111"; --   
+					HEX1 <= "0110001"; -- c 
+					HEX0 <= "0110001"; -- O
+					--desloca
+					HEX7 <= "1111111"; -- 
+					HEX6 <= "1111111"; -- 
+					HEX5 <= "1111111"; --  
+					HEX4 <= "1111111"; -- 
+					HEX3 <= "1111111"; --  
+					HEX2 <= "0110001"; -- C  
+					HEX1 <= "0110001"; -- O 
+					HEX0 <= "1111010"; -- R	
+					--desloca
+					HEX7 <= "1111111"; -- 
+					HEX6 <= "1111111"; -- 
+					HEX5 <= "1111111"; --  
+					HEX4 <= "1111111"; -- 
+					HEX3 <= "0110001"; -- C 
+					HEX2 <= "0110001"; -- O  
+					HEX1 <= "1111010"; -- R 
+					HEX0 <= "1111111"; -- -
+					
+					--Falta a "BLUE"
 				
-				ELSIF (cor = 3) THEN
+				--COR GREEM
+				ELSIF (cor = 3) THEN 
 					HEX7 <= "0110001"; -- C
 					HEX6 <= "1111111"; -- 
 					HEX5 <= "1111111"; --
-					HEX4 <= "1111111"; -- 
-					HEX3 <= "1111110"; --  - 
-					HEX2 <= "1111110"; --  -
-					HEX1 <= "1111110"; --  -
-					HEX0 <= "1111110"; --  -
+					HEX4 <= "1111111"; --  G
+					HEX3 <= "1111110"; --  R
+					HEX2 <= "1111110"; --  E
+					HEX1 <= "1111110"; --  E
+					HEX0 <= "1111110"; --  M
 				END IF;	
 			--Fim cor
 				

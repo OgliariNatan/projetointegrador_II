@@ -1,5 +1,5 @@
 Analysis & Synthesis report for D_7SEG
-Wed Aug 23 11:22:18 2017
+Wed Aug 23 13:04:03 2017
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -46,13 +46,13 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Aug 23 11:22:18 2017       ;
+; Analysis & Synthesis Status        ; Successful - Wed Aug 23 13:04:03 2017       ;
 ; Quartus Prime Version              ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                      ; D_7SEG                                      ;
 ; Top-level Entity Name              ; D_7SEG                                      ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 88                                          ;
-;     Total combinational functions  ; 88                                          ;
+; Total logic elements               ; 85                                          ;
+;     Total combinational functions  ; 85                                          ;
 ;     Dedicated logic registers      ; 26                                          ;
 ; Total registers                    ; 26                                          ;
 ; Total pins                         ; 71                                          ;
@@ -175,36 +175,36 @@ agreement for further details.
 +----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------+---------+
 
 
-+--------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary            ;
-+---------------------------------------------+----------+
-; Resource                                    ; Usage    ;
-+---------------------------------------------+----------+
-; Estimated Total logic elements              ; 88       ;
-;                                             ;          ;
-; Total combinational functions               ; 88       ;
-; Logic element usage by number of LUT inputs ;          ;
-;     -- 4 input functions                    ; 7        ;
-;     -- 3 input functions                    ; 51       ;
-;     -- <=2 input functions                  ; 30       ;
-;                                             ;          ;
-; Logic elements by mode                      ;          ;
-;     -- normal mode                          ; 66       ;
-;     -- arithmetic mode                      ; 22       ;
-;                                             ;          ;
-; Total registers                             ; 26       ;
-;     -- Dedicated logic registers            ; 26       ;
-;     -- I/O registers                        ; 0        ;
-;                                             ;          ;
-; I/O pins                                    ; 71       ;
-;                                             ;          ;
-; Embedded Multiplier 9-bit elements          ; 0        ;
-;                                             ;          ;
-; Maximum fan-out node                        ; Equal1~0 ;
-; Maximum fan-out                             ; 30       ;
-; Total fan-out                               ; 457      ;
-; Average fan-out                             ; 1.79     ;
-+---------------------------------------------+----------+
++----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary              ;
++---------------------------------------------+------------+
+; Resource                                    ; Usage      ;
++---------------------------------------------+------------+
+; Estimated Total logic elements              ; 85         ;
+;                                             ;            ;
+; Total combinational functions               ; 85         ;
+; Logic element usage by number of LUT inputs ;            ;
+;     -- 4 input functions                    ; 7          ;
+;     -- 3 input functions                    ; 46         ;
+;     -- <=2 input functions                  ; 32         ;
+;                                             ;            ;
+; Logic elements by mode                      ;            ;
+;     -- normal mode                          ; 63         ;
+;     -- arithmetic mode                      ; 22         ;
+;                                             ;            ;
+; Total registers                             ; 26         ;
+;     -- Dedicated logic registers            ; 26         ;
+;     -- I/O registers                        ; 0          ;
+;                                             ;            ;
+; I/O pins                                    ; 71         ;
+;                                             ;            ;
+; Embedded Multiplier 9-bit elements          ; 0          ;
+;                                             ;            ;
+; Maximum fan-out node                        ; selecao[0] ;
+; Maximum fan-out                             ; 26         ;
+; Total fan-out                               ; 441        ;
+; Average fan-out                             ; 1.74       ;
++---------------------------------------------+------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -212,7 +212,7 @@ agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; |D_7SEG                    ; 88 (88)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 71   ; 0            ; |D_7SEG             ; D_7SEG      ; work         ;
+; |D_7SEG                    ; 85 (85)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 71   ; 0            ; |D_7SEG             ; D_7SEG      ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -222,25 +222,25 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------------------+---------------------+------------------------+
 ; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
 +-----------------------------------------------------+---------------------+------------------------+
+; HEX0[6]$latch                                       ; GND                 ; yes                    ;
 ; HEX0[5]$latch                                       ; GND                 ; yes                    ;
 ; HEX0[4]$latch                                       ; GND                 ; yes                    ;
+; HEX0[3]$latch                                       ; GND                 ; yes                    ;
+; HEX0[2]$latch                                       ; GND                 ; yes                    ;
 ; HEX0[1]$latch                                       ; GND                 ; yes                    ;
 ; HEX0[0]$latch                                       ; GND                 ; yes                    ;
-; HEX1[6]$latch                                       ; GND                 ; yes                    ;
 ; HEX1[5]$latch                                       ; GND                 ; yes                    ;
 ; HEX1[4]$latch                                       ; GND                 ; yes                    ;
 ; HEX1[3]$latch                                       ; GND                 ; yes                    ;
 ; HEX1[2]$latch                                       ; GND                 ; yes                    ;
 ; HEX1[1]$latch                                       ; GND                 ; yes                    ;
 ; HEX1[0]$latch                                       ; GND                 ; yes                    ;
-; HEX2[6]$latch                                       ; GND                 ; yes                    ;
 ; HEX2[5]$latch                                       ; GND                 ; yes                    ;
+; HEX2[4]$latch                                       ; GND                 ; yes                    ;
 ; HEX2[3]$latch                                       ; GND                 ; yes                    ;
-; HEX2[2]$latch                                       ; GND                 ; yes                    ;
-; HEX2[1]$latch                                       ; GND                 ; yes                    ;
 ; HEX2[0]$latch                                       ; GND                 ; yes                    ;
+; HEX3[6]$latch                                       ; GND                 ; yes                    ;
 ; HEX3[5]$latch                                       ; GND                 ; yes                    ;
-; HEX3[4]$latch                                       ; GND                 ; yes                    ;
 ; HEX3[3]$latch                                       ; GND                 ; yes                    ;
 ; HEX3[2]$latch                                       ; GND                 ; yes                    ;
 ; HEX3[1]$latch                                       ; GND                 ; yes                    ;
@@ -252,17 +252,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; HEX4[2]$latch                                       ; GND                 ; yes                    ;
 ; HEX4[1]$latch                                       ; GND                 ; yes                    ;
 ; HEX4[0]$latch                                       ; GND                 ; yes                    ;
-; HEX5[6]$latch                                       ; GND                 ; yes                    ;
 ; HEX5[5]$latch                                       ; GND                 ; yes                    ;
-; HEX5[4]$latch                                       ; GND                 ; yes                    ;
 ; HEX5[3]$latch                                       ; GND                 ; yes                    ;
 ; HEX5[2]$latch                                       ; GND                 ; yes                    ;
 ; HEX5[1]$latch                                       ; GND                 ; yes                    ;
 ; HEX5[0]$latch                                       ; GND                 ; yes                    ;
 ; HEX6[6]$latch                                       ; GND                 ; yes                    ;
-; HEX6[5]$latch                                       ; GND                 ; yes                    ;
-; HEX6[4]$latch                                       ; GND                 ; yes                    ;
-; HEX6[3]$latch                                       ; GND                 ; yes                    ;
 ; HEX6[2]$latch                                       ; GND                 ; yes                    ;
 ; HEX6[1]$latch                                       ; GND                 ; yes                    ;
 ; HEX6[0]$latch                                       ; GND                 ; yes                    ;
@@ -270,7 +265,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; HEX7[3]$latch                                       ; GND                 ; yes                    ;
 ; HEX7[2]$latch                                       ; GND                 ; yes                    ;
 ; HEX7[1]$latch                                       ; GND                 ; yes                    ;
-; Number of user-specified and inferred latches = 48  ;                     ;                        ;
+; Number of user-specified and inferred latches = 43  ;                     ;                        ;
 +-----------------------------------------------------+---------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
@@ -320,18 +315,18 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; cycloneiii_ff         ; 26                          ;
 ;     ENA SCLR          ; 23                          ;
 ;     plain             ; 3                           ;
-; cycloneiii_lcell_comb ; 90                          ;
+; cycloneiii_lcell_comb ; 87                          ;
 ;     arith             ; 22                          ;
 ;         2 data inputs ; 22                          ;
-;     normal            ; 68                          ;
+;     normal            ; 65                          ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 2                           ;
-;         2 data inputs ; 6                           ;
-;         3 data inputs ; 51                          ;
+;         2 data inputs ; 8                           ;
+;         3 data inputs ; 46                          ;
 ;         4 data inputs ; 7                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 5.00                        ;
-; Average LUT depth     ; 2.20                        ;
+; Average LUT depth     ; 2.24                        ;
 +-----------------------+-----------------------------+
 
 
@@ -350,7 +345,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
-    Info: Processing started: Wed Aug 23 11:21:48 2017
+    Info: Processing started: Wed Aug 23 13:03:34 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off D_7SEG -c D_7SEG
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -359,7 +354,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file d_7seg.
     Info (12023): Found entity 1: D_7SEG File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 21
 Info (12127): Elaborating entity "D_7SEG" for the top level hierarchy
 Warning (10541): VHDL Signal Declaration warning at D_7SEG.vhd(37): used implicit default value for signal "HEX8" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 37
-Warning (10037): Verilog HDL or VHDL warning at D_7SEG.vhd(216): conditional expression evaluates to a constant File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 216
+Warning (10037): Verilog HDL or VHDL warning at D_7SEG.vhd(217): conditional expression evaluates to a constant File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 217
 Warning (10631): VHDL Process Statement warning at D_7SEG.vhd(106): inferring latch(es) for signal or variable "HEX7", which holds its previous value in one or more paths through the process File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 106
 Warning (10631): VHDL Process Statement warning at D_7SEG.vhd(106): inferring latch(es) for signal or variable "HEX6", which holds its previous value in one or more paths through the process File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 106
 Warning (10631): VHDL Process Statement warning at D_7SEG.vhd(106): inferring latch(es) for signal or variable "HEX5", which holds its previous value in one or more paths through the process File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 106
@@ -425,11 +420,16 @@ Info (10041): Inferred latch for "HEX7[2]" at D_7SEG.vhd(106) File: C:/Users/Cli
 Info (10041): Inferred latch for "HEX7[1]" at D_7SEG.vhd(106) File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 106
 Info (10041): Inferred latch for "HEX7[0]" at D_7SEG.vhd(106) File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 106
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX0[6]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 106
-    Warning (13410): Pin "HEX0[3]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 106
-    Warning (13410): Pin "HEX0[2]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 106
-    Warning (13410): Pin "HEX2[4]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 106
-    Warning (13410): Pin "HEX3[6]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 106
+    Warning (13410): Pin "HEX1[6]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 106
+    Warning (13410): Pin "HEX2[6]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 106
+    Warning (13410): Pin "HEX2[2]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 106
+    Warning (13410): Pin "HEX2[1]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 106
+    Warning (13410): Pin "HEX3[4]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 106
+    Warning (13410): Pin "HEX5[6]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 106
+    Warning (13410): Pin "HEX5[4]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 106
+    Warning (13410): Pin "HEX6[5]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 106
+    Warning (13410): Pin "HEX6[4]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 106
+    Warning (13410): Pin "HEX6[3]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 106
     Warning (13410): Pin "HEX7[5]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 106
     Warning (13410): Pin "HEX7[4]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 106
     Warning (13410): Pin "HEX7[0]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 106
@@ -449,14 +449,14 @@ Warning (21074): Design contains 5 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[0]" File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 33
     Warning (15610): No output dependent on input pin "SW[1]" File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 33
     Warning (15610): No output dependent on input pin "SW[2]" File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 33
-Info (21057): Implemented 160 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 156 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 7 input pins
     Info (21059): Implemented 64 output pins
-    Info (21061): Implemented 89 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 33 warnings
+    Info (21061): Implemented 85 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 38 warnings
     Info: Peak virtual memory: 681 megabytes
-    Info: Processing ended: Wed Aug 23 11:22:18 2017
-    Info: Elapsed time: 00:00:30
-    Info: Total CPU time (on all processors): 00:01:01
+    Info: Processing ended: Wed Aug 23 13:04:03 2017
+    Info: Elapsed time: 00:00:29
+    Info: Total CPU time (on all processors): 00:00:56
 
 
