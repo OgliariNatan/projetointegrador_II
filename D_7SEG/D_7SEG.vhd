@@ -18,23 +18,60 @@ LIBRARY ieee;
 USE ieee.std_logic_1164.all;
 USE ieee.std_logic_unsigned.all;
 
+ENTITY divideclock IS
+	GENERIC(	freqIn	: INTEGER := 50000000;
+				freqOut	: INTEGER := 1);
+	PORT	 (CLOCKIN	: IN 	BIT;
+			  CLOCKOUT	: OUT STD_LOGIC );
+END divideclock;
+
+
+
+
+ARCHITECTURE HARDWARE OF divideclock IS
+
+	SIGNAL   clock			: STD_LOGIC := '0';
+	CONSTANT COUNT_MAX	: INTEGER 	:= ((freqIn / freqOut) / 2) - 1;
+
+	BEGIN
+	
+	PROCESS(CLOCKIN)
+	
+		VARIABLE counter : INTEGER RANGE 0 TO COUNT_MAX := 0;
+	
+	BEGIN
+	
+		IF (CLOCKIN'EVENT AND CLOCKIN = '1') THEN
+		
+			IF counter < COUNT_MAX THEN
+				counter := counter + 1;
+			ELSE
+				counter := 0;
+				clock   <= NOT clock;
+			
+			END IF;
+		END IF;
+	END PROCESS;
+	CLOCKOUT <= clock;
+END;
+
 ENTITY D_7SEG IS
 	--Defenições genericas
 	GENERIC(	freqIn		: INTEGER := 50000000; --Frequencia da placa
-				delay			: INTEGER := 100;		  --Atraso do ruido de botão
-				defaultState: STD_LOGIC := '0' 	  --Define dois estados "1" "0"
+				delay			: INTEGER := 100		  --Atraso do ruido de botão
+				-- defaultState: STD_LOGIC := '0' 	  --Define dois estados "1" "0"
 	);
 	
 	PORT(	--Definições dos sinais de entrada
-			clock_50			: IN STD_LOGIC;--Entrada do clock da placa
+			-- clock_50			: IN STD_LOGIC;--Entrada do clock da placa
 
 			--Definições de botão de ajuste 
-			KEY				: IN STD_LOGIC_VECTOR (2 DOWNTO 0) := "000";
-			SW					: IN STD_LOGIC_VECTOR (2 DOWNTO 0);
+			 -- KEY					: IN STD_LOGIC_VECTOR (2 DOWNTO 0) := "000";
+			 -- SW					: IN STD_LOGIC_VECTOR (2 DOWNTO 0);
 			--Definição do Sensor de cor
 
 			--Definição do display_7Segmentos
-			HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6, HEX7, HEX8: OUT STD_LOGIC_VECTOR (0 TO 6);
+			-- HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6, HEX7, HEX8: OUT STD_LOGIC_VECTOR (0 TO 6);
 
 			--Definição da saida do "botão virtual" de antitrepidação
 			buttonOut		: BUFFER STD_LOGIC
@@ -50,7 +87,7 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 	--Antitrepidação
 	SIGNAL buttonAux 		: STD_LOGIC :='0';
 	SIGNAL buttonPressed : STD_LOGIC :='0';
-	CONSTANT cont_max		: INTEGER := ((freqIn/1000)*delay)-1;	
+	CONSTANT cont_max		: INTEGER := ((freqIn/1000)*delay)-1;
 	
 	BEGIN--Começa a logica do programa
 	
@@ -79,7 +116,7 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 		buttonOut <= buttonPressed WHEN defaultState = '0' ELSE (NOT buttonPressed);
 		-- Fim Antitrepidação
 	
-		-- divisor de frequncia
+		-- divisor de frequencia
 		PROCESS (clock_50)
 		BEGIN
 			IF (clock_50'EVENT AND clock_50 ='1') THEN
@@ -103,7 +140,7 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 	-- Fim seleção interface
 	
 	-- Decodificador display 7 seguimentos
-	PROCESS (selecao) 
+	PROCESS (selecao, freqOut) 
 		--VARIAVEIS AUXILIARES APAGARA PARA O PROJETO FINAL
 		CONSTANT t_caixa 	: INTEGER := 5300;			-- Futuro tamanho da caixa
 		CONSTANT cor		: INTEGER := 1;   	   -- Futura cor recebida da caixa
@@ -333,6 +370,26 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 					HEX2 <= "1111010"; -- R  
 					HEX1 <= "1111111"; -- - 
 					HEX0 <= "1100000"; -- B
+					
+					
+					HEX7 <= "1111111"; -- 
+					HEX6 <= "1111111"; -- 
+					HEX5 <= "1111111"; -- C 
+					HEX4 <= "0110001"; -- O
+					HEX3 <= "0110001"; -- R 
+					HEX2 <= "1111010"; -- -  
+					HEX1 <= "1111111"; -- B 
+					HEX0 <= "1100000"; -- L
+					
+					HEX7 <= "1111111"; -- 
+					HEX6 <= "1111111"; -- C
+					HEX5 <= "1111111"; -- O 
+					HEX4 <= "0110001"; -- R
+					HEX3 <= "0110001"; -- - 
+					HEX2 <= "1111010"; -- B  
+					HEX1 <= "1111111"; -- L 
+					HEX0 <= "1100000"; -- U
+					
 					
 					--Falta a "BLUE"
 				
