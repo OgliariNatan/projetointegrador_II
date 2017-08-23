@@ -1,5 +1,5 @@
 Analysis & Synthesis report for D_7SEG
-Wed Aug 23 13:04:03 2017
+Wed Aug 23 13:29:26 2017
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -46,7 +46,7 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Aug 23 13:04:03 2017       ;
+; Analysis & Synthesis Status        ; Successful - Wed Aug 23 13:29:25 2017       ;
 ; Quartus Prime Version              ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                      ; D_7SEG                                      ;
 ; Top-level Entity Name              ; D_7SEG                                      ;
@@ -345,7 +345,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
-    Info: Processing started: Wed Aug 23 13:03:34 2017
+    Info: Processing started: Wed Aug 23 13:28:56 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off D_7SEG -c D_7SEG
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -455,8 +455,8 @@ Info (21057): Implemented 156 device resources after synthesis - the final resou
     Info (21061): Implemented 85 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 38 warnings
     Info: Peak virtual memory: 681 megabytes
-    Info: Processing ended: Wed Aug 23 13:04:03 2017
-    Info: Elapsed time: 00:00:29
-    Info: Total CPU time (on all processors): 00:00:56
+    Info: Processing ended: Wed Aug 23 13:29:26 2017
+    Info: Elapsed time: 00:00:30
+    Info: Total CPU time (on all processors): 00:01:00
 
 

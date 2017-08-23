@@ -106,9 +106,9 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 	PROCESS (selecao) 
 		--VARIAVEIS AUXILIARES APAGARA PARA O PROJETO FINAL
 		CONSTANT t_caixa 	: INTEGER := 15;			-- Futuro tamanho da caixa
-		CONSTANT cor		: INTEGER := 1;   	   -- Futura cor da caixa
-		CONSTANT clk_sd	: INTEGER := 2;
-		CONSTANT conv_sc	: INTEGER := 2;
+		CONSTANT cor		: INTEGER := 1;   	   -- Futura cor recebida da caixa
+		CONSTANT clk_sd	: INTEGER := 2;			-- Futuro Clock do sensor de distancia
+		CONSTANT conv_sc	: INTEGER := 1;			-- Envio da da cor para display
 		--FIM das variaveis auxiliares APAGAR
 		
 		-- Sensor de distancia
@@ -324,6 +324,15 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 					HEX2 <= "0110001"; -- O  
 					HEX1 <= "1111010"; -- R 
 					HEX0 <= "1111111"; -- -
+					--desloca
+					HEX7 <= "1111111"; -- 
+					HEX6 <= "1111111"; -- 
+					HEX5 <= "1111111"; --  
+					HEX4 <= "0110001"; -- C
+					HEX3 <= "0110001"; -- O 
+					HEX2 <= "1111010"; -- R  
+					HEX1 <= "1111111"; -- - 
+					HEX0 <= "1100000"; -- B
 					
 					--Falta a "BLUE"
 				
