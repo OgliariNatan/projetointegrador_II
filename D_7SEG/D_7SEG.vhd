@@ -105,11 +105,10 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 	-- Decodificador display 7 seguimentos
 	PROCESS (selecao) 
 		--VARIAVEIS AUXILIARES APAGARA PARA O PROJETO FINAL
-		CONSTANT t_caixa 	: INTEGER := 10;			-- Futuro tamanho da caixa
-		CONSTANT cor		: INTEGER := 2;   	   -- Futura cor da caixa
+		CONSTANT t_caixa 	: INTEGER := 15;			-- Futuro tamanho da caixa
+		CONSTANT cor		: INTEGER := 1;   	   -- Futura cor da caixa
 		CONSTANT clk_sd	: INTEGER := 2;
 		CONSTANT conv_sc	: INTEGER := 5;
-		
 		--FIM das variaveis auxiliares APAGAR
 		
 		-- Sensor de distancia
@@ -131,8 +130,8 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 		VARIABLE conv_3    : INTEGER;
 		VARIABLE conv_4    : INTEGER;
 	
-	-- Altura 
-	BEGIN
+	 
+	BEGIN -- Inicia o codigo
 				
 		IF (selecao = 2) THEN
 
@@ -219,10 +218,10 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 					HEX6 <= "1111111"; -- 
 					HEX5 <= "1111111"; --  
 					HEX4 <= "1111111"; -- 
-					HEX3 <= "1111010"; -- R 
-					HEX2 <= "0110000"; -- E  
-					HEX1 <= "1000010"; -- D  
-					HEX0 <= "1111111"; --  
+					HEX3 <= "1111111"; --  
+					HEX2 <= "1111010"; -- R  
+					HEX1 <= "0110000"; -- E  
+					HEX0 <= "1000010"; -- D 
 				
 			
 				ELSIF (cor = 2) THEN
