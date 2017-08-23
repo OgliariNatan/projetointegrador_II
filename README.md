@@ -48,9 +48,88 @@ Resumindo, uma esteira com sensor de altura e cor com um seletor de para selecio
 		<td>9</td>
 		<td>9</td>
 	</tr>
-
 	<tr>
 		<td>O</td>
+		<td>0</td>
+		<td>1</td>
+		<td>8</td>
+		<td>9</td>
+		<td>9</td>
+		<td>9</td>
+		<td>9</td>
+	</tr>
+	<tr>
+		<td>R</td>
+		<td>0</td>
+		<td>1</td>
+		<td>8</td>
+		<td>9</td>
+		<td>9</td>
+		<td>9</td>
+		<td>9</td>
+	</tr>
+	<tr>
+		<td>E</td>
+		<td>0</td>
+		<td>1</td>
+		<td>8</td>
+		<td>9</td>
+		<td>9</td>
+		<td>9</td>
+		<td>9</td>
+	</tr>
+	<tr>
+		<td>D</td>
+		<td>0</td>
+		<td>1</td>
+		<td>8</td>
+		<td>9</td>
+		<td>9</td>
+		<td>9</td>
+		<td>9</td>
+	</tr>
+	<tr>
+		<td>B</td>
+		<td>0</td>
+		<td>1</td>
+		<td>8</td>
+		<td>9</td>
+		<td>9</td>
+		<td>9</td>
+		<td>9</td>
+	</tr>
+	<tr>
+		<td>L</td>
+		<td>0</td>
+		<td>1</td>
+		<td>8</td>
+		<td>9</td>
+		<td>9</td>
+		<td>9</td>
+		<td>9</td>
+	</tr>
+	<tr>
+		<td>U</td>
+		<td>0</td>
+		<td>1</td>
+		<td>8</td>
+		<td>9</td>
+		<td>9</td>
+		<td>9</td>
+		<td>9</td>
+	</tr>
+	<tr>
+		<td>G</td>
+		<td>0</td>
+		<td>1</td>
+		<td>8</td>
+		<td>9</td>
+		<td>9</td>
+		<td>9</td>
+		<td>9</td>
+	</tr>
+	<tr>
+		<td>N</td>
 		<td>0</td>
 		<td>1</td>
 		<td>8</td>
