@@ -39,7 +39,7 @@ Resumindo, uma esteira com sensor de altura e cor com um seletor de para selecio
 		<th>g</th>
 	</tr>
 	<tr>
-		<td>C</td>
+		<td align=center>C</td>
 		<td>0</td>
 		<td>1</td>
 		<td>1</td>
