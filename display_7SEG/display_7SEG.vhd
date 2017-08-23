@@ -83,11 +83,6 @@ ARCHITECTURE display OF display_7SEG IS --declaração das variaveis
 	BEGIN
 		IF RISING_EDGE (CLOCK_50) THEN
 			--FALTA terminar de imlementar
-		END IF	
-	END PROCESS
-	
-	
+		END IF;	
+	END PROCESS;
 END display;
-
-
-

@@ -1,0 +1,147 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/01_seletor/simulation/qsim
+Ehard_block
+Z1 w1490018229
+Z2 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z3 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 K`kJb<]?z4U5EbkG_:lMO3
+Z4 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z5 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z6 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z7 DPx10 cycloneive 21 cycloneive_components 0 22 HFZ8mBI5?[8TM9e2YGWCa2
+R0
+Z8 8SELETOR.vho
+Z9 FSELETOR.vho
+l0
+L35
+VB]0;STalBkCB1_B4BXQDW2
+!s100 >mXi5[`cD`bFC`UBKA<om3
+Z10 OV;C;10.5b;63
+32
+Z11 !s110 1490018235
+!i10b 1
+Z12 !s108 1490018235.000000
+Z13 !s90 -work|work|SELETOR.vho|
+Z14 !s107 SELETOR.vho|
+!i113 1
+Z15 o-work work
+Z16 tExplicit 1 CvgOpt 0
+Astructure
+R2
+R3
+R4
+R5
+R6
+R7
+DEx4 work 10 hard_block 0 22 B]0;STalBkCB1_B4BXQDW2
+l65
+L51
+Via>5o7W??azG@W@@eFOTF0
+!s100 [5;Wd8QGQ>@2NGoJ1I]Y43
+R10
+32
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Eseletor
+R1
+R3
+R7
+R2
+Z17 DPx6 altera 11 dffeas_pack 0 22 zWCf]NF6heG=Dhmc@B0=T2
+R4
+R5
+R6
+Z18 DPx6 altera 28 altera_primitives_components 0 22 _Q9E2TD5YB<<@P0[5jYTG0
+R0
+R8
+R9
+l0
+L80
+V90?do8]jPX<]M63Pnjz1^1
+!s100 O8agQY7SFCM0E7BnBa[]:0
+R10
+32
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Astructure
+R3
+R7
+R2
+R17
+R4
+R5
+R6
+R18
+DEx4 work 7 seletor 0 22 90?do8]jPX<]M63Pnjz1^1
+l127
+L94
+VSK@kB^T6UKPkSO<1F?TY:3
+!s100 >7O]54;TYUmcHm=LDA^Jh0
+R10
+32
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Eseletor_vhd_vec_tst
+Z19 w1490018228
+R5
+R6
+R0
+Z20 8Waveform1.vwf.vht
+Z21 FWaveform1.vwf.vht
+l0
+L32
+Vn1XlN7cI?N]jh:O1<kE]j1
+!s100 HLlAbPeXE]ZQ<aViE2?jV0
+R10
+32
+R11
+!i10b 1
+R12
+Z22 !s90 -work|work|Waveform1.vwf.vht|
+Z23 !s107 Waveform1.vwf.vht|
+!i113 1
+R15
+R16
+Aseletor_arch
+R5
+R6
+Z24 DEx4 work 19 seletor_vhd_vec_tst 0 22 n1XlN7cI?N]jh:O1<kE]j1
+l45
+L34
+V?`5PbTh^cMeQ?hJo7@?i50
+!s100 KmjPaYkFQWP<k`MZU8zKH0
+R10
+32
+R11
+!i10b 1
+R12
+R22
+R23
+!i113 1
+R15
+R16
