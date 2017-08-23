@@ -103,7 +103,15 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 	-- Fim seleção interface
 	
 	-- Decodificador display 7 seguimentos
-	PROCESS (t_caixa, clk_sd, selecao, cor) 
+	PROCESS (selecao) 
+		--VARIAVEIS AUXILIARES APAGARA PARA O PROJETO FINAL
+		CONSTANT t_caixa 	: INTEGER := 10;			-- Futuro tamanho da caixa
+		CONSTANT cor		: INTEGER := 2;   	   -- Futura cor da caixa
+		CONSTANT clk_sd	: INTEGER := 2;
+		CONSTANT conv_sc	: INTEGER := 5;
+		
+		--FIM das variaveis auxiliares APAGAR
+		
 		-- Sensor de distancia
 		VARIABLE tamanho_1: INTEGER;
 		VARIABLE tamanho_2: INTEGER;
