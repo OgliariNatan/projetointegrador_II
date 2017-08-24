@@ -4,6 +4,10 @@
 			"name" : "Top",
 			"pins" : [
 				{
+					"name" : "CLOCKOUT",
+					"strict" : false
+				},
+				{
 					"name" : "HEX0[5]",
 					"strict" : false
 				},
@@ -169,6 +173,10 @@
 				},
 				{
 					"name" : "buttonOut",
+					"strict" : false
+				},
+				{
+					"name" : "CLOCKIN",
 					"strict" : false
 				},
 				{
