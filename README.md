@@ -27,116 +27,40 @@ Resumindo, uma esteira com sensor de altura e cor com um seletor de para selecio
 <h4>Demais Informações relevantes para o projeto:</h4>
 <p>Para a interpretação dos dados mostrados no display de 7 segmentos, utilize a imagem abaixo:<br/>
  <img alt="7SEG." src="http://www.twyman.org.uk/Fonts/7%20Seq-3D.jpg"/> <br/>
+Bits setados para os caracteres utilizados no projeto:<br/>
 <table>
 	<tr>
-		<th>Caracteres</th>
-		<th>a</th>
-		<th>b</th>
-		<th>c</th>
-		<th>d</th>
-		<th>e</th>
-		<th>f</th>
-		<th>g</th>
+		<th align=center>Caracteres</th> <th>a</th><th>b</th> <th>c</th> <th>d</th> <th>e</th> <th>f</th> <th>g</th>
 	</tr>
 	<tr>
-		<td>C</td>
-		<td>0</td>
-		<td>1</td>
-		<td>1</td>
-		<td>0</td>
-		<td>0</td>
-		<td>0</td>
-		<td>1</td>
+		<td align=center>C</td>	<td>0</td>	<td>1</td>	<td>1</td> <td>0</td>	<td>0</td>	<td>0</td>	<td>1</td>
 	</tr>
 	<tr>
-		<td>O</td>
-		<td>0</td>
-		<td>0</td>
-		<td>0</td>
-		<td>0</td>
-		<td>0</td>
-		<td>0</td>
-		<td>1</td>
+		<td align=center>O</td>	<td>0</td>	<td>0</td>	<td>0</td>	<td>0</td>	<td>0</td>	<td>0</td>	<td>1</td>
 	</tr>
 	<tr>
-		<td>R</td>
-		<td>1</td>
-		<td>1</td>
-		<td>1</td>
-		<td>1</td>
-		<td>0</td>
-		<td>1</td>
-		<td>0</td>
+		<td align=center>R</td>	<td>1</td>	<td>1</td>	<td>1</td>	<td>1</td>	<td>0</td>	<td>1</td>	<td>0</td>
 	</tr>
 	<tr>
-		<td>E</td>
-		<td>0</td>
-		<td>1</td>
-		<td>1</td>
-		<td>0</td>
-		<td>0</td>
-		<td>0</td>
-		<td>0</td>
+		<td align=center>E</td>	<td>0</td>	<td>1</td>	<td>1</td>	<td>0</td>	<td>0</td>	<td>0</td>	<td>0</td>
 	</tr>
 	<tr>
-		<td>D</td>
-		<td>1</td>
-		<td>0</td>
-		<td>0</td>
-		<td>0</td>
-		<td>0</td>
-		<td>1</td>
-		<td>0</td>
+		<td align=center>D</td>	<td>1</td>	<td>0</td>	<td>0</td>	<td>0</td>	<td>0</td>	<td>1</td>	<td>0</td>
 	</tr>
 	<tr>
-		<td>B</td>
-		<td>1</td>
-		<td>1</td>
-		<td>0</td>
-		<td>0</td>
-		<td>0</td>
-		<td>0</td>
-		<td>0</td>
+		<td align=center>B</td>	<td>1</td>	<td>1</td>	<td>0</td>	<td>0</td>	<td>0</td>	<td>0</td>	<td>0</td>
 	</tr>
 	<tr>
-		<td>L</td>
-		<td>1</td>
-		<td>1</td>
-		<td>1</td>
-		<td>0</td>
-		<td>0</td>
-		<td>0</td>
-		<td>1</td>
+		<td align=center>L</td>	<td>1</td>	<td>1</td>	<td>1</td>	<td>0</td>	<td>0</td>	<td>0</td>	<td>1</td>
 	</tr>
 	<tr>
-		<td>U</td>
-		<td>1</td>
-		<td>0</td>
-		<td>0</td>
-		<td>0</td>
-		<td>0</td>
-		<td>0</td>
-		<td>1</td>
+		<td align=center>U</td>	<td>1</td>	<td>0</td>	<td>0</td>	<td>0</td>	<td>0</td>	<td>0</td>	<td>1</td>
 	</tr>
 	<tr>
-		<td>G</td>
-		<td>0</td>
-		<td>0</td>
-		<td>0</td>
-		<td>0</td>
-		<td>1</td>
-		<td>0</td>
-		<td>0</td>
+		<td align=center>G</td>	<td>0</td>	<td>0</td>	<td>0</td>	<td>0</td>	<td>1</td>	<td>0</td>	<td>0</td>
 	</tr>
 	<tr>
-		<td>N</td>
-		<td>1</td>
-		<td>0</td>
-		<td>1</td>
-		<td>1</td>
-		<td>1</td>
-		<td>0</td>
-		<td>0</td>
+		<td align=center>N</td>	<td>1</td>	<td>0</td>	<td>1</td>	<td>1</td>	<td>1</td>	<td>0</td>	<td>0</td>
 	</tr>
 </table> <br/>
 </p>
