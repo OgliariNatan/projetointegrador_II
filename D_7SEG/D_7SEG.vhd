@@ -29,7 +29,6 @@ ENTITY D_7SEG IS
 	
 	PORT(	--Definições dos sinais de entrada
 			clock_50			: IN STD_LOGIC;--Entrada do clock da placa
-			CLOCKIN			: IN BIT;--NAO SEI O QUE SIGNIFICA
 			CLOCKOUT			:OUT STD_LOGIC; --POSSIVEL SAIDA DO DIVISOR DE CLOCK
 			
 			--Definições de botão de ajuste 
@@ -62,13 +61,13 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 	BEGIN--Começa a logica do programa
 	
 	--DIVISOR DE CLOCK
-	PROCESS(CLOCKIN)
+	PROCESS(clock_50)
 	
 		VARIABLE counter : INTEGER RANGE 0 TO COUNT_MAX1 := 0;
 	
 	BEGIN
 	
-		IF (CLOCKIN'EVENT AND CLOCKIN = '1') THEN
+		IF (clock_50'EVENT AND clock_50 = '1') THEN
 		
 			IF counter < COUNT_MAX1 THEN
 				counter := counter + 1;
@@ -370,18 +369,24 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 					--HEX1 <= "1111111"; -- B 
 					--HEX0 <= "1100000"; -- L
 					--DESLOCA
-					HEX7 <= "1111111"; -- 
-					HEX6 <= "1111111"; -- C
-					HEX5 <= "1111111"; -- O 
-					HEX4 <= "0110001"; -- R
-					HEX3 <= "0110001"; -- - 
-					HEX2 <= "1111010"; -- B  
-					HEX1 <= "1111111"; -- L 
-					HEX0 <= "1100000"; -- U
-					
-					
-					--Falta a "BLUE"
-				
+					--HEX7 <= "1111111"; -- 
+					--HEX6 <= "1111111"; -- C
+					--HEX5 <= "1111111"; -- O 
+					--HEX4 <= "0110001"; -- R
+					--HEX3 <= "0110001"; -- - 
+					--HEX2 <= "1111010"; -- B  
+					--HEX1 <= "1111111"; -- L 
+					--HEX0 <= "1100000"; -- U
+					--DESLOCA
+					HEX7 <= "0110001"; -- C
+					HEX6 <= "0000001"; -- O
+					HEX5 <= "1111010"; -- R 
+					HEX4 <= "1111111"; -- -
+					HEX3 <= "1100000"; -- B 
+					HEX2 <= "1110001"; -- L 
+					HEX1 <= "1000001"; -- U 
+					HEX0 <= "0110000"; -- E
+									
 				--COR GREEM
 				ELSIF (cor = 3) THEN 
 					HEX7 <= "0110001"; -- C
