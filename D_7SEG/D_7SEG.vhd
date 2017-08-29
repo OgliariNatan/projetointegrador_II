@@ -30,7 +30,11 @@ ENTITY D_7SEG IS
 	PORT(	--Definições dos sinais de entrada
 			clock_50			: IN STD_LOGIC;--Entrada do clock da placa
 			CLOCKOUT			:OUT STD_LOGIC; --POSSIVEL SAIDA DO DIVISOR DE CLOCK
-			
+		
+			-- Sensor de distância
+			trigger				:OUT STD_LOGIC;	-- 				  
+			echo					:IN STD_LOGIC;		--				
+	
 			--Definições de botão de ajuste 
 			  KEY					: IN STD_LOGIC_VECTOR (2 DOWNTO 0) := "000";
 			  SW					: IN STD_LOGIC_VECTOR (2 DOWNTO 0);
@@ -47,8 +51,11 @@ END D_7SEG;
 ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 	--Divisor de frequencia
 	SIGNAL count 			: INTEGER :=1; --divisão do clock
+	SIGNAL clk_sd	  		  	   : STD_LOGIC :='0';	-- Clock para sensor de distancia
+	
 	--seleção de interface
 	SIGNAL selecao 		: INTEGER RANGE 0 TO 2; --Numero de seleção
+	
 	--Antitrepidação
 	SIGNAL buttonAux 		: STD_LOGIC :='0';
 	SIGNAL buttonPressed : STD_LOGIC :='0';
@@ -57,6 +64,15 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 	--DIVISOR DE CLOCK
 	SIGNAL clock			 : STD_LOGIC :='0';
 	CONSTANT COUNT_MAX1   : INTEGER := ((freqIn/freqOut)/2)-1;
+	
+	-- Sensor de distância
+	SIGNAL distancia     		: INTEGER := 0;			-- Calculo da distância
+	SIGNAL cont_sensor 			: INTEGER := 0; 		-- Variavel para calculo
+	SIGNAL cont_d				: INTEGER := 0;			-- Variavel para calculo
+	SIGNAL tempo_sd 			: INTEGER := 0;			-- Variavel para calculo
+	SIGNAL t_caixa 				: INTEGER := 0;			-- Tamanho calculado
+	SIGNAL li					: INTEGER;				-- Leitura inicial	
+	
 	
 	BEGIN--Começa a logica do programa
 	
@@ -128,12 +144,57 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 	END PROCESS;
 	-- Fim seleção interface
 	
+	-- Sensor de distância 
+	PROCESS(clk_sd) 
+			-- Variaveis
+			VARIABLE d			  	: INTEGER   := 0; 
+			VARIABLE cl 			: STD_LOGIC := '0';	-- Inicio da leitura	
+			
+	BEGIN
+		
+		IF (clk_sd'EVENT AND clk_sd ='1') THEN
+			
+			IF (echo = '1') THEN
+				tempo_sd <= tempo_sd + 1; -- Contagem do tempo de acionamento do echo
+			END IF;
+			
+			-- Nova Referencia
+			IF (KEY(1) = '0') THEN
+				cl := '0';
+			END IF;
+			
+			
+			cont_d <= cont_d + 1; -- Contagem para o controle do tempo de leitura
+			
+			IF (cont_d = 50_000) THEN --800_000
+		
+				IF(cl = '0') THEN
+					li <= ((tempo_sd*20) / 58);	-- Leitura inicial do ambiente de leitura (sem objeto)
+					cl := '1';					-- Inicio da leitura
+				END IF;
+				
+				d := ((tempo_sd*20) / 58);	-- Calculo da distancia
+				tempo_sd <= 0;				-- Zera o contador do echo
+				trigger <= '1';				-- Aciona o trigger
+			END IF;
+			
+			IF (cont_d = 100_000) THEN --1_000_000
+				cont_d <= 0;		-- Fim do ciclo de leitura
+				trigger <= '0';		-- Desaciona o trigger
+			END IF;
+				
+			t_caixa <= (li - d);  	-- Resultado final
+				
+		END IF;			
+	END PROCESS;
+	-- Fim sensor de distância
+	
+	
+	
 	-- Decodificador display 7 seguimentos
-	PROCESS (selecao) --freqOut
+	PROCESS (selecao, clk_sd, t_caixa) --freqOut
 		--VARIAVEIS AUXILIARES APAGARA PARA O PROJETO FINAL
-		CONSTANT t_caixa 	: INTEGER := 5300;			-- Futuro tamanho da caixa
 		CONSTANT cor		: INTEGER := 1;   	   -- Futura cor recebida da caixa
-		CONSTANT clk_sd	: INTEGER := 2;			-- Futuro Clock do sensor de distancia
 		CONSTANT conv_sc	: INTEGER := 1;			-- Envio da da cor para display
 		--FIM das variaveis auxiliares APAGAR
 		
