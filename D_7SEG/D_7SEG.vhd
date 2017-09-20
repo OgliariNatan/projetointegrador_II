@@ -32,8 +32,9 @@ ENTITY D_7SEG IS
 			CLOCKOUT			:OUT STD_LOGIC; --POSSIVEL SAIDA DO DIVISOR DE CLOCK
 		
 			-- Sensor de distância
-			trigger				:OUT STD_LOGIC;	-- 				  
-			echo					:IN STD_LOGIC;		--				
+			GPIO					:INOUT STD_LOGIC_VECTOR (35 DOWNTO 0);	-- Declara um Buffer para que possamos utilizar com I/O				  
+			--GPIO(1) = echo
+			--GPIO(0) = trigger	
 	
 			--Definições de botão de ajuste 
 			  KEY					: IN STD_LOGIC_VECTOR (2 DOWNTO 0) := "000";
@@ -50,7 +51,7 @@ END D_7SEG;
 
 ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 	--Divisor de frequencia
-	SIGNAL count 			: INTEGER :=1; --divisão do clock
+	SIGNAL count 					: INTEGER :=1; --divisão do clock
 	SIGNAL clk_sd	  		  	   : STD_LOGIC :='0';	-- Clock para sensor de distancia
 	
 	--seleção de interface
@@ -59,7 +60,7 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 	--Antitrepidação
 	SIGNAL buttonAux 		: STD_LOGIC :='0';
 	SIGNAL buttonPressed : STD_LOGIC :='0';
-	CONSTANT cont_max		: INTEGER := ((freqIn/1000)*delay)-1;
+	CONSTANT cont_max		: INTEGER   := ((freqIn/1000)*delay)-1;
 	
 	--DIVISOR DE CLOCK
 	SIGNAL clock			 : STD_LOGIC :='0';
@@ -67,11 +68,11 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 	
 	-- Sensor de distância
 	SIGNAL distancia     		: INTEGER := 0;			-- Calculo da distância
-	SIGNAL cont_sensor 			: INTEGER := 0; 		-- Variavel para calculo
-	SIGNAL cont_d				: INTEGER := 0;			-- Variavel para calculo
-	SIGNAL tempo_sd 			: INTEGER := 0;			-- Variavel para calculo
+	SIGNAL cont_sensor 			: INTEGER := 0; 			-- Variavel para calculo
+	SIGNAL cont_d					: INTEGER := 0;			-- Variavel para calculo
+	SIGNAL tempo_sd 				: INTEGER := 0;			-- Variavel para calculo
 	SIGNAL t_caixa 				: INTEGER := 0;			-- Tamanho calculado
-	SIGNAL li					: INTEGER;				-- Leitura inicial	
+	SIGNAL li						: INTEGER;					-- Leitura inicial	
 	
 	
 	BEGIN--Começa a logica do programa
@@ -154,7 +155,7 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 		
 		IF (clk_sd'EVENT AND clk_sd ='1') THEN
 			
-			IF (echo = '1') THEN
+			IF (GPIO(1) = '1') THEN --GPIO(1) = echo
 				tempo_sd <= tempo_sd + 1; -- Contagem do tempo de acionamento do echo
 			END IF;
 			
@@ -175,12 +176,12 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 				
 				d := ((tempo_sd*20) / 58);	-- Calculo da distancia
 				tempo_sd <= 0;				-- Zera o contador do echo
-				trigger <= '1';				-- Aciona o trigger
+				GPIO(0) <= '1';				-- Aciona o trigger
 			END IF;
 			
 			IF (cont_d = 100_000) THEN --1_000_000
 				cont_d <= 0;		-- Fim do ciclo de leitura
-				trigger <= '0';		-- Desaciona o trigger
+				GPIO(0) <= '0';		-- Desaciona o trigger
 			END IF;
 				
 			t_caixa <= (li - d);  	-- Resultado final
@@ -203,10 +204,10 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 		VARIABLE tamanho_2: INTEGER;
 		VARIABLE tamanho_3: INTEGER;
 		VARIABLE tamanho_4: INTEGER;
-		VARIABLE tam_1    : INTEGER; 
-		VARIABLE tam_2    : INTEGER;
-		VARIABLE tam_3    : INTEGER;
-		VARIABLE tam_4    : INTEGER;
+		VARIABLE tam_1    : INTEGER; --display 0
+		VARIABLE tam_2    : INTEGER; --display 1
+		VARIABLE tam_3    : INTEGER; --display 2
+		VARIABLE tam_4    : INTEGER; --display 3
 		-- Sensor de cor		
 		VARIABLE conversao_1: INTEGER;
 		VARIABLE conversao_2: INTEGER;
@@ -302,69 +303,6 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 			ELSIF (selecao = 0) THEN
 				--COR RED
 				IF (cor  <= 1) THEN 
-					--HEX7 <= "1111111"; -- 
-					--HEX6 <= "1111111"; -- 
-					--HEX5 <= "1111111"; --  
-					--HEX4 <= "1111111"; -- 
-					--HEX3 <= "1111111"; --  
-					--HEX2 <= "1111111"; --  
-					--HEX1 <= "1111111"; --  
-					--HEX0 <= "0110001"; -- C	
-					--desloca
-					--HEX7 <= "1111111"; -- 
-					--HEX6 <= "1111111"; -- 
-					--HEX5 <= "1111111"; --  
-					--HEX4 <= "1111111"; -- 
-					--HEX3 <= "1111111"; --  
-					--HEX2 <= "1111111"; --   
-					--HEX1 <= "0110001"; -- c 
-					--HEX0 <= "0000001"; -- O
-					--desloca
-					--HEX7 <= "1111111"; -- 
-					--HEX6 <= "1111111"; -- 
-					--HEX5 <= "1111111"; --  
-					--HEX4 <= "1111111"; -- 
-					--HEX3 <= "1111111"; --  
-					--HEX2 <= "0110001"; -- C  
-					--HEX1 <= "0000001"; -- O 
-					--HEX0 <= "1111010"; -- R	
-					--desloca
-					--HEX7 <= "1111111"; -- 
-					--HEX6 <= "1111111"; -- 
-					--HEX5 <= "1111111"; --  
-					--HEX4 <= "1111111"; -- 
-					--HEX3 <= "0110001"; -- C 
-					--HEX2 <= "0000001"; -- O  
-					--HEX1 <= "1111010"; -- R 
-					--HEX0 <= "1111111"; -- -	
-					--desloca
-					--HEX7 <= "1111111"; -- 
-					--HEX6 <= "1111111"; -- 
-					--HEX5 <= "1111111"; --  
-					--HEX4 <= "0110001"; -- C
-					--HEX3 <= "0000001"; -- O 
-					--HEX2 <= "1111010"; -- R  
-					--HEX1 <= "1111111"; -- - 
-					--HEX0 <= "1111010"; -- R
-					--desloca
-					--HEX7 <= "1111111"; -- 
-					--HEX6 <= "1111111"; -- 
-					--HEX5 <= "0110001"; -- C 
-					--HEX4 <= "0000001"; -- O
-					--HEX3 <= "1111010"; -- R 
-					--HEX2 <= "1111111"; -- -  
-					--HEX1 <= "1111010"; -- R 
-					--HEX0 <= "0110000"; -- E
-					--desloca
-					--HEX7 <= "1111111"; -- 
-					--HEX6 <= "0110001"; -- C
-					--HEX5 <= "0000001"; -- O 
-					--HEX4 <= "1111010"; -- R
-					--HEX3 <= "1111111"; -- - 
-					--HEX2 <= "1111010"; -- R  
-					--HEX1 <= "0110000"; -- E 
-					--HEX0 <= "1000010"; -- D
-					--desloca
 					HEX7 <= "0110001"; -- C
 					HEX6 <= "0000001"; -- O  
 					HEX5 <= "1111010"; -- R 
@@ -376,69 +314,6 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 				
 				--COR BLUE
 				ELSIF (cor = 2) THEN
-					--HEX7 <= "1111111"; -- 
-					--HEX6 <= "1111111"; -- 
-					--HEX5 <= "1111111"; --  
-					--HEX4 <= "1111111"; -- 
-					--HEX3 <= "1111111"; --  
-					--HEX2 <= "1111111"; --  
-					--HEX1 <= "1111111"; --  
-					--HEX0 <= "0110001"; -- C	
-					--desloca
-					--HEX7 <= "1111111"; -- 
-					--HEX6 <= "1111111"; -- 
-					--HEX5 <= "1111111"; --  
-					--HEX4 <= "1111111"; -- 
-					--HEX3 <= "1111111"; --  
-					--HEX2 <= "1111111"; --   
-					--HEX1 <= "0110001"; -- c 
-					--HEX0 <= "0000001"; -- O
-					--desloca
-					--HEX7 <= "1111111"; -- 
-					--HEX6 <= "1111111"; -- 
-					--HEX5 <= "1111111"; --  
-					--HEX4 <= "1111111"; -- 
-					--HEX3 <= "1111111"; --  
-					--HEX2 <= "0110001"; -- C  
-					--HEX1 <= "0110001"; -- O 
-					--HEX0 <= "1111010"; -- R	
-					--desloca
-					--HEX7 <= "1111111"; -- 
-					--HEX6 <= "1111111"; -- 
-					--HEX5 <= "1111111"; --  
-					--HEX4 <= "1111111"; -- 
-					--HEX3 <= "0110001"; -- C 
-					--HEX2 <= "0110001"; -- O  
-					--HEX1 <= "1111010"; -- R 
-					--HEX0 <= "1111111"; -- -
-					--desloca
-					--HEX7 <= "1111111"; -- 
-					--HEX6 <= "1111111"; -- 
-					--HEX5 <= "1111111"; --  
-					--HEX4 <= "0110001"; -- C
-					--HEX3 <= "0110001"; -- O 
-					--HEX2 <= "1111010"; -- R  
-					--HEX1 <= "1111111"; -- - 
-					--HEX0 <= "1100000"; -- B
-					--DESLOCA
-					--HEX7 <= "1111111"; -- 
-					--HEX6 <= "1111111"; -- 
-					--HEX5 <= "1111111"; -- C 
-					--HEX4 <= "0110001"; -- O
-					--HEX3 <= "0110001"; -- R 
-					--HEX2 <= "1111010"; -- -  
-					--HEX1 <= "1111111"; -- B 
-					--HEX0 <= "1100000"; -- L
-					--DESLOCA
-					--HEX7 <= "1111111"; -- 
-					--HEX6 <= "1111111"; -- C
-					--HEX5 <= "1111111"; -- O 
-					--HEX4 <= "0110001"; -- R
-					--HEX3 <= "0110001"; -- - 
-					--HEX2 <= "1111010"; -- B  
-					--HEX1 <= "1111111"; -- L 
-					--HEX0 <= "1100000"; -- U
-					--DESLOCA
 					HEX7 <= "0110001"; -- C
 					HEX6 <= "0000001"; -- O
 					HEX5 <= "1111010"; -- R 
