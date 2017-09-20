@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for D_7SEG
-Tue Aug 29 10:25:27 2017
+Tue Aug 29 10:51:25 2017
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -116,7 +116,7 @@ agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   1.5%      ;
+;     Processor 2            ;   1.6%      ;
 +----------------------------+-------------+
 
 
@@ -682,61 +682,61 @@ No paths to report.
 ; 0.353 ; clock                  ; clock                  ; clock_50     ; clock_50    ; 0.000        ; 0.073      ; 0.597      ;
 ; 0.400 ; counter[24]            ; counter[24]            ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 0.643      ;
 ; 0.586 ; \process_1:counter[6]  ; \process_1:counter[6]  ; clock_50     ; clock_50    ; 0.000        ; 0.073      ; 0.830      ;
-; 0.587 ; counter[13]            ; counter[13]            ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 0.830      ;
 ; 0.587 ; \process_1:counter[7]  ; \process_1:counter[7]  ; clock_50     ; clock_50    ; 0.000        ; 0.073      ; 0.831      ;
 ; 0.587 ; \process_1:counter[11] ; \process_1:counter[11] ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 0.830      ;
 ; 0.587 ; \process_1:counter[14] ; \process_1:counter[14] ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 0.830      ;
-; 0.588 ; counter[18]            ; counter[18]            ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 0.831      ;
+; 0.587 ; counter[13]            ; counter[13]            ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 0.830      ;
 ; 0.588 ; \process_1:counter[5]  ; \process_1:counter[5]  ; clock_50     ; clock_50    ; 0.000        ; 0.073      ; 0.832      ;
 ; 0.588 ; \process_1:counter[15] ; \process_1:counter[15] ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 0.831      ;
 ; 0.588 ; \process_1:counter[16] ; \process_1:counter[16] ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 0.831      ;
+; 0.588 ; counter[18]            ; counter[18]            ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 0.831      ;
 ; 0.589 ; counter[12]            ; counter[12]            ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 0.832      ;
 ; 0.590 ; counter[19]            ; counter[19]            ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 0.833      ;
 ; 0.590 ; counter[21]            ; counter[21]            ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 0.833      ;
+; 0.591 ; \process_1:counter[21] ; \process_1:counter[21] ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 0.834      ;
 ; 0.591 ; counter[4]             ; counter[4]             ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 0.834      ;
 ; 0.591 ; counter[16]            ; counter[16]            ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 0.834      ;
-; 0.591 ; \process_1:counter[21] ; \process_1:counter[21] ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 0.834      ;
 ; 0.592 ; \process_1:counter[20] ; \process_1:counter[20] ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 0.835      ;
 ; 0.593 ; counter[22]            ; counter[22]            ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 0.836      ;
-; 0.598 ; counter[9]             ; counter[9]             ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 0.841      ;
-; 0.598 ; counter[11]            ; counter[11]            ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 0.841      ;
 ; 0.598 ; \process_1:counter[8]  ; \process_1:counter[8]  ; clock_50     ; clock_50    ; 0.000        ; 0.073      ; 0.842      ;
 ; 0.598 ; \process_1:counter[1]  ; \process_1:counter[1]  ; clock_50     ; clock_50    ; 0.000        ; 0.073      ; 0.842      ;
+; 0.598 ; counter[9]             ; counter[9]             ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 0.841      ;
+; 0.598 ; counter[11]            ; counter[11]            ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 0.841      ;
 ; 0.599 ; counter[1]             ; counter[1]             ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 0.842      ;
 ; 0.599 ; counter[7]             ; counter[7]             ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 0.842      ;
 ; 0.599 ; counter[15]            ; counter[15]            ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 0.842      ;
+; 0.600 ; \process_1:counter[17] ; \process_1:counter[17] ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 0.843      ;
 ; 0.600 ; counter[23]            ; counter[23]            ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 0.843      ;
 ; 0.600 ; counter[2]             ; counter[2]             ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 0.843      ;
-; 0.600 ; \process_1:counter[17] ; \process_1:counter[17] ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 0.843      ;
+; 0.602 ; \process_1:counter[3]  ; \process_1:counter[3]  ; clock_50     ; clock_50    ; 0.000        ; 0.073      ; 0.846      ;
 ; 0.602 ; counter[3]             ; counter[3]             ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 0.845      ;
 ; 0.602 ; counter[5]             ; counter[5]             ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 0.845      ;
-; 0.602 ; \process_1:counter[3]  ; \process_1:counter[3]  ; clock_50     ; clock_50    ; 0.000        ; 0.073      ; 0.846      ;
-; 0.603 ; counter[10]            ; counter[10]            ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 0.846      ;
 ; 0.603 ; \process_1:counter[22] ; \process_1:counter[22] ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 0.846      ;
-; 0.604 ; counter[6]             ; counter[6]             ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 0.847      ;
-; 0.604 ; counter[8]             ; counter[8]             ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 0.847      ;
+; 0.603 ; counter[10]            ; counter[10]            ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 0.846      ;
 ; 0.604 ; \process_1:counter[2]  ; \process_1:counter[2]  ; clock_50     ; clock_50    ; 0.000        ; 0.073      ; 0.848      ;
 ; 0.604 ; \process_1:counter[4]  ; \process_1:counter[4]  ; clock_50     ; clock_50    ; 0.000        ; 0.073      ; 0.848      ;
 ; 0.604 ; \process_1:counter[10] ; \process_1:counter[10] ; clock_50     ; clock_50    ; 0.000        ; 0.073      ; 0.848      ;
 ; 0.604 ; \process_1:counter[19] ; \process_1:counter[19] ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 0.847      ;
+; 0.604 ; counter[6]             ; counter[6]             ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 0.847      ;
+; 0.604 ; counter[8]             ; counter[8]             ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 0.847      ;
+; 0.606 ; \process_1:counter[18] ; \process_1:counter[18] ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 0.849      ;
 ; 0.606 ; counter[17]            ; counter[17]            ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 0.849      ;
 ; 0.606 ; counter[20]            ; counter[20]            ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 0.849      ;
-; 0.606 ; \process_1:counter[18] ; \process_1:counter[18] ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 0.849      ;
-; 0.608 ; counter[0]             ; counter[0]             ; clock_50     ; clock_50    ; 0.000        ; 0.089      ; 0.868      ;
 ; 0.608 ; \process_1:counter[13] ; \process_1:counter[13] ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 0.851      ;
+; 0.608 ; counter[0]             ; counter[0]             ; clock_50     ; clock_50    ; 0.000        ; 0.089      ; 0.868      ;
 ; 0.609 ; \process_1:counter[12] ; \process_1:counter[12] ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 0.852      ;
 ; 0.618 ; \process_1:counter[0]  ; \process_1:counter[0]  ; clock_50     ; clock_50    ; 0.000        ; 0.073      ; 0.862      ;
-; 0.746 ; counter[14]            ; counter[14]            ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 0.989      ;
 ; 0.746 ; \process_1:counter[9]  ; \process_1:counter[9]  ; clock_50     ; clock_50    ; 0.000        ; 0.073      ; 0.990      ;
-; 0.874 ; counter[13]            ; counter[14]            ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 1.117      ;
+; 0.746 ; counter[14]            ; counter[14]            ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 0.989      ;
 ; 0.874 ; \process_1:counter[7]  ; \process_1:counter[8]  ; clock_50     ; clock_50    ; 0.000        ; 0.073      ; 1.118      ;
 ; 0.874 ; \process_1:counter[11] ; \process_1:counter[12] ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 1.117      ;
 ; 0.874 ; \process_1:counter[6]  ; \process_1:counter[7]  ; clock_50     ; clock_50    ; 0.000        ; 0.073      ; 1.118      ;
+; 0.874 ; counter[13]            ; counter[14]            ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 1.117      ;
 ; 0.875 ; \process_1:counter[5]  ; \process_1:counter[6]  ; clock_50     ; clock_50    ; 0.000        ; 0.073      ; 1.119      ;
 ; 0.875 ; \process_1:counter[15] ; \process_1:counter[16] ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 1.118      ;
 ; 0.875 ; \process_1:counter[14] ; \process_1:counter[15] ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 1.118      ;
-; 0.876 ; counter[18]            ; counter[19]            ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 1.119      ;
 ; 0.876 ; \process_1:counter[16] ; \process_1:counter[17] ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 1.119      ;
+; 0.876 ; counter[18]            ; counter[19]            ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 1.119      ;
 ; 0.877 ; counter[21]            ; counter[22]            ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 1.120      ;
 ; 0.877 ; counter[19]            ; counter[20]            ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 1.120      ;
 ; 0.877 ; counter[12]            ; counter[13]            ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 1.120      ;
@@ -745,39 +745,39 @@ No paths to report.
 ; 0.879 ; counter[16]            ; counter[17]            ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 1.122      ;
 ; 0.880 ; \process_1:counter[20] ; \process_1:counter[21] ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 1.123      ;
 ; 0.881 ; counter[22]            ; counter[23]            ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 1.124      ;
-; 0.884 ; counter[9]             ; counter[10]            ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 1.127      ;
 ; 0.884 ; \process_1:counter[1]  ; \process_1:counter[2]  ; clock_50     ; clock_50    ; 0.000        ; 0.073      ; 1.128      ;
+; 0.884 ; counter[9]             ; counter[10]            ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 1.127      ;
+; 0.885 ; \process_1:counter[6]  ; \process_1:counter[8]  ; clock_50     ; clock_50    ; 0.000        ; 0.073      ; 1.129      ;
 ; 0.885 ; counter[11]            ; counter[12]            ; clock_50     ; clock_50    ; 0.000        ; 0.071      ; 1.127      ;
 ; 0.885 ; counter[15]            ; counter[16]            ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 1.128      ;
 ; 0.885 ; counter[1]             ; counter[2]             ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 1.128      ;
 ; 0.885 ; counter[7]             ; counter[8]             ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 1.128      ;
-; 0.885 ; \process_1:counter[6]  ; \process_1:counter[8]  ; clock_50     ; clock_50    ; 0.000        ; 0.073      ; 1.129      ;
-; 0.886 ; counter[23]            ; counter[24]            ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 1.129      ;
 ; 0.886 ; \process_1:counter[17] ; \process_1:counter[18] ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 1.129      ;
 ; 0.886 ; \process_1:counter[8]  ; \process_1:counter[9]  ; clock_50     ; clock_50    ; 0.000        ; 0.073      ; 1.130      ;
 ; 0.886 ; \process_1:counter[14] ; \process_1:counter[16] ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 1.129      ;
-; 0.887 ; counter[18]            ; counter[20]            ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 1.130      ;
+; 0.886 ; counter[23]            ; counter[24]            ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 1.129      ;
 ; 0.887 ; \process_1:counter[0]  ; \process_1:counter[1]  ; clock_50     ; clock_50    ; 0.000        ; 0.073      ; 1.131      ;
 ; 0.887 ; \process_1:counter[16] ; \process_1:counter[18] ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 1.130      ;
+; 0.887 ; counter[18]            ; counter[20]            ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 1.130      ;
 ; 0.888 ; counter[2]             ; counter[3]             ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 1.131      ;
 ; 0.888 ; counter[12]            ; counter[14]            ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 1.131      ;
+; 0.889 ; \process_1:counter[3]  ; \process_1:counter[4]  ; clock_50     ; clock_50    ; 0.000        ; 0.073      ; 1.133      ;
 ; 0.889 ; counter[3]             ; counter[4]             ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 1.132      ;
 ; 0.889 ; counter[5]             ; counter[6]             ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 1.132      ;
-; 0.889 ; \process_1:counter[3]  ; \process_1:counter[4]  ; clock_50     ; clock_50    ; 0.000        ; 0.073      ; 1.133      ;
 ; 0.890 ; counter[16]            ; counter[18]            ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 1.133      ;
 ; 0.890 ; counter[4]             ; counter[6]             ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 1.133      ;
-; 0.891 ; counter[10]            ; counter[11]            ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 1.134      ;
 ; 0.891 ; \process_1:counter[19] ; \process_1:counter[20] ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 1.134      ;
 ; 0.891 ; \process_1:counter[20] ; \process_1:counter[22] ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 1.134      ;
+; 0.891 ; counter[10]            ; counter[11]            ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 1.134      ;
+; 0.892 ; \process_1:counter[4]  ; \process_1:counter[5]  ; clock_50     ; clock_50    ; 0.000        ; 0.073      ; 1.136      ;
+; 0.892 ; \process_1:counter[2]  ; \process_1:counter[3]  ; clock_50     ; clock_50    ; 0.000        ; 0.073      ; 1.136      ;
 ; 0.892 ; counter[8]             ; counter[9]             ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 1.135      ;
 ; 0.892 ; counter[6]             ; counter[7]             ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 1.135      ;
 ; 0.892 ; counter[22]            ; counter[24]            ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 1.135      ;
 ; 0.892 ; counter[17]            ; counter[18]            ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 1.135      ;
-; 0.892 ; \process_1:counter[4]  ; \process_1:counter[5]  ; clock_50     ; clock_50    ; 0.000        ; 0.073      ; 1.136      ;
-; 0.892 ; \process_1:counter[2]  ; \process_1:counter[3]  ; clock_50     ; clock_50    ; 0.000        ; 0.073      ; 1.136      ;
-; 0.894 ; counter[20]            ; counter[21]            ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 1.137      ;
 ; 0.894 ; \process_1:counter[10] ; \process_1:counter[11] ; clock_50     ; clock_50    ; 0.000        ; 0.071      ; 1.136      ;
 ; 0.894 ; \process_1:counter[18] ; \process_1:counter[19] ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 1.137      ;
+; 0.894 ; counter[20]            ; counter[21]            ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 1.137      ;
 ; 0.895 ; \process_1:counter[13] ; \process_1:counter[14] ; clock_50     ; clock_50    ; 0.000        ; 0.072      ; 1.138      ;
 +-------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
 
@@ -1010,53 +1010,53 @@ No paths to report.
 +-------+------------------------+------------------------+---------------+-------------+--------------+------------+------------+
 ; 0.181 ; clock                  ; clock                  ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.307      ;
 ; 0.199 ; counter[24]            ; counter[24]            ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.325      ;
-; 0.291 ; \process_1:counter[11] ; \process_1:counter[11] ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.417      ;
 ; 0.291 ; counter[13]            ; counter[13]            ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.417      ;
+; 0.291 ; \process_1:counter[11] ; \process_1:counter[11] ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.417      ;
 ; 0.292 ; counter[12]            ; counter[12]            ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.418      ;
+; 0.293 ; counter[19]            ; counter[19]            ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.419      ;
 ; 0.293 ; \process_1:counter[5]  ; \process_1:counter[5]  ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.419      ;
 ; 0.293 ; \process_1:counter[6]  ; \process_1:counter[6]  ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.419      ;
 ; 0.293 ; \process_1:counter[7]  ; \process_1:counter[7]  ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.419      ;
 ; 0.293 ; \process_1:counter[14] ; \process_1:counter[14] ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.419      ;
 ; 0.293 ; \process_1:counter[15] ; \process_1:counter[15] ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.419      ;
 ; 0.293 ; \process_1:counter[16] ; \process_1:counter[16] ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.419      ;
-; 0.293 ; counter[19]            ; counter[19]            ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.419      ;
-; 0.294 ; \process_1:counter[21] ; \process_1:counter[21] ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.420      ;
-; 0.294 ; \process_1:counter[20] ; \process_1:counter[20] ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.420      ;
 ; 0.294 ; counter[4]             ; counter[4]             ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.420      ;
 ; 0.294 ; counter[16]            ; counter[16]            ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.420      ;
 ; 0.294 ; counter[18]            ; counter[18]            ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.420      ;
 ; 0.294 ; counter[21]            ; counter[21]            ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.420      ;
+; 0.294 ; \process_1:counter[21] ; \process_1:counter[21] ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.420      ;
+; 0.294 ; \process_1:counter[20] ; \process_1:counter[20] ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.420      ;
 ; 0.295 ; counter[22]            ; counter[22]            ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.421      ;
-; 0.298 ; \process_1:counter[1]  ; \process_1:counter[1]  ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.424      ;
 ; 0.298 ; counter[1]             ; counter[1]             ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.424      ;
 ; 0.298 ; counter[9]             ; counter[9]             ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.424      ;
 ; 0.298 ; counter[11]            ; counter[11]            ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.424      ;
-; 0.299 ; \process_1:counter[8]  ; \process_1:counter[8]  ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.425      ;
-; 0.299 ; \process_1:counter[17] ; \process_1:counter[17] ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.425      ;
+; 0.298 ; \process_1:counter[1]  ; \process_1:counter[1]  ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.424      ;
 ; 0.299 ; counter[23]            ; counter[23]            ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.425      ;
 ; 0.299 ; counter[2]             ; counter[2]             ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.425      ;
 ; 0.299 ; counter[3]             ; counter[3]             ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.425      ;
 ; 0.299 ; counter[7]             ; counter[7]             ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.425      ;
 ; 0.299 ; counter[15]            ; counter[15]            ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.425      ;
+; 0.299 ; \process_1:counter[8]  ; \process_1:counter[8]  ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.425      ;
+; 0.299 ; \process_1:counter[17] ; \process_1:counter[17] ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.425      ;
+; 0.300 ; counter[5]             ; counter[5]             ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.426      ;
+; 0.300 ; counter[10]            ; counter[10]            ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.426      ;
 ; 0.300 ; \process_1:counter[22] ; \process_1:counter[22] ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.426      ;
 ; 0.300 ; \process_1:counter[2]  ; \process_1:counter[2]  ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.426      ;
 ; 0.300 ; \process_1:counter[3]  ; \process_1:counter[3]  ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.426      ;
 ; 0.300 ; \process_1:counter[19] ; \process_1:counter[19] ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.426      ;
-; 0.300 ; counter[5]             ; counter[5]             ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.426      ;
-; 0.300 ; counter[10]            ; counter[10]            ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.426      ;
-; 0.301 ; \process_1:counter[4]  ; \process_1:counter[4]  ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.427      ;
-; 0.301 ; \process_1:counter[18] ; \process_1:counter[18] ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.427      ;
 ; 0.301 ; counter[6]             ; counter[6]             ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.427      ;
 ; 0.301 ; counter[8]             ; counter[8]             ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.427      ;
 ; 0.301 ; counter[20]            ; counter[20]            ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.427      ;
-; 0.303 ; \process_1:counter[10] ; \process_1:counter[10] ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.429      ;
+; 0.301 ; \process_1:counter[4]  ; \process_1:counter[4]  ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.427      ;
+; 0.301 ; \process_1:counter[18] ; \process_1:counter[18] ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.427      ;
 ; 0.303 ; counter[17]            ; counter[17]            ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.429      ;
+; 0.303 ; \process_1:counter[10] ; \process_1:counter[10] ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.429      ;
+; 0.304 ; counter[0]             ; counter[0]             ; clock_50      ; clock_50    ; 0.000        ; 0.050      ; 0.438      ;
 ; 0.304 ; \process_1:counter[13] ; \process_1:counter[13] ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.430      ;
 ; 0.304 ; \process_1:counter[12] ; \process_1:counter[12] ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.430      ;
-; 0.304 ; counter[0]             ; counter[0]             ; clock_50      ; clock_50    ; 0.000        ; 0.050      ; 0.438      ;
 ; 0.308 ; \process_1:counter[0]  ; \process_1:counter[0]  ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.434      ;
-; 0.359 ; \process_1:counter[9]  ; \process_1:counter[9]  ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.485      ;
 ; 0.359 ; counter[14]            ; counter[14]            ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.485      ;
+; 0.359 ; \process_1:counter[9]  ; \process_1:counter[9]  ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.485      ;
 ; 0.436 ; buttonPressed          ; \process_1:counter[8]  ; buttonPressed ; clock_50    ; 0.000        ; 1.567      ; 2.212      ;
 ; 0.436 ; buttonPressed          ; \process_1:counter[0]  ; buttonPressed ; clock_50    ; 0.000        ; 1.567      ; 2.212      ;
 ; 0.436 ; buttonPressed          ; \process_1:counter[1]  ; buttonPressed ; clock_50    ; 0.000        ; 1.567      ; 2.212      ;
@@ -1068,46 +1068,46 @@ No paths to report.
 ; 0.436 ; buttonPressed          ; \process_1:counter[7]  ; buttonPressed ; clock_50    ; 0.000        ; 1.567      ; 2.212      ;
 ; 0.436 ; buttonPressed          ; \process_1:counter[9]  ; buttonPressed ; clock_50    ; 0.000        ; 1.567      ; 2.212      ;
 ; 0.436 ; buttonPressed          ; \process_1:counter[10] ; buttonPressed ; clock_50    ; 0.000        ; 1.567      ; 2.212      ;
-; 0.440 ; \process_1:counter[11] ; \process_1:counter[12] ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.566      ;
 ; 0.440 ; counter[13]            ; counter[14]            ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.566      ;
+; 0.440 ; \process_1:counter[11] ; \process_1:counter[12] ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.566      ;
+; 0.442 ; counter[19]            ; counter[20]            ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.568      ;
 ; 0.442 ; \process_1:counter[5]  ; \process_1:counter[6]  ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.568      ;
 ; 0.442 ; \process_1:counter[15] ; \process_1:counter[16] ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.568      ;
 ; 0.442 ; \process_1:counter[7]  ; \process_1:counter[8]  ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.568      ;
-; 0.442 ; counter[19]            ; counter[20]            ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.568      ;
-; 0.443 ; \process_1:counter[21] ; \process_1:counter[22] ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.569      ;
 ; 0.443 ; counter[21]            ; counter[22]            ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.569      ;
-; 0.447 ; \process_1:counter[1]  ; \process_1:counter[2]  ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.573      ;
+; 0.443 ; \process_1:counter[21] ; \process_1:counter[22] ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.569      ;
 ; 0.447 ; counter[1]             ; counter[2]             ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.573      ;
 ; 0.447 ; counter[9]             ; counter[10]            ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.573      ;
+; 0.447 ; \process_1:counter[1]  ; \process_1:counter[2]  ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.573      ;
 ; 0.447 ; buttonPressed          ; buttonPressed          ; buttonPressed ; clock_50    ; 0.000        ; 1.568      ; 2.224      ;
-; 0.448 ; \process_1:counter[17] ; \process_1:counter[18] ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.574      ;
 ; 0.448 ; counter[23]            ; counter[24]            ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.574      ;
 ; 0.448 ; counter[11]            ; counter[12]            ; clock_50      ; clock_50    ; 0.000        ; 0.041      ; 0.573      ;
 ; 0.448 ; counter[3]             ; counter[4]             ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.574      ;
 ; 0.448 ; counter[15]            ; counter[16]            ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.574      ;
 ; 0.448 ; counter[7]             ; counter[8]             ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.574      ;
+; 0.448 ; \process_1:counter[17] ; \process_1:counter[18] ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.574      ;
+; 0.449 ; counter[5]             ; counter[6]             ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.575      ;
 ; 0.449 ; \process_1:counter[19] ; \process_1:counter[20] ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.575      ;
 ; 0.449 ; \process_1:counter[3]  ; \process_1:counter[4]  ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.575      ;
-; 0.449 ; counter[5]             ; counter[6]             ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.575      ;
 ; 0.450 ; counter[12]            ; counter[13]            ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.576      ;
 ; 0.451 ; \process_1:counter[6]  ; \process_1:counter[7]  ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.577      ;
 ; 0.451 ; \process_1:counter[14] ; \process_1:counter[15] ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.577      ;
 ; 0.451 ; \process_1:counter[16] ; \process_1:counter[17] ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.577      ;
-; 0.452 ; \process_1:counter[20] ; \process_1:counter[21] ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.578      ;
 ; 0.452 ; counter[18]            ; counter[19]            ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.578      ;
 ; 0.452 ; counter[17]            ; counter[18]            ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.578      ;
 ; 0.452 ; counter[4]             ; counter[5]             ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.578      ;
 ; 0.452 ; counter[16]            ; counter[17]            ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.578      ;
-; 0.453 ; \process_1:counter[13] ; \process_1:counter[14] ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.579      ;
+; 0.452 ; \process_1:counter[20] ; \process_1:counter[21] ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.578      ;
 ; 0.453 ; counter[22]            ; counter[23]            ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.579      ;
 ; 0.453 ; counter[12]            ; counter[14]            ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.579      ;
+; 0.453 ; \process_1:counter[13] ; \process_1:counter[14] ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.579      ;
 ; 0.454 ; \process_1:counter[14] ; \process_1:counter[16] ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.580      ;
 ; 0.454 ; \process_1:counter[6]  ; \process_1:counter[8]  ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.580      ;
 ; 0.454 ; \process_1:counter[16] ; \process_1:counter[18] ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.580      ;
-; 0.455 ; \process_1:counter[20] ; \process_1:counter[22] ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.581      ;
 ; 0.455 ; counter[18]            ; counter[20]            ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.581      ;
 ; 0.455 ; counter[4]             ; counter[6]             ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.581      ;
 ; 0.455 ; counter[16]            ; counter[18]            ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.581      ;
+; 0.455 ; \process_1:counter[20] ; \process_1:counter[22] ; clock_50      ; clock_50    ; 0.000        ; 0.042      ; 0.581      ;
 +-------+------------------------+------------------------+---------------+-------------+--------------+------------+------------+
 
 
@@ -1674,7 +1674,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime TimeQuest Timing Analyzer
     Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
-    Info: Processing started: Tue Aug 29 10:25:21 2017
+    Info: Processing started: Tue Aug 29 10:51:19 2017
 Info: Command: quartus_sta D_7SEG -c D_7SEG
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -1768,7 +1768,7 @@ Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 6 warnings
     Info: Peak virtual memory: 707 megabytes
-    Info: Processing ended: Tue Aug 29 10:25:27 2017
+    Info: Processing ended: Tue Aug 29 10:51:25 2017
     Info: Elapsed time: 00:00:06
     Info: Total CPU time (on all processors): 00:00:05
 

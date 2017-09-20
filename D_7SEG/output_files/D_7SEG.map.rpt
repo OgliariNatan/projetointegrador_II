@@ -1,5 +1,5 @@
 Analysis & Synthesis report for D_7SEG
-Tue Aug 29 10:24:14 2017
+Tue Aug 29 10:50:06 2017
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -46,7 +46,7 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Aug 29 10:24:14 2017       ;
+; Analysis & Synthesis Status        ; Successful - Tue Aug 29 10:50:06 2017       ;
 ; Quartus Prime Version              ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                      ; D_7SEG                                      ;
 ; Top-level Entity Name              ; D_7SEG                                      ;
@@ -332,7 +332,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -342,7 +342,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
-    Info: Processing started: Tue Aug 29 10:23:47 2017
+    Info: Processing started: Tue Aug 29 10:49:33 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off D_7SEG -c D_7SEG
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -352,7 +352,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file d_7seg.
 Info (12127): Elaborating entity "D_7SEG" for the top level hierarchy
 Warning (10541): VHDL Signal Declaration warning at D_7SEG.vhd(43): used implicit default value for signal "HEX8" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 43
 Warning (10540): VHDL Signal Declaration warning at D_7SEG.vhd(54): used explicit default value for signal "clk_sd" because signal was never assigned a value File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 54
-Warning (10037): Verilog HDL or VHDL warning at D_7SEG.vhd(306): conditional expression evaluates to a constant File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 306
+Warning (10037): Verilog HDL or VHDL warning at D_7SEG.vhd(304): conditional expression evaluates to a constant File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 304
 Warning (10631): VHDL Process Statement warning at D_7SEG.vhd(195): inferring latch(es) for signal or variable "HEX7", which holds its previous value in one or more paths through the process File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 195
 Warning (10631): VHDL Process Statement warning at D_7SEG.vhd(195): inferring latch(es) for signal or variable "HEX6", which holds its previous value in one or more paths through the process File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 195
 Warning (10631): VHDL Process Statement warning at D_7SEG.vhd(195): inferring latch(es) for signal or variable "HEX5", which holds its previous value in one or more paths through the process File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 195
@@ -482,9 +482,9 @@ Info (21057): Implemented 175 device resources after synthesis - the final resou
     Info (21059): Implemented 66 output pins
     Info (21061): Implemented 101 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 53 warnings
-    Info: Peak virtual memory: 681 megabytes
-    Info: Processing ended: Tue Aug 29 10:24:14 2017
-    Info: Elapsed time: 00:00:27
-    Info: Total CPU time (on all processors): 00:00:56
+    Info: Peak virtual memory: 680 megabytes
+    Info: Processing ended: Tue Aug 29 10:50:06 2017
+    Info: Elapsed time: 00:00:33
+    Info: Total CPU time (on all processors): 00:01:03
 
 
