@@ -37,8 +37,8 @@ ENTITY D_7SEG IS
 			--GPIO(0) = trigger	
 	
 			--Definições de botão de ajuste 
-			  KEY					: IN STD_LOGIC_VECTOR (3 DOWNTO 0) := "000";
-			  SW					: IN STD_LOGIC_VECTOR (2 DOWNTO 0);
+			  KEY					: IN STD_LOGIC_VECTOR (3 DOWNTO 0) := "0000";
+			  SW					: IN STD_LOGIC_VECTOR (17 DOWNTO 0);
 
 			--Definição do display_7Segmentos
 			  HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6, HEX7, HEX8: OUT STD_LOGIC_VECTOR (0 TO 6);
@@ -134,16 +134,18 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 			END IF;
 			
 			--APAGAR INICIO
-			IF (KEY(2) = '1') THEN
+			IF (SW(1) = '1') THEN
 			LEDR(9) <= '1';
 			LEDR(10) <= '0';
+			GPIO(0) <= '0';
 			END IF;
 			
 			
-			IF (KEY(3) = '1') THEN
+			IF (SW(0) = '1') THEN
 							
 			LEDR(10) <= '1';
-			GPIO(0) <= '1';	
+			GPIO(0) <= '1';
+		   LEDR(9) <= '0';	
 
 			END IF;		
 			--APAGAR FIM
