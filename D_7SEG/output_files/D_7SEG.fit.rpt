@@ -1,5 +1,5 @@
 Fitter report for D_7SEG
-Fri Sep 22 14:35:58 2017
+Fri Sep 22 16:33:25 2017
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -70,7 +70,7 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Fri Sep 22 14:35:58 2017       ;
+; Fitter Status                      ; Successful - Fri Sep 22 16:33:25 2017       ;
 ; Quartus Prime Version              ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                      ; D_7SEG                                      ;
 ; Top-level Entity Name              ; D_7SEG                                      ;
@@ -1265,7 +1265,7 @@ The pin-out file can be found in C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integr
 +----------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+------------------------+---------------+-----------+-----------------+------------+----------+--------------+--------------+------------------+--------------------+---------------------------+----------------------------+----------------------+----------------------+---------------------+
 ; Name     ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Output Register ; Output Enable Register ; Power Up High ; Slew Rate ; PCI I/O Enabled ; Open Drain ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Output Termination ; Termination Control Block ; Output Buffer Pre-emphasis ; Location assigned by ; Output Enable Source ; Output Enable Group ;
 +----------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+------------------------+---------------+-----------+-----------------+------------+----------+--------------+--------------+------------------+--------------------+---------------------------+----------------------------+----------------------+----------------------+---------------------+
-; GPIO[0]  ; AB22  ; 4        ; 107          ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                ; --                        ; no                         ; User                 ; 0 pF                 ; -                   ;
+; GPIO[0]  ; AB22  ; 4        ; 107          ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; no         ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                ; --                        ; no                         ; User                 ; 0 pF                 ; -                   ;
 ; GPIO[10] ; AC19  ; 4        ; 94           ; 0            ; 7            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                ; --                        ; no                         ; User                 ; 0 pF                 ; -                   ;
 ; GPIO[11] ; AF16  ; 4        ; 65           ; 0            ; 14           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                ; --                        ; no                         ; User                 ; 0 pF                 ; -                   ;
 ; GPIO[12] ; AD19  ; 4        ; 94           ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                ; --                        ; no                         ; User                 ; 0 pF                 ; -                   ;
@@ -2220,7 +2220,6 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ; LEDR[15]  ; Missing drive strength and slew rate ;
 ; LEDR[16]  ; Missing drive strength and slew rate ;
 ; LEDR[17]  ; Missing drive strength and slew rate ;
-; GPIO[0]   ; Missing drive strength               ;
 ; GPIO[1]   ; Missing drive strength               ;
 ; GPIO[2]   ; Missing drive strength               ;
 ; GPIO[3]   ; Missing drive strength               ;
@@ -2256,6 +2255,7 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ; GPIO[33]  ; Missing drive strength               ;
 ; GPIO[34]  ; Missing drive strength               ;
 ; GPIO[35]  ; Missing drive strength               ;
+; GPIO[0]   ; Missing drive strength               ;
 ; CLOCKOUT  ; Missing location assignment          ;
 ; HEX8[6]   ; Missing location assignment          ;
 ; HEX8[5]   ; Missing location assignment          ;
@@ -2371,7 +2371,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; LEDR[15]  ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; LEDR[16]  ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; LEDR[17]  ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; GPIO[0]   ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
 ; GPIO[1]   ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
 ; GPIO[2]   ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
 ; GPIO[3]   ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
@@ -2407,6 +2406,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; GPIO[33]  ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
 ; GPIO[34]  ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
 ; GPIO[35]  ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
+; GPIO[0]   ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
 ; clock_50  ; Input    ; (0) 0 ps      ; --            ; --                    ; --  ; --   ;
 ; KEY[0]    ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 +-----------+----------+---------------+---------------+-----------------------+-----+------+
@@ -2422,7 +2422,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; SW[0]                           ;                   ;         ;
 ; SW[1]                           ;                   ;         ;
 ; SW[2]                           ;                   ;         ;
-; GPIO[0]                         ;                   ;         ;
 ; GPIO[1]                         ;                   ;         ;
 ; GPIO[2]                         ;                   ;         ;
 ; GPIO[3]                         ;                   ;         ;
@@ -2458,6 +2457,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; GPIO[33]                        ;                   ;         ;
 ; GPIO[34]                        ;                   ;         ;
 ; GPIO[35]                        ;                   ;         ;
+; GPIO[0]                         ;                   ;         ;
 ; clock_50                        ;                   ;         ;
 ; KEY[0]                          ;                   ;         ;
 ;      - buttonPressed~0          ; 0                 ; 6       ;
@@ -2685,9 +2685,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+
 ; Pin/Rules          ; IO_000001    ; IO_000002    ; IO_000003    ; IO_000004    ; IO_000005    ; IO_000006 ; IO_000007    ; IO_000008    ; IO_000009 ; IO_000010 ; IO_000011    ; IO_000012    ; IO_000013    ; IO_000014    ; IO_000015    ; IO_000018    ; IO_000019    ; IO_000020    ; IO_000021    ; IO_000022    ; IO_000023    ; IO_000024    ; IO_000026    ; IO_000027    ; IO_000045    ; IO_000046    ; IO_000047    ; IO_000033 ; IO_000034    ; IO_000042    ;
 +--------------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+
-; Total Pass         ; 117          ; 0            ; 117          ; 0            ; 0            ; 126       ; 117          ; 0            ; 126       ; 126       ; 0            ; 50           ; 0            ; 0            ; 43           ; 0            ; 50           ; 43           ; 0            ; 0            ; 36           ; 50           ; 0            ; 0            ; 0            ; 0            ; 0            ; 126       ; 0            ; 0            ;
+; Total Pass         ; 117          ; 0            ; 117          ; 0            ; 0            ; 126       ; 117          ; 0            ; 126       ; 126       ; 0            ; 50           ; 0            ; 0            ; 43           ; 0            ; 50           ; 43           ; 0            ; 0            ; 35           ; 50           ; 0            ; 0            ; 0            ; 0            ; 0            ; 126       ; 0            ; 0            ;
 ; Total Unchecked    ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0            ;
-; Total Inapplicable ; 9            ; 126          ; 9            ; 126          ; 126          ; 0         ; 9            ; 126          ; 0         ; 0         ; 126          ; 76           ; 126          ; 126          ; 83           ; 126          ; 76           ; 83           ; 126          ; 126          ; 90           ; 76           ; 126          ; 126          ; 126          ; 126          ; 126          ; 0         ; 126          ; 126          ;
+; Total Inapplicable ; 9            ; 126          ; 9            ; 126          ; 126          ; 0         ; 9            ; 126          ; 0         ; 0         ; 126          ; 76           ; 126          ; 126          ; 83           ; 126          ; 76           ; 83           ; 126          ; 126          ; 91           ; 76           ; 126          ; 126          ; 126          ; 126          ; 126          ; 0         ; 126          ; 126          ;
 ; Total Fail         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0            ;
 ; CLOCKOUT           ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; KEY[1]             ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
@@ -2777,7 +2777,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; LEDR[15]           ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; LEDR[16]           ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; LEDR[17]           ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; GPIO[0]            ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; GPIO[1]            ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; GPIO[2]            ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; GPIO[3]            ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
@@ -2813,6 +2812,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; GPIO[33]           ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; GPIO[34]           ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; GPIO[35]           ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; GPIO[0]            ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; clock_50           ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; KEY[0]             ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 +--------------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+
@@ -2942,7 +2942,7 @@ Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQue
 Info (332130): Timing requirements not specified -- quality metrics such as performance may be sacrificed to reduce compilation time.
 Info (176353): Automatically promoted node clock_50~input (placed in PIN Y2 (CLK2, DIFFCLK_1p)) File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 31
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G4
-Info (176353): Automatically promoted node HEX0[6]~0  File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 202
+Info (176353): Automatically promoted node HEX0[6]~0  File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 220
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
 Info (176233): Starting register packing
 Info (176235): Finished register packing
@@ -3381,8 +3381,8 @@ Info (170195): Router estimated average interconnect usage is 0% of the availabl
     Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X92_Y0 to location X103_Y11
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:03
-Info (11888): Total time spent on timing analysis during the Fitter is 0.33 seconds.
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:02
+Info (11888): Total time spent on timing analysis during the Fitter is 0.30 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -3390,7 +3390,6 @@ Info (334004): Delay annotation completed successfully
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:02
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Warning (169177): 37 pins must meet Intel FPGA requirements for 3.3-, 3.0-, and 2.5-V interfaces. For more information, refer to AN 447: Interfacing Cyclone IV E Devices with 3.3/3.0/2.5-V LVTTL/LVCMOS I/O Systems.
-    Info (169178): Pin GPIO[0] uses I/O standard 3.3-V LVTTL at AB22 File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
     Info (169178): Pin GPIO[1] uses I/O standard 3.3-V LVTTL at AC15 File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
     Info (169178): Pin GPIO[2] uses I/O standard 3.3-V LVTTL at AB21 File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
     Info (169178): Pin GPIO[3] uses I/O standard 3.3-V LVTTL at Y17 File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
@@ -3426,9 +3425,9 @@ Warning (169177): 37 pins must meet Intel FPGA requirements for 3.3-, 3.0-, and 
     Info (169178): Pin GPIO[33] uses I/O standard 3.3-V LVTTL at AH26 File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
     Info (169178): Pin GPIO[34] uses I/O standard 3.3-V LVTTL at AH23 File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
     Info (169178): Pin GPIO[35] uses I/O standard 3.3-V LVTTL at AG26 File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
+    Info (169178): Pin GPIO[0] uses I/O standard 3.3-V LVTTL at AB22 File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
     Info (169178): Pin clock_50 uses I/O standard 3.3-V LVTTL at Y2 File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 31
 Warning (169064): Following 36 pins have no output enable or a GND or VCC output enable - later changes to this connectivity may change fitting results
-    Info (169065): Pin GPIO[0] has a permanently disabled output enable File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
     Info (169065): Pin GPIO[1] has a permanently disabled output enable File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
     Info (169065): Pin GPIO[2] has a permanently disabled output enable File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
     Info (169065): Pin GPIO[3] has a permanently disabled output enable File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
@@ -3464,12 +3463,13 @@ Warning (169064): Following 36 pins have no output enable or a GND or VCC output
     Info (169065): Pin GPIO[33] has a permanently disabled output enable File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
     Info (169065): Pin GPIO[34] has a permanently disabled output enable File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
     Info (169065): Pin GPIO[35] has a permanently disabled output enable File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
+    Info (169065): Pin GPIO[0] has a permanently enabled output enable File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
 Info (144001): Generated suppressed messages file C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/output_files/D_7SEG.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 418 warnings
-    Info: Peak virtual memory: 1379 megabytes
-    Info: Processing ended: Fri Sep 22 14:35:59 2017
+    Info: Peak virtual memory: 1322 megabytes
+    Info: Processing ended: Fri Sep 22 16:33:27 2017
     Info: Elapsed time: 00:00:40
-    Info: Total CPU time (on all processors): 00:00:46
+    Info: Total CPU time (on all processors): 00:00:45
 
 
 +----------------------------+

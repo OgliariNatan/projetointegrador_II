@@ -17,7 +17,7 @@
 // PROGRAM "Quartus Prime"
 // VERSION "Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition"
 
-// DATE "09/22/2017 14:36:40"
+// DATE "09/22/2017 16:34:05"
 
 // 
 // Device: Altera EP4CE115F29C7 Package FBGA780
@@ -152,7 +152,6 @@ output 	[17:0] LEDR;
 // LEDR[15]	=>  Location: PIN_G15,	 I/O Standard: 2.5 V,	 Current Strength: Default
 // LEDR[16]	=>  Location: PIN_G16,	 I/O Standard: 2.5 V,	 Current Strength: Default
 // LEDR[17]	=>  Location: PIN_H15,	 I/O Standard: 2.5 V,	 Current Strength: Default
-// GPIO[0]	=>  Location: PIN_AB22,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 8mA
 // GPIO[1]	=>  Location: PIN_AC15,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 8mA
 // GPIO[2]	=>  Location: PIN_AB21,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 8mA
 // GPIO[3]	=>  Location: PIN_Y17,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 8mA
@@ -188,6 +187,7 @@ output 	[17:0] LEDR;
 // GPIO[33]	=>  Location: PIN_AH26,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 8mA
 // GPIO[34]	=>  Location: PIN_AH23,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 8mA
 // GPIO[35]	=>  Location: PIN_AG26,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 8mA
+// GPIO[0]	=>  Location: PIN_AB22,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 8mA
 // clock_50	=>  Location: PIN_Y2,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 // KEY[0]	=>  Location: PIN_M23,	 I/O Standard: 2.5 V,	 Current Strength: Default
 
@@ -212,7 +212,6 @@ wire \KEY[2]~input_o ;
 wire \SW[0]~input_o ;
 wire \SW[1]~input_o ;
 wire \SW[2]~input_o ;
-wire \GPIO[0]~input_o ;
 wire \GPIO[1]~input_o ;
 wire \GPIO[2]~input_o ;
 wire \GPIO[3]~input_o ;
@@ -248,7 +247,7 @@ wire \GPIO[32]~input_o ;
 wire \GPIO[33]~input_o ;
 wire \GPIO[34]~input_o ;
 wire \GPIO[35]~input_o ;
-wire \GPIO[0]~output_o ;
+wire \GPIO[0]~input_o ;
 wire \GPIO[1]~output_o ;
 wire \GPIO[2]~output_o ;
 wire \GPIO[3]~output_o ;
@@ -284,6 +283,7 @@ wire \GPIO[32]~output_o ;
 wire \GPIO[33]~output_o ;
 wire \GPIO[34]~output_o ;
 wire \GPIO[35]~output_o ;
+wire \GPIO[0]~output_o ;
 wire \CLOCKOUT~output_o ;
 wire \HEX0[6]~output_o ;
 wire \HEX0[5]~output_o ;
@@ -541,19 +541,6 @@ hard_block auto_generated_inst(
 	.devpor(devpor),
 	.devclrn(devclrn),
 	.devoe(devoe));
-
-// Location: IOOBUF_X107_Y0_N2
-cycloneive_io_obuf \GPIO[0]~output (
-	.i(vcc),
-	.oe(vcc),
-	.seriesterminationcontrol(16'b0000000000000000),
-	.devoe(devoe),
-	.o(\GPIO[0]~output_o ),
-	.obar());
-// synopsys translate_off
-defparam \GPIO[0]~output .bus_hold = "false";
-defparam \GPIO[0]~output .open_drain_output = "true";
-// synopsys translate_on
 
 // Location: IOOBUF_X60_Y0_N23
 cycloneive_io_obuf \GPIO[1]~output (
@@ -1008,6 +995,19 @@ cycloneive_io_obuf \GPIO[35]~output (
 // synopsys translate_off
 defparam \GPIO[35]~output .bus_hold = "false";
 defparam \GPIO[35]~output .open_drain_output = "true";
+// synopsys translate_on
+
+// Location: IOOBUF_X107_Y0_N2
+cycloneive_io_obuf \GPIO[0]~output (
+	.i(vcc),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\GPIO[0]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \GPIO[0]~output .bus_hold = "false";
+defparam \GPIO[0]~output .open_drain_output = "false";
 // synopsys translate_on
 
 // Location: IOOBUF_X115_Y40_N2
@@ -1974,7 +1974,7 @@ defparam \LEDR[8]~output .open_drain_output = "false";
 
 // Location: IOOBUF_X83_Y73_N23
 cycloneive_io_obuf \LEDR[9]~output (
-	.i(gnd),
+	.i(vcc),
 	.oe(vcc),
 	.seriesterminationcontrol(16'b0000000000000000),
 	.devoe(devoe),
@@ -1987,7 +1987,7 @@ defparam \LEDR[9]~output .open_drain_output = "false";
 
 // Location: IOOBUF_X60_Y73_N23
 cycloneive_io_obuf \LEDR[10]~output (
-	.i(gnd),
+	.i(vcc),
 	.oe(vcc),
 	.seriesterminationcontrol(16'b0000000000000000),
 	.devoe(devoe),
@@ -4766,16 +4766,6 @@ defparam \SW[2]~input .bus_hold = "false";
 defparam \SW[2]~input .simulate_z_as = "z";
 // synopsys translate_on
 
-// Location: IOIBUF_X107_Y0_N1
-cycloneive_io_ibuf \GPIO[0]~input (
-	.i(GPIO[0]),
-	.ibar(gnd),
-	.o(\GPIO[0]~input_o ));
-// synopsys translate_off
-defparam \GPIO[0]~input .bus_hold = "false";
-defparam \GPIO[0]~input .simulate_z_as = "z";
-// synopsys translate_on
-
 // Location: IOIBUF_X60_Y0_N22
 cycloneive_io_ibuf \GPIO[1]~input (
 	.i(GPIO[1]),
@@ -5126,6 +5116,16 @@ defparam \GPIO[35]~input .bus_hold = "false";
 defparam \GPIO[35]~input .simulate_z_as = "z";
 // synopsys translate_on
 
+// Location: IOIBUF_X107_Y0_N1
+cycloneive_io_ibuf \GPIO[0]~input (
+	.i(GPIO[0]),
+	.ibar(gnd),
+	.o(\GPIO[0]~input_o ));
+// synopsys translate_off
+defparam \GPIO[0]~input .bus_hold = "false";
+defparam \GPIO[0]~input .simulate_z_as = "z";
+// synopsys translate_on
+
 assign CLOCKOUT = \CLOCKOUT~output_o ;
 
 assign HEX0[6] = \HEX0[6]~output_o ;
@@ -5292,8 +5292,6 @@ assign LEDR[16] = \LEDR[16]~output_o ;
 
 assign LEDR[17] = \LEDR[17]~output_o ;
 
-assign GPIO[0] = \GPIO[0]~output_o ;
-
 assign GPIO[1] = \GPIO[1]~output_o ;
 
 assign GPIO[2] = \GPIO[2]~output_o ;
@@ -5363,6 +5361,8 @@ assign GPIO[33] = \GPIO[33]~output_o ;
 assign GPIO[34] = \GPIO[34]~output_o ;
 
 assign GPIO[35] = \GPIO[35]~output_o ;
+
+assign GPIO[0] = \GPIO[0]~output_o ;
 
 endmodule
 

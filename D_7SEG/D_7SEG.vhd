@@ -37,7 +37,7 @@ ENTITY D_7SEG IS
 			--GPIO(0) = trigger	
 	
 			--Definições de botão de ajuste 
-			  KEY					: IN STD_LOGIC_VECTOR (2 DOWNTO 0) := "000";
+			  KEY					: IN STD_LOGIC_VECTOR (3 DOWNTO 0) := "000";
 			  SW					: IN STD_LOGIC_VECTOR (2 DOWNTO 0);
 
 			--Definição do display_7Segmentos
@@ -80,6 +80,7 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 	
 	BEGIN--Começa a logica do programa
 	
+		
 	--DIVISOR DE CLOCK
 	PROCESS(clock_50)
 	
@@ -131,12 +132,35 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 			IF (clock_50'EVENT AND clock_50 ='1') THEN
 				count    <= count + 1;
 			END IF;
+			
+			--APAGAR INICIO
+			IF (KEY(2) = '1') THEN
+			LEDR(9) <= '1';
+			LEDR(10) <= '0';
+			END IF;
+			
+			
+			IF (KEY(3) = '1') THEN
+							
+			LEDR(10) <= '1';
+			GPIO(0) <= '1';	
+
+			END IF;		
+			--APAGAR FIM
+			
 		END PROCESS;
 		-- Fim divisor de frequncia
+		
+		
+
+	
 	
 		-- Seleção da interface
 	PROCESS (buttonOut) 
 	BEGIN
+	
+	
+	
 		IF (buttonOut'EVENT AND buttonOut='1') THEN
 			IF (selecao = 2) THEN
 				selecao <= 0;
