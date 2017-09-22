@@ -1,0 +1,16 @@
+|divideclock
+CLOCKIN => clock.CLK
+CLOCKIN => counter[0].CLK
+CLOCKIN => counter[1].CLK
+CLOCKIN => counter[2].CLK
+CLOCKIN => counter[3].CLK
+CLOCKIN => counter[4].CLK
+CLOCKIN => counter[5].CLK
+CLOCKIN => counter[6].CLK
+CLOCKIN => counter[7].CLK
+CLOCKIN => counter[8].CLK
+CLOCKIN => counter[9].CLK
+CLOCKIN => counter[10].CLK
+CLOCKOUT << clock.DB_MAX_OUTPUT_PORT_TYPE
+
+

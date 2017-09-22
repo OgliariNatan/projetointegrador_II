@@ -1,0 +1,77 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "TRIGGER",
+					"strict" : false
+				},
+				{
+					"name" : "DISPLAY_UNI[0]",
+					"strict" : false
+				},
+				{
+					"name" : "DISPLAY_UNI[1]",
+					"strict" : false
+				},
+				{
+					"name" : "DISPLAY_UNI[2]",
+					"strict" : false
+				},
+				{
+					"name" : "DISPLAY_UNI[3]",
+					"strict" : false
+				},
+				{
+					"name" : "DISPLAY_UNI[4]",
+					"strict" : false
+				},
+				{
+					"name" : "DISPLAY_UNI[5]",
+					"strict" : false
+				},
+				{
+					"name" : "DISPLAY_UNI[6]",
+					"strict" : false
+				},
+				{
+					"name" : "DISPLAY_DEZ[0]",
+					"strict" : false
+				},
+				{
+					"name" : "DISPLAY_DEZ[1]",
+					"strict" : false
+				},
+				{
+					"name" : "DISPLAY_DEZ[2]",
+					"strict" : false
+				},
+				{
+					"name" : "DISPLAY_DEZ[3]",
+					"strict" : false
+				},
+				{
+					"name" : "DISPLAY_DEZ[4]",
+					"strict" : false
+				},
+				{
+					"name" : "DISPLAY_DEZ[5]",
+					"strict" : false
+				},
+				{
+					"name" : "DISPLAY_DEZ[6]",
+					"strict" : false
+				},
+				{
+					"name" : "ECHO",
+					"strict" : false
+				},
+				{
+					"name" : "CLOCK_IN",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

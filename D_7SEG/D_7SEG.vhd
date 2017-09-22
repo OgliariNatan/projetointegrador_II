@@ -29,7 +29,7 @@ ENTITY D_7SEG IS
 	
 	PORT(	--Definições dos sinais de entrada
 			clock_50			: IN STD_LOGIC;--Entrada do clock da placa
-			CLOCKOUT			:OUT STD_LOGIC; --POSSIVEL SAIDA DO DIVISOR DE CLOCK
+			CLOCKOUT			: OUT STD_LOGIC; --POSSIVEL SAIDA DO DIVISOR DE CLOCK
 		
 			-- Sensor de distância
 			GPIO					:INOUT STD_LOGIC_VECTOR (35 DOWNTO 0);	-- Declara um Buffer para que possamos utilizar com I/O				  
@@ -44,7 +44,10 @@ ENTITY D_7SEG IS
 			  HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6, HEX7, HEX8: OUT STD_LOGIC_VECTOR (0 TO 6);
 
 			--Definição da saida do "botão virtual" de antitrepidação
-			buttonOut		: BUFFER STD_LOGIC
+			buttonOut			: BUFFER STD_LOGIC;
+			
+			--DECLARAÇÂO DE LED para testes
+			LEDR					: OUT STD_LOGIC_VECTOR(17 DOWNTO 0)
 		);
 	
 END D_7SEG;
@@ -155,8 +158,11 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 		
 		IF (clk_sd'EVENT AND clk_sd ='1') THEN
 			
+			LEDR(1)<='1';
+			
 			IF (GPIO(1) = '1') THEN --GPIO(1) = echo
 				tempo_sd <= tempo_sd + 1; -- Contagem do tempo de acionamento do echo
+				LEDR(0)<='1';  --DEBUG APAGAR
 			END IF;
 			
 			-- Nova Referencia
@@ -195,7 +201,7 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 	-- Decodificador display 7 seguimentos
 	PROCESS (selecao, clk_sd, t_caixa) --freqOut
 		--VARIAVEIS AUXILIARES APAGARA PARA O PROJETO FINAL
-		CONSTANT cor		: INTEGER := 1;   	   -- Futura cor recebida da caixa
+		CONSTANT cor		: INTEGER := 2;   	   -- Futura cor recebida da caixa
 		CONSTANT conv_sc	: INTEGER := 1;			-- Envio da da cor para display
 		--FIM das variaveis auxiliares APAGAR
 		
@@ -300,7 +306,7 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 		-- Fim altura
 				
 		-- Cor
-			ELSIF (selecao = 0) THEN
+			ELSIF (selecao = 1) THEN
 				--COR RED
 				IF (cor  <= 1) THEN 
 					HEX7 <= "0110001"; -- C
@@ -326,13 +332,13 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 				--COR GREEM
 				ELSIF (cor = 3) THEN 
 					HEX7 <= "0110001"; -- C
-					HEX6 <= "1111111"; -- O 
+					HEX6 <= "0000001"; -- O 
 					HEX5 <= "1111111"; --
-					HEX4 <= "1111111"; --  G
-					HEX3 <= "1111110"; --  R
-					HEX2 <= "1111110"; --  E
-					HEX1 <= "1111110"; --  E
-					HEX0 <= "1111110"; --  M
+					HEX4 <= "0000100"; --  G
+					HEX3 <= "1111010"; --  R
+					HEX2 <= "0110000"; --  E
+					HEX1 <= "0110000"; --  E
+					HEX0 <= "1011100"; --  N
 				END IF;	
 			--Fim cor
 				
@@ -353,8 +359,8 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 			-- Fim decodificaçao BCD
 											
 						HEX7 <= "0000000"; -- 
-						HEX6 <= "0000000"; -- a
-						HEX5 <= "0000000"; -- c
+						HEX6 <= "0000000"; -- 
+						HEX5 <= "0000000"; -- 
 						HEX4 <= "0000000"; -- 
 			CASE conv_1 IS
 				WHEN 0 => HEX3 <= "0000001";

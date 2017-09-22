@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Mon Apr 24 14:48:56 2017
+Quartus Prime Version : 16.1.0 Build 196 10/24/2016 SJ Lite Edition
+Revision Name : cont_pulse
+Top-level Entity Name : cont_pulse
+Family : Cyclone IV E
+Total logic elements : 15
+    Total combinational functions : 15
+    Dedicated logic registers : 8
+Total registers : 8
+Total pins : 11
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

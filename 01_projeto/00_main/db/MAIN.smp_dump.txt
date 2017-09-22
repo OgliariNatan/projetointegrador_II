@@ -1,0 +1,16 @@
+
+State Machine - |MAIN|U_SOM_DECODE:BLOCO_03|u_som:BLOCO_01|fsm_u_som:FSM|pr_state
+Name pr_state.delay pr_state.inicia_delay pr_state.mede_echo pr_state.espera_echo pr_state.gera_trig pr_state.inicia_trig pr_state.inicio 
+pr_state.inicio 0 0 0 0 0 0 0 
+pr_state.inicia_trig 0 0 0 0 0 1 1 
+pr_state.gera_trig 0 0 0 0 1 0 1 
+pr_state.espera_echo 0 0 0 1 0 0 1 
+pr_state.mede_echo 0 0 1 0 0 0 1 
+pr_state.inicia_delay 0 1 0 0 0 0 1 
+pr_state.delay 1 0 0 0 0 0 1 
+
+State Machine - |MAIN|SELETOR:BLOCO_01|ESTADO
+Name ESTADO.CASO_03 ESTADO.CASO_02 ESTADO.CASO_01 
+ESTADO.CASO_01 0 0 0 
+ESTADO.CASO_02 0 1 1 
+ESTADO.CASO_03 1 0 1 

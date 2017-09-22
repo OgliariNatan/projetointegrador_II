@@ -1,0 +1,22 @@
+|fsm_u_som
+CLOCK => pr_state~1.DATAIN
+RST => Selector4.IN6
+RST => Selector3.IN5
+RST => pr_state~3.DATAIN
+E_SINAL_ECHO => Selector7.IN5
+E_SINAL_ECHO => Selector7.IN6
+E_SINAL_ECHO => Selector6.IN6
+E_SINAL_ECHO => Selector8.IN5
+E_SINAL_TRIG => Selector5.IN5
+E_SINAL_TRIG => Selector5.IN6
+E_SINAL_TRIG => Selector4.IN5
+E_SINAL_TRIG => Selector6.IN5
+E_SINAL_DELAY => Selector9.IN5
+E_SINAL_DELAY => Selector9.IN6
+E_SINAL_DELAY => Selector8.IN6
+E_SINAL_DELAY => Selector3.IN6
+S_EN_TRIG << S_EN_TRIG$latch.DB_MAX_OUTPUT_PORT_TYPE
+S_RST_ECHO << S_RST_ECHO$latch.DB_MAX_OUTPUT_PORT_TYPE
+S_EN_DELAY << S_EN_DELAY$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+

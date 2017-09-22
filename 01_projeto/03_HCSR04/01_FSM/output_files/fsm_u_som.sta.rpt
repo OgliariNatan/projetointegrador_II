@@ -1,0 +1,993 @@
+TimeQuest Timing Analyzer report for fsm_u_som
+Mon Apr 24 14:34:22 2017
+Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow 1200mV 85C Model Fmax Summary
+  6. Timing Closure Recommendations
+  7. Slow 1200mV 85C Model Setup Summary
+  8. Slow 1200mV 85C Model Hold Summary
+  9. Slow 1200mV 85C Model Recovery Summary
+ 10. Slow 1200mV 85C Model Removal Summary
+ 11. Slow 1200mV 85C Model Minimum Pulse Width Summary
+ 12. Slow 1200mV 85C Model Setup: 'CLOCK'
+ 13. Slow 1200mV 85C Model Setup: 'pr_state.inicia_delay'
+ 14. Slow 1200mV 85C Model Setup: 'pr_state.espera_echo'
+ 15. Slow 1200mV 85C Model Setup: 'pr_state.inicia_trig'
+ 16. Slow 1200mV 85C Model Hold: 'pr_state.inicia_trig'
+ 17. Slow 1200mV 85C Model Hold: 'pr_state.espera_echo'
+ 18. Slow 1200mV 85C Model Hold: 'pr_state.inicia_delay'
+ 19. Slow 1200mV 85C Model Hold: 'CLOCK'
+ 20. Slow 1200mV 85C Model Metastability Summary
+ 21. Slow 1200mV 0C Model Fmax Summary
+ 22. Slow 1200mV 0C Model Setup Summary
+ 23. Slow 1200mV 0C Model Hold Summary
+ 24. Slow 1200mV 0C Model Recovery Summary
+ 25. Slow 1200mV 0C Model Removal Summary
+ 26. Slow 1200mV 0C Model Minimum Pulse Width Summary
+ 27. Slow 1200mV 0C Model Setup: 'CLOCK'
+ 28. Slow 1200mV 0C Model Setup: 'pr_state.inicia_delay'
+ 29. Slow 1200mV 0C Model Setup: 'pr_state.espera_echo'
+ 30. Slow 1200mV 0C Model Setup: 'pr_state.inicia_trig'
+ 31. Slow 1200mV 0C Model Hold: 'pr_state.inicia_trig'
+ 32. Slow 1200mV 0C Model Hold: 'pr_state.espera_echo'
+ 33. Slow 1200mV 0C Model Hold: 'pr_state.inicia_delay'
+ 34. Slow 1200mV 0C Model Hold: 'CLOCK'
+ 35. Slow 1200mV 0C Model Metastability Summary
+ 36. Fast 1200mV 0C Model Setup Summary
+ 37. Fast 1200mV 0C Model Hold Summary
+ 38. Fast 1200mV 0C Model Recovery Summary
+ 39. Fast 1200mV 0C Model Removal Summary
+ 40. Fast 1200mV 0C Model Minimum Pulse Width Summary
+ 41. Fast 1200mV 0C Model Setup: 'CLOCK'
+ 42. Fast 1200mV 0C Model Setup: 'pr_state.inicia_delay'
+ 43. Fast 1200mV 0C Model Setup: 'pr_state.espera_echo'
+ 44. Fast 1200mV 0C Model Setup: 'pr_state.inicia_trig'
+ 45. Fast 1200mV 0C Model Hold: 'pr_state.inicia_trig'
+ 46. Fast 1200mV 0C Model Hold: 'pr_state.espera_echo'
+ 47. Fast 1200mV 0C Model Hold: 'pr_state.inicia_delay'
+ 48. Fast 1200mV 0C Model Hold: 'CLOCK'
+ 49. Fast 1200mV 0C Model Metastability Summary
+ 50. Multicorner Timing Analysis Summary
+ 51. Board Trace Model Assignments
+ 52. Input Transition Times
+ 53. Signal Integrity Metrics (Slow 1200mv 0c Model)
+ 54. Signal Integrity Metrics (Slow 1200mv 85c Model)
+ 55. Signal Integrity Metrics (Fast 1200mv 0c Model)
+ 56. Setup Transfers
+ 57. Hold Transfers
+ 58. Report TCCS
+ 59. Report RSKM
+ 60. Unconstrained Paths Summary
+ 61. Clock Status Summary
+ 62. Unconstrained Input Ports
+ 63. Unconstrained Output Ports
+ 64. Unconstrained Input Ports
+ 65. Unconstrained Output Ports
+ 66. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2016  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Intel and sold by Intel or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++-----------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                           ;
++-----------------------+-----------------------------------------------------+
+; Quartus Prime Version ; Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
+; Timing Analyzer       ; TimeQuest                                           ;
+; Revision Name         ; fsm_u_som                                           ;
+; Device Family         ; Cyclone IV E                                        ;
+; Device Name           ; EP4CE115F29C7                                       ;
+; Timing Models         ; Final                                               ;
+; Delay Model           ; Combined                                            ;
+; Rise/Fall Delays      ; Enabled                                             ;
++-----------------------+-----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.1%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                       ;
++-----------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------------------------+
+; Clock Name            ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                   ;
++-----------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------------------------+
+; CLOCK                 ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { CLOCK }                 ;
+; pr_state.espera_echo  ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { pr_state.espera_echo }  ;
+; pr_state.inicia_delay ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { pr_state.inicia_delay } ;
+; pr_state.inicia_trig  ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { pr_state.inicia_trig }  ;
++-----------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Fmax Summary                                                                                   ;
++------------+-----------------+-----------------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name            ; Note                                                          ;
++------------+-----------------+-----------------------+---------------------------------------------------------------+
+; 305.9 MHz  ; 250.0 MHz       ; CLOCK                 ; limit due to minimum period restriction (max I/O toggle rate) ;
+; 474.38 MHz ; 474.38 MHz      ; pr_state.inicia_delay ;                                                               ;
+; 602.41 MHz ; 602.41 MHz      ; pr_state.espera_echo  ;                                                               ;
+; 638.57 MHz ; 638.57 MHz      ; pr_state.inicia_trig  ;                                                               ;
++------------+-----------------+-----------------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
+----------------------------------
+; Timing Closure Recommendations ;
+----------------------------------
+HTML report is unavailable in plain text report export.
+
+
++------------------------------------------------+
+; Slow 1200mV 85C Model Setup Summary            ;
++-----------------------+--------+---------------+
+; Clock                 ; Slack  ; End Point TNS ;
++-----------------------+--------+---------------+
+; CLOCK                 ; -2.269 ; -11.747       ;
+; pr_state.inicia_delay ; -0.554 ; -0.554        ;
+; pr_state.espera_echo  ; -0.330 ; -0.330        ;
+; pr_state.inicia_trig  ; -0.283 ; -0.283        ;
++-----------------------+--------+---------------+
+
+
++------------------------------------------------+
+; Slow 1200mV 85C Model Hold Summary             ;
++-----------------------+--------+---------------+
+; Clock                 ; Slack  ; End Point TNS ;
++-----------------------+--------+---------------+
+; pr_state.inicia_trig  ; -0.033 ; -0.033        ;
+; pr_state.espera_echo  ; 0.031  ; 0.000         ;
+; pr_state.inicia_delay ; 0.097  ; 0.000         ;
+; CLOCK                 ; 1.016  ; 0.000         ;
++-----------------------+--------+---------------+
+
+
+------------------------------------------
+; Slow 1200mV 85C Model Recovery Summary ;
+------------------------------------------
+No paths to report.
+
+
+-----------------------------------------
+; Slow 1200mV 85C Model Removal Summary ;
+-----------------------------------------
+No paths to report.
+
+
++---------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width Summary ;
++-----------------------+--------+------------------+
+; Clock                 ; Slack  ; End Point TNS    ;
++-----------------------+--------+------------------+
+; CLOCK                 ; -3.000 ; -11.995          ;
+; pr_state.inicia_trig  ; 0.399  ; 0.000            ;
+; pr_state.inicia_delay ; 0.401  ; 0.000            ;
+; pr_state.espera_echo  ; 0.402  ; 0.000            ;
++-----------------------+--------+------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Setup: 'CLOCK'                                                                                                  ;
++--------+-----------------------+-----------------------+-----------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node             ; To Node               ; Launch Clock          ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------+-----------------------+-----------------------+-------------+--------------+------------+------------+
+; -2.269 ; pr_state.delay        ; pr_state.delay        ; CLOCK                 ; CLOCK       ; 1.000        ; -0.082     ; 3.185      ;
+; -1.992 ; pr_state.gera_trig    ; pr_state.gera_trig    ; CLOCK                 ; CLOCK       ; 1.000        ; -0.082     ; 2.908      ;
+; -1.835 ; pr_state.gera_trig    ; pr_state.espera_echo  ; CLOCK                 ; CLOCK       ; 1.000        ; -0.082     ; 2.751      ;
+; -1.819 ; pr_state.inicia_trig  ; pr_state.gera_trig    ; pr_state.inicia_trig  ; CLOCK       ; 0.500        ; 2.995      ; 5.544      ;
+; -1.683 ; pr_state.mede_echo    ; pr_state.inicia_delay ; CLOCK                 ; CLOCK       ; 1.000        ; 0.970      ; 3.651      ;
+; -1.667 ; pr_state.inicio       ; pr_state.inicia_trig  ; CLOCK                 ; CLOCK       ; 1.000        ; 0.970      ; 3.635      ;
+; -1.529 ; pr_state.inicia_delay ; pr_state.delay        ; pr_state.inicia_delay ; CLOCK       ; 0.500        ; 2.995      ; 5.254      ;
+; -1.467 ; pr_state.inicia_delay ; pr_state.inicia_delay ; pr_state.inicia_delay ; CLOCK       ; 0.500        ; 2.995      ; 5.192      ;
+; -1.406 ; pr_state.inicia_trig  ; pr_state.inicia_trig  ; pr_state.inicia_trig  ; CLOCK       ; 0.500        ; 2.995      ; 5.131      ;
+; -1.377 ; pr_state.espera_echo  ; pr_state.espera_echo  ; pr_state.espera_echo  ; CLOCK       ; 0.500        ; 2.995      ; 5.102      ;
+; -1.341 ; pr_state.inicia_trig  ; pr_state.gera_trig    ; pr_state.inicia_trig  ; CLOCK       ; 1.000        ; 2.995      ; 5.566      ;
+; -1.334 ; pr_state.mede_echo    ; pr_state.mede_echo    ; CLOCK                 ; CLOCK       ; 1.000        ; -0.050     ; 2.282      ;
+; -1.075 ; pr_state.inicia_delay ; pr_state.delay        ; pr_state.inicia_delay ; CLOCK       ; 1.000        ; 2.995      ; 5.300      ;
+; -1.039 ; pr_state.inicia_delay ; pr_state.inicia_delay ; pr_state.inicia_delay ; CLOCK       ; 1.000        ; 2.995      ; 5.264      ;
+; -1.007 ; pr_state.inicia_trig  ; pr_state.inicia_trig  ; pr_state.inicia_trig  ; CLOCK       ; 1.000        ; 2.995      ; 5.232      ;
+; -0.967 ; pr_state.delay        ; pr_state.inicio       ; CLOCK                 ; CLOCK       ; 1.000        ; -1.155     ; 0.810      ;
+; -0.942 ; pr_state.espera_echo  ; pr_state.mede_echo    ; pr_state.espera_echo  ; CLOCK       ; 0.500        ; 1.954      ; 3.626      ;
+; -0.935 ; pr_state.espera_echo  ; pr_state.espera_echo  ; pr_state.espera_echo  ; CLOCK       ; 1.000        ; 2.995      ; 5.160      ;
+; -0.461 ; pr_state.espera_echo  ; pr_state.mede_echo    ; pr_state.espera_echo  ; CLOCK       ; 1.000        ; 1.954      ; 3.645      ;
++--------+-----------------------+-----------------------+-----------------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Setup: 'pr_state.inicia_delay'                                                                                       ;
++--------+-----------------------+------------------+-----------------------+-----------------------+--------------+------------+------------+
+; Slack  ; From Node             ; To Node          ; Launch Clock          ; Latch Clock           ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------+------------------+-----------------------+-----------------------+--------------+------------+------------+
+; -0.554 ; pr_state.inicia_delay ; S_EN_DELAY$latch ; pr_state.inicia_delay ; pr_state.inicia_delay ; 0.500        ; 0.949      ; 1.358      ;
+; -0.059 ; pr_state.inicia_delay ; S_EN_DELAY$latch ; pr_state.inicia_delay ; pr_state.inicia_delay ; 1.000        ; 0.949      ; 1.363      ;
++--------+-----------------------+------------------+-----------------------+-----------------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Setup: 'pr_state.espera_echo'                                                                                     ;
++--------+----------------------+------------------+----------------------+----------------------+--------------+------------+------------+
+; Slack  ; From Node            ; To Node          ; Launch Clock         ; Latch Clock          ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------+------------------+----------------------+----------------------+--------------+------------+------------+
+; -0.330 ; pr_state.espera_echo ; S_RST_ECHO$latch ; pr_state.espera_echo ; pr_state.espera_echo ; 0.500        ; 0.971      ; 1.336      ;
+; 0.159  ; pr_state.espera_echo ; S_RST_ECHO$latch ; pr_state.espera_echo ; pr_state.espera_echo ; 1.000        ; 0.971      ; 1.347      ;
++--------+----------------------+------------------+----------------------+----------------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Setup: 'pr_state.inicia_trig'                                                                                    ;
++--------+----------------------+-----------------+----------------------+----------------------+--------------+------------+------------+
+; Slack  ; From Node            ; To Node         ; Launch Clock         ; Latch Clock          ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------+-----------------+----------------------+----------------------+--------------+------------+------------+
+; -0.283 ; pr_state.inicia_trig ; S_EN_TRIG$latch ; pr_state.inicia_trig ; pr_state.inicia_trig ; 0.500        ; 1.025      ; 1.342      ;
+; 0.186  ; pr_state.inicia_trig ; S_EN_TRIG$latch ; pr_state.inicia_trig ; pr_state.inicia_trig ; 1.000        ; 1.025      ; 1.373      ;
++--------+----------------------+-----------------+----------------------+----------------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Hold: 'pr_state.inicia_trig'                                                                                     ;
++--------+----------------------+-----------------+----------------------+----------------------+--------------+------------+------------+
+; Slack  ; From Node            ; To Node         ; Launch Clock         ; Latch Clock          ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------+-----------------+----------------------+----------------------+--------------+------------+------------+
+; -0.033 ; pr_state.inicia_trig ; S_EN_TRIG$latch ; pr_state.inicia_trig ; pr_state.inicia_trig ; 0.000        ; 1.099      ; 1.298      ;
+; 0.447  ; pr_state.inicia_trig ; S_EN_TRIG$latch ; pr_state.inicia_trig ; pr_state.inicia_trig ; -0.500       ; 1.099      ; 1.278      ;
++--------+----------------------+-----------------+----------------------+----------------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Hold: 'pr_state.espera_echo'                                                                                     ;
++-------+----------------------+------------------+----------------------+----------------------+--------------+------------+------------+
+; Slack ; From Node            ; To Node          ; Launch Clock         ; Latch Clock          ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------+------------------+----------------------+----------------------+--------------+------------+------------+
+; 0.031 ; pr_state.espera_echo ; S_RST_ECHO$latch ; pr_state.espera_echo ; pr_state.espera_echo ; 0.000        ; 1.011      ; 1.274      ;
+; 0.530 ; pr_state.espera_echo ; S_RST_ECHO$latch ; pr_state.espera_echo ; pr_state.espera_echo ; -0.500       ; 1.011      ; 1.273      ;
++-------+----------------------+------------------+----------------------+----------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Hold: 'pr_state.inicia_delay'                                                                                       ;
++-------+-----------------------+------------------+-----------------------+-----------------------+--------------+------------+------------+
+; Slack ; From Node             ; To Node          ; Launch Clock          ; Latch Clock           ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------+------------------+-----------------------+-----------------------+--------------+------------+------------+
+; 0.097 ; pr_state.inicia_delay ; S_EN_DELAY$latch ; pr_state.inicia_delay ; pr_state.inicia_delay ; 0.000        ; 0.989      ; 1.318      ;
+; 0.593 ; pr_state.inicia_delay ; S_EN_DELAY$latch ; pr_state.inicia_delay ; pr_state.inicia_delay ; -0.500       ; 0.989      ; 1.314      ;
++-------+-----------------------+------------------+-----------------------+-----------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Hold: 'CLOCK'                                                                                                  ;
++-------+-----------------------+-----------------------+-----------------------+-------------+--------------+------------+------------+
+; Slack ; From Node             ; To Node               ; Launch Clock          ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------+-----------------------+-----------------------+-------------+--------------+------------+------------+
+; 1.016 ; pr_state.espera_echo  ; pr_state.mede_echo    ; pr_state.espera_echo  ; CLOCK       ; 0.000        ; 2.025      ; 3.479      ;
+; 1.402 ; pr_state.espera_echo  ; pr_state.espera_echo  ; pr_state.espera_echo  ; CLOCK       ; 0.000        ; 3.109      ; 4.949      ;
+; 1.462 ; pr_state.inicia_delay ; pr_state.delay        ; pr_state.inicia_delay ; CLOCK       ; 0.000        ; 3.109      ; 5.009      ;
+; 1.479 ; pr_state.delay        ; pr_state.inicio       ; CLOCK                 ; CLOCK       ; 0.000        ; -0.970     ; 0.695      ;
+; 1.479 ; pr_state.espera_echo  ; pr_state.mede_echo    ; pr_state.espera_echo  ; CLOCK       ; -0.500       ; 2.025      ; 3.442      ;
+; 1.483 ; pr_state.inicia_delay ; pr_state.inicia_delay ; pr_state.inicia_delay ; CLOCK       ; 0.000        ; 3.109      ; 5.030      ;
+; 1.485 ; pr_state.inicia_trig  ; pr_state.inicia_trig  ; pr_state.inicia_trig  ; CLOCK       ; 0.000        ; 3.109      ; 5.032      ;
+; 1.805 ; pr_state.inicia_trig  ; pr_state.gera_trig    ; pr_state.inicia_trig  ; CLOCK       ; 0.000        ; 3.109      ; 5.352      ;
+; 1.836 ; pr_state.espera_echo  ; pr_state.espera_echo  ; pr_state.espera_echo  ; CLOCK       ; -0.500       ; 3.109      ; 4.883      ;
+; 1.885 ; pr_state.inicia_delay ; pr_state.delay        ; pr_state.inicia_delay ; CLOCK       ; -0.500       ; 3.109      ; 4.932      ;
+; 1.888 ; pr_state.inicia_trig  ; pr_state.inicia_trig  ; pr_state.inicia_trig  ; CLOCK       ; -0.500       ; 3.109      ; 4.935      ;
+; 1.913 ; pr_state.inicia_delay ; pr_state.inicia_delay ; pr_state.inicia_delay ; CLOCK       ; -0.500       ; 3.109      ; 4.960      ;
+; 1.927 ; pr_state.mede_echo    ; pr_state.mede_echo    ; CLOCK                 ; CLOCK       ; 0.000        ; 0.050      ; 2.163      ;
+; 1.932 ; pr_state.inicio       ; pr_state.inicia_trig  ; CLOCK                 ; CLOCK       ; 0.000        ; 1.155      ; 3.273      ;
+; 2.080 ; pr_state.mede_echo    ; pr_state.inicia_delay ; CLOCK                 ; CLOCK       ; 0.000        ; 1.155      ; 3.421      ;
+; 2.251 ; pr_state.gera_trig    ; pr_state.espera_echo  ; CLOCK                 ; CLOCK       ; 0.000        ; 0.082      ; 2.519      ;
+; 2.285 ; pr_state.inicia_trig  ; pr_state.gera_trig    ; pr_state.inicia_trig  ; CLOCK       ; -0.500       ; 3.109      ; 5.332      ;
+; 2.501 ; pr_state.gera_trig    ; pr_state.gera_trig    ; CLOCK                 ; CLOCK       ; 0.000        ; 0.082      ; 2.769      ;
+; 2.619 ; pr_state.delay        ; pr_state.delay        ; CLOCK                 ; CLOCK       ; 0.000        ; 0.082      ; 2.887      ;
++-------+-----------------------+-----------------------+-----------------------+-------------+--------------+------------+------------+
+
+
+-----------------------------------------------
+; Slow 1200mV 85C Model Metastability Summary ;
+-----------------------------------------------
+No synchronizer chains to report.
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Fmax Summary                                                                                    ;
++------------+-----------------+-----------------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name            ; Note                                                          ;
++------------+-----------------+-----------------------+---------------------------------------------------------------+
+; 339.33 MHz ; 250.0 MHz       ; CLOCK                 ; limit due to minimum period restriction (max I/O toggle rate) ;
+; 498.5 MHz  ; 498.5 MHz       ; pr_state.inicia_delay ;                                                               ;
+; 619.58 MHz ; 619.58 MHz      ; pr_state.espera_echo  ;                                                               ;
+; 655.31 MHz ; 655.31 MHz      ; pr_state.inicia_trig  ;                                                               ;
++------------+-----------------+-----------------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++------------------------------------------------+
+; Slow 1200mV 0C Model Setup Summary             ;
++-----------------------+--------+---------------+
+; Clock                 ; Slack  ; End Point TNS ;
++-----------------------+--------+---------------+
+; CLOCK                 ; -1.947 ; -10.279       ;
+; pr_state.inicia_delay ; -0.503 ; -0.503        ;
+; pr_state.espera_echo  ; -0.307 ; -0.307        ;
+; pr_state.inicia_trig  ; -0.263 ; -0.263        ;
++-----------------------+--------+---------------+
+
+
++------------------------------------------------+
+; Slow 1200mV 0C Model Hold Summary              ;
++-----------------------+--------+---------------+
+; Clock                 ; Slack  ; End Point TNS ;
++-----------------------+--------+---------------+
+; pr_state.inicia_trig  ; -0.039 ; -0.039        ;
+; pr_state.espera_echo  ; 0.015  ; 0.000         ;
+; pr_state.inicia_delay ; 0.077  ; 0.000         ;
+; CLOCK                 ; 0.938  ; 0.000         ;
++-----------------------+--------+---------------+
+
+
+-----------------------------------------
+; Slow 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Slow 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width Summary ;
++-----------------------+--------+-----------------+
+; Clock                 ; Slack  ; End Point TNS   ;
++-----------------------+--------+-----------------+
+; CLOCK                 ; -3.000 ; -11.995         ;
+; pr_state.espera_echo  ; 0.421  ; 0.000           ;
+; pr_state.inicia_delay ; 0.421  ; 0.000           ;
+; pr_state.inicia_trig  ; 0.426  ; 0.000           ;
++-----------------------+--------+-----------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Setup: 'CLOCK'                                                                                                   ;
++--------+-----------------------+-----------------------+-----------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node             ; To Node               ; Launch Clock          ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------+-----------------------+-----------------------+-------------+--------------+------------+------------+
+; -1.947 ; pr_state.delay        ; pr_state.delay        ; CLOCK                 ; CLOCK       ; 1.000        ; -0.073     ; 2.873      ;
+; -1.732 ; pr_state.gera_trig    ; pr_state.gera_trig    ; CLOCK                 ; CLOCK       ; 1.000        ; -0.073     ; 2.658      ;
+; -1.625 ; pr_state.gera_trig    ; pr_state.espera_echo  ; CLOCK                 ; CLOCK       ; 1.000        ; -0.073     ; 2.551      ;
+; -1.586 ; pr_state.inicia_trig  ; pr_state.gera_trig    ; pr_state.inicia_trig  ; CLOCK       ; 0.500        ; 2.725      ; 5.023      ;
+; -1.564 ; pr_state.mede_echo    ; pr_state.inicia_delay ; CLOCK                 ; CLOCK       ; 1.000        ; 0.844      ; 3.407      ;
+; -1.516 ; pr_state.inicio       ; pr_state.inicia_trig  ; CLOCK                 ; CLOCK       ; 1.000        ; 0.844      ; 3.359      ;
+; -1.290 ; pr_state.inicia_delay ; pr_state.delay        ; pr_state.inicia_delay ; CLOCK       ; 0.500        ; 2.725      ; 4.727      ;
+; -1.235 ; pr_state.inicia_delay ; pr_state.inicia_delay ; pr_state.inicia_delay ; CLOCK       ; 0.500        ; 2.725      ; 4.672      ;
+; -1.224 ; pr_state.inicia_trig  ; pr_state.gera_trig    ; pr_state.inicia_trig  ; CLOCK       ; 1.000        ; 2.725      ; 5.161      ;
+; -1.187 ; pr_state.inicia_trig  ; pr_state.inicia_trig  ; pr_state.inicia_trig  ; CLOCK       ; 0.500        ; 2.725      ; 4.624      ;
+; -1.149 ; pr_state.mede_echo    ; pr_state.mede_echo    ; CLOCK                 ; CLOCK       ; 1.000        ; -0.044     ; 2.104      ;
+; -1.145 ; pr_state.espera_echo  ; pr_state.espera_echo  ; pr_state.espera_echo  ; CLOCK       ; 0.500        ; 2.725      ; 4.582      ;
+; -0.997 ; pr_state.inicia_delay ; pr_state.delay        ; pr_state.inicia_delay ; CLOCK       ; 1.000        ; 2.725      ; 4.934      ;
+; -0.970 ; pr_state.inicia_delay ; pr_state.inicia_delay ; pr_state.inicia_delay ; CLOCK       ; 1.000        ; 2.725      ; 4.907      ;
+; -0.948 ; pr_state.inicia_trig  ; pr_state.inicia_trig  ; pr_state.inicia_trig  ; CLOCK       ; 1.000        ; 2.725      ; 4.885      ;
+; -0.895 ; pr_state.espera_echo  ; pr_state.espera_echo  ; pr_state.espera_echo  ; CLOCK       ; 1.000        ; 2.725      ; 4.832      ;
+; -0.746 ; pr_state.delay        ; pr_state.inicio       ; CLOCK                 ; CLOCK       ; 1.000        ; -1.009     ; 0.736      ;
+; -0.711 ; pr_state.espera_echo  ; pr_state.mede_echo    ; pr_state.espera_echo  ; CLOCK       ; 0.500        ; 1.817      ; 3.240      ;
+; -0.356 ; pr_state.espera_echo  ; pr_state.mede_echo    ; pr_state.espera_echo  ; CLOCK       ; 1.000        ; 1.817      ; 3.385      ;
++--------+-----------------------+-----------------------+-----------------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Setup: 'pr_state.inicia_delay'                                                                                        ;
++--------+-----------------------+------------------+-----------------------+-----------------------+--------------+------------+------------+
+; Slack  ; From Node             ; To Node          ; Launch Clock          ; Latch Clock           ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------+------------------+-----------------------+-----------------------+--------------+------------+------------+
+; -0.503 ; pr_state.inicia_delay ; S_EN_DELAY$latch ; pr_state.inicia_delay ; pr_state.inicia_delay ; 0.500        ; 0.855      ; 1.277      ;
+; 0.052  ; pr_state.inicia_delay ; S_EN_DELAY$latch ; pr_state.inicia_delay ; pr_state.inicia_delay ; 1.000        ; 0.855      ; 1.222      ;
++--------+-----------------------+------------------+-----------------------+-----------------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Setup: 'pr_state.espera_echo'                                                                                      ;
++--------+----------------------+------------------+----------------------+----------------------+--------------+------------+------------+
+; Slack  ; From Node            ; To Node          ; Launch Clock         ; Latch Clock          ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------+------------------+----------------------+----------------------+--------------+------------+------------+
+; -0.307 ; pr_state.espera_echo ; S_RST_ECHO$latch ; pr_state.espera_echo ; pr_state.espera_echo ; 0.500        ; 0.874      ; 1.251      ;
+; 0.239  ; pr_state.espera_echo ; S_RST_ECHO$latch ; pr_state.espera_echo ; pr_state.espera_echo ; 1.000        ; 0.874      ; 1.205      ;
++--------+----------------------+------------------+----------------------+----------------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Setup: 'pr_state.inicia_trig'                                                                                     ;
++--------+----------------------+-----------------+----------------------+----------------------+--------------+------------+------------+
+; Slack  ; From Node            ; To Node         ; Launch Clock         ; Latch Clock          ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------+-----------------+----------------------+----------------------+--------------+------------+------------+
+; -0.263 ; pr_state.inicia_trig ; S_EN_TRIG$latch ; pr_state.inicia_trig ; pr_state.inicia_trig ; 0.500        ; 0.919      ; 1.252      ;
+; 0.262  ; pr_state.inicia_trig ; S_EN_TRIG$latch ; pr_state.inicia_trig ; pr_state.inicia_trig ; 1.000        ; 0.919      ; 1.227      ;
++--------+----------------------+-----------------+----------------------+----------------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Hold: 'pr_state.inicia_trig'                                                                                      ;
++--------+----------------------+-----------------+----------------------+----------------------+--------------+------------+------------+
+; Slack  ; From Node            ; To Node         ; Launch Clock         ; Latch Clock          ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------+-----------------+----------------------+----------------------+--------------+------------+------------+
+; -0.039 ; pr_state.inicia_trig ; S_EN_TRIG$latch ; pr_state.inicia_trig ; pr_state.inicia_trig ; 0.000        ; 0.986      ; 1.160      ;
+; 0.489  ; pr_state.inicia_trig ; S_EN_TRIG$latch ; pr_state.inicia_trig ; pr_state.inicia_trig ; -0.500       ; 0.986      ; 1.188      ;
++--------+----------------------+-----------------+----------------------+----------------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Hold: 'pr_state.espera_echo'                                                                                      ;
++-------+----------------------+------------------+----------------------+----------------------+--------------+------------+------------+
+; Slack ; From Node            ; To Node          ; Launch Clock         ; Latch Clock          ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------+------------------+----------------------+----------------------+--------------+------------+------------+
+; 0.015 ; pr_state.espera_echo ; S_RST_ECHO$latch ; pr_state.espera_echo ; pr_state.espera_echo ; 0.000        ; 0.911      ; 1.139      ;
+; 0.564 ; pr_state.espera_echo ; S_RST_ECHO$latch ; pr_state.espera_echo ; pr_state.espera_echo ; -0.500       ; 0.911      ; 1.188      ;
++-------+----------------------+------------------+----------------------+----------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Hold: 'pr_state.inicia_delay'                                                                                        ;
++-------+-----------------------+------------------+-----------------------+-----------------------+--------------+------------+------------+
+; Slack ; From Node             ; To Node          ; Launch Clock          ; Latch Clock           ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------+------------------+-----------------------+-----------------------+--------------+------------+------------+
+; 0.077 ; pr_state.inicia_delay ; S_EN_DELAY$latch ; pr_state.inicia_delay ; pr_state.inicia_delay ; 0.000        ; 0.892      ; 1.182      ;
+; 0.629 ; pr_state.inicia_delay ; S_EN_DELAY$latch ; pr_state.inicia_delay ; pr_state.inicia_delay ; -0.500       ; 0.892      ; 1.234      ;
++-------+-----------------------+------------------+-----------------------+-----------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Hold: 'CLOCK'                                                                                                   ;
++-------+-----------------------+-----------------------+-----------------------+-------------+--------------+------------+------------+
+; Slack ; From Node             ; To Node               ; Launch Clock          ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------+-----------------------+-----------------------+-------------+--------------+------------+------------+
+; 0.938 ; pr_state.espera_echo  ; pr_state.mede_echo    ; pr_state.espera_echo  ; CLOCK       ; 0.000        ; 1.881      ; 3.223      ;
+; 1.293 ; pr_state.espera_echo  ; pr_state.mede_echo    ; pr_state.espera_echo  ; CLOCK       ; -0.500       ; 1.881      ; 3.078      ;
+; 1.303 ; pr_state.delay        ; pr_state.inicio       ; CLOCK                 ; CLOCK       ; 0.000        ; -0.844     ; 0.630      ;
+; 1.404 ; pr_state.espera_echo  ; pr_state.espera_echo  ; pr_state.espera_echo  ; CLOCK       ; 0.000        ; 2.826      ; 4.634      ;
+; 1.432 ; pr_state.inicia_delay ; pr_state.delay        ; pr_state.inicia_delay ; CLOCK       ; 0.000        ; 2.826      ; 4.662      ;
+; 1.458 ; pr_state.inicia_delay ; pr_state.inicia_delay ; pr_state.inicia_delay ; CLOCK       ; 0.000        ; 2.826      ; 4.688      ;
+; 1.468 ; pr_state.inicia_trig  ; pr_state.inicia_trig  ; pr_state.inicia_trig  ; CLOCK       ; 0.000        ; 2.826      ; 4.698      ;
+; 1.654 ; pr_state.espera_echo  ; pr_state.espera_echo  ; pr_state.espera_echo  ; CLOCK       ; -0.500       ; 2.826      ; 4.384      ;
+; 1.708 ; pr_state.inicia_delay ; pr_state.delay        ; pr_state.inicia_delay ; CLOCK       ; -0.500       ; 2.826      ; 4.438      ;
+; 1.716 ; pr_state.inicia_trig  ; pr_state.inicia_trig  ; pr_state.inicia_trig  ; CLOCK       ; -0.500       ; 2.826      ; 4.446      ;
+; 1.732 ; pr_state.mede_echo    ; pr_state.mede_echo    ; CLOCK                 ; CLOCK       ; 0.000        ; 0.044      ; 1.947      ;
+; 1.733 ; pr_state.inicia_trig  ; pr_state.gera_trig    ; pr_state.inicia_trig  ; CLOCK       ; 0.000        ; 2.826      ; 4.963      ;
+; 1.734 ; pr_state.inicia_delay ; pr_state.inicia_delay ; pr_state.inicia_delay ; CLOCK       ; -0.500       ; 2.826      ; 4.464      ;
+; 1.779 ; pr_state.inicio       ; pr_state.inicia_trig  ; CLOCK                 ; CLOCK       ; 0.000        ; 1.009      ; 2.959      ;
+; 1.897 ; pr_state.mede_echo    ; pr_state.inicia_delay ; CLOCK                 ; CLOCK       ; 0.000        ; 1.009      ; 3.077      ;
+; 2.010 ; pr_state.gera_trig    ; pr_state.espera_echo  ; CLOCK                 ; CLOCK       ; 0.000        ; 0.073      ; 2.254      ;
+; 2.100 ; pr_state.inicia_trig  ; pr_state.gera_trig    ; pr_state.inicia_trig  ; CLOCK       ; -0.500       ; 2.826      ; 4.830      ;
+; 2.302 ; pr_state.gera_trig    ; pr_state.gera_trig    ; CLOCK                 ; CLOCK       ; 0.000        ; 0.073      ; 2.546      ;
+; 2.369 ; pr_state.delay        ; pr_state.delay        ; CLOCK                 ; CLOCK       ; 0.000        ; 0.073      ; 2.613      ;
++-------+-----------------------+-----------------------+-----------------------+-------------+--------------+------------+------------+
+
+
+----------------------------------------------
+; Slow 1200mV 0C Model Metastability Summary ;
+----------------------------------------------
+No synchronizer chains to report.
+
+
++------------------------------------------------+
+; Fast 1200mV 0C Model Setup Summary             ;
++-----------------------+--------+---------------+
+; Clock                 ; Slack  ; End Point TNS ;
++-----------------------+--------+---------------+
+; CLOCK                 ; -0.809 ; -3.542        ;
+; pr_state.inicia_delay ; 0.033  ; 0.000         ;
+; pr_state.espera_echo  ; 0.153  ; 0.000         ;
+; pr_state.inicia_trig  ; 0.170  ; 0.000         ;
++-----------------------+--------+---------------+
+
+
++------------------------------------------------+
+; Fast 1200mV 0C Model Hold Summary              ;
++-----------------------+--------+---------------+
+; Clock                 ; Slack  ; End Point TNS ;
++-----------------------+--------+---------------+
+; pr_state.inicia_trig  ; -0.003 ; -0.003        ;
+; pr_state.espera_echo  ; 0.033  ; 0.000         ;
+; pr_state.inicia_delay ; 0.069  ; 0.000         ;
+; CLOCK                 ; 0.340  ; 0.000         ;
++-----------------------+--------+---------------+
+
+
+-----------------------------------------
+; Fast 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Fast 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width Summary ;
++-----------------------+--------+-----------------+
+; Clock                 ; Slack  ; End Point TNS   ;
++-----------------------+--------+-----------------+
+; CLOCK                 ; -3.000 ; -10.363         ;
+; pr_state.inicia_trig  ; 0.425  ; 0.000           ;
+; pr_state.espera_echo  ; 0.439  ; 0.000           ;
+; pr_state.inicia_delay ; 0.439  ; 0.000           ;
++-----------------------+--------+-----------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Setup: 'CLOCK'                                                                                                   ;
++--------+-----------------------+-----------------------+-----------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node             ; To Node               ; Launch Clock          ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------+-----------------------+-----------------------+-------------+--------------+------------+------------+
+; -0.809 ; pr_state.inicia_trig  ; pr_state.gera_trig    ; pr_state.inicia_trig  ; CLOCK       ; 0.500        ; 1.610      ; 3.011      ;
+; -0.694 ; pr_state.delay        ; pr_state.delay        ; CLOCK                 ; CLOCK       ; 1.000        ; -0.042     ; 1.639      ;
+; -0.643 ; pr_state.inicia_delay ; pr_state.delay        ; pr_state.inicia_delay ; CLOCK       ; 0.500        ; 1.610      ; 2.845      ;
+; -0.580 ; pr_state.gera_trig    ; pr_state.gera_trig    ; CLOCK                 ; CLOCK       ; 1.000        ; -0.042     ; 1.525      ;
+; -0.568 ; pr_state.espera_echo  ; pr_state.espera_echo  ; pr_state.espera_echo  ; CLOCK       ; 0.500        ; 1.610      ; 2.770      ;
+; -0.567 ; pr_state.inicia_delay ; pr_state.inicia_delay ; pr_state.inicia_delay ; CLOCK       ; 0.500        ; 1.610      ; 2.769      ;
+; -0.556 ; pr_state.inicia_trig  ; pr_state.inicia_trig  ; pr_state.inicia_trig  ; CLOCK       ; 0.500        ; 1.610      ; 2.758      ;
+; -0.455 ; pr_state.gera_trig    ; pr_state.espera_echo  ; CLOCK                 ; CLOCK       ; 1.000        ; -0.042     ; 1.400      ;
+; -0.316 ; pr_state.mede_echo    ; pr_state.inicia_delay ; CLOCK                 ; CLOCK       ; 1.000        ; 0.572      ; 1.875      ;
+; -0.287 ; pr_state.espera_echo  ; pr_state.mede_echo    ; pr_state.espera_echo  ; CLOCK       ; 0.500        ; 1.001      ; 1.880      ;
+; -0.225 ; pr_state.inicio       ; pr_state.inicia_trig  ; CLOCK                 ; CLOCK       ; 1.000        ; 0.572      ; 1.784      ;
+; -0.194 ; pr_state.mede_echo    ; pr_state.mede_echo    ; CLOCK                 ; CLOCK       ; 1.000        ; -0.025     ; 1.156      ;
+; -0.061 ; pr_state.delay        ; pr_state.inicio       ; CLOCK                 ; CLOCK       ; 1.000        ; -0.671     ; 0.377      ;
+; 0.032  ; pr_state.inicia_trig  ; pr_state.gera_trig    ; pr_state.inicia_trig  ; CLOCK       ; 1.000        ; 1.610      ; 2.670      ;
+; 0.189  ; pr_state.inicia_delay ; pr_state.delay        ; pr_state.inicia_delay ; CLOCK       ; 1.000        ; 1.610      ; 2.513      ;
+; 0.212  ; pr_state.inicia_delay ; pr_state.inicia_delay ; pr_state.inicia_delay ; CLOCK       ; 1.000        ; 1.610      ; 2.490      ;
+; 0.246  ; pr_state.inicia_trig  ; pr_state.inicia_trig  ; pr_state.inicia_trig  ; CLOCK       ; 1.000        ; 1.610      ; 2.456      ;
+; 0.277  ; pr_state.espera_echo  ; pr_state.espera_echo  ; pr_state.espera_echo  ; CLOCK       ; 1.000        ; 1.610      ; 2.425      ;
+; 0.434  ; pr_state.espera_echo  ; pr_state.mede_echo    ; pr_state.espera_echo  ; CLOCK       ; 1.000        ; 1.001      ; 1.659      ;
++--------+-----------------------+-----------------------+-----------------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Setup: 'pr_state.inicia_delay'                                                                                       ;
++-------+-----------------------+------------------+-----------------------+-----------------------+--------------+------------+------------+
+; Slack ; From Node             ; To Node          ; Launch Clock          ; Latch Clock           ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------+------------------+-----------------------+-----------------------+--------------+------------+------------+
+; 0.033 ; pr_state.inicia_delay ; S_EN_DELAY$latch ; pr_state.inicia_delay ; pr_state.inicia_delay ; 0.500        ; 0.455      ; 0.606      ;
+; 0.470 ; pr_state.inicia_delay ; S_EN_DELAY$latch ; pr_state.inicia_delay ; pr_state.inicia_delay ; 1.000        ; 0.455      ; 0.669      ;
++-------+-----------------------+------------------+-----------------------+-----------------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Setup: 'pr_state.espera_echo'                                                                                     ;
++-------+----------------------+------------------+----------------------+----------------------+--------------+------------+------------+
+; Slack ; From Node            ; To Node          ; Launch Clock         ; Latch Clock          ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------+------------------+----------------------+----------------------+--------------+------------+------------+
+; 0.153 ; pr_state.espera_echo ; S_RST_ECHO$latch ; pr_state.espera_echo ; pr_state.espera_echo ; 0.500        ; 0.467      ; 0.592      ;
+; 0.585 ; pr_state.espera_echo ; S_RST_ECHO$latch ; pr_state.espera_echo ; pr_state.espera_echo ; 1.000        ; 0.467      ; 0.660      ;
++-------+----------------------+------------------+----------------------+----------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Setup: 'pr_state.inicia_trig'                                                                                    ;
++-------+----------------------+-----------------+----------------------+----------------------+--------------+------------+------------+
+; Slack ; From Node            ; To Node         ; Launch Clock         ; Latch Clock          ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------+-----------------+----------------------+----------------------+--------------+------------+------------+
+; 0.170 ; pr_state.inicia_trig ; S_EN_TRIG$latch ; pr_state.inicia_trig ; pr_state.inicia_trig ; 0.500        ; 0.497      ; 0.605      ;
+; 0.597 ; pr_state.inicia_trig ; S_EN_TRIG$latch ; pr_state.inicia_trig ; pr_state.inicia_trig ; 1.000        ; 0.497      ; 0.678      ;
++-------+----------------------+-----------------+----------------------+----------------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Hold: 'pr_state.inicia_trig'                                                                                      ;
++--------+----------------------+-----------------+----------------------+----------------------+--------------+------------+------------+
+; Slack  ; From Node            ; To Node         ; Launch Clock         ; Latch Clock          ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------+-----------------+----------------------+----------------------+--------------+------------+------------+
+; -0.003 ; pr_state.inicia_trig ; S_EN_TRIG$latch ; pr_state.inicia_trig ; pr_state.inicia_trig ; 0.000        ; 0.538      ; 0.640      ;
+; 0.435  ; pr_state.inicia_trig ; S_EN_TRIG$latch ; pr_state.inicia_trig ; pr_state.inicia_trig ; -0.500       ; 0.538      ; 0.578      ;
++--------+----------------------+-----------------+----------------------+----------------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Hold: 'pr_state.espera_echo'                                                                                      ;
++-------+----------------------+------------------+----------------------+----------------------+--------------+------------+------------+
+; Slack ; From Node            ; To Node          ; Launch Clock         ; Latch Clock          ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------+------------------+----------------------+----------------------+--------------+------------+------------+
+; 0.033 ; pr_state.espera_echo ; S_RST_ECHO$latch ; pr_state.espera_echo ; pr_state.espera_echo ; 0.000        ; 0.485      ; 0.623      ;
+; 0.475 ; pr_state.espera_echo ; S_RST_ECHO$latch ; pr_state.espera_echo ; pr_state.espera_echo ; -0.500       ; 0.485      ; 0.565      ;
++-------+----------------------+------------------+----------------------+----------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Hold: 'pr_state.inicia_delay'                                                                                        ;
++-------+-----------------------+------------------+-----------------------+-----------------------+--------------+------------+------------+
+; Slack ; From Node             ; To Node          ; Launch Clock          ; Latch Clock           ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------+------------------+-----------------------+-----------------------+--------------+------------+------------+
+; 0.069 ; pr_state.inicia_delay ; S_EN_DELAY$latch ; pr_state.inicia_delay ; pr_state.inicia_delay ; 0.000        ; 0.473      ; 0.647      ;
+; 0.509 ; pr_state.inicia_delay ; S_EN_DELAY$latch ; pr_state.inicia_delay ; pr_state.inicia_delay ; -0.500       ; 0.473      ; 0.587      ;
++-------+-----------------------+------------------+-----------------------+-----------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Hold: 'CLOCK'                                                                                                   ;
++-------+-----------------------+-----------------------+-----------------------+-------------+--------------+------------+------------+
+; Slack ; From Node             ; To Node               ; Launch Clock          ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------+-----------------------+-----------------------+-------------+--------------+------------+------------+
+; 0.340 ; pr_state.espera_echo  ; pr_state.mede_echo    ; pr_state.espera_echo  ; CLOCK       ; 0.000        ; 1.038      ; 1.587      ;
+; 0.446 ; pr_state.espera_echo  ; pr_state.espera_echo  ; pr_state.espera_echo  ; CLOCK       ; 0.000        ; 1.672      ; 2.327      ;
+; 0.481 ; pr_state.inicia_trig  ; pr_state.inicia_trig  ; pr_state.inicia_trig  ; CLOCK       ; 0.000        ; 1.672      ; 2.362      ;
+; 0.497 ; pr_state.inicia_delay ; pr_state.delay        ; pr_state.inicia_delay ; CLOCK       ; 0.000        ; 1.672      ; 2.378      ;
+; 0.500 ; pr_state.inicia_delay ; pr_state.inicia_delay ; pr_state.inicia_delay ; CLOCK       ; 0.000        ; 1.672      ; 2.381      ;
+; 0.686 ; pr_state.inicia_trig  ; pr_state.gera_trig    ; pr_state.inicia_trig  ; CLOCK       ; 0.000        ; 1.672      ; 2.567      ;
+; 0.812 ; pr_state.delay        ; pr_state.inicio       ; CLOCK                 ; CLOCK       ; 0.000        ; -0.572     ; 0.324      ;
+; 0.844 ; pr_state.mede_echo    ; pr_state.inicia_delay ; CLOCK                 ; CLOCK       ; 0.000        ; 0.671      ; 1.599      ;
+; 0.870 ; pr_state.inicio       ; pr_state.inicia_trig  ; CLOCK                 ; CLOCK       ; 0.000        ; 0.671      ; 1.625      ;
+; 0.874 ; pr_state.mede_echo    ; pr_state.mede_echo    ; CLOCK                 ; CLOCK       ; 0.000        ; 0.025      ; 0.983      ;
+; 1.035 ; pr_state.espera_echo  ; pr_state.mede_echo    ; pr_state.espera_echo  ; CLOCK       ; -0.500       ; 1.038      ; 1.782      ;
+; 1.077 ; pr_state.gera_trig    ; pr_state.espera_echo  ; CLOCK                 ; CLOCK       ; 0.000        ; 0.042      ; 1.203      ;
+; 1.179 ; pr_state.gera_trig    ; pr_state.gera_trig    ; CLOCK                 ; CLOCK       ; 0.000        ; 0.042      ; 1.305      ;
+; 1.209 ; pr_state.delay        ; pr_state.delay        ; CLOCK                 ; CLOCK       ; 0.000        ; 0.042      ; 1.335      ;
+; 1.267 ; pr_state.inicia_delay ; pr_state.inicia_delay ; pr_state.inicia_delay ; CLOCK       ; -0.500       ; 1.672      ; 2.648      ;
+; 1.272 ; pr_state.espera_echo  ; pr_state.espera_echo  ; pr_state.espera_echo  ; CLOCK       ; -0.500       ; 1.672      ; 2.653      ;
+; 1.272 ; pr_state.inicia_trig  ; pr_state.inicia_trig  ; pr_state.inicia_trig  ; CLOCK       ; -0.500       ; 1.672      ; 2.653      ;
+; 1.294 ; pr_state.inicia_delay ; pr_state.delay        ; pr_state.inicia_delay ; CLOCK       ; -0.500       ; 1.672      ; 2.675      ;
+; 1.514 ; pr_state.inicia_trig  ; pr_state.gera_trig    ; pr_state.inicia_trig  ; CLOCK       ; -0.500       ; 1.672      ; 2.895      ;
++-------+-----------------------+-----------------------+-----------------------+-------------+--------------+------------+------------+
+
+
+----------------------------------------------
+; Fast 1200mV 0C Model Metastability Summary ;
+----------------------------------------------
+No synchronizer chains to report.
+
+
++--------------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                                  ;
++------------------------+---------+--------+----------+---------+---------------------+
+; Clock                  ; Setup   ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------------+---------+--------+----------+---------+---------------------+
+; Worst-case Slack       ; -2.269  ; -0.039 ; N/A      ; N/A     ; -3.000              ;
+;  CLOCK                 ; -2.269  ; 0.340  ; N/A      ; N/A     ; -3.000              ;
+;  pr_state.espera_echo  ; -0.330  ; 0.015  ; N/A      ; N/A     ; 0.402               ;
+;  pr_state.inicia_delay ; -0.554  ; 0.069  ; N/A      ; N/A     ; 0.401               ;
+;  pr_state.inicia_trig  ; -0.283  ; -0.039 ; N/A      ; N/A     ; 0.399               ;
+; Design-wide TNS        ; -12.914 ; -0.039 ; 0.0      ; 0.0     ; -11.995             ;
+;  CLOCK                 ; -11.747 ; 0.000  ; N/A      ; N/A     ; -11.995             ;
+;  pr_state.espera_echo  ; -0.330  ; 0.000  ; N/A      ; N/A     ; 0.000               ;
+;  pr_state.inicia_delay ; -0.554  ; 0.000  ; N/A      ; N/A     ; 0.000               ;
+;  pr_state.inicia_trig  ; -0.283  ; -0.039 ; N/A      ; N/A     ; 0.000               ;
++------------------------+---------+--------+----------+---------+---------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Board Trace Model Assignments                                                                                                                                                                                                                                                                                                                                                                                    ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; Pin           ; I/O Standard ; Near Tline Length ; Near Tline L per Length ; Near Tline C per Length ; Near Series R ; Near Differential R ; Near Pull-up R ; Near Pull-down R ; Near C ; Far Tline Length ; Far Tline L per Length ; Far Tline C per Length ; Far Series R ; Far Pull-up R ; Far Pull-down R ; Far C ; Termination Voltage ; Far Differential R ; EBD File Name ; EBD Signal Name ; EBD Far-end ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; S_EN_TRIG     ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; S_RST_ECHO    ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; S_EN_DELAY    ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+
+
++----------------------------------------------------------------------------+
+; Input Transition Times                                                     ;
++-------------------------+--------------+-----------------+-----------------+
+; Pin                     ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
++-------------------------+--------------+-----------------+-----------------+
+; E_SINAL_TRIG            ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; CLOCK                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; RST                     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; E_SINAL_DELAY           ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; E_SINAL_ECHO            ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_ASDO_DATA1~     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_FLASH_nCE_nCSO~ ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_DATA0~          ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
++-------------------------+--------------+-----------------+-----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; S_EN_TRIG     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-09 V                   ; 2.37 V              ; -0.00994 V          ; 0.186 V                              ; 0.028 V                              ; 4.98e-10 s                  ; 4.96e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.07e-09 V                  ; 2.37 V             ; -0.00994 V         ; 0.186 V                             ; 0.028 V                             ; 4.98e-10 s                 ; 4.96e-10 s                 ; Yes                       ; Yes                       ;
+; S_RST_ECHO    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-09 V                   ; 2.37 V              ; -0.00994 V          ; 0.186 V                              ; 0.028 V                              ; 4.98e-10 s                  ; 4.96e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.07e-09 V                  ; 2.37 V             ; -0.00994 V         ; 0.186 V                             ; 0.028 V                             ; 4.98e-10 s                 ; 4.96e-10 s                 ; Yes                       ; Yes                       ;
+; S_EN_DELAY    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-09 V                   ; 2.37 V              ; -0.00994 V          ; 0.186 V                              ; 0.028 V                              ; 4.98e-10 s                  ; 4.96e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.07e-09 V                  ; 2.37 V             ; -0.00994 V         ; 0.186 V                             ; 0.028 V                             ; 4.98e-10 s                 ; 4.96e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.67e-09 V                   ; 2.38 V              ; -0.0485 V           ; 0.167 V                              ; 0.096 V                              ; 2.95e-10 s                  ; 2.73e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 2.67e-09 V                  ; 2.38 V             ; -0.0485 V          ; 0.167 V                             ; 0.096 V                             ; 2.95e-10 s                 ; 2.73e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.18e-09 V                   ; 2.38 V              ; -0.00483 V          ; 0.152 V                              ; 0.012 V                              ; 4.81e-10 s                  ; 6.29e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.18e-09 V                  ; 2.38 V             ; -0.00483 V         ; 0.152 V                             ; 0.012 V                             ; 4.81e-10 s                 ; 6.29e-10 s                 ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 85c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; S_EN_TRIG     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.67e-07 V                   ; 2.35 V              ; -0.00942 V          ; 0.116 V                              ; 0.033 V                              ; 6.66e-10 s                  ; 6.27e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.67e-07 V                  ; 2.35 V             ; -0.00942 V         ; 0.116 V                             ; 0.033 V                             ; 6.66e-10 s                 ; 6.27e-10 s                 ; Yes                       ; Yes                       ;
+; S_RST_ECHO    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.67e-07 V                   ; 2.35 V              ; -0.00942 V          ; 0.116 V                              ; 0.033 V                              ; 6.66e-10 s                  ; 6.27e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.67e-07 V                  ; 2.35 V             ; -0.00942 V         ; 0.116 V                             ; 0.033 V                             ; 6.66e-10 s                 ; 6.27e-10 s                 ; Yes                       ; Yes                       ;
+; S_EN_DELAY    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.67e-07 V                   ; 2.35 V              ; -0.00942 V          ; 0.116 V                              ; 0.033 V                              ; 6.66e-10 s                  ; 6.27e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.67e-07 V                  ; 2.35 V             ; -0.00942 V         ; 0.116 V                             ; 0.033 V                             ; 6.66e-10 s                 ; 6.27e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.75e-07 V                   ; 2.35 V              ; -0.0109 V           ; 0.084 V                              ; 0.027 V                              ; 4.31e-10 s                  ; 3.61e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.75e-07 V                  ; 2.35 V             ; -0.0109 V          ; 0.084 V                             ; 0.027 V                             ; 4.31e-10 s                 ; 3.61e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.15e-07 V                   ; 2.35 V              ; -0.00712 V          ; 0.093 V                              ; 0.02 V                               ; 6.21e-10 s                  ; 7.9e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 6.15e-07 V                  ; 2.35 V             ; -0.00712 V         ; 0.093 V                             ; 0.02 V                              ; 6.21e-10 s                 ; 7.9e-10 s                  ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Fast 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; S_EN_TRIG     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.74e-08 V                   ; 2.71 V              ; -0.0317 V           ; 0.148 V                              ; 0.064 V                              ; 4.51e-10 s                  ; 4.15e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.74e-08 V                  ; 2.71 V             ; -0.0317 V          ; 0.148 V                             ; 0.064 V                             ; 4.51e-10 s                 ; 4.15e-10 s                 ; No                        ; Yes                       ;
+; S_RST_ECHO    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.74e-08 V                   ; 2.71 V              ; -0.0317 V           ; 0.148 V                              ; 0.064 V                              ; 4.51e-10 s                  ; 4.15e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.74e-08 V                  ; 2.71 V             ; -0.0317 V          ; 0.148 V                             ; 0.064 V                             ; 4.51e-10 s                 ; 4.15e-10 s                 ; No                        ; Yes                       ;
+; S_EN_DELAY    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.74e-08 V                   ; 2.71 V              ; -0.0317 V           ; 0.148 V                              ; 0.064 V                              ; 4.51e-10 s                  ; 4.15e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.74e-08 V                  ; 2.71 V             ; -0.0317 V          ; 0.148 V                             ; 0.064 V                             ; 4.51e-10 s                 ; 4.15e-10 s                 ; No                        ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.22e-08 V                   ; 2.74 V              ; -0.06 V             ; 0.158 V                              ; 0.08 V                               ; 2.68e-10 s                  ; 2.19e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 2.22e-08 V                  ; 2.74 V             ; -0.06 V            ; 0.158 V                             ; 0.08 V                              ; 2.68e-10 s                 ; 2.19e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.54e-08 V                   ; 2.7 V               ; -0.00943 V          ; 0.276 V                              ; 0.035 V                              ; 3.19e-10 s                  ; 4.99e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 3.54e-08 V                  ; 2.7 V              ; -0.00943 V         ; 0.276 V                             ; 0.035 V                             ; 3.19e-10 s                 ; 4.99e-10 s                 ; No                        ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++-------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                           ;
++-----------------------+-----------------------+----------+----------+----------+----------+
+; From Clock            ; To Clock              ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-----------------------+-----------------------+----------+----------+----------+----------+
+; CLOCK                 ; CLOCK                 ; 7        ; 0        ; 0        ; 0        ;
+; pr_state.espera_echo  ; CLOCK                 ; 2        ; 2        ; 0        ; 0        ;
+; pr_state.inicia_delay ; CLOCK                 ; 2        ; 2        ; 0        ; 0        ;
+; pr_state.inicia_trig  ; CLOCK                 ; 2        ; 2        ; 0        ; 0        ;
+; pr_state.espera_echo  ; pr_state.espera_echo  ; 0        ; 0        ; 1        ; 1        ;
+; pr_state.inicia_delay ; pr_state.inicia_delay ; 0        ; 0        ; 1        ; 1        ;
+; pr_state.inicia_trig  ; pr_state.inicia_trig  ; 0        ; 0        ; 1        ; 1        ;
++-----------------------+-----------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                            ;
++-----------------------+-----------------------+----------+----------+----------+----------+
+; From Clock            ; To Clock              ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-----------------------+-----------------------+----------+----------+----------+----------+
+; CLOCK                 ; CLOCK                 ; 7        ; 0        ; 0        ; 0        ;
+; pr_state.espera_echo  ; CLOCK                 ; 2        ; 2        ; 0        ; 0        ;
+; pr_state.inicia_delay ; CLOCK                 ; 2        ; 2        ; 0        ; 0        ;
+; pr_state.inicia_trig  ; CLOCK                 ; 2        ; 2        ; 0        ; 0        ;
+; pr_state.espera_echo  ; pr_state.espera_echo  ; 0        ; 0        ; 1        ; 1        ;
+; pr_state.inicia_delay ; pr_state.inicia_delay ; 0        ; 0        ; 1        ; 1        ;
+; pr_state.inicia_trig  ; pr_state.inicia_trig  ; 0        ; 0        ; 1        ; 1        ;
++-----------------------+-----------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 4     ; 4    ;
+; Unconstrained Input Port Paths  ; 16    ; 16   ;
+; Unconstrained Output Ports      ; 3     ; 3    ;
+; Unconstrained Output Port Paths ; 3     ; 3    ;
++---------------------------------+-------+------+
+
+
++--------------------------------------------------------------------+
+; Clock Status Summary                                               ;
++-----------------------+-----------------------+------+-------------+
+; Target                ; Clock                 ; Type ; Status      ;
++-----------------------+-----------------------+------+-------------+
+; CLOCK                 ; CLOCK                 ; Base ; Constrained ;
+; pr_state.espera_echo  ; pr_state.espera_echo  ; Base ; Constrained ;
+; pr_state.inicia_delay ; pr_state.inicia_delay ; Base ; Constrained ;
+; pr_state.inicia_trig  ; pr_state.inicia_trig  ; Base ; Constrained ;
++-----------------------+-----------------------+------+-------------+
+
+
++------------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                            ;
++---------------+--------------------------------------------------------------------------------------+
+; Input Port    ; Comment                                                                              ;
++---------------+--------------------------------------------------------------------------------------+
+; E_SINAL_DELAY ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; E_SINAL_ECHO  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; E_SINAL_TRIG  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RST           ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++---------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; S_EN_DELAY  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; S_EN_TRIG   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; S_RST_ECHO  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                            ;
++---------------+--------------------------------------------------------------------------------------+
+; Input Port    ; Comment                                                                              ;
++---------------+--------------------------------------------------------------------------------------+
+; E_SINAL_DELAY ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; E_SINAL_ECHO  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; E_SINAL_TRIG  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RST           ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++---------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; S_EN_DELAY  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; S_EN_TRIG   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; S_RST_ECHO  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime TimeQuest Timing Analyzer
+    Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
+    Info: Processing started: Mon Apr 24 14:34:07 2017
+Info: Command: quartus_sta fsm_u_som -c fsm_u_som
+Info: qsta_default_script.tcl version: #1
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Warning (335093): TimeQuest Timing Analyzer is analyzing 3 combinational loops as latches. For more details, run the Check Timing command in the TimeQuest Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'fsm_u_som.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name CLOCK CLOCK
+    Info (332105): create_clock -period 1.000 -name pr_state.espera_echo pr_state.espera_echo
+    Info (332105): create_clock -period 1.000 -name pr_state.inicia_delay pr_state.inicia_delay
+    Info (332105): create_clock -period 1.000 -name pr_state.inicia_trig pr_state.inicia_trig
+Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow 1200mV 85C Model
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -2.269
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.269             -11.747 CLOCK 
+    Info (332119):    -0.554              -0.554 pr_state.inicia_delay 
+    Info (332119):    -0.330              -0.330 pr_state.espera_echo 
+    Info (332119):    -0.283              -0.283 pr_state.inicia_trig 
+Info (332146): Worst-case hold slack is -0.033
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -0.033              -0.033 pr_state.inicia_trig 
+    Info (332119):     0.031               0.000 pr_state.espera_echo 
+    Info (332119):     0.097               0.000 pr_state.inicia_delay 
+    Info (332119):     1.016               0.000 CLOCK 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -11.995 CLOCK 
+    Info (332119):     0.399               0.000 pr_state.inicia_trig 
+    Info (332119):     0.401               0.000 pr_state.inicia_delay 
+    Info (332119):     0.402               0.000 pr_state.espera_echo 
+Info: Analyzing Slow 1200mV 0C Model
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -1.947
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -1.947             -10.279 CLOCK 
+    Info (332119):    -0.503              -0.503 pr_state.inicia_delay 
+    Info (332119):    -0.307              -0.307 pr_state.espera_echo 
+    Info (332119):    -0.263              -0.263 pr_state.inicia_trig 
+Info (332146): Worst-case hold slack is -0.039
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -0.039              -0.039 pr_state.inicia_trig 
+    Info (332119):     0.015               0.000 pr_state.espera_echo 
+    Info (332119):     0.077               0.000 pr_state.inicia_delay 
+    Info (332119):     0.938               0.000 CLOCK 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -11.995 CLOCK 
+    Info (332119):     0.421               0.000 pr_state.espera_echo 
+    Info (332119):     0.421               0.000 pr_state.inicia_delay 
+    Info (332119):     0.426               0.000 pr_state.inicia_trig 
+Info: Analyzing Fast 1200mV 0C Model
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -0.809
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -0.809              -3.542 CLOCK 
+    Info (332119):     0.033               0.000 pr_state.inicia_delay 
+    Info (332119):     0.153               0.000 pr_state.espera_echo 
+    Info (332119):     0.170               0.000 pr_state.inicia_trig 
+Info (332146): Worst-case hold slack is -0.003
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -0.003              -0.003 pr_state.inicia_trig 
+    Info (332119):     0.033               0.000 pr_state.espera_echo 
+    Info (332119):     0.069               0.000 pr_state.inicia_delay 
+    Info (332119):     0.340               0.000 CLOCK 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -10.363 CLOCK 
+    Info (332119):     0.425               0.000 pr_state.inicia_trig 
+    Info (332119):     0.439               0.000 pr_state.espera_echo 
+    Info (332119):     0.439               0.000 pr_state.inicia_delay 
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 6 warnings
+    Info: Peak virtual memory: 681 megabytes
+    Info: Processing ended: Mon Apr 24 14:34:22 2017
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:05
+
+

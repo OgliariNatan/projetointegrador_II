@@ -1,0 +1,149 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'CLOCK_50'
+Slack : -4.733
+TNS   : -280.506
+
+Type  : Slow 1200mV 85C Model Setup 'sen_alt_7seg:BLOCO_03|sens_alt:BLOCO_01|CLOCK'
+Slack : -3.848
+TNS   : -102.663
+
+Type  : Slow 1200mV 85C Model Setup 'sensor_cor:BLOCO_COR|CLOCK_500k'
+Slack : -1.471
+TNS   : -9.670
+
+Type  : Slow 1200mV 85C Model Setup 'debouncer_pi:BLOCO_00|buttonPressed'
+Slack : -0.071
+TNS   : -0.071
+
+Type  : Slow 1200mV 85C Model Hold 'sen_alt_7seg:BLOCO_03|sens_alt:BLOCO_01|CLOCK'
+Slack : 0.385
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'CLOCK_50'
+Slack : 0.402
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'sensor_cor:BLOCO_COR|CLOCK_500k'
+Slack : 0.403
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'debouncer_pi:BLOCO_00|buttonPressed'
+Slack : 0.479
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -128.930
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'sen_alt_7seg:BLOCO_03|sens_alt:BLOCO_01|CLOCK'
+Slack : -1.285
+TNS   : -47.545
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'sensor_cor:BLOCO_COR|CLOCK_500k'
+Slack : -1.285
+TNS   : -11.565
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'debouncer_pi:BLOCO_00|buttonPressed'
+Slack : -1.285
+TNS   : -3.855
+
+Type  : Slow 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -4.252
+TNS   : -248.111
+
+Type  : Slow 1200mV 0C Model Setup 'sen_alt_7seg:BLOCO_03|sens_alt:BLOCO_01|CLOCK'
+Slack : -3.409
+TNS   : -90.686
+
+Type  : Slow 1200mV 0C Model Setup 'sensor_cor:BLOCO_COR|CLOCK_500k'
+Slack : -1.253
+TNS   : -8.013
+
+Type  : Slow 1200mV 0C Model Setup 'debouncer_pi:BLOCO_00|buttonPressed'
+Slack : 0.025
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'sen_alt_7seg:BLOCO_03|sens_alt:BLOCO_01|CLOCK'
+Slack : 0.339
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'sensor_cor:BLOCO_COR|CLOCK_500k'
+Slack : 0.354
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.355
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'debouncer_pi:BLOCO_00|buttonPressed'
+Slack : 0.432
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -128.930
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'sen_alt_7seg:BLOCO_03|sens_alt:BLOCO_01|CLOCK'
+Slack : -1.285
+TNS   : -47.545
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'sensor_cor:BLOCO_COR|CLOCK_500k'
+Slack : -1.285
+TNS   : -11.565
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'debouncer_pi:BLOCO_00|buttonPressed'
+Slack : -1.285
+TNS   : -3.855
+
+Type  : Fast 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -1.769
+TNS   : -81.883
+
+Type  : Fast 1200mV 0C Model Setup 'sen_alt_7seg:BLOCO_03|sens_alt:BLOCO_01|CLOCK'
+Slack : -1.358
+TNS   : -31.760
+
+Type  : Fast 1200mV 0C Model Setup 'sensor_cor:BLOCO_COR|CLOCK_500k'
+Slack : -0.163
+TNS   : -0.495
+
+Type  : Fast 1200mV 0C Model Setup 'debouncer_pi:BLOCO_00|buttonPressed'
+Slack : 0.497
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'sen_alt_7seg:BLOCO_03|sens_alt:BLOCO_01|CLOCK'
+Slack : 0.173
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.182
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'sensor_cor:BLOCO_COR|CLOCK_500k'
+Slack : 0.182
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'debouncer_pi:BLOCO_00|buttonPressed'
+Slack : 0.223
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -129.378
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'sen_alt_7seg:BLOCO_03|sens_alt:BLOCO_01|CLOCK'
+Slack : -1.000
+TNS   : -37.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'sensor_cor:BLOCO_COR|CLOCK_500k'
+Slack : -1.000
+TNS   : -9.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'debouncer_pi:BLOCO_00|buttonPressed'
+Slack : -1.000
+TNS   : -3.000
+
+------------------------------------------------------------

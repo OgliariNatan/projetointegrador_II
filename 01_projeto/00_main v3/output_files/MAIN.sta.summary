@@ -1,0 +1,113 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'CLOCK_50'
+Slack : -4.950
+TNS   : -114.000
+
+Type  : Slow 1200mV 85C Model Setup 'sen_alt_7seg:BLOCO_03|sens_alt:BLOCO_01|CLOCK'
+Slack : -3.642
+TNS   : -95.499
+
+Type  : Slow 1200mV 85C Model Setup 'debouncer_pi:BLOCO_00|buttonPressed'
+Slack : 0.098
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'sen_alt_7seg:BLOCO_03|sens_alt:BLOCO_01|CLOCK'
+Slack : 0.387
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'debouncer_pi:BLOCO_00|buttonPressed'
+Slack : 0.444
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'CLOCK_50'
+Slack : 0.640
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -49.260
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'sen_alt_7seg:BLOCO_03|sens_alt:BLOCO_01|CLOCK'
+Slack : -1.285
+TNS   : -47.545
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'debouncer_pi:BLOCO_00|buttonPressed'
+Slack : -1.285
+TNS   : -3.855
+
+Type  : Slow 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -4.445
+TNS   : -101.418
+
+Type  : Slow 1200mV 0C Model Setup 'sen_alt_7seg:BLOCO_03|sens_alt:BLOCO_01|CLOCK'
+Slack : -3.250
+TNS   : -84.635
+
+Type  : Slow 1200mV 0C Model Setup 'debouncer_pi:BLOCO_00|buttonPressed'
+Slack : 0.182
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'sen_alt_7seg:BLOCO_03|sens_alt:BLOCO_01|CLOCK'
+Slack : 0.339
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'debouncer_pi:BLOCO_00|buttonPressed'
+Slack : 0.400
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.585
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -49.260
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'sen_alt_7seg:BLOCO_03|sens_alt:BLOCO_01|CLOCK'
+Slack : -1.285
+TNS   : -47.545
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'debouncer_pi:BLOCO_00|buttonPressed'
+Slack : -1.285
+TNS   : -3.855
+
+Type  : Fast 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -1.859
+TNS   : -35.465
+
+Type  : Fast 1200mV 0C Model Setup 'sen_alt_7seg:BLOCO_03|sens_alt:BLOCO_01|CLOCK'
+Slack : -1.239
+TNS   : -27.366
+
+Type  : Fast 1200mV 0C Model Setup 'debouncer_pi:BLOCO_00|buttonPressed'
+Slack : 0.563
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'sen_alt_7seg:BLOCO_03|sens_alt:BLOCO_01|CLOCK'
+Slack : 0.174
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'debouncer_pi:BLOCO_00|buttonPressed'
+Slack : 0.201
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.291
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -49.478
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'sen_alt_7seg:BLOCO_03|sens_alt:BLOCO_01|CLOCK'
+Slack : -1.000
+TNS   : -37.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'debouncer_pi:BLOCO_00|buttonPressed'
+Slack : -1.000
+TNS   : -3.000
+
+------------------------------------------------------------

@@ -1,0 +1,26 @@
+|delay
+CLOCK => delay_value.CLK
+CLOCK => counter[0].CLK
+CLOCK => counter[1].CLK
+CLOCK => counter[2].CLK
+CLOCK => counter[3].CLK
+CLOCK => counter[4].CLK
+CLOCK => counter[5].CLK
+CLOCK => counter[6].CLK
+CLOCK => counter[7].CLK
+CLOCK => counter[8].CLK
+CLOCK => counter[9].CLK
+ENABLE => counter.OUTPUTSELECT
+ENABLE => counter.OUTPUTSELECT
+ENABLE => counter.OUTPUTSELECT
+ENABLE => counter.OUTPUTSELECT
+ENABLE => counter.OUTPUTSELECT
+ENABLE => counter.OUTPUTSELECT
+ENABLE => counter.OUTPUTSELECT
+ENABLE => counter.OUTPUTSELECT
+ENABLE => counter.OUTPUTSELECT
+ENABLE => counter.OUTPUTSELECT
+ENABLE => delay_value.OUTPUTSELECT
+DELAY <= delay_value.DB_MAX_OUTPUT_PORT_TYPE
+
+

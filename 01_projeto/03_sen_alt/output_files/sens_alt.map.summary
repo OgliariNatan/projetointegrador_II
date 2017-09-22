@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Tue Apr 25 17:44:42 2017
+Quartus Prime Version : 16.1.0 Build 196 10/24/2016 SJ Lite Edition
+Revision Name : sens_alt
+Top-level Entity Name : sens_alt
+Family : Cyclone IV E
+Total logic elements : 79
+    Total combinational functions : 79
+    Dedicated logic registers : 42
+Total registers : 42
+Total pins : 11
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

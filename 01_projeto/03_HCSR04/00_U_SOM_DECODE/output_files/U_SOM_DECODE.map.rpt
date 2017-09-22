@@ -1,0 +1,485 @@
+Analysis & Synthesis report for U_SOM_DECODE
+Tue Apr 25 01:56:50 2017
+Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |U_SOM_DECODE|u_som:BLOCO_01|fsm_u_som:FSM|pr_state
+  9. User-Specified and Inferred Latches
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: u_som:BLOCO_01
+ 13. Parameter Settings for User Entity Instance: u_som:BLOCO_01|divideclock:CLOCK_DIVIDE
+ 14. Parameter Settings for User Entity Instance: u_som:BLOCO_01|cont_pulse:CONTADOR
+ 15. Parameter Settings for User Entity Instance: u_som:BLOCO_01|delay:DECODE_DELAY
+ 16. Parameter Settings for User Entity Instance: u_som:BLOCO_01|trigger:DECODE_TRIGG
+ 17. Port Connectivity Checks: "u_som:BLOCO_01"
+ 18. Post-Synthesis Netlist Statistics for Top Partition
+ 19. Elapsed Time Per Partition
+ 20. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2016  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Intel and sold by Intel or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue Apr 25 01:56:50 2017       ;
+; Quartus Prime Version              ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
+; Revision Name                      ; U_SOM_DECODE                                ;
+; Top-level Entity Name              ; U_SOM_DECODE                                ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 105                                         ;
+;     Total combinational functions  ; 105                                         ;
+;     Dedicated logic registers      ; 44                                          ;
+; Total registers                    ; 44                                          ;
+; Total pins                         ; 18                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                                      ; U_SOM_DECODE       ; U_SOM_DECODE       ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; OpenCore Plus hardware evaluation                                          ; Enable             ; Enable             ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                         ; Library ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------------------+---------+
+; sub_ENTIDADES/u_som.vhd          ; yes             ; User VHDL File  ; D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/u_som.vhd         ;         ;
+; sub_ENTIDADES/trigger.vhd        ; yes             ; User VHDL File  ; D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/trigger.vhd       ;         ;
+; sub_ENTIDADES/fsm_u_som.vhd      ; yes             ; User VHDL File  ; D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/fsm_u_som.vhd     ;         ;
+; sub_ENTIDADES/divideclock.vhd    ; yes             ; User VHDL File  ; D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/divideclock.vhd   ;         ;
+; sub_ENTIDADES/delay.vhd          ; yes             ; User VHDL File  ; D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/delay.vhd         ;         ;
+; sub_ENTIDADES/decode7seg.vhd     ; yes             ; User VHDL File  ; D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/decode7seg.vhd    ;         ;
+; sub_ENTIDADES/cont_pulse.vhd     ; yes             ; User VHDL File  ; D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/cont_pulse.vhd    ;         ;
+; sub_ENTIDADES/classificador.vhd  ; yes             ; User VHDL File  ; D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/classificador.vhd ;         ;
+; U_SOM_DECODE.vhd                 ; yes             ; User VHDL File  ; D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/U_SOM_DECODE.vhd                ;         ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                                 ;
++---------------------------------------------+-----------------------------------------------+
+; Resource                                    ; Usage                                         ;
++---------------------------------------------+-----------------------------------------------+
+; Estimated Total logic elements              ; 105                                           ;
+;                                             ;                                               ;
+; Total combinational functions               ; 105                                           ;
+; Logic element usage by number of LUT inputs ;                                               ;
+;     -- 4 input functions                    ; 45                                            ;
+;     -- 3 input functions                    ; 15                                            ;
+;     -- <=2 input functions                  ; 45                                            ;
+;                                             ;                                               ;
+; Logic elements by mode                      ;                                               ;
+;     -- normal mode                          ; 69                                            ;
+;     -- arithmetic mode                      ; 36                                            ;
+;                                             ;                                               ;
+; Total registers                             ; 44                                            ;
+;     -- Dedicated logic registers            ; 44                                            ;
+;     -- I/O registers                        ; 0                                             ;
+;                                             ;                                               ;
+; I/O pins                                    ; 18                                            ;
+;                                             ;                                               ;
+; Embedded Multiplier 9-bit elements          ; 0                                             ;
+;                                             ;                                               ;
+; Maximum fan-out node                        ; u_som:BLOCO_01|divideclock:CLOCK_DIVIDE|clock ;
+; Maximum fan-out                             ; 33                                            ;
+; Total fan-out                               ; 493                                           ;
+; Average fan-out                             ; 2.66                                          ;
++---------------------------------------------+-----------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                ;
++----------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------+---------------+--------------+
+; Compilation Hierarchy Node       ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                   ; Entity Name   ; Library Name ;
++----------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------+---------------+--------------+
+; |U_SOM_DECODE                    ; 105 (0)             ; 44 (0)                    ; 0           ; 0            ; 0       ; 0         ; 18   ; 0            ; |U_SOM_DECODE                                         ; U_SOM_DECODE  ; work         ;
+;    |decode7seg:BLOCO_02|         ; 14 (14)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |U_SOM_DECODE|decode7seg:BLOCO_02                     ; decode7seg    ; work         ;
+;    |u_som:BLOCO_01|              ; 91 (0)              ; 44 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |U_SOM_DECODE|u_som:BLOCO_01                          ; u_som         ; work         ;
+;       |classificador:CLASSIFICA| ; 26 (26)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |U_SOM_DECODE|u_som:BLOCO_01|classificador:CLASSIFICA ; classificador ; work         ;
+;       |cont_pulse:CONTADOR|      ; 16 (16)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |U_SOM_DECODE|u_som:BLOCO_01|cont_pulse:CONTADOR      ; cont_pulse    ; work         ;
+;       |delay:DECODE_DELAY|       ; 19 (19)             ; 15 (15)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |U_SOM_DECODE|u_som:BLOCO_01|delay:DECODE_DELAY       ; delay         ; work         ;
+;       |divideclock:CLOCK_DIVIDE| ; 16 (16)             ; 12 (12)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |U_SOM_DECODE|u_som:BLOCO_01|divideclock:CLOCK_DIVIDE ; divideclock   ; work         ;
+;       |fsm_u_som:FSM|            ; 13 (13)             ; 7 (7)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |U_SOM_DECODE|u_som:BLOCO_01|fsm_u_som:FSM            ; fsm_u_som     ; work         ;
+;       |trigger:DECODE_TRIGG|     ; 1 (1)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |U_SOM_DECODE|u_som:BLOCO_01|trigger:DECODE_TRIGG     ; trigger       ; work         ;
++----------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------+---------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |U_SOM_DECODE|u_som:BLOCO_01|fsm_u_som:FSM|pr_state                                                                                                      ;
++-----------------------+----------------+-----------------------+--------------------+----------------------+--------------------+----------------------+-----------------+
+; Name                  ; pr_state.delay ; pr_state.inicia_delay ; pr_state.mede_echo ; pr_state.espera_echo ; pr_state.gera_trig ; pr_state.inicia_trig ; pr_state.inicio ;
++-----------------------+----------------+-----------------------+--------------------+----------------------+--------------------+----------------------+-----------------+
+; pr_state.inicio       ; 0              ; 0                     ; 0                  ; 0                    ; 0                  ; 0                    ; 0               ;
+; pr_state.inicia_trig  ; 0              ; 0                     ; 0                  ; 0                    ; 0                  ; 1                    ; 1               ;
+; pr_state.gera_trig    ; 0              ; 0                     ; 0                  ; 0                    ; 1                  ; 0                    ; 1               ;
+; pr_state.espera_echo  ; 0              ; 0                     ; 0                  ; 1                    ; 0                  ; 0                    ; 1               ;
+; pr_state.mede_echo    ; 0              ; 0                     ; 1                  ; 0                    ; 0                  ; 0                    ; 1               ;
+; pr_state.inicia_delay ; 0              ; 1                     ; 0                  ; 0                    ; 0                  ; 0                    ; 1               ;
+; pr_state.delay        ; 1              ; 0                     ; 0                  ; 0                    ; 0                  ; 0                    ; 1               ;
++-----------------------+----------------+-----------------------+--------------------+----------------------+--------------------+----------------------+-----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                ;
++----------------------------------------------------+--------------------------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal                  ; Free of Timing Hazards ;
++----------------------------------------------------+--------------------------------------+------------------------+
+; u_som:BLOCO_01|fsm_u_som:FSM|S_EN_TRIG             ; u_som:BLOCO_01|fsm_u_som:FSM|WideOr0 ; yes                    ;
+; u_som:BLOCO_01|fsm_u_som:FSM|S_RST_ECHO            ; u_som:BLOCO_01|fsm_u_som:FSM|WideOr1 ; yes                    ;
+; u_som:BLOCO_01|fsm_u_som:FSM|S_EN_DELAY            ; u_som:BLOCO_01|fsm_u_som:FSM|WideOr2 ; yes                    ;
+; Number of user-specified and inferred latches = 3  ;                                      ;                        ;
++----------------------------------------------------+--------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 44    ;
+; Number of registers using Synchronous Clear  ; 25    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 15    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 21    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
+; 3:1                ; 14 bits   ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |U_SOM_DECODE|u_som:BLOCO_01|delay:DECODE_DELAY|counter[10] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: u_som:BLOCO_01 ;
++----------------+-------+------------------------------------+
+; Parameter Name ; Value ; Type                               ;
++----------------+-------+------------------------------------+
+; n              ; 8     ; Signed Integer                     ;
++----------------+-------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: u_som:BLOCO_01|divideclock:CLOCK_DIVIDE ;
++----------------+----------+----------------------------------------------------------+
+; Parameter Name ; Value    ; Type                                                     ;
++----------------+----------+----------------------------------------------------------+
+; freqin         ; 50000000 ; Signed Integer                                           ;
+; freqout        ; 17000    ; Signed Integer                                           ;
++----------------+----------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: u_som:BLOCO_01|cont_pulse:CONTADOR ;
++----------------+-------+--------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                   ;
++----------------+-------+--------------------------------------------------------+
+; n              ; 8     ; Signed Integer                                         ;
++----------------+-------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: u_som:BLOCO_01|delay:DECODE_DELAY ;
++----------------+-------+-------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                  ;
++----------------+-------+-------------------------------------------------------+
+; delay_width    ; 8500  ; Signed Integer                                        ;
++----------------+-------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: u_som:BLOCO_01|trigger:DECODE_TRIGG ;
++----------------+-------+---------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                    ;
++----------------+-------+---------------------------------------------------------+
+; pulse_width    ; 1     ; Signed Integer                                          ;
++----------------+-------+---------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "u_som:BLOCO_01"                                                                          ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; bcd[9..8] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 18                          ;
+; cycloneiii_ff         ; 44                          ;
+;     CLR               ; 8                           ;
+;     ENA CLR           ; 7                           ;
+;     ENA SCLR          ; 14                          ;
+;     SCLR              ; 11                          ;
+;     plain             ; 4                           ;
+; cycloneiii_lcell_comb ; 107                         ;
+;     arith             ; 36                          ;
+;         2 data inputs ; 35                          ;
+;         3 data inputs ; 1                           ;
+;     normal            ; 71                          ;
+;         1 data inputs ; 6                           ;
+;         2 data inputs ; 6                           ;
+;         3 data inputs ; 14                          ;
+;         4 data inputs ; 45                          ;
+;                       ;                             ;
+; Max LUT depth         ; 9.70                        ;
+; Average LUT depth     ; 4.17                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
+    Info: Processing started: Tue Apr 25 01:56:25 2017
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off U_SOM_DECODE -c U_SOM_DECODE
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file sub_entidades/u_som.vhd
+    Info (12022): Found design unit 1: u_som-HARDWARE File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/u_som.vhd Line: 34
+    Info (12023): Found entity 1: u_som File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/u_som.vhd Line: 20
+Info (12021): Found 2 design units, including 1 entities, in source file sub_entidades/trigger.vhd
+    Info (12022): Found design unit 1: trigger-HARDWARE File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/trigger.vhd Line: 28
+    Info (12023): Found entity 1: trigger File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/trigger.vhd Line: 17
+Info (12021): Found 2 design units, including 1 entities, in source file sub_entidades/fsm_u_som.vhd
+    Info (12022): Found design unit 1: fsm_u_som-HARDWARE File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/fsm_u_som.vhd Line: 31
+    Info (12023): Found entity 1: fsm_u_som File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/fsm_u_som.vhd Line: 19
+Info (12021): Found 2 design units, including 1 entities, in source file sub_entidades/divideclock.vhd
+    Info (12022): Found design unit 1: divideclock-HARDWARE File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/divideclock.vhd Line: 31
+    Info (12023): Found entity 1: divideclock File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/divideclock.vhd Line: 21
+Info (12021): Found 2 design units, including 1 entities, in source file sub_entidades/delay.vhd
+    Info (12022): Found design unit 1: delay-HARDWARE File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/delay.vhd Line: 33
+    Info (12023): Found entity 1: delay File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/delay.vhd Line: 19
+Info (12021): Found 2 design units, including 1 entities, in source file sub_entidades/decode7seg.vhd
+    Info (12022): Found design unit 1: decode7seg-HARDWARE File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/decode7seg.vhd Line: 28
+    Info (12023): Found entity 1: decode7seg File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/decode7seg.vhd Line: 17
+Info (12021): Found 2 design units, including 1 entities, in source file sub_entidades/cont_pulse.vhd
+    Info (12022): Found design unit 1: cont_pulse-HARDWARE File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/cont_pulse.vhd Line: 32
+    Info (12023): Found entity 1: cont_pulse File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/cont_pulse.vhd Line: 20
+Info (12021): Found 2 design units, including 1 entities, in source file sub_entidades/classificador.vhd
+    Info (12022): Found design unit 1: classificador-HARDWARE File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/classificador.vhd Line: 34
+    Info (12023): Found entity 1: classificador File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/classificador.vhd Line: 24
+Info (12021): Found 2 design units, including 1 entities, in source file u_som_decode.vhd
+    Info (12022): Found design unit 1: U_SOM_DECODE-HARDWARE File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/U_SOM_DECODE.vhd Line: 30
+    Info (12023): Found entity 1: U_SOM_DECODE File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/U_SOM_DECODE.vhd Line: 18
+Info (12127): Elaborating entity "U_SOM_DECODE" for the top level hierarchy
+Info (12128): Elaborating entity "u_som" for hierarchy "u_som:BLOCO_01" File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/U_SOM_DECODE.vhd Line: 41
+Info (12128): Elaborating entity "divideclock" for hierarchy "u_som:BLOCO_01|divideclock:CLOCK_DIVIDE" File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/u_som.vhd Line: 48
+Info (12128): Elaborating entity "fsm_u_som" for hierarchy "u_som:BLOCO_01|fsm_u_som:FSM" File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/u_som.vhd Line: 52
+Warning (10492): VHDL Process Statement warning at fsm_u_som.vhd(63): signal "RST" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/fsm_u_som.vhd Line: 63
+Warning (10492): VHDL Process Statement warning at fsm_u_som.vhd(65): signal "RST" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/fsm_u_som.vhd Line: 65
+Warning (10492): VHDL Process Statement warning at fsm_u_som.vhd(74): signal "E_SINAL_TRIG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/fsm_u_som.vhd Line: 74
+Warning (10492): VHDL Process Statement warning at fsm_u_som.vhd(76): signal "E_SINAL_TRIG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/fsm_u_som.vhd Line: 76
+Warning (10492): VHDL Process Statement warning at fsm_u_som.vhd(84): signal "E_SINAL_TRIG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/fsm_u_som.vhd Line: 84
+Warning (10492): VHDL Process Statement warning at fsm_u_som.vhd(86): signal "E_SINAL_TRIG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/fsm_u_som.vhd Line: 86
+Warning (10492): VHDL Process Statement warning at fsm_u_som.vhd(95): signal "E_SINAL_ECHO" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/fsm_u_som.vhd Line: 95
+Warning (10492): VHDL Process Statement warning at fsm_u_som.vhd(97): signal "E_SINAL_ECHO" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/fsm_u_som.vhd Line: 97
+Warning (10492): VHDL Process Statement warning at fsm_u_som.vhd(106): signal "E_SINAL_ECHO" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/fsm_u_som.vhd Line: 106
+Warning (10492): VHDL Process Statement warning at fsm_u_som.vhd(108): signal "E_SINAL_ECHO" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/fsm_u_som.vhd Line: 108
+Warning (10492): VHDL Process Statement warning at fsm_u_som.vhd(117): signal "E_SINAL_DELAY" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/fsm_u_som.vhd Line: 117
+Warning (10492): VHDL Process Statement warning at fsm_u_som.vhd(119): signal "E_SINAL_DELAY" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/fsm_u_som.vhd Line: 119
+Warning (10492): VHDL Process Statement warning at fsm_u_som.vhd(126): signal "E_SINAL_DELAY" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/fsm_u_som.vhd Line: 126
+Warning (10492): VHDL Process Statement warning at fsm_u_som.vhd(128): signal "E_SINAL_DELAY" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/fsm_u_som.vhd Line: 128
+Warning (10631): VHDL Process Statement warning at fsm_u_som.vhd(53): inferring latch(es) for signal or variable "S_EN_TRIG", which holds its previous value in one or more paths through the process File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/fsm_u_som.vhd Line: 53
+Warning (10631): VHDL Process Statement warning at fsm_u_som.vhd(53): inferring latch(es) for signal or variable "S_RST_ECHO", which holds its previous value in one or more paths through the process File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/fsm_u_som.vhd Line: 53
+Warning (10631): VHDL Process Statement warning at fsm_u_som.vhd(53): inferring latch(es) for signal or variable "S_EN_DELAY", which holds its previous value in one or more paths through the process File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/fsm_u_som.vhd Line: 53
+Warning (10631): VHDL Process Statement warning at fsm_u_som.vhd(53): inferring latch(es) for signal or variable "nx_state", which holds its previous value in one or more paths through the process File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/fsm_u_som.vhd Line: 53
+Info (10041): Inferred latch for "nx_state.delay" at fsm_u_som.vhd(53) File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/fsm_u_som.vhd Line: 53
+Info (10041): Inferred latch for "nx_state.inicia_delay" at fsm_u_som.vhd(53) File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/fsm_u_som.vhd Line: 53
+Info (10041): Inferred latch for "nx_state.mede_echo" at fsm_u_som.vhd(53) File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/fsm_u_som.vhd Line: 53
+Info (10041): Inferred latch for "nx_state.espera_echo" at fsm_u_som.vhd(53) File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/fsm_u_som.vhd Line: 53
+Info (10041): Inferred latch for "nx_state.gera_trig" at fsm_u_som.vhd(53) File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/fsm_u_som.vhd Line: 53
+Info (10041): Inferred latch for "nx_state.inicia_trig" at fsm_u_som.vhd(53) File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/fsm_u_som.vhd Line: 53
+Info (10041): Inferred latch for "nx_state.inicio" at fsm_u_som.vhd(53) File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/fsm_u_som.vhd Line: 53
+Info (10041): Inferred latch for "S_EN_DELAY" at fsm_u_som.vhd(53) File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/fsm_u_som.vhd Line: 53
+Info (10041): Inferred latch for "S_RST_ECHO" at fsm_u_som.vhd(53) File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/fsm_u_som.vhd Line: 53
+Info (10041): Inferred latch for "S_EN_TRIG" at fsm_u_som.vhd(53) File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/fsm_u_som.vhd Line: 53
+Info (12128): Elaborating entity "cont_pulse" for hierarchy "u_som:BLOCO_01|cont_pulse:CONTADOR" File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/u_som.vhd Line: 56
+Warning (10492): VHDL Process Statement warning at cont_pulse.vhd(40): signal "EN" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/cont_pulse.vhd Line: 40
+Info (12128): Elaborating entity "delay" for hierarchy "u_som:BLOCO_01|delay:DECODE_DELAY" File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/u_som.vhd Line: 61
+Info (12128): Elaborating entity "trigger" for hierarchy "u_som:BLOCO_01|trigger:DECODE_TRIGG" File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/u_som.vhd Line: 66
+Info (12128): Elaborating entity "classificador" for hierarchy "u_som:BLOCO_01|classificador:CLASSIFICA" File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/u_som.vhd Line: 71
+Info (12128): Elaborating entity "decode7seg" for hierarchy "decode7seg:BLOCO_02" File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/U_SOM_DECODE.vhd Line: 44
+Warning (13012): Latch u_som:BLOCO_01|fsm_u_som:FSM|S_EN_TRIG has unsafe behavior File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/fsm_u_som.vhd Line: 24
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal u_som:BLOCO_01|fsm_u_som:FSM|pr_state.inicia_trig File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/fsm_u_som.vhd Line: 37
+Warning (13012): Latch u_som:BLOCO_01|fsm_u_som:FSM|S_RST_ECHO has unsafe behavior File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/fsm_u_som.vhd Line: 24
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal u_som:BLOCO_01|fsm_u_som:FSM|pr_state.espera_echo File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/fsm_u_som.vhd Line: 37
+Warning (13012): Latch u_som:BLOCO_01|fsm_u_som:FSM|S_EN_DELAY has unsafe behavior File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/fsm_u_som.vhd Line: 24
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal u_som:BLOCO_01|fsm_u_som:FSM|pr_state.inicia_delay File: D:/Users/dinho/Dropbox/ifsc/PI2/01_projeto/03_HCSR04/00_U_SOM_DECODE/sub_ENTIDADES/fsm_u_som.vhd Line: 37
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 124 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
+    Info (21059): Implemented 15 output pins
+    Info (21061): Implemented 106 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 26 warnings
+    Info: Peak virtual memory: 645 megabytes
+    Info: Processing ended: Tue Apr 25 01:56:50 2017
+    Info: Elapsed time: 00:00:25
+    Info: Total CPU time (on all processors): 00:00:46
+
+

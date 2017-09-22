@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Tue Apr 25 18:26:05 2017
+Quartus Prime Version : 16.1.0 Build 196 10/24/2016 SJ Lite Edition
+Revision Name : sen_alt_7seg
+Top-level Entity Name : sen_alt_7seg
+Family : Cyclone IV E
+Total logic elements : 121
+    Total combinational functions : 121
+    Dedicated logic registers : 42
+Total registers : 42
+Total pins : 17
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

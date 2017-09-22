@@ -1,0 +1,41 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "S_EN_TRIG",
+					"strict" : false
+				},
+				{
+					"name" : "S_RST_ECHO",
+					"strict" : false
+				},
+				{
+					"name" : "S_EN_DELAY",
+					"strict" : false
+				},
+				{
+					"name" : "E_SINAL_TRIG",
+					"strict" : false
+				},
+				{
+					"name" : "CLOCK",
+					"strict" : false
+				},
+				{
+					"name" : "RST",
+					"strict" : false
+				},
+				{
+					"name" : "E_SINAL_DELAY",
+					"strict" : false
+				},
+				{
+					"name" : "E_SINAL_ECHO",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

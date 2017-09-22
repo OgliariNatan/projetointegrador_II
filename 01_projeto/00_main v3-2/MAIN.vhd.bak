@@ -1,0 +1,31 @@
+--INSTITUTO FEDERAL DE SANTA CATARINA
+
+--		PROJETO INTEGRADOR II (2017)
+
+-- 	ENTIDADE MAIN							=>interliga as demais entidades e as conecta ao kit fpga
+--														
+-- 	AUTORES: 	JEFERSON	PEDROSO
+--						TARCIS	BECHER
+
+--		MARÇO DE 2017
+
+
+
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+
+ENTITY MENU IS PORT
+
+
+END MENU;
+
+
+
+
+ARCHITECTURE HARDWARE OF MENU IS 
+
+	BEGIN
+	
+	
+	
+END HARDWARE;

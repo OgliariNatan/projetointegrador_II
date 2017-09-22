@@ -1,0 +1,61 @@
+
+--INSTITUTO FEDERAL DE SANTA CATARINA
+
+--		PROJETO INTEGRADOR II (2017)
+
+-- 	DIVISOR DE CLOCK PARA SENSOR HCSR04
+--														
+-- 	AUTORES: 	JEFERSON	PEDROSO
+--						TARCIS	BECHER
+
+--		ABRIL DE 2017
+
+
+
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+
+
+-------------------
+-------------------
+
+
+ENTITY divideclock IS
+	GENERIC(	freqIn	: INTEGER := 50000000;
+				freqOut	: INTEGER := 17000 );
+	PORT	 (CLOCKIN	: IN 	BIT;
+			  CLOCKOUT	: OUT STD_LOGIC );
+END divideclock;
+
+
+
+---------------------------------------
+---------------------------------------
+
+
+ARCHITECTURE HARDWARE OF divideclock IS
+
+	SIGNAL   clock			: STD_LOGIC := '0';
+	CONSTANT COUNT_MAX	: INTEGER 	:= ((freqIn / freqOut) / 2) - 1;
+
+	BEGIN
+	
+	PROCESS(CLOCKIN)
+	
+		VARIABLE counter : INTEGER RANGE 0 TO COUNT_MAX := 0;
+	
+	BEGIN
+	
+		IF (CLOCKIN'EVENT AND CLOCKIN = '1') THEN
+		
+			IF counter < COUNT_MAX THEN
+				counter := counter + 1;
+			ELSE
+				counter := 0;
+				clock <= NOT clock;
+			
+			END IF;
+		END IF;
+	END PROCESS;
+	CLOCKOUT <= clock;
+END;
