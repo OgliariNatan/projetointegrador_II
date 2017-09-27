@@ -22,7 +22,6 @@ USE ieee.std_logic_unsigned.all;
 ENTITY D_7SEG IS
 	--Defenições genericas
 	GENERIC(	freqIn		: INTEGER := 50000000;  --Frequencia da placa
-				delay			: INTEGER := 100;		   --Atraso do ruido de botão
 				defaultState : STD_LOGIC := '0'; 	--Define dois estados "1" "0"
 				freqOut 		: INTEGER :=1 				--Saida do divisor de clock
 	);
@@ -58,12 +57,7 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 	SIGNAL clk_sd	  		  	   : STD_LOGIC :='0';	-- Clock para sensor de distancia
 	
 	--seleção de interface
-	SIGNAL selecao 		: INTEGER RANGE 0 TO 2; --Numero de seleção
-	
-	--Antitrepidação
-	SIGNAL buttonAux 		: STD_LOGIC :='0';
-	SIGNAL buttonPressed : STD_LOGIC :='0';
-	CONSTANT cont_max		: INTEGER   := ((freqIn/1000)*delay)-1;
+	SIGNAL selecao 		: INTEGER RANGE 0 TO 1; --Numero de seleção
 	
 	--DIVISOR DE CLOCK
 	SIGNAL clock			 : STD_LOGIC :='0';
@@ -100,30 +94,13 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 	END PROCESS;
 	CLOCKOUT <= clock;
 		
-	--Antitrepidação *codigo do professor*
-	buttonAux <= KEY(0) WHEN defaultState = '0' ELSE (NOT KEY(0));
-	PROCESS(CLOCK_50)
-			VARIABLE counter : INTEGER RANGE 0 TO CONT_MAX := 0;
-			
-		BEGIN
-			IF RISING_EDGE(CLOCK_50) THEN
-				IF buttonPressed = '0' AND buttonAux = '1' THEN
-					buttonPressed <= '1';
-					counter := 0;
-				ELSIF buttonPressed = '1' AND buttonAux = '1' THEN
-					counter := 0;
-				ELSIF buttonPressed = '1' AND buttonAux = '0' THEN
-					IF counter < CONT_MAX THEN
-						counter := counter + 1;
-					ELSE
-						counter := 0;
-						buttonPressed <= '0';
-					END IF;
-				END IF;
-			END IF;
-		END PROCESS;
-		buttonOut <= buttonPressed WHEN defaultState = '0' ELSE (NOT buttonPressed);
-		-- Fim Antitrepidação
+BOTAO_MENU: WORK.debouncer_pi
+
+	PORT MAP(
+		CLOCK_50,
+		KEY(0),
+		buttonOut
+		);
 	
 		-- divisor de frequencia
 		PROCESS (clock_50)
