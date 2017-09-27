@@ -3,111 +3,75 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'clock_50'
-Slack : -4.078
-TNS   : -154.090
+Slack : -4.026
+TNS   : -157.368
 
-Type  : Slow 1200mV 85C Model Setup 'selecao[0]'
-Slack : -0.940
-TNS   : -1.858
-
-Type  : Slow 1200mV 85C Model Setup 'buttonPressed'
-Slack : -0.788
-TNS   : -1.478
-
-Type  : Slow 1200mV 85C Model Hold 'selecao[0]'
-Slack : -0.026
-TNS   : -0.029
+Type  : Slow 1200mV 85C Model Setup 'debouncer_pi:BOTAO_MENU|buttonPressed'
+Slack : 0.210
+TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'clock_50'
 Slack : 0.402
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Hold 'buttonPressed'
-Slack : 0.531
+Type  : Slow 1200mV 85C Model Hold 'debouncer_pi:BOTAO_MENU|buttonPressed'
+Slack : 0.445
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clock_50'
 Slack : -3.000
 TNS   : -67.250
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'buttonPressed'
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'debouncer_pi:BOTAO_MENU|buttonPressed'
 Slack : -1.285
-TNS   : -2.570
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'selecao[0]'
-Slack : 0.421
-TNS   : 0.000
+TNS   : -1.285
 
 Type  : Slow 1200mV 0C Model Setup 'clock_50'
-Slack : -3.682
-TNS   : -136.972
+Slack : -3.649
+TNS   : -139.743
 
-Type  : Slow 1200mV 0C Model Setup 'selecao[0]'
-Slack : -1.072
-TNS   : -2.121
-
-Type  : Slow 1200mV 0C Model Setup 'buttonPressed'
-Slack : -0.653
-TNS   : -1.203
-
-Type  : Slow 1200mV 0C Model Hold 'selecao[0]'
-Slack : 0.012
+Type  : Slow 1200mV 0C Model Setup 'debouncer_pi:BOTAO_MENU|buttonPressed'
+Slack : 0.297
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'clock_50'
-Slack : 0.354
+Slack : 0.353
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Hold 'buttonPressed'
-Slack : 0.465
+Type  : Slow 1200mV 0C Model Hold 'debouncer_pi:BOTAO_MENU|buttonPressed'
+Slack : 0.398
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clock_50'
 Slack : -3.000
 TNS   : -67.250
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'buttonPressed'
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'debouncer_pi:BOTAO_MENU|buttonPressed'
 Slack : -1.285
-TNS   : -2.570
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'selecao[0]'
-Slack : 0.318
-TNS   : 0.000
+TNS   : -1.285
 
 Type  : Fast 1200mV 0C Model Setup 'clock_50'
-Slack : -1.541
-TNS   : -46.613
+Slack : -1.498
+TNS   : -48.388
 
-Type  : Fast 1200mV 0C Model Setup 'buttonPressed'
-Slack : -0.082
-TNS   : -0.154
-
-Type  : Fast 1200mV 0C Model Setup 'selecao[0]'
-Slack : 0.131
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Hold 'selecao[0]'
-Slack : 0.010
+Type  : Fast 1200mV 0C Model Setup 'debouncer_pi:BOTAO_MENU|buttonPressed'
+Slack : 0.626
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'clock_50'
 Slack : 0.181
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Hold 'buttonPressed'
-Slack : 0.230
+Type  : Fast 1200mV 0C Model Hold 'debouncer_pi:BOTAO_MENU|buttonPressed'
+Slack : 0.208
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clock_50'
 Slack : -3.000
-TNS   : -67.604
+TNS   : -67.774
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'buttonPressed'
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'debouncer_pi:BOTAO_MENU|buttonPressed'
 Slack : -1.000
-TNS   : -2.000
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'selecao[0]'
-Slack : 0.271
-TNS   : 0.000
+TNS   : -1.000
 
 ------------------------------------------------------------
