@@ -1,0 +1,18 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+
+ENTITY hc_sr04 IS 
+	PORT
+	(
+	
+	);
+END hc_sr04;
+
+ARCHITECTURE behavior OF ______ IS
+
+	BEGIN
+	PROCESS()
+
+	END PROCESS;
+	
+END;
