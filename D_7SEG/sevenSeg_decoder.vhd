@@ -1,0 +1,35 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+
+ENTITY sevenSeg_decoder IS 
+	PORT
+	(
+		BCD_DATA:		IN INTEGER;
+		SEG7_DATA:		BUFFER STD_LOGIC_VECTOR (6 DOWNTO 0)
+	);
+END sevenSeg_decoder;
+
+ARCHITECTURE behavior OF sevenSeg_decoder IS
+
+	BEGIN
+	PROCESS(BCD_DATA)
+		
+		BEGIN
+		
+		CASE (BCD_DATA) IS
+			WHEN 0 => SEG7_DATA <= "0000001";
+			WHEN 1 => SEG7_DATA <= "1001111";
+			WHEN 2 => SEG7_DATA <= "0010010";
+			WHEN 3 => SEG7_DATA <= "0000110";
+			WHEN 4 => SEG7_DATA <= "1001100";
+			WHEN 5 => SEG7_DATA <= "0100100";
+			WHEN 6 => SEG7_DATA <= "0100000";
+			WHEN 7 => SEG7_DATA <= "0001111";
+			WHEN 8 => SEG7_DATA <= "0000000";
+			WHEN 9 => SEG7_DATA <= "0000100";
+			WHEN OTHERS => SEG7_DATA <= "1111111";			-- Outras opções é nula
+		END CASE;
+		
+	END PROCESS;
+	
+END;

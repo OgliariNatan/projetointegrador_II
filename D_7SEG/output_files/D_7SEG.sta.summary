@@ -3,72 +3,72 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'clock_50'
-Slack : -4.026
-TNS   : -157.368
+Slack : -4.160
+TNS   : -75.213
 
 Type  : Slow 1200mV 85C Model Setup 'debouncer_pi:BOTAO_MENU|buttonPressed'
 Slack : 0.210
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Hold 'clock_50'
-Slack : 0.402
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'debouncer_pi:BOTAO_MENU|buttonPressed'
 Slack : 0.445
 TNS   : 0.000
 
+Type  : Slow 1200mV 85C Model Hold 'clock_50'
+Slack : 0.642
+TNS   : 0.000
+
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clock_50'
 Slack : -3.000
-TNS   : -67.250
+TNS   : -33.840
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'debouncer_pi:BOTAO_MENU|buttonPressed'
 Slack : -1.285
 TNS   : -1.285
 
 Type  : Slow 1200mV 0C Model Setup 'clock_50'
-Slack : -3.649
-TNS   : -139.743
+Slack : -3.787
+TNS   : -67.129
 
 Type  : Slow 1200mV 0C Model Setup 'debouncer_pi:BOTAO_MENU|buttonPressed'
 Slack : 0.297
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Hold 'clock_50'
-Slack : 0.353
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'debouncer_pi:BOTAO_MENU|buttonPressed'
 Slack : 0.398
 TNS   : 0.000
 
+Type  : Slow 1200mV 0C Model Hold 'clock_50'
+Slack : 0.589
+TNS   : 0.000
+
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clock_50'
 Slack : -3.000
-TNS   : -67.250
+TNS   : -33.840
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'debouncer_pi:BOTAO_MENU|buttonPressed'
 Slack : -1.285
 TNS   : -1.285
 
 Type  : Fast 1200mV 0C Model Setup 'clock_50'
-Slack : -1.498
-TNS   : -48.388
+Slack : -1.557
+TNS   : -23.615
 
 Type  : Fast 1200mV 0C Model Setup 'debouncer_pi:BOTAO_MENU|buttonPressed'
 Slack : 0.626
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Hold 'clock_50'
-Slack : 0.181
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'debouncer_pi:BOTAO_MENU|buttonPressed'
 Slack : 0.208
 TNS   : 0.000
 
+Type  : Fast 1200mV 0C Model Hold 'clock_50'
+Slack : 0.295
+TNS   : 0.000
+
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clock_50'
 Slack : -3.000
-TNS   : -67.774
+TNS   : -34.028
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'debouncer_pi:BOTAO_MENU|buttonPressed'
 Slack : -1.000

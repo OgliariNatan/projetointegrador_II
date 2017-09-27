@@ -4,11 +4,11 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "CLOCKOUT",
+					"name" : "HEX0[6]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX0[6]",
+					"name" : "HEX0[4]",
 					"strict" : false
 				},
 				{
@@ -16,11 +16,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "HEX0[1]",
+					"name" : "HEX1[3]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX1[0]",
+					"name" : "HEX1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX2[4]",
 					"strict" : false
 				},
 				{
@@ -32,11 +36,19 @@
 					"strict" : false
 				},
 				{
-					"name" : "HEX2[0]",
+					"name" : "HEX3[5]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX3[6]",
+					"name" : "HEX3[4]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX3[3]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX3[2]",
 					"strict" : false
 				},
 				{
@@ -88,11 +100,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "clock_50",
+					"name" : "KEY[0]",
 					"strict" : false
 				},
 				{
-					"name" : "KEY[0]",
+					"name" : "clock_50",
 					"strict" : false
 				}
 			]

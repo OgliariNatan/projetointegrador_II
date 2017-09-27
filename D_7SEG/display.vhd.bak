@@ -1,0 +1,100 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+
+ENTITY DISPLAY IS 
+	PORT
+	(
+		COR			: IN STD_LOGIC;
+		ALTURA		: IN INTEGER;
+		BOTAO		: IN STD_LOGIC;
+		
+		DISPLAY0	: OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
+		DISPLAY1	: OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
+		DISPLAY2	: OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
+		DISPLAY3	: OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
+		DISPLAY4	: OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
+		DISPLAY5	: OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
+		DISPLAY6	: OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
+		DISPLAY7	: OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
+	);
+	
+ARCHITECTURE behavior OF DISPLAY IS
+
+	SIGNAL selecao 		: INTEGER RANGE 0 TO 1; --Numero de seleção : 0 é altura e 1 é cor
+	
+	BEGIN
+	PROCESS (COR, ALTURA, BOTAO)
+		
+		VARIABLE size		: INTEGER;
+		VARIABLE unit_size	: INTEGER;
+		VARIABLE ten_size	: INTEGER;
+		
+		IF (selecao = 0) THEN
+			tamanho <= ALTURA;
+			
+			ten_size  := tamanho/10;    	-- atribui ao tam_1 o digito mais significativo
+			unit_size :=  tamanho - (ten_size*10);
+ 
+		-- Fim decodificaçao BCD
+										
+			HEX7 <= "0001000"; -- A
+			HEX6 <= "1110001"; -- L
+			HEX5 <= "1110000"; -- T
+			HEX4 <= "1111111"; -- 
+			
+			DECODE_UNIT: WORK.7seg_decoder
+			
+			PORT MAP(
+			unit_size;
+			HEX2
+			);
+			
+			DECODE_TEN: WORK.7seg_decoder
+			
+			PORT MAP(
+			unit_size;
+			HEX3
+			);
+			
+			HEX5 <= "1101010"; -- m
+			HEX4 <= "1101010"; -- m
+		END IF;
+		
+		ELSE IF (selecao = 1) THEN
+	
+			IF(COR = 0) THEN
+				HEX7 <= "0110001"; -- C
+				HEX6 <= "0000001"; -- O  
+				HEX5 <= "1111010"; -- R 
+				HEX4 <= "1111111"; -- -
+				HEX3 <= "1111010"; -- R 
+				HEX2 <= "0110000"; -- E  
+				HEX1 <= "1000010"; -- D 
+				HEX0 <= "1111111"; -- -
+			END IF;
+			
+			ELSE IF(COR = 1) THEN
+				HEX7 <= "0110001"; -- C
+				HEX6 <= "0000001"; -- O
+				HEX5 <= "1111010"; -- R 
+				HEX4 <= "1111111"; -- -
+				HEX3 <= "1100000"; -- B 
+				HEX2 <= "1110001"; -- L 
+				HEX1 <= "1000001"; -- U 
+				HEX0 <= "0110000"; -- E
+			END IF
+			
+			ELSE
+				HEX7 <= "0110001"; -- C
+				HEX6 <= "0000001"; -- O
+				HEX5 <= "1111010"; -- R 
+				HEX4 <= "1111111"; -- -
+				HEX3 <= "0110000"; -- E 
+				HEX2 <= "1111010"; -- R 
+				HEX1 <= "1111010"; -- R 
+				HEX0 <= "0000001"; -- O
+			END IF;
+		BEGIN
+	END PROCESS;
+	
+END behavior;
