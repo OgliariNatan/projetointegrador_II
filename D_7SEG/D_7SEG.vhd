@@ -58,7 +58,7 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 	SIGNAL clk_sd	  		  	   : STD_LOGIC :='0';	-- Clock para sensor de distancia
 	
 	--seleção de interface
-	SIGNAL selecao 		: INTEGER RANGE 0 TO 2; --Numero de seleção
+	SIGNAL selecao 		: INTEGER RANGE 0 TO 1; --Numero de seleção 0 TO 1
 	
 	--Antitrepidação
 	SIGNAL buttonAux 		: STD_LOGIC :='0';
@@ -133,7 +133,13 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 				count    <= count + 1;
 			END IF;
 			
-			--APAGAR INICIO
+		END PROCESS;
+		-- Fim divisor de frequncia
+		
+	PROCESS (buttonOut)
+	BEGIN
+	
+	--APAGAR INICIO
 			IF (SW(1) = '1') THEN
 			LEDR(9) <= '1';
 			LEDR(10) <= '0';
@@ -149,12 +155,9 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 
 			END IF;		
 			--APAGAR FIM
-			
-		END PROCESS;
-		-- Fim divisor de frequncia
+	
+	END PROCESS;
 		
-		
-
 	
 	
 		-- Seleção da interface
@@ -162,9 +165,9 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 	BEGIN
 	
 	
-	
+	   --selecao <= 0; --APAGAR
 		IF (buttonOut'EVENT AND buttonOut='1') THEN
-			IF (selecao = 2) THEN
+			IF (selecao = 1) THEN --IF (selecao = 2) THEN
 				selecao <= 0;
 			ELSE
 				selecao <= selecao + 1;
@@ -253,7 +256,7 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 	 
 	BEGIN -- Inicia o codigo
 				
-		IF (selecao = 2) THEN
+		IF (selecao = 1) THEN
 
 			-- Decodificaçao BCD
 				tamanho_1 := t_caixa;
@@ -332,7 +335,7 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 		-- Fim altura
 				
 		-- Cor
-			ELSIF (selecao = 1) THEN
+			ELSIF (selecao = 0) THEN
 				--COR RED
 				IF (cor  <= 1) THEN 
 					HEX7 <= "0110001"; -- C
@@ -369,80 +372,80 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 			--Fim cor
 				
 			--Frequencia  do sensor de cor
-			ELSIF (selecao = 1) THEN	
-				conversao_1 := conv_sc;
-				
-				conv_1 := conversao_1/1000;    	-- atribui ao tam_1 o digito mais significativo
-				conversao_2 :=  conversao_1 - conv_1*1000;
-	 
-				conv_2 := conversao_2/100;
-				conversao_3 := conversao_2 - conv_2*100;
-		 
-				conv_3 := conversao_3/10;
-				conversao_4 := conversao_3 - conv_3*10;
-		 
-				conv_4 := conversao_4;
-			-- Fim decodificaçao BCD
-											
-						HEX7 <= "0000000"; -- 
-						HEX6 <= "0000000"; -- 
-						HEX5 <= "0000000"; -- 
-						HEX4 <= "0000000"; -- 
-			CASE conv_1 IS
-				WHEN 0 => HEX3 <= "0000001";
-				WHEN 1 => HEX3 <= "1001111";
-				WHEN 2 => HEX3 <= "0010010";
-				WHEN 3 => HEX3 <= "0000110";
-				WHEN 4 => HEX3 <= "1001100";
-				WHEN 5 => HEX3 <= "0100100";
-				WHEN 6 => HEX3 <= "0100000";
-				WHEN 7 => HEX3 <= "0001111";
-				WHEN 8 => HEX3 <= "0000000";
-				WHEN 9 => HEX3 <= "0000100";
-				WHEN OTHERS => NULL;			-- Outras opções é nula
-			END CASE;
-						
-			CASE conv_2 IS
-				WHEN 0 => HEX2 <= "0000001";
-				WHEN 1 => HEX2 <= "1001111";
-				WHEN 2 => HEX2 <= "0010010";
-				WHEN 3 => HEX2 <= "0000110";
-				WHEN 4 => HEX2 <= "1001100";
-				WHEN 5 => HEX2 <= "0100100";
-	     		WHEN 6 => HEX2 <= "0100000";
-				WHEN 7 => HEX2 <= "0001111";
-				WHEN 8 => HEX2 <= "0000000";
-				WHEN 9 => HEX2 <= "0000100";
-		    	WHEN OTHERS => NULL;			-- Outras opções é nula
-			END CASE;
-							
-			CASE conv_3 IS
-				WHEN 0 => HEX1 <= "0000001";
-				WHEN 1 => HEX1 <= "1001111";
-				WHEN 2 => HEX1 <= "0010010";
-				WHEN 3 => HEX1 <= "0000110";
-				WHEN 4 => HEX1 <= "1001100";
-				WHEN 5 => HEX1 <= "0100100";
-				WHEN 6 => HEX1 <= "0100000";
-				WHEN 7 => HEX1 <= "0001111";
-				WHEN 8 => HEX1 <= "0000000";
-				WHEN 9 => HEX1 <= "0000100";
-				WHEN OTHERS => NULL;			-- Outras opções é nula
-			END CASE;
-							
-			CASE conv_4 IS
-				WHEN 0 => HEX0 <= "0000001";
-				WHEN 1 => HEX0 <= "1001111";
-				WHEN 2 => HEX0 <= "0010010";
-				WHEN 3 => HEX0 <= "0000110";
-				WHEN 4 => HEX0 <= "1001100";
-				WHEN 5 => HEX0 <= "0100100";
-				WHEN 6 => HEX0 <= "0100000";
-				WHEN 7 => HEX0 <= "0001111";
-				WHEN 8 => HEX0 <= "0000000";
-				WHEN 9 => HEX0 <= "0000100";
-				WHEN OTHERS => NULL;			-- Outras opções é nula
-			END CASE;
+--			ELSIF (selecao = 1) THEN	
+--				conversao_1 := conv_sc;
+--				
+--				conv_1 := conversao_1/1000;    	-- atribui ao tam_1 o digito mais significativo
+--				conversao_2 :=  conversao_1 - conv_1*1000;
+--	 
+--				conv_2 := conversao_2/100;
+--				conversao_3 := conversao_2 - conv_2*100;
+--		 
+--				conv_3 := conversao_3/10;
+--				conversao_4 := conversao_3 - conv_3*10;
+--		 
+--				conv_4 := conversao_4;
+--			-- Fim decodificaçao BCD
+--											
+--						HEX7 <= "0000000"; -- 
+--						HEX6 <= "0000000"; -- 
+--						HEX5 <= "0000000"; -- 
+--						HEX4 <= "0000000"; -- 
+--			CASE conv_1 IS
+--				WHEN 0 => HEX3 <= "0000001";
+--				WHEN 1 => HEX3 <= "1001111";
+--				WHEN 2 => HEX3 <= "0010010";
+--				WHEN 3 => HEX3 <= "0000110";
+--				WHEN 4 => HEX3 <= "1001100";
+--				WHEN 5 => HEX3 <= "0100100";
+--				WHEN 6 => HEX3 <= "0100000";
+--				WHEN 7 => HEX3 <= "0001111";
+--				WHEN 8 => HEX3 <= "0000000";
+--				WHEN 9 => HEX3 <= "0000100";
+--				WHEN OTHERS => NULL;			-- Outras opções é nula
+--			END CASE;
+--						
+--			CASE conv_2 IS
+--				WHEN 0 => HEX2 <= "0000001";
+--				WHEN 1 => HEX2 <= "1001111";
+--				WHEN 2 => HEX2 <= "0010010";
+--				WHEN 3 => HEX2 <= "0000110";
+--				WHEN 4 => HEX2 <= "1001100";
+--				WHEN 5 => HEX2 <= "0100100";
+--	     		WHEN 6 => HEX2 <= "0100000";
+--				WHEN 7 => HEX2 <= "0001111";
+--				WHEN 8 => HEX2 <= "0000000";
+--				WHEN 9 => HEX2 <= "0000100";
+--		    	WHEN OTHERS => NULL;			-- Outras opções é nula
+--			END CASE;
+--							
+--			CASE conv_3 IS
+--				WHEN 0 => HEX1 <= "0000001";
+--				WHEN 1 => HEX1 <= "1001111";
+--				WHEN 2 => HEX1 <= "0010010";
+--				WHEN 3 => HEX1 <= "0000110";
+--				WHEN 4 => HEX1 <= "1001100";
+--				WHEN 5 => HEX1 <= "0100100";
+--				WHEN 6 => HEX1 <= "0100000";
+--				WHEN 7 => HEX1 <= "0001111";
+--				WHEN 8 => HEX1 <= "0000000";
+--				WHEN 9 => HEX1 <= "0000100";
+--				WHEN OTHERS => NULL;			-- Outras opções é nula
+--			END CASE;
+--							
+--			CASE conv_4 IS
+--				WHEN 0 => HEX0 <= "0000001";
+--				WHEN 1 => HEX0 <= "1001111";
+--				WHEN 2 => HEX0 <= "0010010";
+--				WHEN 3 => HEX0 <= "0000110";
+--				WHEN 4 => HEX0 <= "1001100";
+--				WHEN 5 => HEX0 <= "0100100";
+--				WHEN 6 => HEX0 <= "0100000";
+--				WHEN 7 => HEX0 <= "0001111";
+--				WHEN 8 => HEX0 <= "0000000";
+--				WHEN 9 => HEX0 <= "0000100";
+--				WHEN OTHERS => NULL;			-- Outras opções é nula
+--			END CASE;
 		END IF;
 	END PROCESS;
 	-- Fim decodificaçao
