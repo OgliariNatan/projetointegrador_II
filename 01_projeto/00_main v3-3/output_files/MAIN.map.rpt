@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MAIN
-Fri Sep 22 14:45:47 2017
+Fri Sep 22 15:59:16 2017
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -54,7 +54,7 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Sep 22 14:45:46 2017       ;
+; Analysis & Synthesis Status        ; Successful - Fri Sep 22 15:59:16 2017       ;
 ; Quartus Prime Version              ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                      ; MAIN                                        ;
 ; Top-level Entity Name              ; MAIN                                        ;
@@ -501,7 +501,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:09     ;
+; Top            ; 00:00:06     ;
 +----------------+--------------+
 
 
@@ -511,7 +511,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
-    Info: Processing started: Fri Sep 22 14:45:06 2017
+    Info: Processing started: Fri Sep 22 15:58:40 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MAIN -c MAIN
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -664,9 +664,9 @@ Info (21057): Implemented 1560 device resources after synthesis - the final reso
     Info (21060): Implemented 13 bidirectional pins
     Info (21061): Implemented 1465 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 67 warnings
-    Info: Peak virtual memory: 722 megabytes
-    Info: Processing ended: Fri Sep 22 14:45:47 2017
-    Info: Elapsed time: 00:00:41
-    Info: Total CPU time (on all processors): 00:01:08
+    Info: Peak virtual memory: 717 megabytes
+    Info: Processing ended: Fri Sep 22 15:59:16 2017
+    Info: Elapsed time: 00:00:36
+    Info: Total CPU time (on all processors): 00:01:02
 
 

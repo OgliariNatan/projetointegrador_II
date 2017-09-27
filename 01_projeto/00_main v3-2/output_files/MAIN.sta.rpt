@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for MAIN
-Mon Jun 26 17:33:56 2017
+Fri Sep 22 16:06:36 2017
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -117,12 +117,12 @@ agreement for further details.
 ; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 2           ;
 ;                            ;             ;
-; Average used               ; 1.02        ;
+; Average used               ; 1.01        ;
 ; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   1.8%      ;
+;     Processor 2            ;   1.2%      ;
 +----------------------------+-------------+
 
 
@@ -614,16 +614,16 @@ No paths to report.
 ; 0.639 ; sensor_cor:BLOCO_COR|counter[4]                     ; sensor_cor:BLOCO_COR|counter[4]                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.906      ;
 ; 0.639 ; counter[2]                                          ; counter[2]                                          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.905      ;
 ; 0.639 ; counter[8]                                          ; counter[8]                                          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.905      ;
+; 0.640 ; sensor_cor:BLOCO_COR|counter_500k[3]                ; sensor_cor:BLOCO_COR|counter_500k[3]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.907      ;
 ; 0.640 ; sensor_cor:BLOCO_COR|counter[7]                     ; sensor_cor:BLOCO_COR|counter[7]                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.907      ;
 ; 0.640 ; counter[6]                                          ; counter[6]                                          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.906      ;
 ; 0.640 ; counter[11]                                         ; counter[11]                                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.906      ;
-; 0.640 ; sensor_cor:BLOCO_COR|counter_500k[3]                ; sensor_cor:BLOCO_COR|counter_500k[3]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.907      ;
 ; 0.641 ; counter[9]                                          ; counter[9]                                          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.907      ;
+; 0.642 ; sensor_cor:BLOCO_COR|counter_500k[1]                ; sensor_cor:BLOCO_COR|counter_500k[1]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.909      ;
 ; 0.642 ; sensor_cor:BLOCO_COR|counter[13]                    ; sensor_cor:BLOCO_COR|counter[13]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.908      ;
 ; 0.642 ; counter[15]                                         ; counter[15]                                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.908      ;
 ; 0.642 ; debouncer_pi:BLOCO_00|counter[1]                    ; debouncer_pi:BLOCO_00|counter[1]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.907      ;
 ; 0.642 ; debouncer_pi:BLOCO_00|counter[10]                   ; debouncer_pi:BLOCO_00|counter[10]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.907      ;
-; 0.642 ; sensor_cor:BLOCO_COR|counter_500k[1]                ; sensor_cor:BLOCO_COR|counter_500k[1]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.909      ;
 ; 0.643 ; sensor_cor:BLOCO_COR|counter[5]                     ; sensor_cor:BLOCO_COR|counter[5]                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.910      ;
 ; 0.643 ; counter[25]                                         ; counter[25]                                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.909      ;
 ; 0.643 ; debouncer_pi:BLOCO_00|counter[8]                    ; debouncer_pi:BLOCO_00|counter[8]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.908      ;
@@ -639,6 +639,7 @@ No paths to report.
 ; 0.644 ; sen_alt_7seg:BLOCO_03|sens_alt:BLOCO_01|counter[2]  ; sen_alt_7seg:BLOCO_03|sens_alt:BLOCO_01|counter[2]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.911      ;
 ; 0.644 ; sen_alt_7seg:BLOCO_03|sens_alt:BLOCO_01|counter[5]  ; sen_alt_7seg:BLOCO_03|sens_alt:BLOCO_01|counter[5]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.911      ;
 ; 0.644 ; sen_alt_7seg:BLOCO_03|sens_alt:BLOCO_01|counter[9]  ; sen_alt_7seg:BLOCO_03|sens_alt:BLOCO_01|counter[9]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.911      ;
+; 0.645 ; sensor_cor:BLOCO_COR|counter_500k[2]                ; sensor_cor:BLOCO_COR|counter_500k[2]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.912      ;
 ; 0.645 ; sensor_cor:BLOCO_COR|counter[23]                    ; sensor_cor:BLOCO_COR|counter[23]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.911      ;
 ; 0.645 ; sensor_cor:BLOCO_COR|counter[12]                    ; sensor_cor:BLOCO_COR|counter[12]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.911      ;
 ; 0.645 ; counter[12]                                         ; counter[12]                                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.911      ;
@@ -646,19 +647,18 @@ No paths to report.
 ; 0.645 ; debouncer_pi:BLOCO_00|counter[3]                    ; debouncer_pi:BLOCO_00|counter[3]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.910      ;
 ; 0.645 ; debouncer_pi:BLOCO_00|counter[15]                   ; debouncer_pi:BLOCO_00|counter[15]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.910      ;
 ; 0.645 ; debouncer_pi:BLOCO_00|counter[16]                   ; debouncer_pi:BLOCO_00|counter[16]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.910      ;
-; 0.645 ; sensor_cor:BLOCO_COR|counter_500k[2]                ; sensor_cor:BLOCO_COR|counter_500k[2]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.912      ;
 ; 0.645 ; sen_alt_7seg:BLOCO_03|sens_alt:BLOCO_01|counter[10] ; sen_alt_7seg:BLOCO_03|sens_alt:BLOCO_01|counter[10] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.912      ;
+; 0.646 ; sensor_cor:BLOCO_COR|counter_500k[4]                ; sensor_cor:BLOCO_COR|counter_500k[4]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.913      ;
 ; 0.646 ; sensor_cor:BLOCO_COR|counter[6]                     ; sensor_cor:BLOCO_COR|counter[6]                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.913      ;
 ; 0.646 ; sensor_cor:BLOCO_COR|counter[14]                    ; sensor_cor:BLOCO_COR|counter[14]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.912      ;
 ; 0.646 ; counter[10]                                         ; counter[10]                                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.912      ;
-; 0.646 ; sensor_cor:BLOCO_COR|counter_500k[4]                ; sensor_cor:BLOCO_COR|counter_500k[4]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.913      ;
 ; 0.648 ; counter[22]                                         ; counter[22]                                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.914      ;
 ; 0.648 ; debouncer_pi:BLOCO_00|counter[2]                    ; debouncer_pi:BLOCO_00|counter[2]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.913      ;
 ; 0.648 ; debouncer_pi:BLOCO_00|counter[4]                    ; debouncer_pi:BLOCO_00|counter[4]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.913      ;
 ; 0.649 ; sensor_cor:BLOCO_COR|counter[22]                    ; sensor_cor:BLOCO_COR|counter[22]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.915      ;
 ; 0.655 ; counter[13]                                         ; counter[13]                                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.921      ;
-; 0.656 ; counter[19]                                         ; counter[19]                                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.922      ;
 ; 0.656 ; sensor_cor:BLOCO_COR|counter_500k[5]                ; sensor_cor:BLOCO_COR|counter_500k[5]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.923      ;
+; 0.656 ; counter[19]                                         ; counter[19]                                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.922      ;
 ; 0.656 ; sen_alt_7seg:BLOCO_03|sens_alt:BLOCO_01|counter[3]  ; sen_alt_7seg:BLOCO_03|sens_alt:BLOCO_01|counter[3]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.923      ;
 ; 0.658 ; counter[27]                                         ; counter[27]                                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.924      ;
 ; 0.658 ; debouncer_pi:BLOCO_00|counter[9]                    ; debouncer_pi:BLOCO_00|counter[9]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.923      ;
@@ -694,12 +694,12 @@ No paths to report.
 ; 0.953 ; sensor_cor:BLOCO_COR|counter[3]                     ; sensor_cor:BLOCO_COR|counter[4]                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 1.220      ;
 ; 0.953 ; counter[7]                                          ; counter[8]                                          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 1.219      ;
 ; 0.953 ; counter[5]                                          ; counter[6]                                          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 1.219      ;
+; 0.958 ; sensor_cor:BLOCO_COR|counter_500k[3]                ; sensor_cor:BLOCO_COR|counter_500k[4]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 1.225      ;
 ; 0.958 ; counter[11]                                         ; counter[12]                                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 1.224      ;
 ; 0.958 ; sensor_cor:BLOCO_COR|counter[7]                     ; sensor_cor:BLOCO_COR|counter[8]                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 1.225      ;
-; 0.958 ; sensor_cor:BLOCO_COR|counter_500k[3]                ; sensor_cor:BLOCO_COR|counter_500k[4]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 1.225      ;
+; 0.959 ; sensor_cor:BLOCO_COR|counter_500k[1]                ; sensor_cor:BLOCO_COR|counter_500k[2]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 1.226      ;
 ; 0.959 ; sensor_cor:BLOCO_COR|counter[13]                    ; sensor_cor:BLOCO_COR|counter[14]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 1.225      ;
 ; 0.959 ; counter[9]                                          ; counter[10]                                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 1.225      ;
-; 0.959 ; counter[15]                                         ; counter[16]                                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 1.225      ;
 +-------+-----------------------------------------------------+-----------------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -1299,19 +1299,19 @@ No paths to report.
 ; 0.584 ; counter[7]                                          ; counter[7]                                          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.826      ;
 ; 0.585 ; counter[2]                                          ; counter[2]                                          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.827      ;
 ; 0.585 ; counter[11]                                         ; counter[11]                                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.827      ;
-; 0.586 ; sensor_cor:BLOCO_COR|counter_500k[3]                ; sensor_cor:BLOCO_COR|counter_500k[3]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.829      ;
 ; 0.586 ; sensor_cor:BLOCO_COR|counter[4]                     ; sensor_cor:BLOCO_COR|counter[4]                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.828      ;
 ; 0.586 ; sensor_cor:BLOCO_COR|counter[7]                     ; sensor_cor:BLOCO_COR|counter[7]                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.828      ;
 ; 0.586 ; counter[6]                                          ; counter[6]                                          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.828      ;
 ; 0.586 ; counter[8]                                          ; counter[8]                                          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.828      ;
+; 0.586 ; sensor_cor:BLOCO_COR|counter_500k[3]                ; sensor_cor:BLOCO_COR|counter_500k[3]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.829      ;
 ; 0.586 ; sen_alt_7seg:BLOCO_03|sens_alt:BLOCO_01|counter[8]  ; sen_alt_7seg:BLOCO_03|sens_alt:BLOCO_01|counter[8]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.073      ; 0.830      ;
 ; 0.587 ; sensor_cor:BLOCO_COR|counter[13]                    ; sensor_cor:BLOCO_COR|counter[13]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.830      ;
 ; 0.587 ; counter[9]                                          ; counter[9]                                          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.829      ;
 ; 0.587 ; debouncer_pi:BLOCO_00|counter[8]                    ; debouncer_pi:BLOCO_00|counter[8]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.070      ; 0.828      ;
 ; 0.587 ; debouncer_pi:BLOCO_00|counter[10]                   ; debouncer_pi:BLOCO_00|counter[10]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.070      ; 0.828      ;
-; 0.588 ; sensor_cor:BLOCO_COR|counter_500k[1]                ; sensor_cor:BLOCO_COR|counter_500k[1]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.831      ;
 ; 0.588 ; counter[15]                                         ; counter[15]                                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.830      ;
 ; 0.588 ; debouncer_pi:BLOCO_00|counter[17]                   ; debouncer_pi:BLOCO_00|counter[17]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.070      ; 0.829      ;
+; 0.588 ; sensor_cor:BLOCO_COR|counter_500k[1]                ; sensor_cor:BLOCO_COR|counter_500k[1]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.831      ;
 ; 0.588 ; sen_alt_7seg:BLOCO_03|sens_alt:BLOCO_01|counter[2]  ; sen_alt_7seg:BLOCO_03|sens_alt:BLOCO_01|counter[2]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.073      ; 0.832      ;
 ; 0.588 ; sen_alt_7seg:BLOCO_03|sens_alt:BLOCO_01|counter[7]  ; sen_alt_7seg:BLOCO_03|sens_alt:BLOCO_01|counter[7]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.073      ; 0.832      ;
 ; 0.589 ; sensor_cor:BLOCO_COR|counter[0]                     ; sensor_cor:BLOCO_COR|counter[0]                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.088      ; 0.848      ;
@@ -1325,18 +1325,18 @@ No paths to report.
 ; 0.589 ; sen_alt_7seg:BLOCO_03|sens_alt:BLOCO_01|counter[1]  ; sen_alt_7seg:BLOCO_03|sens_alt:BLOCO_01|counter[1]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.073      ; 0.833      ;
 ; 0.589 ; sen_alt_7seg:BLOCO_03|sens_alt:BLOCO_01|counter[5]  ; sen_alt_7seg:BLOCO_03|sens_alt:BLOCO_01|counter[5]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.073      ; 0.833      ;
 ; 0.589 ; sen_alt_7seg:BLOCO_03|sens_alt:BLOCO_01|counter[9]  ; sen_alt_7seg:BLOCO_03|sens_alt:BLOCO_01|counter[9]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.073      ; 0.833      ;
-; 0.590 ; sensor_cor:BLOCO_COR|counter_500k[2]                ; sensor_cor:BLOCO_COR|counter_500k[2]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.833      ;
 ; 0.590 ; sensor_cor:BLOCO_COR|counter[23]                    ; sensor_cor:BLOCO_COR|counter[23]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.833      ;
 ; 0.590 ; sensor_cor:BLOCO_COR|counter[5]                     ; sensor_cor:BLOCO_COR|counter[5]                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.832      ;
 ; 0.590 ; sensor_cor:BLOCO_COR|counter[14]                    ; sensor_cor:BLOCO_COR|counter[14]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.833      ;
 ; 0.590 ; counter[12]                                         ; counter[12]                                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.832      ;
 ; 0.590 ; debouncer_pi:BLOCO_00|counter[7]                    ; debouncer_pi:BLOCO_00|counter[7]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.070      ; 0.831      ;
 ; 0.590 ; debouncer_pi:BLOCO_00|counter[16]                   ; debouncer_pi:BLOCO_00|counter[16]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.070      ; 0.831      ;
-; 0.591 ; sensor_cor:BLOCO_COR|counter_500k[4]                ; sensor_cor:BLOCO_COR|counter_500k[4]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.834      ;
+; 0.590 ; sensor_cor:BLOCO_COR|counter_500k[2]                ; sensor_cor:BLOCO_COR|counter_500k[2]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.833      ;
 ; 0.591 ; counter[10]                                         ; counter[10]                                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.833      ;
 ; 0.591 ; counter[23]                                         ; counter[23]                                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.833      ;
 ; 0.591 ; debouncer_pi:BLOCO_00|counter[3]                    ; debouncer_pi:BLOCO_00|counter[3]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.070      ; 0.832      ;
 ; 0.591 ; debouncer_pi:BLOCO_00|counter[15]                   ; debouncer_pi:BLOCO_00|counter[15]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.070      ; 0.832      ;
+; 0.591 ; sensor_cor:BLOCO_COR|counter_500k[4]                ; sensor_cor:BLOCO_COR|counter_500k[4]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.834      ;
 ; 0.592 ; sensor_cor:BLOCO_COR|counter[6]                     ; sensor_cor:BLOCO_COR|counter[6]                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.834      ;
 ; 0.593 ; sensor_cor:BLOCO_COR|counter[22]                    ; sensor_cor:BLOCO_COR|counter[22]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.836      ;
 ; 0.593 ; counter[22]                                         ; counter[22]                                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.835      ;
@@ -1383,8 +1383,8 @@ No paths to report.
 ; 0.871 ; counter[5]                                          ; counter[6]                                          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 1.113      ;
 ; 0.871 ; counter[7]                                          ; counter[8]                                          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 1.113      ;
 ; 0.871 ; counter[11]                                         ; counter[12]                                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 1.113      ;
-; 0.872 ; sensor_cor:BLOCO_COR|counter_500k[3]                ; sensor_cor:BLOCO_COR|counter_500k[4]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 1.115      ;
 ; 0.872 ; sensor_cor:BLOCO_COR|counter[7]                     ; sensor_cor:BLOCO_COR|counter[8]                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 1.114      ;
+; 0.872 ; sensor_cor:BLOCO_COR|counter_500k[3]                ; sensor_cor:BLOCO_COR|counter_500k[4]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 1.115      ;
 ; 0.873 ; counter[9]                                          ; counter[10]                                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 1.115      ;
 +-------+-----------------------------------------------------+-----------------------------------------------------+--------------+-------------+--------------+------------+------------+
 
@@ -1864,10 +1864,10 @@ No paths to report.
 ; 0.290 ; counter[2]                                          ; counter[2]                                          ; CLOCK_50                        ; CLOCK_50    ; 0.000        ; 0.041      ; 0.415      ;
 ; 0.290 ; counter[6]                                          ; counter[6]                                          ; CLOCK_50                        ; CLOCK_50    ; 0.000        ; 0.041      ; 0.415      ;
 ; 0.291 ; counter[8]                                          ; counter[8]                                          ; CLOCK_50                        ; CLOCK_50    ; 0.000        ; 0.041      ; 0.416      ;
-; 0.292 ; sensor_cor:BLOCO_COR|counter[13]                    ; sensor_cor:BLOCO_COR|counter[13]                    ; CLOCK_50                        ; CLOCK_50    ; 0.000        ; 0.041      ; 0.417      ;
-; 0.292 ; counter[11]                                         ; counter[11]                                         ; CLOCK_50                        ; CLOCK_50    ; 0.000        ; 0.041      ; 0.417      ;
 ; 0.292 ; sensor_cor:BLOCO_COR|counter_500k[1]                ; sensor_cor:BLOCO_COR|counter_500k[1]                ; CLOCK_50                        ; CLOCK_50    ; 0.000        ; 0.042      ; 0.418      ;
 ; 0.292 ; sensor_cor:BLOCO_COR|counter_500k[3]                ; sensor_cor:BLOCO_COR|counter_500k[3]                ; CLOCK_50                        ; CLOCK_50    ; 0.000        ; 0.042      ; 0.418      ;
+; 0.292 ; sensor_cor:BLOCO_COR|counter[13]                    ; sensor_cor:BLOCO_COR|counter[13]                    ; CLOCK_50                        ; CLOCK_50    ; 0.000        ; 0.041      ; 0.417      ;
+; 0.292 ; counter[11]                                         ; counter[11]                                         ; CLOCK_50                        ; CLOCK_50    ; 0.000        ; 0.041      ; 0.417      ;
 ; 0.293 ; sensor_cor:BLOCO_COR|counter[0]                     ; sensor_cor:BLOCO_COR|counter[0]                     ; CLOCK_50                        ; CLOCK_50    ; 0.000        ; 0.049      ; 0.426      ;
 ; 0.293 ; sensor_cor:BLOCO_COR|counter[7]                     ; sensor_cor:BLOCO_COR|counter[7]                     ; CLOCK_50                        ; CLOCK_50    ; 0.000        ; 0.041      ; 0.418      ;
 ; 0.293 ; sensor_cor:BLOCO_COR|counter[12]                    ; sensor_cor:BLOCO_COR|counter[12]                    ; CLOCK_50                        ; CLOCK_50    ; 0.000        ; 0.041      ; 0.418      ;
@@ -1879,6 +1879,8 @@ No paths to report.
 ; 0.293 ; sen_alt_7seg:BLOCO_03|sens_alt:BLOCO_01|counter[5]  ; sen_alt_7seg:BLOCO_03|sens_alt:BLOCO_01|counter[5]  ; CLOCK_50                        ; CLOCK_50    ; 0.000        ; 0.042      ; 0.419      ;
 ; 0.293 ; sen_alt_7seg:BLOCO_03|sens_alt:BLOCO_01|counter[7]  ; sen_alt_7seg:BLOCO_03|sens_alt:BLOCO_01|counter[7]  ; CLOCK_50                        ; CLOCK_50    ; 0.000        ; 0.042      ; 0.419      ;
 ; 0.293 ; sen_alt_7seg:BLOCO_03|sens_alt:BLOCO_01|counter[8]  ; sen_alt_7seg:BLOCO_03|sens_alt:BLOCO_01|counter[8]  ; CLOCK_50                        ; CLOCK_50    ; 0.000        ; 0.042      ; 0.419      ;
+; 0.294 ; sensor_cor:BLOCO_COR|counter_500k[2]                ; sensor_cor:BLOCO_COR|counter_500k[2]                ; CLOCK_50                        ; CLOCK_50    ; 0.000        ; 0.042      ; 0.420      ;
+; 0.294 ; sensor_cor:BLOCO_COR|counter_500k[4]                ; sensor_cor:BLOCO_COR|counter_500k[4]                ; CLOCK_50                        ; CLOCK_50    ; 0.000        ; 0.042      ; 0.420      ;
 ; 0.294 ; sensor_cor:BLOCO_COR|counter[5]                     ; sensor_cor:BLOCO_COR|counter[5]                     ; CLOCK_50                        ; CLOCK_50    ; 0.000        ; 0.041      ; 0.419      ;
 ; 0.294 ; sensor_cor:BLOCO_COR|counter[6]                     ; sensor_cor:BLOCO_COR|counter[6]                     ; CLOCK_50                        ; CLOCK_50    ; 0.000        ; 0.041      ; 0.419      ;
 ; 0.294 ; sensor_cor:BLOCO_COR|counter[14]                    ; sensor_cor:BLOCO_COR|counter[14]                    ; CLOCK_50                        ; CLOCK_50    ; 0.000        ; 0.041      ; 0.419      ;
@@ -1888,8 +1890,6 @@ No paths to report.
 ; 0.294 ; debouncer_pi:BLOCO_00|counter[7]                    ; debouncer_pi:BLOCO_00|counter[7]                    ; CLOCK_50                        ; CLOCK_50    ; 0.000        ; 0.040      ; 0.418      ;
 ; 0.294 ; debouncer_pi:BLOCO_00|counter[8]                    ; debouncer_pi:BLOCO_00|counter[8]                    ; CLOCK_50                        ; CLOCK_50    ; 0.000        ; 0.040      ; 0.418      ;
 ; 0.294 ; debouncer_pi:BLOCO_00|counter[17]                   ; debouncer_pi:BLOCO_00|counter[17]                   ; CLOCK_50                        ; CLOCK_50    ; 0.000        ; 0.040      ; 0.418      ;
-; 0.294 ; sensor_cor:BLOCO_COR|counter_500k[2]                ; sensor_cor:BLOCO_COR|counter_500k[2]                ; CLOCK_50                        ; CLOCK_50    ; 0.000        ; 0.042      ; 0.420      ;
-; 0.294 ; sensor_cor:BLOCO_COR|counter_500k[4]                ; sensor_cor:BLOCO_COR|counter_500k[4]                ; CLOCK_50                        ; CLOCK_50    ; 0.000        ; 0.042      ; 0.420      ;
 ; 0.294 ; sen_alt_7seg:BLOCO_03|sens_alt:BLOCO_01|counter[10] ; sen_alt_7seg:BLOCO_03|sens_alt:BLOCO_01|counter[10] ; CLOCK_50                        ; CLOCK_50    ; 0.000        ; 0.042      ; 0.420      ;
 ; 0.294 ; sen_alt_7seg:BLOCO_03|sens_alt:BLOCO_01|counter[0]  ; sen_alt_7seg:BLOCO_03|sens_alt:BLOCO_01|counter[0]  ; CLOCK_50                        ; CLOCK_50    ; 0.000        ; 0.050      ; 0.428      ;
 ; 0.294 ; sen_alt_7seg:BLOCO_03|sens_alt:BLOCO_01|counter[1]  ; sen_alt_7seg:BLOCO_03|sens_alt:BLOCO_01|counter[1]  ; CLOCK_50                        ; CLOCK_50    ; 0.000        ; 0.042      ; 0.420      ;
@@ -1928,8 +1928,8 @@ No paths to report.
 ; 0.303 ; debouncer_pi:BLOCO_00|counter[0]                    ; debouncer_pi:BLOCO_00|counter[0]                    ; CLOCK_50                        ; CLOCK_50    ; 0.000        ; 0.040      ; 0.427      ;
 ; 0.303 ; debouncer_pi:BLOCO_00|counter[21]                   ; debouncer_pi:BLOCO_00|counter[21]                   ; CLOCK_50                        ; CLOCK_50    ; 0.000        ; 0.040      ; 0.427      ;
 ; 0.303 ; debouncer_pi:BLOCO_00|counter[18]                   ; debouncer_pi:BLOCO_00|counter[18]                   ; CLOCK_50                        ; CLOCK_50    ; 0.000        ; 0.040      ; 0.427      ;
-; 0.304 ; debouncer_pi:BLOCO_00|counter[20]                   ; debouncer_pi:BLOCO_00|counter[20]                   ; CLOCK_50                        ; CLOCK_50    ; 0.000        ; 0.040      ; 0.428      ;
 ; 0.304 ; sensor_cor:BLOCO_COR|counter_500k[0]                ; sensor_cor:BLOCO_COR|counter_500k[0]                ; CLOCK_50                        ; CLOCK_50    ; 0.000        ; 0.042      ; 0.430      ;
+; 0.304 ; debouncer_pi:BLOCO_00|counter[20]                   ; debouncer_pi:BLOCO_00|counter[20]                   ; CLOCK_50                        ; CLOCK_50    ; 0.000        ; 0.040      ; 0.428      ;
 ; 0.363 ; sensor_cor:BLOCO_COR|counter[17]                    ; sensor_cor:BLOCO_COR|counter[17]                    ; CLOCK_50                        ; CLOCK_50    ; 0.000        ; 0.041      ; 0.488      ;
 ; 0.365 ; sensor_cor:BLOCO_COR|counter[21]                    ; sensor_cor:BLOCO_COR|counter[21]                    ; CLOCK_50                        ; CLOCK_50    ; 0.000        ; 0.041      ; 0.490      ;
 ; 0.366 ; counter[16]                                         ; counter[16]                                         ; CLOCK_50                        ; CLOCK_50    ; 0.000        ; 0.041      ; 0.491      ;
@@ -1944,10 +1944,10 @@ No paths to report.
 ; 0.438 ; counter[5]                                          ; counter[6]                                          ; CLOCK_50                        ; CLOCK_50    ; 0.000        ; 0.041      ; 0.563      ;
 ; 0.438 ; counter[7]                                          ; counter[8]                                          ; CLOCK_50                        ; CLOCK_50    ; 0.000        ; 0.041      ; 0.563      ;
 ; 0.440 ; counter[0]                                          ; counter[1]                                          ; CLOCK_50                        ; CLOCK_50    ; 0.000        ; 0.049      ; 0.573      ;
-; 0.441 ; counter[11]                                         ; counter[12]                                         ; CLOCK_50                        ; CLOCK_50    ; 0.000        ; 0.041      ; 0.566      ;
-; 0.441 ; sensor_cor:BLOCO_COR|counter[13]                    ; sensor_cor:BLOCO_COR|counter[14]                    ; CLOCK_50                        ; CLOCK_50    ; 0.000        ; 0.041      ; 0.566      ;
 ; 0.441 ; sensor_cor:BLOCO_COR|counter_500k[1]                ; sensor_cor:BLOCO_COR|counter_500k[2]                ; CLOCK_50                        ; CLOCK_50    ; 0.000        ; 0.042      ; 0.567      ;
 ; 0.441 ; sensor_cor:BLOCO_COR|counter_500k[3]                ; sensor_cor:BLOCO_COR|counter_500k[4]                ; CLOCK_50                        ; CLOCK_50    ; 0.000        ; 0.042      ; 0.567      ;
+; 0.441 ; counter[11]                                         ; counter[12]                                         ; CLOCK_50                        ; CLOCK_50    ; 0.000        ; 0.041      ; 0.566      ;
+; 0.441 ; sensor_cor:BLOCO_COR|counter[13]                    ; sensor_cor:BLOCO_COR|counter[14]                    ; CLOCK_50                        ; CLOCK_50    ; 0.000        ; 0.041      ; 0.566      ;
 ; 0.442 ; counter[9]                                          ; counter[10]                                         ; CLOCK_50                        ; CLOCK_50    ; 0.000        ; 0.041      ; 0.567      ;
 +-------+-----------------------------------------------------+-----------------------------------------------------+---------------------------------+-------------+--------------+------------+------------+
 
@@ -2617,7 +2617,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime TimeQuest Timing Analyzer
     Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
-    Info: Processing started: Mon Jun 26 17:33:51 2017
+    Info: Processing started: Fri Sep 22 16:06:27 2017
 Info: Command: quartus_sta MAIN -c MAIN
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -2719,9 +2719,9 @@ Info (332146): Worst-case minimum pulse width slack is -3.000
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 688 megabytes
-    Info: Processing ended: Mon Jun 26 17:33:55 2017
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:04
+    Info: Peak virtual memory: 712 megabytes
+    Info: Processing ended: Fri Sep 22 16:06:36 2017
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:05
 
 

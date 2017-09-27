@@ -100,11 +100,35 @@
 					"strict" : false
 				},
 				{
+<<<<<<< HEAD
 					"name" : "KEY[0]",
+=======
+					"name" : "LEDR[9]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[10]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO[0]",
 					"strict" : false
 				},
 				{
 					"name" : "clock_50",
+>>>>>>> 8d7571be3bae389559aba5b62a7ab576b51c6074
+					"strict" : false
+				},
+				{
+					"name" : "clock_50",
+					"strict" : false
+				},
+				{
+					"name" : "SW[0]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[1]",
 					"strict" : false
 				}
 			]

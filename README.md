@@ -7,6 +7,8 @@ Identificação junto aos mentores: "Equipe 2". <br/>
 O projeto consiste em um sistema integrado com alguns sensores pré estabelecidos. <br/>
 Resumindo, uma esteira com sensor de altura e cor com um seletor de para selecionar entre duas saidas. <br/>
 	<ul>
+		<li>Sensor de distância <a href="https://drive.google.com/open?id=0BzUZsr8WwPNLbmZDWnhsazVjMEE
+">KIT DE2-115</a>.</li>
 		<li>Linguagem VHDL ou Diagrama de Blocos.</li>
 		<li>Sensor de distância <a href="https://cdn.sparkfun.com/datasheets/Sensors/Proximity/HCSR04.pdf">HCSR04</a>.</li>
 		<li>Módulo de reconhecimento de cores <a href="http://www.mouser.com/catalog/specsheets/TCS3200-E11.pdf">TCS3200</a>.</li>
@@ -17,6 +19,9 @@ Resumindo, uma esteira com sensor de altura e cor com um seletor de para selecio
 		<li>Interface homem-maquina.</li>
 	</ul>
 </p>
+
+
+
 <h3>Softwares utilizados:</h3>
 <p>
 	<a href="http://dl.altera.com/16.1/?edition=lite">Quartus Lite Edition V16.1</a> <br/>
@@ -25,6 +30,8 @@ Resumindo, uma esteira com sensor de altura e cor com um seletor de para selecio
 		<a href="https://github.com/gutovsk49">Augusto</a>. <br/>
 	</p>
 <h4>Demais Informações relevantes para o projeto:</h4>
+<p> Echo GPIO(1) <br/> Trigger GPIO(0) <br/> </p>
+
 <p>Para a interpretação dos dados mostrados no display de 7 segmentos, utilize a imagem abaixo:<br/>
  <img alt="7SEG." src="http://www.twyman.org.uk/Fonts/7%20Seq-3D.jpg"/> <br/>
 Bits setados para os caracteres utilizados no projeto:<br/>
