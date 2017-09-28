@@ -13,15 +13,18 @@ ENTITY hc_sr04 IS
 		CLOCK_CORE	: IN STD_LOGIC;
 		ENABLE		: IN STD_LOGIC;
 		ECHO			: IN STD_LOGIC;
-		
-		TRIGGER	: OUT STD_LOGIC
+		FIM_TRIGGER	: OUT STD_LOGIC;
+		TRIGGER		: OUT STD_LOGIC
 	
 	);
 END hc_sr04;
 
 ARCHITECTURE behavior OF hc_sr04 IS
 
-	SIGNAL hc_clock : STD_LOGIC := '0';
+	CONSTANT	COUNT_MAX	: INTEGER 	:= 500;
+	SIGNAL	counter 		: INTEGER RANGE 0 TO COUNT_MAX := 0;
+	SIGNAL 	hc_clock 	: STD_LOGIC;
+	--SIGNAL	FIM_TRIGGER	: STD_LOGIC;
 	
 	BEGIN
 	
@@ -32,26 +35,22 @@ ARCHITECTURE behavior OF hc_sr04 IS
 		freqOut,
 		hc_clock
 		);
-		
+	
 	PROCESS(ENABLE)
 	
-	CONSTANT COUNT_MAX	: INTEGER 	:= 1000000;
-	VARIABLE counter 		: INTEGER RANGE 0 TO COUNT_MAX := 0;
-	
 	BEGIN
-	
-		IF (CLOCK_CORE'EVENT AND CLOCK_CORE = '1') THEN
-		
-			IF counter < COUNT_MAX THEN
-				counter := counter + 1;
-				TRIGGER <= '1';
-			ELSE
-				counter 	:= 0;
-				TRIGGER	<= '0';
+			IF (CLOCK_CORE'EVENT AND CLOCK_CORE = '1') THEN
 			
+				IF counter < COUNT_MAX THEN
+					counter <= counter + 1;
+					TRIGGER <= '1';
+				ELSE
+					counter 		<= 0;
+					FIM_TRIGGER	<= '0';
+					TRIGGER		<= '0';
+				
+				END IF;
 			END IF;
-		END IF;
-
 	END PROCESS;
 	
 END;

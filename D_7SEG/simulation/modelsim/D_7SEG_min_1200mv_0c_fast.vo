@@ -17,7 +17,7 @@
 // PROGRAM "Quartus Prime"
 // VERSION "Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition"
 
-// DATE "09/28/2017 11:16:11"
+// DATE "09/28/2017 18:33:22"
 
 // 
 // Device: Altera EP4CE115F29C7 Package FBGA780
@@ -44,6 +44,7 @@ module D_7SEG (
 	HEX6,
 	HEX7,
 	buttonOut,
+	END_TRIGGER,
 	HC_ENABLE,
 	LEDR);
 input 	clock_50;
@@ -60,11 +61,13 @@ output 	[0:6] HEX5;
 output 	[0:6] HEX6;
 output 	[0:6] HEX7;
 output 	buttonOut;
+output 	END_TRIGGER;
 output 	HC_ENABLE;
 output 	[17:0] LEDR;
 
 // Design Ports Information
-// CLOCKOUT	=>  Location: PIN_L22,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// CLOCKOUT	=>  Location: PIN_L27,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// KEY[1]	=>  Location: PIN_M21,	 I/O Standard: 2.5 V,	 Current Strength: Default
 // KEY[2]	=>  Location: PIN_N21,	 I/O Standard: 2.5 V,	 Current Strength: Default
 // KEY[3]	=>  Location: PIN_R24,	 I/O Standard: 2.5 V,	 Current Strength: Default
 // SW[0]	=>  Location: PIN_AB28,	 I/O Standard: 2.5 V,	 Current Strength: Default
@@ -142,7 +145,8 @@ output 	[17:0] LEDR;
 // HEX7[1]	=>  Location: PIN_AE17,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 8mA
 // HEX7[0]	=>  Location: PIN_AD17,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 8mA
 // buttonOut	=>  Location: PIN_AE26,	 I/O Standard: 2.5 V,	 Current Strength: Default
-// HC_ENABLE	=>  Location: PIN_K26,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// END_TRIGGER	=>  Location: PIN_C13,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// HC_ENABLE	=>  Location: PIN_V27,	 I/O Standard: 2.5 V,	 Current Strength: Default
 // LEDR[0]	=>  Location: PIN_G19,	 I/O Standard: 2.5 V,	 Current Strength: Default
 // LEDR[1]	=>  Location: PIN_F19,	 I/O Standard: 2.5 V,	 Current Strength: Default
 // LEDR[2]	=>  Location: PIN_E19,	 I/O Standard: 2.5 V,	 Current Strength: Default
@@ -199,7 +203,6 @@ output 	[17:0] LEDR;
 // GPIO[1]	=>  Location: PIN_AC15,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 8mA
 // KEY[0]	=>  Location: PIN_M23,	 I/O Standard: 2.5 V,	 Current Strength: Default
 // clock_50	=>  Location: PIN_Y2,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-// KEY[1]	=>  Location: PIN_M21,	 I/O Standard: 2.5 V,	 Current Strength: Default
 
 
 wire gnd;
@@ -217,6 +220,7 @@ tri1 devoe;
 initial $sdf_annotate("D_7SEG_min_1200mv_0c_v_fast.sdo");
 // synopsys translate_on
 
+wire \KEY[1]~input_o ;
 wire \KEY[2]~input_o ;
 wire \KEY[3]~input_o ;
 wire \SW[0]~input_o ;
@@ -367,6 +371,7 @@ wire \HEX7[2]~output_o ;
 wire \HEX7[1]~output_o ;
 wire \HEX7[0]~output_o ;
 wire \buttonOut~output_o ;
+wire \END_TRIGGER~output_o ;
 wire \HC_ENABLE~output_o ;
 wire \LEDR[0]~output_o ;
 wire \LEDR[1]~output_o ;
@@ -388,55 +393,31 @@ wire \LEDR[16]~output_o ;
 wire \LEDR[17]~output_o ;
 wire \clock_50~input_o ;
 wire \clock_50~inputclkctrl_outclk ;
-wire \SENSOR_ALTURA|counter[0]~20_combout ;
-wire \SENSOR_ALTURA|counter[0]~21 ;
-wire \SENSOR_ALTURA|counter[1]~22_combout ;
-wire \SENSOR_ALTURA|counter[1]~23 ;
-wire \SENSOR_ALTURA|counter[2]~24_combout ;
-wire \SENSOR_ALTURA|counter[2]~25 ;
-wire \SENSOR_ALTURA|counter[3]~26_combout ;
-wire \SENSOR_ALTURA|counter[3]~27 ;
-wire \SENSOR_ALTURA|counter[4]~28_combout ;
-wire \SENSOR_ALTURA|counter[4]~29 ;
-wire \SENSOR_ALTURA|counter[5]~30_combout ;
-wire \SENSOR_ALTURA|counter[5]~31 ;
-wire \SENSOR_ALTURA|counter[6]~32_combout ;
-wire \SENSOR_ALTURA|counter[6]~33 ;
-wire \SENSOR_ALTURA|counter[7]~34_combout ;
-wire \SENSOR_ALTURA|counter[7]~35 ;
-wire \SENSOR_ALTURA|counter[8]~36_combout ;
-wire \SENSOR_ALTURA|counter[8]~37 ;
-wire \SENSOR_ALTURA|counter[9]~38_combout ;
-wire \SENSOR_ALTURA|counter[9]~39 ;
-wire \SENSOR_ALTURA|counter[10]~40_combout ;
-wire \SENSOR_ALTURA|counter[10]~41 ;
-wire \SENSOR_ALTURA|counter[11]~42_combout ;
-wire \SENSOR_ALTURA|counter[11]~43 ;
-wire \SENSOR_ALTURA|counter[12]~44_combout ;
-wire \SENSOR_ALTURA|counter[12]~45 ;
-wire \SENSOR_ALTURA|counter[13]~46_combout ;
-wire \SENSOR_ALTURA|counter[13]~47 ;
-wire \SENSOR_ALTURA|counter[14]~48_combout ;
-wire \SENSOR_ALTURA|counter[14]~49 ;
-wire \SENSOR_ALTURA|counter[15]~50_combout ;
-wire \SENSOR_ALTURA|counter[15]~51 ;
-wire \SENSOR_ALTURA|counter[16]~52_combout ;
-wire \SENSOR_ALTURA|counter[16]~53 ;
-wire \SENSOR_ALTURA|counter[17]~54_combout ;
-wire \SENSOR_ALTURA|counter[17]~55 ;
-wire \SENSOR_ALTURA|counter[18]~56_combout ;
-wire \SENSOR_ALTURA|counter[18]~57 ;
-wire \SENSOR_ALTURA|counter[19]~58_combout ;
-wire \SENSOR_ALTURA|LessThan0~3_combout ;
-wire \SENSOR_ALTURA|LessThan0~1_combout ;
+wire \SENSOR_ALTURA|counter[0]~9_combout ;
+wire \SENSOR_ALTURA|counter[0]~10 ;
+wire \SENSOR_ALTURA|counter[1]~11_combout ;
+wire \SENSOR_ALTURA|counter[1]~12 ;
+wire \SENSOR_ALTURA|counter[2]~13_combout ;
+wire \SENSOR_ALTURA|counter[2]~14 ;
+wire \SENSOR_ALTURA|counter[3]~15_combout ;
+wire \SENSOR_ALTURA|counter[3]~16 ;
+wire \SENSOR_ALTURA|counter[4]~17_combout ;
+wire \SENSOR_ALTURA|counter[4]~18 ;
+wire \SENSOR_ALTURA|counter[5]~19_combout ;
+wire \SENSOR_ALTURA|counter[5]~20 ;
+wire \SENSOR_ALTURA|counter[6]~21_combout ;
+wire \SENSOR_ALTURA|counter[6]~22 ;
+wire \SENSOR_ALTURA|counter[7]~23_combout ;
+wire \SENSOR_ALTURA|counter[7]~24 ;
+wire \SENSOR_ALTURA|counter[8]~25_combout ;
 wire \SENSOR_ALTURA|LessThan0~0_combout ;
-wire \SENSOR_ALTURA|LessThan0~2_combout ;
-wire \SENSOR_ALTURA|LessThan0~4_combout ;
+wire \SENSOR_ALTURA|LessThan0~1_combout ;
+wire \SENSOR_ALTURA|TRIGGER~feeder_combout ;
 wire \SENSOR_ALTURA|TRIGGER~q ;
 wire \KEY[0]~input_o ;
 wire \BOTAO_MENU|counter[0]~23_combout ;
-wire \BOTAO_MENU|counter[11]~65_combout ;
-wire \BOTAO_MENU|counter[11]~66_combout ;
+wire \BOTAO_MENU|counter[22]~65_combout ;
+wire \BOTAO_MENU|counter[22]~66_combout ;
 wire \BOTAO_MENU|counter[0]~24 ;
 wire \BOTAO_MENU|counter[1]~25_combout ;
 wire \BOTAO_MENU|counter[1]~26 ;
@@ -486,9 +467,9 @@ wire \BOTAO_MENU|counter[22]~69_combout ;
 wire \BOTAO_MENU|LessThan0~1_combout ;
 wire \BOTAO_MENU|LessThan0~7_combout ;
 wire \BOTAO_MENU|LessThan0~8_combout ;
-wire \BOTAO_MENU|LessThan0~5_combout ;
 wire \BOTAO_MENU|LessThan0~3_combout ;
 wire \BOTAO_MENU|LessThan0~4_combout ;
+wire \BOTAO_MENU|LessThan0~5_combout ;
 wire \BOTAO_MENU|LessThan0~6_combout ;
 wire \BOTAO_MENU|LessThan0~9_combout ;
 wire \BOTAO_MENU|buttonPressed~0_combout ;
@@ -496,69 +477,8 @@ wire \BOTAO_MENU|buttonPressed~feeder_combout ;
 wire \BOTAO_MENU|buttonPressed~q ;
 wire \selecao~0_combout ;
 wire \selecao~q ;
-wire \KEY[1]~input_o ;
-wire \BOTAO_ALTURA|counter[0]~23_combout ;
-wire \BOTAO_ALTURA|counter[2]~65_combout ;
-wire \BOTAO_ALTURA|counter[2]~66_combout ;
-wire \BOTAO_ALTURA|counter[0]~24 ;
-wire \BOTAO_ALTURA|counter[1]~25_combout ;
-wire \BOTAO_ALTURA|counter[1]~26 ;
-wire \BOTAO_ALTURA|counter[2]~27_combout ;
-wire \BOTAO_ALTURA|counter[2]~28 ;
-wire \BOTAO_ALTURA|counter[3]~29_combout ;
-wire \BOTAO_ALTURA|counter[3]~30 ;
-wire \BOTAO_ALTURA|counter[4]~31_combout ;
-wire \BOTAO_ALTURA|counter[4]~32 ;
-wire \BOTAO_ALTURA|counter[5]~33_combout ;
-wire \BOTAO_ALTURA|counter[5]~34 ;
-wire \BOTAO_ALTURA|counter[6]~35_combout ;
-wire \BOTAO_ALTURA|counter[6]~36 ;
-wire \BOTAO_ALTURA|counter[7]~37_combout ;
-wire \BOTAO_ALTURA|counter[7]~38 ;
-wire \BOTAO_ALTURA|counter[8]~39_combout ;
-wire \BOTAO_ALTURA|counter[8]~40 ;
-wire \BOTAO_ALTURA|counter[9]~41_combout ;
-wire \BOTAO_ALTURA|counter[9]~42 ;
-wire \BOTAO_ALTURA|counter[10]~43_combout ;
-wire \BOTAO_ALTURA|counter[10]~44 ;
-wire \BOTAO_ALTURA|counter[11]~45_combout ;
-wire \BOTAO_ALTURA|counter[11]~46 ;
-wire \BOTAO_ALTURA|counter[12]~47_combout ;
-wire \BOTAO_ALTURA|counter[12]~48 ;
-wire \BOTAO_ALTURA|counter[13]~49_combout ;
-wire \BOTAO_ALTURA|counter[13]~50 ;
-wire \BOTAO_ALTURA|counter[14]~51_combout ;
-wire \BOTAO_ALTURA|counter[14]~52 ;
-wire \BOTAO_ALTURA|counter[15]~53_combout ;
-wire \BOTAO_ALTURA|counter[15]~54 ;
-wire \BOTAO_ALTURA|counter[16]~55_combout ;
-wire \BOTAO_ALTURA|counter[16]~56 ;
-wire \BOTAO_ALTURA|counter[17]~57_combout ;
-wire \BOTAO_ALTURA|counter[17]~58 ;
-wire \BOTAO_ALTURA|counter[18]~59_combout ;
-wire \BOTAO_ALTURA|counter[18]~60 ;
-wire \BOTAO_ALTURA|counter[19]~61_combout ;
-wire \BOTAO_ALTURA|counter[19]~62 ;
-wire \BOTAO_ALTURA|counter[20]~63_combout ;
-wire \BOTAO_ALTURA|counter[20]~64 ;
-wire \BOTAO_ALTURA|counter[21]~67_combout ;
-wire \BOTAO_ALTURA|counter[21]~68 ;
-wire \BOTAO_ALTURA|counter[22]~69_combout ;
-wire \BOTAO_ALTURA|LessThan0~0_combout ;
-wire \BOTAO_ALTURA|LessThan0~1_combout ;
-wire \BOTAO_ALTURA|LessThan0~7_combout ;
-wire \BOTAO_ALTURA|LessThan0~8_combout ;
-wire \BOTAO_ALTURA|LessThan0~5_combout ;
-wire \BOTAO_ALTURA|LessThan0~3_combout ;
-wire \BOTAO_ALTURA|LessThan0~4_combout ;
-wire \BOTAO_ALTURA|LessThan0~6_combout ;
-wire \BOTAO_ALTURA|LessThan0~2_combout ;
-wire \BOTAO_ALTURA|LessThan0~9_combout ;
-wire \BOTAO_ALTURA|buttonPressed~0_combout ;
-wire \BOTAO_ALTURA|buttonPressed~q ;
 wire [22:0] \BOTAO_MENU|counter ;
-wire [22:0] \BOTAO_ALTURA|counter ;
-wire [19:0] \SENSOR_ALTURA|counter ;
+wire [8:0] \SENSOR_ALTURA|counter ;
 
 
 hard_block auto_generated_inst(
@@ -1023,7 +943,7 @@ defparam \GPIO[0]~output .open_drain_output = "false";
 
 // Location: IOOBUF_X60_Y0_N23
 cycloneive_io_obuf \GPIO[1]~output (
-	.i(vcc),
+	.i(gnd),
 	.oe(vcc),
 	.seriesterminationcontrol(16'b0000000000000000),
 	.devoe(devoe),
@@ -1034,7 +954,7 @@ defparam \GPIO[1]~output .bus_hold = "false";
 defparam \GPIO[1]~output .open_drain_output = "true";
 // synopsys translate_on
 
-// Location: IOOBUF_X115_Y62_N16
+// Location: IOOBUF_X115_Y48_N9
 cycloneive_io_obuf \CLOCKOUT~output (
 	.i(gnd),
 	.oe(vcc),
@@ -1788,9 +1708,22 @@ defparam \buttonOut~output .bus_hold = "false";
 defparam \buttonOut~output .open_drain_output = "false";
 // synopsys translate_on
 
-// Location: IOOBUF_X115_Y55_N23
+// Location: IOOBUF_X54_Y73_N2
+cycloneive_io_obuf \END_TRIGGER~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\END_TRIGGER~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \END_TRIGGER~output .bus_hold = "false";
+defparam \END_TRIGGER~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X115_Y22_N16
 cycloneive_io_obuf \HC_ENABLE~output (
-	.i(\BOTAO_ALTURA|buttonPressed~q ),
+	.i(gnd),
 	.oe(vcc),
 	.seriesterminationcontrol(16'b0000000000000000),
 	.devoe(devoe),
@@ -2058,32 +1991,32 @@ defparam \clock_50~inputclkctrl .clock_type = "global clock";
 defparam \clock_50~inputclkctrl .ena_register_mode = "none";
 // synopsys translate_on
 
-// Location: LCCOMB_X108_Y4_N12
-cycloneive_lcell_comb \SENSOR_ALTURA|counter[0]~20 (
+// Location: LCCOMB_X108_Y1_N6
+cycloneive_lcell_comb \SENSOR_ALTURA|counter[0]~9 (
 // Equation(s):
-// \SENSOR_ALTURA|counter[0]~20_combout  = \SENSOR_ALTURA|counter [0] $ (VCC)
-// \SENSOR_ALTURA|counter[0]~21  = CARRY(\SENSOR_ALTURA|counter [0])
+// \SENSOR_ALTURA|counter[0]~9_combout  = \SENSOR_ALTURA|counter [0] $ (VCC)
+// \SENSOR_ALTURA|counter[0]~10  = CARRY(\SENSOR_ALTURA|counter [0])
 
 	.dataa(\SENSOR_ALTURA|counter [0]),
 	.datab(gnd),
 	.datac(gnd),
 	.datad(vcc),
 	.cin(gnd),
-	.combout(\SENSOR_ALTURA|counter[0]~20_combout ),
-	.cout(\SENSOR_ALTURA|counter[0]~21 ));
+	.combout(\SENSOR_ALTURA|counter[0]~9_combout ),
+	.cout(\SENSOR_ALTURA|counter[0]~10 ));
 // synopsys translate_off
-defparam \SENSOR_ALTURA|counter[0]~20 .lut_mask = 16'h55AA;
-defparam \SENSOR_ALTURA|counter[0]~20 .sum_lutc_input = "datac";
+defparam \SENSOR_ALTURA|counter[0]~9 .lut_mask = 16'h55AA;
+defparam \SENSOR_ALTURA|counter[0]~9 .sum_lutc_input = "datac";
 // synopsys translate_on
 
-// Location: FF_X108_Y4_N13
+// Location: FF_X108_Y1_N7
 dffeas \SENSOR_ALTURA|counter[0] (
 	.clk(\clock_50~inputclkctrl_outclk ),
-	.d(\SENSOR_ALTURA|counter[0]~20_combout ),
+	.d(\SENSOR_ALTURA|counter[0]~9_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
-	.sclr(!\SENSOR_ALTURA|LessThan0~4_combout ),
+	.sclr(!\SENSOR_ALTURA|LessThan0~1_combout ),
 	.sload(gnd),
 	.ena(vcc),
 	.devclrn(devclrn),
@@ -2095,32 +2028,32 @@ defparam \SENSOR_ALTURA|counter[0] .is_wysiwyg = "true";
 defparam \SENSOR_ALTURA|counter[0] .power_up = "low";
 // synopsys translate_on
 
-// Location: LCCOMB_X108_Y4_N14
-cycloneive_lcell_comb \SENSOR_ALTURA|counter[1]~22 (
+// Location: LCCOMB_X108_Y1_N8
+cycloneive_lcell_comb \SENSOR_ALTURA|counter[1]~11 (
 // Equation(s):
-// \SENSOR_ALTURA|counter[1]~22_combout  = (\SENSOR_ALTURA|counter [1] & (!\SENSOR_ALTURA|counter[0]~21 )) # (!\SENSOR_ALTURA|counter [1] & ((\SENSOR_ALTURA|counter[0]~21 ) # (GND)))
-// \SENSOR_ALTURA|counter[1]~23  = CARRY((!\SENSOR_ALTURA|counter[0]~21 ) # (!\SENSOR_ALTURA|counter [1]))
+// \SENSOR_ALTURA|counter[1]~11_combout  = (\SENSOR_ALTURA|counter [1] & (!\SENSOR_ALTURA|counter[0]~10 )) # (!\SENSOR_ALTURA|counter [1] & ((\SENSOR_ALTURA|counter[0]~10 ) # (GND)))
+// \SENSOR_ALTURA|counter[1]~12  = CARRY((!\SENSOR_ALTURA|counter[0]~10 ) # (!\SENSOR_ALTURA|counter [1]))
 
 	.dataa(gnd),
 	.datab(\SENSOR_ALTURA|counter [1]),
 	.datac(gnd),
 	.datad(vcc),
-	.cin(\SENSOR_ALTURA|counter[0]~21 ),
-	.combout(\SENSOR_ALTURA|counter[1]~22_combout ),
-	.cout(\SENSOR_ALTURA|counter[1]~23 ));
+	.cin(\SENSOR_ALTURA|counter[0]~10 ),
+	.combout(\SENSOR_ALTURA|counter[1]~11_combout ),
+	.cout(\SENSOR_ALTURA|counter[1]~12 ));
 // synopsys translate_off
-defparam \SENSOR_ALTURA|counter[1]~22 .lut_mask = 16'h3C3F;
-defparam \SENSOR_ALTURA|counter[1]~22 .sum_lutc_input = "cin";
+defparam \SENSOR_ALTURA|counter[1]~11 .lut_mask = 16'h3C3F;
+defparam \SENSOR_ALTURA|counter[1]~11 .sum_lutc_input = "cin";
 // synopsys translate_on
 
-// Location: FF_X108_Y4_N15
+// Location: FF_X108_Y1_N9
 dffeas \SENSOR_ALTURA|counter[1] (
 	.clk(\clock_50~inputclkctrl_outclk ),
-	.d(\SENSOR_ALTURA|counter[1]~22_combout ),
+	.d(\SENSOR_ALTURA|counter[1]~11_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
-	.sclr(!\SENSOR_ALTURA|LessThan0~4_combout ),
+	.sclr(!\SENSOR_ALTURA|LessThan0~1_combout ),
 	.sload(gnd),
 	.ena(vcc),
 	.devclrn(devclrn),
@@ -2132,32 +2065,32 @@ defparam \SENSOR_ALTURA|counter[1] .is_wysiwyg = "true";
 defparam \SENSOR_ALTURA|counter[1] .power_up = "low";
 // synopsys translate_on
 
-// Location: LCCOMB_X108_Y4_N16
-cycloneive_lcell_comb \SENSOR_ALTURA|counter[2]~24 (
+// Location: LCCOMB_X108_Y1_N10
+cycloneive_lcell_comb \SENSOR_ALTURA|counter[2]~13 (
 // Equation(s):
-// \SENSOR_ALTURA|counter[2]~24_combout  = (\SENSOR_ALTURA|counter [2] & (\SENSOR_ALTURA|counter[1]~23  $ (GND))) # (!\SENSOR_ALTURA|counter [2] & (!\SENSOR_ALTURA|counter[1]~23  & VCC))
-// \SENSOR_ALTURA|counter[2]~25  = CARRY((\SENSOR_ALTURA|counter [2] & !\SENSOR_ALTURA|counter[1]~23 ))
+// \SENSOR_ALTURA|counter[2]~13_combout  = (\SENSOR_ALTURA|counter [2] & (\SENSOR_ALTURA|counter[1]~12  $ (GND))) # (!\SENSOR_ALTURA|counter [2] & (!\SENSOR_ALTURA|counter[1]~12  & VCC))
+// \SENSOR_ALTURA|counter[2]~14  = CARRY((\SENSOR_ALTURA|counter [2] & !\SENSOR_ALTURA|counter[1]~12 ))
 
-	.dataa(gnd),
-	.datab(\SENSOR_ALTURA|counter [2]),
+	.dataa(\SENSOR_ALTURA|counter [2]),
+	.datab(gnd),
 	.datac(gnd),
 	.datad(vcc),
-	.cin(\SENSOR_ALTURA|counter[1]~23 ),
-	.combout(\SENSOR_ALTURA|counter[2]~24_combout ),
-	.cout(\SENSOR_ALTURA|counter[2]~25 ));
+	.cin(\SENSOR_ALTURA|counter[1]~12 ),
+	.combout(\SENSOR_ALTURA|counter[2]~13_combout ),
+	.cout(\SENSOR_ALTURA|counter[2]~14 ));
 // synopsys translate_off
-defparam \SENSOR_ALTURA|counter[2]~24 .lut_mask = 16'hC30C;
-defparam \SENSOR_ALTURA|counter[2]~24 .sum_lutc_input = "cin";
+defparam \SENSOR_ALTURA|counter[2]~13 .lut_mask = 16'hA50A;
+defparam \SENSOR_ALTURA|counter[2]~13 .sum_lutc_input = "cin";
 // synopsys translate_on
 
-// Location: FF_X108_Y4_N17
+// Location: FF_X108_Y1_N11
 dffeas \SENSOR_ALTURA|counter[2] (
 	.clk(\clock_50~inputclkctrl_outclk ),
-	.d(\SENSOR_ALTURA|counter[2]~24_combout ),
+	.d(\SENSOR_ALTURA|counter[2]~13_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
-	.sclr(!\SENSOR_ALTURA|LessThan0~4_combout ),
+	.sclr(!\SENSOR_ALTURA|LessThan0~1_combout ),
 	.sload(gnd),
 	.ena(vcc),
 	.devclrn(devclrn),
@@ -2169,32 +2102,32 @@ defparam \SENSOR_ALTURA|counter[2] .is_wysiwyg = "true";
 defparam \SENSOR_ALTURA|counter[2] .power_up = "low";
 // synopsys translate_on
 
-// Location: LCCOMB_X108_Y4_N18
-cycloneive_lcell_comb \SENSOR_ALTURA|counter[3]~26 (
+// Location: LCCOMB_X108_Y1_N12
+cycloneive_lcell_comb \SENSOR_ALTURA|counter[3]~15 (
 // Equation(s):
-// \SENSOR_ALTURA|counter[3]~26_combout  = (\SENSOR_ALTURA|counter [3] & (!\SENSOR_ALTURA|counter[2]~25 )) # (!\SENSOR_ALTURA|counter [3] & ((\SENSOR_ALTURA|counter[2]~25 ) # (GND)))
-// \SENSOR_ALTURA|counter[3]~27  = CARRY((!\SENSOR_ALTURA|counter[2]~25 ) # (!\SENSOR_ALTURA|counter [3]))
+// \SENSOR_ALTURA|counter[3]~15_combout  = (\SENSOR_ALTURA|counter [3] & (!\SENSOR_ALTURA|counter[2]~14 )) # (!\SENSOR_ALTURA|counter [3] & ((\SENSOR_ALTURA|counter[2]~14 ) # (GND)))
+// \SENSOR_ALTURA|counter[3]~16  = CARRY((!\SENSOR_ALTURA|counter[2]~14 ) # (!\SENSOR_ALTURA|counter [3]))
 
-	.dataa(gnd),
-	.datab(\SENSOR_ALTURA|counter [3]),
+	.dataa(\SENSOR_ALTURA|counter [3]),
+	.datab(gnd),
 	.datac(gnd),
 	.datad(vcc),
-	.cin(\SENSOR_ALTURA|counter[2]~25 ),
-	.combout(\SENSOR_ALTURA|counter[3]~26_combout ),
-	.cout(\SENSOR_ALTURA|counter[3]~27 ));
+	.cin(\SENSOR_ALTURA|counter[2]~14 ),
+	.combout(\SENSOR_ALTURA|counter[3]~15_combout ),
+	.cout(\SENSOR_ALTURA|counter[3]~16 ));
 // synopsys translate_off
-defparam \SENSOR_ALTURA|counter[3]~26 .lut_mask = 16'h3C3F;
-defparam \SENSOR_ALTURA|counter[3]~26 .sum_lutc_input = "cin";
+defparam \SENSOR_ALTURA|counter[3]~15 .lut_mask = 16'h5A5F;
+defparam \SENSOR_ALTURA|counter[3]~15 .sum_lutc_input = "cin";
 // synopsys translate_on
 
-// Location: FF_X108_Y4_N19
+// Location: FF_X108_Y1_N13
 dffeas \SENSOR_ALTURA|counter[3] (
 	.clk(\clock_50~inputclkctrl_outclk ),
-	.d(\SENSOR_ALTURA|counter[3]~26_combout ),
+	.d(\SENSOR_ALTURA|counter[3]~15_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
-	.sclr(!\SENSOR_ALTURA|LessThan0~4_combout ),
+	.sclr(!\SENSOR_ALTURA|LessThan0~1_combout ),
 	.sload(gnd),
 	.ena(vcc),
 	.devclrn(devclrn),
@@ -2206,32 +2139,32 @@ defparam \SENSOR_ALTURA|counter[3] .is_wysiwyg = "true";
 defparam \SENSOR_ALTURA|counter[3] .power_up = "low";
 // synopsys translate_on
 
-// Location: LCCOMB_X108_Y4_N20
-cycloneive_lcell_comb \SENSOR_ALTURA|counter[4]~28 (
+// Location: LCCOMB_X108_Y1_N14
+cycloneive_lcell_comb \SENSOR_ALTURA|counter[4]~17 (
 // Equation(s):
-// \SENSOR_ALTURA|counter[4]~28_combout  = (\SENSOR_ALTURA|counter [4] & (\SENSOR_ALTURA|counter[3]~27  $ (GND))) # (!\SENSOR_ALTURA|counter [4] & (!\SENSOR_ALTURA|counter[3]~27  & VCC))
-// \SENSOR_ALTURA|counter[4]~29  = CARRY((\SENSOR_ALTURA|counter [4] & !\SENSOR_ALTURA|counter[3]~27 ))
+// \SENSOR_ALTURA|counter[4]~17_combout  = (\SENSOR_ALTURA|counter [4] & (\SENSOR_ALTURA|counter[3]~16  $ (GND))) # (!\SENSOR_ALTURA|counter [4] & (!\SENSOR_ALTURA|counter[3]~16  & VCC))
+// \SENSOR_ALTURA|counter[4]~18  = CARRY((\SENSOR_ALTURA|counter [4] & !\SENSOR_ALTURA|counter[3]~16 ))
 
 	.dataa(gnd),
 	.datab(\SENSOR_ALTURA|counter [4]),
 	.datac(gnd),
 	.datad(vcc),
-	.cin(\SENSOR_ALTURA|counter[3]~27 ),
-	.combout(\SENSOR_ALTURA|counter[4]~28_combout ),
-	.cout(\SENSOR_ALTURA|counter[4]~29 ));
+	.cin(\SENSOR_ALTURA|counter[3]~16 ),
+	.combout(\SENSOR_ALTURA|counter[4]~17_combout ),
+	.cout(\SENSOR_ALTURA|counter[4]~18 ));
 // synopsys translate_off
-defparam \SENSOR_ALTURA|counter[4]~28 .lut_mask = 16'hC30C;
-defparam \SENSOR_ALTURA|counter[4]~28 .sum_lutc_input = "cin";
+defparam \SENSOR_ALTURA|counter[4]~17 .lut_mask = 16'hC30C;
+defparam \SENSOR_ALTURA|counter[4]~17 .sum_lutc_input = "cin";
 // synopsys translate_on
 
-// Location: FF_X108_Y4_N21
+// Location: FF_X108_Y1_N15
 dffeas \SENSOR_ALTURA|counter[4] (
 	.clk(\clock_50~inputclkctrl_outclk ),
-	.d(\SENSOR_ALTURA|counter[4]~28_combout ),
+	.d(\SENSOR_ALTURA|counter[4]~17_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
-	.sclr(!\SENSOR_ALTURA|LessThan0~4_combout ),
+	.sclr(!\SENSOR_ALTURA|LessThan0~1_combout ),
 	.sload(gnd),
 	.ena(vcc),
 	.devclrn(devclrn),
@@ -2243,32 +2176,32 @@ defparam \SENSOR_ALTURA|counter[4] .is_wysiwyg = "true";
 defparam \SENSOR_ALTURA|counter[4] .power_up = "low";
 // synopsys translate_on
 
-// Location: LCCOMB_X108_Y4_N22
-cycloneive_lcell_comb \SENSOR_ALTURA|counter[5]~30 (
+// Location: LCCOMB_X108_Y1_N16
+cycloneive_lcell_comb \SENSOR_ALTURA|counter[5]~19 (
 // Equation(s):
-// \SENSOR_ALTURA|counter[5]~30_combout  = (\SENSOR_ALTURA|counter [5] & (!\SENSOR_ALTURA|counter[4]~29 )) # (!\SENSOR_ALTURA|counter [5] & ((\SENSOR_ALTURA|counter[4]~29 ) # (GND)))
-// \SENSOR_ALTURA|counter[5]~31  = CARRY((!\SENSOR_ALTURA|counter[4]~29 ) # (!\SENSOR_ALTURA|counter [5]))
+// \SENSOR_ALTURA|counter[5]~19_combout  = (\SENSOR_ALTURA|counter [5] & (!\SENSOR_ALTURA|counter[4]~18 )) # (!\SENSOR_ALTURA|counter [5] & ((\SENSOR_ALTURA|counter[4]~18 ) # (GND)))
+// \SENSOR_ALTURA|counter[5]~20  = CARRY((!\SENSOR_ALTURA|counter[4]~18 ) # (!\SENSOR_ALTURA|counter [5]))
 
-	.dataa(\SENSOR_ALTURA|counter [5]),
-	.datab(gnd),
+	.dataa(gnd),
+	.datab(\SENSOR_ALTURA|counter [5]),
 	.datac(gnd),
 	.datad(vcc),
-	.cin(\SENSOR_ALTURA|counter[4]~29 ),
-	.combout(\SENSOR_ALTURA|counter[5]~30_combout ),
-	.cout(\SENSOR_ALTURA|counter[5]~31 ));
+	.cin(\SENSOR_ALTURA|counter[4]~18 ),
+	.combout(\SENSOR_ALTURA|counter[5]~19_combout ),
+	.cout(\SENSOR_ALTURA|counter[5]~20 ));
 // synopsys translate_off
-defparam \SENSOR_ALTURA|counter[5]~30 .lut_mask = 16'h5A5F;
-defparam \SENSOR_ALTURA|counter[5]~30 .sum_lutc_input = "cin";
+defparam \SENSOR_ALTURA|counter[5]~19 .lut_mask = 16'h3C3F;
+defparam \SENSOR_ALTURA|counter[5]~19 .sum_lutc_input = "cin";
 // synopsys translate_on
 
-// Location: FF_X108_Y4_N23
+// Location: FF_X108_Y1_N17
 dffeas \SENSOR_ALTURA|counter[5] (
 	.clk(\clock_50~inputclkctrl_outclk ),
-	.d(\SENSOR_ALTURA|counter[5]~30_combout ),
+	.d(\SENSOR_ALTURA|counter[5]~19_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
-	.sclr(!\SENSOR_ALTURA|LessThan0~4_combout ),
+	.sclr(!\SENSOR_ALTURA|LessThan0~1_combout ),
 	.sload(gnd),
 	.ena(vcc),
 	.devclrn(devclrn),
@@ -2280,32 +2213,32 @@ defparam \SENSOR_ALTURA|counter[5] .is_wysiwyg = "true";
 defparam \SENSOR_ALTURA|counter[5] .power_up = "low";
 // synopsys translate_on
 
-// Location: LCCOMB_X108_Y4_N24
-cycloneive_lcell_comb \SENSOR_ALTURA|counter[6]~32 (
+// Location: LCCOMB_X108_Y1_N18
+cycloneive_lcell_comb \SENSOR_ALTURA|counter[6]~21 (
 // Equation(s):
-// \SENSOR_ALTURA|counter[6]~32_combout  = (\SENSOR_ALTURA|counter [6] & (\SENSOR_ALTURA|counter[5]~31  $ (GND))) # (!\SENSOR_ALTURA|counter [6] & (!\SENSOR_ALTURA|counter[5]~31  & VCC))
-// \SENSOR_ALTURA|counter[6]~33  = CARRY((\SENSOR_ALTURA|counter [6] & !\SENSOR_ALTURA|counter[5]~31 ))
+// \SENSOR_ALTURA|counter[6]~21_combout  = (\SENSOR_ALTURA|counter [6] & (\SENSOR_ALTURA|counter[5]~20  $ (GND))) # (!\SENSOR_ALTURA|counter [6] & (!\SENSOR_ALTURA|counter[5]~20  & VCC))
+// \SENSOR_ALTURA|counter[6]~22  = CARRY((\SENSOR_ALTURA|counter [6] & !\SENSOR_ALTURA|counter[5]~20 ))
 
 	.dataa(gnd),
 	.datab(\SENSOR_ALTURA|counter [6]),
 	.datac(gnd),
 	.datad(vcc),
-	.cin(\SENSOR_ALTURA|counter[5]~31 ),
-	.combout(\SENSOR_ALTURA|counter[6]~32_combout ),
-	.cout(\SENSOR_ALTURA|counter[6]~33 ));
+	.cin(\SENSOR_ALTURA|counter[5]~20 ),
+	.combout(\SENSOR_ALTURA|counter[6]~21_combout ),
+	.cout(\SENSOR_ALTURA|counter[6]~22 ));
 // synopsys translate_off
-defparam \SENSOR_ALTURA|counter[6]~32 .lut_mask = 16'hC30C;
-defparam \SENSOR_ALTURA|counter[6]~32 .sum_lutc_input = "cin";
+defparam \SENSOR_ALTURA|counter[6]~21 .lut_mask = 16'hC30C;
+defparam \SENSOR_ALTURA|counter[6]~21 .sum_lutc_input = "cin";
 // synopsys translate_on
 
-// Location: FF_X108_Y4_N25
+// Location: FF_X108_Y1_N19
 dffeas \SENSOR_ALTURA|counter[6] (
 	.clk(\clock_50~inputclkctrl_outclk ),
-	.d(\SENSOR_ALTURA|counter[6]~32_combout ),
+	.d(\SENSOR_ALTURA|counter[6]~21_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
-	.sclr(!\SENSOR_ALTURA|LessThan0~4_combout ),
+	.sclr(!\SENSOR_ALTURA|LessThan0~1_combout ),
 	.sload(gnd),
 	.ena(vcc),
 	.devclrn(devclrn),
@@ -2317,32 +2250,32 @@ defparam \SENSOR_ALTURA|counter[6] .is_wysiwyg = "true";
 defparam \SENSOR_ALTURA|counter[6] .power_up = "low";
 // synopsys translate_on
 
-// Location: LCCOMB_X108_Y4_N26
-cycloneive_lcell_comb \SENSOR_ALTURA|counter[7]~34 (
+// Location: LCCOMB_X108_Y1_N20
+cycloneive_lcell_comb \SENSOR_ALTURA|counter[7]~23 (
 // Equation(s):
-// \SENSOR_ALTURA|counter[7]~34_combout  = (\SENSOR_ALTURA|counter [7] & (!\SENSOR_ALTURA|counter[6]~33 )) # (!\SENSOR_ALTURA|counter [7] & ((\SENSOR_ALTURA|counter[6]~33 ) # (GND)))
-// \SENSOR_ALTURA|counter[7]~35  = CARRY((!\SENSOR_ALTURA|counter[6]~33 ) # (!\SENSOR_ALTURA|counter [7]))
+// \SENSOR_ALTURA|counter[7]~23_combout  = (\SENSOR_ALTURA|counter [7] & (!\SENSOR_ALTURA|counter[6]~22 )) # (!\SENSOR_ALTURA|counter [7] & ((\SENSOR_ALTURA|counter[6]~22 ) # (GND)))
+// \SENSOR_ALTURA|counter[7]~24  = CARRY((!\SENSOR_ALTURA|counter[6]~22 ) # (!\SENSOR_ALTURA|counter [7]))
 
-	.dataa(\SENSOR_ALTURA|counter [7]),
-	.datab(gnd),
+	.dataa(gnd),
+	.datab(\SENSOR_ALTURA|counter [7]),
 	.datac(gnd),
 	.datad(vcc),
-	.cin(\SENSOR_ALTURA|counter[6]~33 ),
-	.combout(\SENSOR_ALTURA|counter[7]~34_combout ),
-	.cout(\SENSOR_ALTURA|counter[7]~35 ));
+	.cin(\SENSOR_ALTURA|counter[6]~22 ),
+	.combout(\SENSOR_ALTURA|counter[7]~23_combout ),
+	.cout(\SENSOR_ALTURA|counter[7]~24 ));
 // synopsys translate_off
-defparam \SENSOR_ALTURA|counter[7]~34 .lut_mask = 16'h5A5F;
-defparam \SENSOR_ALTURA|counter[7]~34 .sum_lutc_input = "cin";
+defparam \SENSOR_ALTURA|counter[7]~23 .lut_mask = 16'h3C3F;
+defparam \SENSOR_ALTURA|counter[7]~23 .sum_lutc_input = "cin";
 // synopsys translate_on
 
-// Location: FF_X108_Y4_N27
+// Location: FF_X108_Y1_N21
 dffeas \SENSOR_ALTURA|counter[7] (
 	.clk(\clock_50~inputclkctrl_outclk ),
-	.d(\SENSOR_ALTURA|counter[7]~34_combout ),
+	.d(\SENSOR_ALTURA|counter[7]~23_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
-	.sclr(!\SENSOR_ALTURA|LessThan0~4_combout ),
+	.sclr(!\SENSOR_ALTURA|LessThan0~1_combout ),
 	.sload(gnd),
 	.ena(vcc),
 	.devclrn(devclrn),
@@ -2354,32 +2287,31 @@ defparam \SENSOR_ALTURA|counter[7] .is_wysiwyg = "true";
 defparam \SENSOR_ALTURA|counter[7] .power_up = "low";
 // synopsys translate_on
 
-// Location: LCCOMB_X108_Y4_N28
-cycloneive_lcell_comb \SENSOR_ALTURA|counter[8]~36 (
+// Location: LCCOMB_X108_Y1_N22
+cycloneive_lcell_comb \SENSOR_ALTURA|counter[8]~25 (
 // Equation(s):
-// \SENSOR_ALTURA|counter[8]~36_combout  = (\SENSOR_ALTURA|counter [8] & (\SENSOR_ALTURA|counter[7]~35  $ (GND))) # (!\SENSOR_ALTURA|counter [8] & (!\SENSOR_ALTURA|counter[7]~35  & VCC))
-// \SENSOR_ALTURA|counter[8]~37  = CARRY((\SENSOR_ALTURA|counter [8] & !\SENSOR_ALTURA|counter[7]~35 ))
+// \SENSOR_ALTURA|counter[8]~25_combout  = \SENSOR_ALTURA|counter [8] $ (!\SENSOR_ALTURA|counter[7]~24 )
 
-	.dataa(gnd),
-	.datab(\SENSOR_ALTURA|counter [8]),
+	.dataa(\SENSOR_ALTURA|counter [8]),
+	.datab(gnd),
 	.datac(gnd),
-	.datad(vcc),
-	.cin(\SENSOR_ALTURA|counter[7]~35 ),
-	.combout(\SENSOR_ALTURA|counter[8]~36_combout ),
-	.cout(\SENSOR_ALTURA|counter[8]~37 ));
+	.datad(gnd),
+	.cin(\SENSOR_ALTURA|counter[7]~24 ),
+	.combout(\SENSOR_ALTURA|counter[8]~25_combout ),
+	.cout());
 // synopsys translate_off
-defparam \SENSOR_ALTURA|counter[8]~36 .lut_mask = 16'hC30C;
-defparam \SENSOR_ALTURA|counter[8]~36 .sum_lutc_input = "cin";
+defparam \SENSOR_ALTURA|counter[8]~25 .lut_mask = 16'hA5A5;
+defparam \SENSOR_ALTURA|counter[8]~25 .sum_lutc_input = "cin";
 // synopsys translate_on
 
-// Location: FF_X108_Y4_N29
+// Location: FF_X108_Y1_N23
 dffeas \SENSOR_ALTURA|counter[8] (
 	.clk(\clock_50~inputclkctrl_outclk ),
-	.d(\SENSOR_ALTURA|counter[8]~36_combout ),
+	.d(\SENSOR_ALTURA|counter[8]~25_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
-	.sclr(!\SENSOR_ALTURA|LessThan0~4_combout ),
+	.sclr(!\SENSOR_ALTURA|LessThan0~1_combout ),
 	.sload(gnd),
 	.ena(vcc),
 	.devclrn(devclrn),
@@ -2391,501 +2323,61 @@ defparam \SENSOR_ALTURA|counter[8] .is_wysiwyg = "true";
 defparam \SENSOR_ALTURA|counter[8] .power_up = "low";
 // synopsys translate_on
 
-// Location: LCCOMB_X108_Y4_N30
-cycloneive_lcell_comb \SENSOR_ALTURA|counter[9]~38 (
-// Equation(s):
-// \SENSOR_ALTURA|counter[9]~38_combout  = (\SENSOR_ALTURA|counter [9] & (!\SENSOR_ALTURA|counter[8]~37 )) # (!\SENSOR_ALTURA|counter [9] & ((\SENSOR_ALTURA|counter[8]~37 ) # (GND)))
-// \SENSOR_ALTURA|counter[9]~39  = CARRY((!\SENSOR_ALTURA|counter[8]~37 ) # (!\SENSOR_ALTURA|counter [9]))
-
-	.dataa(\SENSOR_ALTURA|counter [9]),
-	.datab(gnd),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\SENSOR_ALTURA|counter[8]~37 ),
-	.combout(\SENSOR_ALTURA|counter[9]~38_combout ),
-	.cout(\SENSOR_ALTURA|counter[9]~39 ));
-// synopsys translate_off
-defparam \SENSOR_ALTURA|counter[9]~38 .lut_mask = 16'h5A5F;
-defparam \SENSOR_ALTURA|counter[9]~38 .sum_lutc_input = "cin";
-// synopsys translate_on
-
-// Location: FF_X108_Y4_N31
-dffeas \SENSOR_ALTURA|counter[9] (
-	.clk(\clock_50~inputclkctrl_outclk ),
-	.d(\SENSOR_ALTURA|counter[9]~38_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(!\SENSOR_ALTURA|LessThan0~4_combout ),
-	.sload(gnd),
-	.ena(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(\SENSOR_ALTURA|counter [9]),
-	.prn(vcc));
-// synopsys translate_off
-defparam \SENSOR_ALTURA|counter[9] .is_wysiwyg = "true";
-defparam \SENSOR_ALTURA|counter[9] .power_up = "low";
-// synopsys translate_on
-
-// Location: LCCOMB_X108_Y3_N0
-cycloneive_lcell_comb \SENSOR_ALTURA|counter[10]~40 (
-// Equation(s):
-// \SENSOR_ALTURA|counter[10]~40_combout  = (\SENSOR_ALTURA|counter [10] & (\SENSOR_ALTURA|counter[9]~39  $ (GND))) # (!\SENSOR_ALTURA|counter [10] & (!\SENSOR_ALTURA|counter[9]~39  & VCC))
-// \SENSOR_ALTURA|counter[10]~41  = CARRY((\SENSOR_ALTURA|counter [10] & !\SENSOR_ALTURA|counter[9]~39 ))
-
-	.dataa(gnd),
-	.datab(\SENSOR_ALTURA|counter [10]),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\SENSOR_ALTURA|counter[9]~39 ),
-	.combout(\SENSOR_ALTURA|counter[10]~40_combout ),
-	.cout(\SENSOR_ALTURA|counter[10]~41 ));
-// synopsys translate_off
-defparam \SENSOR_ALTURA|counter[10]~40 .lut_mask = 16'hC30C;
-defparam \SENSOR_ALTURA|counter[10]~40 .sum_lutc_input = "cin";
-// synopsys translate_on
-
-// Location: FF_X108_Y3_N1
-dffeas \SENSOR_ALTURA|counter[10] (
-	.clk(\clock_50~inputclkctrl_outclk ),
-	.d(\SENSOR_ALTURA|counter[10]~40_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(!\SENSOR_ALTURA|LessThan0~4_combout ),
-	.sload(gnd),
-	.ena(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(\SENSOR_ALTURA|counter [10]),
-	.prn(vcc));
-// synopsys translate_off
-defparam \SENSOR_ALTURA|counter[10] .is_wysiwyg = "true";
-defparam \SENSOR_ALTURA|counter[10] .power_up = "low";
-// synopsys translate_on
-
-// Location: LCCOMB_X108_Y3_N2
-cycloneive_lcell_comb \SENSOR_ALTURA|counter[11]~42 (
-// Equation(s):
-// \SENSOR_ALTURA|counter[11]~42_combout  = (\SENSOR_ALTURA|counter [11] & (!\SENSOR_ALTURA|counter[10]~41 )) # (!\SENSOR_ALTURA|counter [11] & ((\SENSOR_ALTURA|counter[10]~41 ) # (GND)))
-// \SENSOR_ALTURA|counter[11]~43  = CARRY((!\SENSOR_ALTURA|counter[10]~41 ) # (!\SENSOR_ALTURA|counter [11]))
-
-	.dataa(gnd),
-	.datab(\SENSOR_ALTURA|counter [11]),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\SENSOR_ALTURA|counter[10]~41 ),
-	.combout(\SENSOR_ALTURA|counter[11]~42_combout ),
-	.cout(\SENSOR_ALTURA|counter[11]~43 ));
-// synopsys translate_off
-defparam \SENSOR_ALTURA|counter[11]~42 .lut_mask = 16'h3C3F;
-defparam \SENSOR_ALTURA|counter[11]~42 .sum_lutc_input = "cin";
-// synopsys translate_on
-
-// Location: FF_X108_Y3_N3
-dffeas \SENSOR_ALTURA|counter[11] (
-	.clk(\clock_50~inputclkctrl_outclk ),
-	.d(\SENSOR_ALTURA|counter[11]~42_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(!\SENSOR_ALTURA|LessThan0~4_combout ),
-	.sload(gnd),
-	.ena(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(\SENSOR_ALTURA|counter [11]),
-	.prn(vcc));
-// synopsys translate_off
-defparam \SENSOR_ALTURA|counter[11] .is_wysiwyg = "true";
-defparam \SENSOR_ALTURA|counter[11] .power_up = "low";
-// synopsys translate_on
-
-// Location: LCCOMB_X108_Y3_N4
-cycloneive_lcell_comb \SENSOR_ALTURA|counter[12]~44 (
-// Equation(s):
-// \SENSOR_ALTURA|counter[12]~44_combout  = (\SENSOR_ALTURA|counter [12] & (\SENSOR_ALTURA|counter[11]~43  $ (GND))) # (!\SENSOR_ALTURA|counter [12] & (!\SENSOR_ALTURA|counter[11]~43  & VCC))
-// \SENSOR_ALTURA|counter[12]~45  = CARRY((\SENSOR_ALTURA|counter [12] & !\SENSOR_ALTURA|counter[11]~43 ))
-
-	.dataa(gnd),
-	.datab(\SENSOR_ALTURA|counter [12]),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\SENSOR_ALTURA|counter[11]~43 ),
-	.combout(\SENSOR_ALTURA|counter[12]~44_combout ),
-	.cout(\SENSOR_ALTURA|counter[12]~45 ));
-// synopsys translate_off
-defparam \SENSOR_ALTURA|counter[12]~44 .lut_mask = 16'hC30C;
-defparam \SENSOR_ALTURA|counter[12]~44 .sum_lutc_input = "cin";
-// synopsys translate_on
-
-// Location: FF_X108_Y3_N5
-dffeas \SENSOR_ALTURA|counter[12] (
-	.clk(\clock_50~inputclkctrl_outclk ),
-	.d(\SENSOR_ALTURA|counter[12]~44_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(!\SENSOR_ALTURA|LessThan0~4_combout ),
-	.sload(gnd),
-	.ena(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(\SENSOR_ALTURA|counter [12]),
-	.prn(vcc));
-// synopsys translate_off
-defparam \SENSOR_ALTURA|counter[12] .is_wysiwyg = "true";
-defparam \SENSOR_ALTURA|counter[12] .power_up = "low";
-// synopsys translate_on
-
-// Location: LCCOMB_X108_Y3_N6
-cycloneive_lcell_comb \SENSOR_ALTURA|counter[13]~46 (
-// Equation(s):
-// \SENSOR_ALTURA|counter[13]~46_combout  = (\SENSOR_ALTURA|counter [13] & (!\SENSOR_ALTURA|counter[12]~45 )) # (!\SENSOR_ALTURA|counter [13] & ((\SENSOR_ALTURA|counter[12]~45 ) # (GND)))
-// \SENSOR_ALTURA|counter[13]~47  = CARRY((!\SENSOR_ALTURA|counter[12]~45 ) # (!\SENSOR_ALTURA|counter [13]))
-
-	.dataa(\SENSOR_ALTURA|counter [13]),
-	.datab(gnd),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\SENSOR_ALTURA|counter[12]~45 ),
-	.combout(\SENSOR_ALTURA|counter[13]~46_combout ),
-	.cout(\SENSOR_ALTURA|counter[13]~47 ));
-// synopsys translate_off
-defparam \SENSOR_ALTURA|counter[13]~46 .lut_mask = 16'h5A5F;
-defparam \SENSOR_ALTURA|counter[13]~46 .sum_lutc_input = "cin";
-// synopsys translate_on
-
-// Location: FF_X108_Y3_N7
-dffeas \SENSOR_ALTURA|counter[13] (
-	.clk(\clock_50~inputclkctrl_outclk ),
-	.d(\SENSOR_ALTURA|counter[13]~46_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(!\SENSOR_ALTURA|LessThan0~4_combout ),
-	.sload(gnd),
-	.ena(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(\SENSOR_ALTURA|counter [13]),
-	.prn(vcc));
-// synopsys translate_off
-defparam \SENSOR_ALTURA|counter[13] .is_wysiwyg = "true";
-defparam \SENSOR_ALTURA|counter[13] .power_up = "low";
-// synopsys translate_on
-
-// Location: LCCOMB_X108_Y3_N8
-cycloneive_lcell_comb \SENSOR_ALTURA|counter[14]~48 (
-// Equation(s):
-// \SENSOR_ALTURA|counter[14]~48_combout  = (\SENSOR_ALTURA|counter [14] & (\SENSOR_ALTURA|counter[13]~47  $ (GND))) # (!\SENSOR_ALTURA|counter [14] & (!\SENSOR_ALTURA|counter[13]~47  & VCC))
-// \SENSOR_ALTURA|counter[14]~49  = CARRY((\SENSOR_ALTURA|counter [14] & !\SENSOR_ALTURA|counter[13]~47 ))
-
-	.dataa(gnd),
-	.datab(\SENSOR_ALTURA|counter [14]),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\SENSOR_ALTURA|counter[13]~47 ),
-	.combout(\SENSOR_ALTURA|counter[14]~48_combout ),
-	.cout(\SENSOR_ALTURA|counter[14]~49 ));
-// synopsys translate_off
-defparam \SENSOR_ALTURA|counter[14]~48 .lut_mask = 16'hC30C;
-defparam \SENSOR_ALTURA|counter[14]~48 .sum_lutc_input = "cin";
-// synopsys translate_on
-
-// Location: FF_X108_Y3_N9
-dffeas \SENSOR_ALTURA|counter[14] (
-	.clk(\clock_50~inputclkctrl_outclk ),
-	.d(\SENSOR_ALTURA|counter[14]~48_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(!\SENSOR_ALTURA|LessThan0~4_combout ),
-	.sload(gnd),
-	.ena(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(\SENSOR_ALTURA|counter [14]),
-	.prn(vcc));
-// synopsys translate_off
-defparam \SENSOR_ALTURA|counter[14] .is_wysiwyg = "true";
-defparam \SENSOR_ALTURA|counter[14] .power_up = "low";
-// synopsys translate_on
-
-// Location: LCCOMB_X108_Y3_N10
-cycloneive_lcell_comb \SENSOR_ALTURA|counter[15]~50 (
-// Equation(s):
-// \SENSOR_ALTURA|counter[15]~50_combout  = (\SENSOR_ALTURA|counter [15] & (!\SENSOR_ALTURA|counter[14]~49 )) # (!\SENSOR_ALTURA|counter [15] & ((\SENSOR_ALTURA|counter[14]~49 ) # (GND)))
-// \SENSOR_ALTURA|counter[15]~51  = CARRY((!\SENSOR_ALTURA|counter[14]~49 ) # (!\SENSOR_ALTURA|counter [15]))
-
-	.dataa(\SENSOR_ALTURA|counter [15]),
-	.datab(gnd),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\SENSOR_ALTURA|counter[14]~49 ),
-	.combout(\SENSOR_ALTURA|counter[15]~50_combout ),
-	.cout(\SENSOR_ALTURA|counter[15]~51 ));
-// synopsys translate_off
-defparam \SENSOR_ALTURA|counter[15]~50 .lut_mask = 16'h5A5F;
-defparam \SENSOR_ALTURA|counter[15]~50 .sum_lutc_input = "cin";
-// synopsys translate_on
-
-// Location: FF_X108_Y3_N11
-dffeas \SENSOR_ALTURA|counter[15] (
-	.clk(\clock_50~inputclkctrl_outclk ),
-	.d(\SENSOR_ALTURA|counter[15]~50_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(!\SENSOR_ALTURA|LessThan0~4_combout ),
-	.sload(gnd),
-	.ena(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(\SENSOR_ALTURA|counter [15]),
-	.prn(vcc));
-// synopsys translate_off
-defparam \SENSOR_ALTURA|counter[15] .is_wysiwyg = "true";
-defparam \SENSOR_ALTURA|counter[15] .power_up = "low";
-// synopsys translate_on
-
-// Location: LCCOMB_X108_Y3_N12
-cycloneive_lcell_comb \SENSOR_ALTURA|counter[16]~52 (
-// Equation(s):
-// \SENSOR_ALTURA|counter[16]~52_combout  = (\SENSOR_ALTURA|counter [16] & (\SENSOR_ALTURA|counter[15]~51  $ (GND))) # (!\SENSOR_ALTURA|counter [16] & (!\SENSOR_ALTURA|counter[15]~51  & VCC))
-// \SENSOR_ALTURA|counter[16]~53  = CARRY((\SENSOR_ALTURA|counter [16] & !\SENSOR_ALTURA|counter[15]~51 ))
-
-	.dataa(\SENSOR_ALTURA|counter [16]),
-	.datab(gnd),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\SENSOR_ALTURA|counter[15]~51 ),
-	.combout(\SENSOR_ALTURA|counter[16]~52_combout ),
-	.cout(\SENSOR_ALTURA|counter[16]~53 ));
-// synopsys translate_off
-defparam \SENSOR_ALTURA|counter[16]~52 .lut_mask = 16'hA50A;
-defparam \SENSOR_ALTURA|counter[16]~52 .sum_lutc_input = "cin";
-// synopsys translate_on
-
-// Location: FF_X108_Y3_N13
-dffeas \SENSOR_ALTURA|counter[16] (
-	.clk(\clock_50~inputclkctrl_outclk ),
-	.d(\SENSOR_ALTURA|counter[16]~52_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(!\SENSOR_ALTURA|LessThan0~4_combout ),
-	.sload(gnd),
-	.ena(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(\SENSOR_ALTURA|counter [16]),
-	.prn(vcc));
-// synopsys translate_off
-defparam \SENSOR_ALTURA|counter[16] .is_wysiwyg = "true";
-defparam \SENSOR_ALTURA|counter[16] .power_up = "low";
-// synopsys translate_on
-
-// Location: LCCOMB_X108_Y3_N14
-cycloneive_lcell_comb \SENSOR_ALTURA|counter[17]~54 (
-// Equation(s):
-// \SENSOR_ALTURA|counter[17]~54_combout  = (\SENSOR_ALTURA|counter [17] & (!\SENSOR_ALTURA|counter[16]~53 )) # (!\SENSOR_ALTURA|counter [17] & ((\SENSOR_ALTURA|counter[16]~53 ) # (GND)))
-// \SENSOR_ALTURA|counter[17]~55  = CARRY((!\SENSOR_ALTURA|counter[16]~53 ) # (!\SENSOR_ALTURA|counter [17]))
-
-	.dataa(gnd),
-	.datab(\SENSOR_ALTURA|counter [17]),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\SENSOR_ALTURA|counter[16]~53 ),
-	.combout(\SENSOR_ALTURA|counter[17]~54_combout ),
-	.cout(\SENSOR_ALTURA|counter[17]~55 ));
-// synopsys translate_off
-defparam \SENSOR_ALTURA|counter[17]~54 .lut_mask = 16'h3C3F;
-defparam \SENSOR_ALTURA|counter[17]~54 .sum_lutc_input = "cin";
-// synopsys translate_on
-
-// Location: FF_X108_Y3_N15
-dffeas \SENSOR_ALTURA|counter[17] (
-	.clk(\clock_50~inputclkctrl_outclk ),
-	.d(\SENSOR_ALTURA|counter[17]~54_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(!\SENSOR_ALTURA|LessThan0~4_combout ),
-	.sload(gnd),
-	.ena(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(\SENSOR_ALTURA|counter [17]),
-	.prn(vcc));
-// synopsys translate_off
-defparam \SENSOR_ALTURA|counter[17] .is_wysiwyg = "true";
-defparam \SENSOR_ALTURA|counter[17] .power_up = "low";
-// synopsys translate_on
-
-// Location: LCCOMB_X108_Y3_N16
-cycloneive_lcell_comb \SENSOR_ALTURA|counter[18]~56 (
-// Equation(s):
-// \SENSOR_ALTURA|counter[18]~56_combout  = (\SENSOR_ALTURA|counter [18] & (\SENSOR_ALTURA|counter[17]~55  $ (GND))) # (!\SENSOR_ALTURA|counter [18] & (!\SENSOR_ALTURA|counter[17]~55  & VCC))
-// \SENSOR_ALTURA|counter[18]~57  = CARRY((\SENSOR_ALTURA|counter [18] & !\SENSOR_ALTURA|counter[17]~55 ))
-
-	.dataa(gnd),
-	.datab(\SENSOR_ALTURA|counter [18]),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\SENSOR_ALTURA|counter[17]~55 ),
-	.combout(\SENSOR_ALTURA|counter[18]~56_combout ),
-	.cout(\SENSOR_ALTURA|counter[18]~57 ));
-// synopsys translate_off
-defparam \SENSOR_ALTURA|counter[18]~56 .lut_mask = 16'hC30C;
-defparam \SENSOR_ALTURA|counter[18]~56 .sum_lutc_input = "cin";
-// synopsys translate_on
-
-// Location: FF_X108_Y3_N17
-dffeas \SENSOR_ALTURA|counter[18] (
-	.clk(\clock_50~inputclkctrl_outclk ),
-	.d(\SENSOR_ALTURA|counter[18]~56_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(!\SENSOR_ALTURA|LessThan0~4_combout ),
-	.sload(gnd),
-	.ena(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(\SENSOR_ALTURA|counter [18]),
-	.prn(vcc));
-// synopsys translate_off
-defparam \SENSOR_ALTURA|counter[18] .is_wysiwyg = "true";
-defparam \SENSOR_ALTURA|counter[18] .power_up = "low";
-// synopsys translate_on
-
-// Location: LCCOMB_X108_Y3_N18
-cycloneive_lcell_comb \SENSOR_ALTURA|counter[19]~58 (
-// Equation(s):
-// \SENSOR_ALTURA|counter[19]~58_combout  = \SENSOR_ALTURA|counter[18]~57  $ (\SENSOR_ALTURA|counter [19])
-
-	.dataa(gnd),
-	.datab(gnd),
-	.datac(gnd),
-	.datad(\SENSOR_ALTURA|counter [19]),
-	.cin(\SENSOR_ALTURA|counter[18]~57 ),
-	.combout(\SENSOR_ALTURA|counter[19]~58_combout ),
-	.cout());
-// synopsys translate_off
-defparam \SENSOR_ALTURA|counter[19]~58 .lut_mask = 16'h0FF0;
-defparam \SENSOR_ALTURA|counter[19]~58 .sum_lutc_input = "cin";
-// synopsys translate_on
-
-// Location: FF_X108_Y3_N19
-dffeas \SENSOR_ALTURA|counter[19] (
-	.clk(\clock_50~inputclkctrl_outclk ),
-	.d(\SENSOR_ALTURA|counter[19]~58_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(!\SENSOR_ALTURA|LessThan0~4_combout ),
-	.sload(gnd),
-	.ena(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(\SENSOR_ALTURA|counter [19]),
-	.prn(vcc));
-// synopsys translate_off
-defparam \SENSOR_ALTURA|counter[19] .is_wysiwyg = "true";
-defparam \SENSOR_ALTURA|counter[19] .power_up = "low";
-// synopsys translate_on
-
-// Location: LCCOMB_X108_Y3_N26
-cycloneive_lcell_comb \SENSOR_ALTURA|LessThan0~3 (
-// Equation(s):
-// \SENSOR_ALTURA|LessThan0~3_combout  = (((!\SENSOR_ALTURA|counter [14] & !\SENSOR_ALTURA|counter [15])) # (!\SENSOR_ALTURA|counter [17])) # (!\SENSOR_ALTURA|counter [16])
-
-	.dataa(\SENSOR_ALTURA|counter [16]),
-	.datab(\SENSOR_ALTURA|counter [17]),
-	.datac(\SENSOR_ALTURA|counter [14]),
-	.datad(\SENSOR_ALTURA|counter [15]),
-	.cin(gnd),
-	.combout(\SENSOR_ALTURA|LessThan0~3_combout ),
-	.cout());
-// synopsys translate_off
-defparam \SENSOR_ALTURA|LessThan0~3 .lut_mask = 16'h777F;
-defparam \SENSOR_ALTURA|LessThan0~3 .sum_lutc_input = "datac";
-// synopsys translate_on
-
-// Location: LCCOMB_X108_Y3_N22
-cycloneive_lcell_comb \SENSOR_ALTURA|LessThan0~1 (
-// Equation(s):
-// \SENSOR_ALTURA|LessThan0~1_combout  = (!\SENSOR_ALTURA|counter [13] & (!\SENSOR_ALTURA|counter [11] & (!\SENSOR_ALTURA|counter [12] & !\SENSOR_ALTURA|counter [10])))
-
-	.dataa(\SENSOR_ALTURA|counter [13]),
-	.datab(\SENSOR_ALTURA|counter [11]),
-	.datac(\SENSOR_ALTURA|counter [12]),
-	.datad(\SENSOR_ALTURA|counter [10]),
-	.cin(gnd),
-	.combout(\SENSOR_ALTURA|LessThan0~1_combout ),
-	.cout());
-// synopsys translate_off
-defparam \SENSOR_ALTURA|LessThan0~1 .lut_mask = 16'h0001;
-defparam \SENSOR_ALTURA|LessThan0~1 .sum_lutc_input = "datac";
-// synopsys translate_on
-
-// Location: LCCOMB_X108_Y4_N0
+// Location: LCCOMB_X108_Y1_N2
 cycloneive_lcell_comb \SENSOR_ALTURA|LessThan0~0 (
 // Equation(s):
-// \SENSOR_ALTURA|LessThan0~0_combout  = ((!\SENSOR_ALTURA|counter [7] & (!\SENSOR_ALTURA|counter [6] & !\SENSOR_ALTURA|counter [8]))) # (!\SENSOR_ALTURA|counter [9])
+// \SENSOR_ALTURA|LessThan0~0_combout  = (((!\SENSOR_ALTURA|counter [2] & !\SENSOR_ALTURA|counter [3])) # (!\SENSOR_ALTURA|counter [4])) # (!\SENSOR_ALTURA|counter [5])
 
-	.dataa(\SENSOR_ALTURA|counter [7]),
-	.datab(\SENSOR_ALTURA|counter [6]),
-	.datac(\SENSOR_ALTURA|counter [9]),
-	.datad(\SENSOR_ALTURA|counter [8]),
+	.dataa(\SENSOR_ALTURA|counter [2]),
+	.datab(\SENSOR_ALTURA|counter [5]),
+	.datac(\SENSOR_ALTURA|counter [4]),
+	.datad(\SENSOR_ALTURA|counter [3]),
 	.cin(gnd),
 	.combout(\SENSOR_ALTURA|LessThan0~0_combout ),
 	.cout());
 // synopsys translate_off
-defparam \SENSOR_ALTURA|LessThan0~0 .lut_mask = 16'h0F1F;
+defparam \SENSOR_ALTURA|LessThan0~0 .lut_mask = 16'h3F7F;
 defparam \SENSOR_ALTURA|LessThan0~0 .sum_lutc_input = "datac";
 // synopsys translate_on
 
-// Location: LCCOMB_X108_Y3_N28
-cycloneive_lcell_comb \SENSOR_ALTURA|LessThan0~2 (
+// Location: LCCOMB_X108_Y1_N24
+cycloneive_lcell_comb \SENSOR_ALTURA|LessThan0~1 (
 // Equation(s):
-// \SENSOR_ALTURA|LessThan0~2_combout  = (!\SENSOR_ALTURA|counter [15] & (\SENSOR_ALTURA|LessThan0~1_combout  & \SENSOR_ALTURA|LessThan0~0_combout ))
+// \SENSOR_ALTURA|LessThan0~1_combout  = (((\SENSOR_ALTURA|LessThan0~0_combout ) # (!\SENSOR_ALTURA|counter [7])) # (!\SENSOR_ALTURA|counter [6])) # (!\SENSOR_ALTURA|counter [8])
 
-	.dataa(\SENSOR_ALTURA|counter [15]),
-	.datab(gnd),
-	.datac(\SENSOR_ALTURA|LessThan0~1_combout ),
+	.dataa(\SENSOR_ALTURA|counter [8]),
+	.datab(\SENSOR_ALTURA|counter [6]),
+	.datac(\SENSOR_ALTURA|counter [7]),
 	.datad(\SENSOR_ALTURA|LessThan0~0_combout ),
 	.cin(gnd),
-	.combout(\SENSOR_ALTURA|LessThan0~2_combout ),
+	.combout(\SENSOR_ALTURA|LessThan0~1_combout ),
 	.cout());
 // synopsys translate_off
-defparam \SENSOR_ALTURA|LessThan0~2 .lut_mask = 16'h5000;
-defparam \SENSOR_ALTURA|LessThan0~2 .sum_lutc_input = "datac";
+defparam \SENSOR_ALTURA|LessThan0~1 .lut_mask = 16'hFF7F;
+defparam \SENSOR_ALTURA|LessThan0~1 .sum_lutc_input = "datac";
 // synopsys translate_on
 
-// Location: LCCOMB_X108_Y3_N24
-cycloneive_lcell_comb \SENSOR_ALTURA|LessThan0~4 (
+// Location: LCCOMB_X108_Y1_N28
+cycloneive_lcell_comb \SENSOR_ALTURA|TRIGGER~feeder (
 // Equation(s):
-// \SENSOR_ALTURA|LessThan0~4_combout  = (((\SENSOR_ALTURA|LessThan0~3_combout ) # (\SENSOR_ALTURA|LessThan0~2_combout )) # (!\SENSOR_ALTURA|counter [18])) # (!\SENSOR_ALTURA|counter [19])
+// \SENSOR_ALTURA|TRIGGER~feeder_combout  = \SENSOR_ALTURA|LessThan0~1_combout 
 
-	.dataa(\SENSOR_ALTURA|counter [19]),
-	.datab(\SENSOR_ALTURA|counter [18]),
-	.datac(\SENSOR_ALTURA|LessThan0~3_combout ),
-	.datad(\SENSOR_ALTURA|LessThan0~2_combout ),
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\SENSOR_ALTURA|LessThan0~1_combout ),
 	.cin(gnd),
-	.combout(\SENSOR_ALTURA|LessThan0~4_combout ),
+	.combout(\SENSOR_ALTURA|TRIGGER~feeder_combout ),
 	.cout());
 // synopsys translate_off
-defparam \SENSOR_ALTURA|LessThan0~4 .lut_mask = 16'hFFF7;
-defparam \SENSOR_ALTURA|LessThan0~4 .sum_lutc_input = "datac";
+defparam \SENSOR_ALTURA|TRIGGER~feeder .lut_mask = 16'hFF00;
+defparam \SENSOR_ALTURA|TRIGGER~feeder .sum_lutc_input = "datac";
 // synopsys translate_on
 
-// Location: FF_X108_Y3_N25
+// Location: FF_X108_Y1_N29
 dffeas \SENSOR_ALTURA|TRIGGER (
 	.clk(\clock_50~inputclkctrl_outclk ),
-	.d(\SENSOR_ALTURA|LessThan0~4_combout ),
+	.d(\SENSOR_ALTURA|TRIGGER~feeder_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
@@ -2911,7 +2403,7 @@ defparam \KEY[0]~input .bus_hold = "false";
 defparam \KEY[0]~input .simulate_z_as = "z";
 // synopsys translate_on
 
-// Location: LCCOMB_X103_Y4_N10
+// Location: LCCOMB_X107_Y7_N10
 cycloneive_lcell_comb \BOTAO_MENU|counter[0]~23 (
 // Equation(s):
 // \BOTAO_MENU|counter[0]~23_combout  = \BOTAO_MENU|counter [0] $ (VCC)
@@ -2929,50 +2421,50 @@ defparam \BOTAO_MENU|counter[0]~23 .lut_mask = 16'h55AA;
 defparam \BOTAO_MENU|counter[0]~23 .sum_lutc_input = "datac";
 // synopsys translate_on
 
-// Location: LCCOMB_X103_Y4_N4
-cycloneive_lcell_comb \BOTAO_MENU|counter[11]~65 (
+// Location: LCCOMB_X107_Y7_N4
+cycloneive_lcell_comb \BOTAO_MENU|counter[22]~65 (
 // Equation(s):
-// \BOTAO_MENU|counter[11]~65_combout  = (\KEY[0]~input_o ) # (!\BOTAO_MENU|LessThan0~9_combout )
+// \BOTAO_MENU|counter[22]~65_combout  = (\KEY[0]~input_o ) # (!\BOTAO_MENU|LessThan0~9_combout )
 
 	.dataa(gnd),
 	.datab(gnd),
 	.datac(\KEY[0]~input_o ),
 	.datad(\BOTAO_MENU|LessThan0~9_combout ),
 	.cin(gnd),
-	.combout(\BOTAO_MENU|counter[11]~65_combout ),
+	.combout(\BOTAO_MENU|counter[22]~65_combout ),
 	.cout());
 // synopsys translate_off
-defparam \BOTAO_MENU|counter[11]~65 .lut_mask = 16'hF0FF;
-defparam \BOTAO_MENU|counter[11]~65 .sum_lutc_input = "datac";
+defparam \BOTAO_MENU|counter[22]~65 .lut_mask = 16'hF0FF;
+defparam \BOTAO_MENU|counter[22]~65 .sum_lutc_input = "datac";
 // synopsys translate_on
 
-// Location: LCCOMB_X103_Y4_N8
-cycloneive_lcell_comb \BOTAO_MENU|counter[11]~66 (
+// Location: LCCOMB_X108_Y7_N12
+cycloneive_lcell_comb \BOTAO_MENU|counter[22]~66 (
 // Equation(s):
-// \BOTAO_MENU|counter[11]~66_combout  = (\KEY[0]~input_o ) # (\BOTAO_MENU|buttonPressed~q )
+// \BOTAO_MENU|counter[22]~66_combout  = (\BOTAO_MENU|buttonPressed~q ) # (\KEY[0]~input_o )
 
 	.dataa(gnd),
-	.datab(\KEY[0]~input_o ),
-	.datac(\BOTAO_MENU|buttonPressed~q ),
+	.datab(\BOTAO_MENU|buttonPressed~q ),
+	.datac(\KEY[0]~input_o ),
 	.datad(gnd),
 	.cin(gnd),
-	.combout(\BOTAO_MENU|counter[11]~66_combout ),
+	.combout(\BOTAO_MENU|counter[22]~66_combout ),
 	.cout());
 // synopsys translate_off
-defparam \BOTAO_MENU|counter[11]~66 .lut_mask = 16'hFCFC;
-defparam \BOTAO_MENU|counter[11]~66 .sum_lutc_input = "datac";
+defparam \BOTAO_MENU|counter[22]~66 .lut_mask = 16'hFCFC;
+defparam \BOTAO_MENU|counter[22]~66 .sum_lutc_input = "datac";
 // synopsys translate_on
 
-// Location: FF_X103_Y4_N11
+// Location: FF_X107_Y7_N11
 dffeas \BOTAO_MENU|counter[0] (
 	.clk(\clock_50~inputclkctrl_outclk ),
 	.d(\BOTAO_MENU|counter[0]~23_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
-	.sclr(\BOTAO_MENU|counter[11]~65_combout ),
+	.sclr(\BOTAO_MENU|counter[22]~65_combout ),
 	.sload(gnd),
-	.ena(\BOTAO_MENU|counter[11]~66_combout ),
+	.ena(\BOTAO_MENU|counter[22]~66_combout ),
 	.devclrn(devclrn),
 	.devpor(devpor),
 	.q(\BOTAO_MENU|counter [0]),
@@ -2982,7 +2474,7 @@ defparam \BOTAO_MENU|counter[0] .is_wysiwyg = "true";
 defparam \BOTAO_MENU|counter[0] .power_up = "low";
 // synopsys translate_on
 
-// Location: LCCOMB_X103_Y4_N12
+// Location: LCCOMB_X107_Y7_N12
 cycloneive_lcell_comb \BOTAO_MENU|counter[1]~25 (
 // Equation(s):
 // \BOTAO_MENU|counter[1]~25_combout  = (\BOTAO_MENU|counter [1] & (!\BOTAO_MENU|counter[0]~24 )) # (!\BOTAO_MENU|counter [1] & ((\BOTAO_MENU|counter[0]~24 ) # (GND)))
@@ -3000,16 +2492,16 @@ defparam \BOTAO_MENU|counter[1]~25 .lut_mask = 16'h5A5F;
 defparam \BOTAO_MENU|counter[1]~25 .sum_lutc_input = "cin";
 // synopsys translate_on
 
-// Location: FF_X103_Y4_N13
+// Location: FF_X107_Y7_N13
 dffeas \BOTAO_MENU|counter[1] (
 	.clk(\clock_50~inputclkctrl_outclk ),
 	.d(\BOTAO_MENU|counter[1]~25_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
-	.sclr(\BOTAO_MENU|counter[11]~65_combout ),
+	.sclr(\BOTAO_MENU|counter[22]~65_combout ),
 	.sload(gnd),
-	.ena(\BOTAO_MENU|counter[11]~66_combout ),
+	.ena(\BOTAO_MENU|counter[22]~66_combout ),
 	.devclrn(devclrn),
 	.devpor(devpor),
 	.q(\BOTAO_MENU|counter [1]),
@@ -3019,7 +2511,7 @@ defparam \BOTAO_MENU|counter[1] .is_wysiwyg = "true";
 defparam \BOTAO_MENU|counter[1] .power_up = "low";
 // synopsys translate_on
 
-// Location: LCCOMB_X103_Y4_N14
+// Location: LCCOMB_X107_Y7_N14
 cycloneive_lcell_comb \BOTAO_MENU|counter[2]~27 (
 // Equation(s):
 // \BOTAO_MENU|counter[2]~27_combout  = (\BOTAO_MENU|counter [2] & (\BOTAO_MENU|counter[1]~26  $ (GND))) # (!\BOTAO_MENU|counter [2] & (!\BOTAO_MENU|counter[1]~26  & VCC))
@@ -3037,16 +2529,16 @@ defparam \BOTAO_MENU|counter[2]~27 .lut_mask = 16'hC30C;
 defparam \BOTAO_MENU|counter[2]~27 .sum_lutc_input = "cin";
 // synopsys translate_on
 
-// Location: FF_X103_Y4_N15
+// Location: FF_X107_Y7_N15
 dffeas \BOTAO_MENU|counter[2] (
 	.clk(\clock_50~inputclkctrl_outclk ),
 	.d(\BOTAO_MENU|counter[2]~27_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
-	.sclr(\BOTAO_MENU|counter[11]~65_combout ),
+	.sclr(\BOTAO_MENU|counter[22]~65_combout ),
 	.sload(gnd),
-	.ena(\BOTAO_MENU|counter[11]~66_combout ),
+	.ena(\BOTAO_MENU|counter[22]~66_combout ),
 	.devclrn(devclrn),
 	.devpor(devpor),
 	.q(\BOTAO_MENU|counter [2]),
@@ -3056,7 +2548,7 @@ defparam \BOTAO_MENU|counter[2] .is_wysiwyg = "true";
 defparam \BOTAO_MENU|counter[2] .power_up = "low";
 // synopsys translate_on
 
-// Location: LCCOMB_X103_Y4_N16
+// Location: LCCOMB_X107_Y7_N16
 cycloneive_lcell_comb \BOTAO_MENU|counter[3]~29 (
 // Equation(s):
 // \BOTAO_MENU|counter[3]~29_combout  = (\BOTAO_MENU|counter [3] & (!\BOTAO_MENU|counter[2]~28 )) # (!\BOTAO_MENU|counter [3] & ((\BOTAO_MENU|counter[2]~28 ) # (GND)))
@@ -3074,16 +2566,16 @@ defparam \BOTAO_MENU|counter[3]~29 .lut_mask = 16'h3C3F;
 defparam \BOTAO_MENU|counter[3]~29 .sum_lutc_input = "cin";
 // synopsys translate_on
 
-// Location: FF_X103_Y4_N17
+// Location: FF_X107_Y7_N17
 dffeas \BOTAO_MENU|counter[3] (
 	.clk(\clock_50~inputclkctrl_outclk ),
 	.d(\BOTAO_MENU|counter[3]~29_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
-	.sclr(\BOTAO_MENU|counter[11]~65_combout ),
+	.sclr(\BOTAO_MENU|counter[22]~65_combout ),
 	.sload(gnd),
-	.ena(\BOTAO_MENU|counter[11]~66_combout ),
+	.ena(\BOTAO_MENU|counter[22]~66_combout ),
 	.devclrn(devclrn),
 	.devpor(devpor),
 	.q(\BOTAO_MENU|counter [3]),
@@ -3093,7 +2585,7 @@ defparam \BOTAO_MENU|counter[3] .is_wysiwyg = "true";
 defparam \BOTAO_MENU|counter[3] .power_up = "low";
 // synopsys translate_on
 
-// Location: LCCOMB_X103_Y4_N18
+// Location: LCCOMB_X107_Y7_N18
 cycloneive_lcell_comb \BOTAO_MENU|counter[4]~31 (
 // Equation(s):
 // \BOTAO_MENU|counter[4]~31_combout  = (\BOTAO_MENU|counter [4] & (\BOTAO_MENU|counter[3]~30  $ (GND))) # (!\BOTAO_MENU|counter [4] & (!\BOTAO_MENU|counter[3]~30  & VCC))
@@ -3111,16 +2603,16 @@ defparam \BOTAO_MENU|counter[4]~31 .lut_mask = 16'hC30C;
 defparam \BOTAO_MENU|counter[4]~31 .sum_lutc_input = "cin";
 // synopsys translate_on
 
-// Location: FF_X103_Y4_N19
+// Location: FF_X107_Y7_N19
 dffeas \BOTAO_MENU|counter[4] (
 	.clk(\clock_50~inputclkctrl_outclk ),
 	.d(\BOTAO_MENU|counter[4]~31_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
-	.sclr(\BOTAO_MENU|counter[11]~65_combout ),
+	.sclr(\BOTAO_MENU|counter[22]~65_combout ),
 	.sload(gnd),
-	.ena(\BOTAO_MENU|counter[11]~66_combout ),
+	.ena(\BOTAO_MENU|counter[22]~66_combout ),
 	.devclrn(devclrn),
 	.devpor(devpor),
 	.q(\BOTAO_MENU|counter [4]),
@@ -3130,7 +2622,7 @@ defparam \BOTAO_MENU|counter[4] .is_wysiwyg = "true";
 defparam \BOTAO_MENU|counter[4] .power_up = "low";
 // synopsys translate_on
 
-// Location: LCCOMB_X103_Y4_N20
+// Location: LCCOMB_X107_Y7_N20
 cycloneive_lcell_comb \BOTAO_MENU|counter[5]~33 (
 // Equation(s):
 // \BOTAO_MENU|counter[5]~33_combout  = (\BOTAO_MENU|counter [5] & (!\BOTAO_MENU|counter[4]~32 )) # (!\BOTAO_MENU|counter [5] & ((\BOTAO_MENU|counter[4]~32 ) # (GND)))
@@ -3148,16 +2640,16 @@ defparam \BOTAO_MENU|counter[5]~33 .lut_mask = 16'h3C3F;
 defparam \BOTAO_MENU|counter[5]~33 .sum_lutc_input = "cin";
 // synopsys translate_on
 
-// Location: FF_X103_Y4_N21
+// Location: FF_X107_Y7_N21
 dffeas \BOTAO_MENU|counter[5] (
 	.clk(\clock_50~inputclkctrl_outclk ),
 	.d(\BOTAO_MENU|counter[5]~33_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
-	.sclr(\BOTAO_MENU|counter[11]~65_combout ),
+	.sclr(\BOTAO_MENU|counter[22]~65_combout ),
 	.sload(gnd),
-	.ena(\BOTAO_MENU|counter[11]~66_combout ),
+	.ena(\BOTAO_MENU|counter[22]~66_combout ),
 	.devclrn(devclrn),
 	.devpor(devpor),
 	.q(\BOTAO_MENU|counter [5]),
@@ -3167,34 +2659,34 @@ defparam \BOTAO_MENU|counter[5] .is_wysiwyg = "true";
 defparam \BOTAO_MENU|counter[5] .power_up = "low";
 // synopsys translate_on
 
-// Location: LCCOMB_X103_Y4_N22
+// Location: LCCOMB_X107_Y7_N22
 cycloneive_lcell_comb \BOTAO_MENU|counter[6]~35 (
 // Equation(s):
 // \BOTAO_MENU|counter[6]~35_combout  = (\BOTAO_MENU|counter [6] & (\BOTAO_MENU|counter[5]~34  $ (GND))) # (!\BOTAO_MENU|counter [6] & (!\BOTAO_MENU|counter[5]~34  & VCC))
 // \BOTAO_MENU|counter[6]~36  = CARRY((\BOTAO_MENU|counter [6] & !\BOTAO_MENU|counter[5]~34 ))
 
-	.dataa(\BOTAO_MENU|counter [6]),
-	.datab(gnd),
+	.dataa(gnd),
+	.datab(\BOTAO_MENU|counter [6]),
 	.datac(gnd),
 	.datad(vcc),
 	.cin(\BOTAO_MENU|counter[5]~34 ),
 	.combout(\BOTAO_MENU|counter[6]~35_combout ),
 	.cout(\BOTAO_MENU|counter[6]~36 ));
 // synopsys translate_off
-defparam \BOTAO_MENU|counter[6]~35 .lut_mask = 16'hA50A;
+defparam \BOTAO_MENU|counter[6]~35 .lut_mask = 16'hC30C;
 defparam \BOTAO_MENU|counter[6]~35 .sum_lutc_input = "cin";
 // synopsys translate_on
 
-// Location: FF_X103_Y4_N23
+// Location: FF_X107_Y7_N23
 dffeas \BOTAO_MENU|counter[6] (
 	.clk(\clock_50~inputclkctrl_outclk ),
 	.d(\BOTAO_MENU|counter[6]~35_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
-	.sclr(\BOTAO_MENU|counter[11]~65_combout ),
+	.sclr(\BOTAO_MENU|counter[22]~65_combout ),
 	.sload(gnd),
-	.ena(\BOTAO_MENU|counter[11]~66_combout ),
+	.ena(\BOTAO_MENU|counter[22]~66_combout ),
 	.devclrn(devclrn),
 	.devpor(devpor),
 	.q(\BOTAO_MENU|counter [6]),
@@ -3204,7 +2696,7 @@ defparam \BOTAO_MENU|counter[6] .is_wysiwyg = "true";
 defparam \BOTAO_MENU|counter[6] .power_up = "low";
 // synopsys translate_on
 
-// Location: LCCOMB_X103_Y4_N24
+// Location: LCCOMB_X107_Y7_N24
 cycloneive_lcell_comb \BOTAO_MENU|counter[7]~37 (
 // Equation(s):
 // \BOTAO_MENU|counter[7]~37_combout  = (\BOTAO_MENU|counter [7] & (!\BOTAO_MENU|counter[6]~36 )) # (!\BOTAO_MENU|counter [7] & ((\BOTAO_MENU|counter[6]~36 ) # (GND)))
@@ -3222,16 +2714,16 @@ defparam \BOTAO_MENU|counter[7]~37 .lut_mask = 16'h3C3F;
 defparam \BOTAO_MENU|counter[7]~37 .sum_lutc_input = "cin";
 // synopsys translate_on
 
-// Location: FF_X103_Y4_N25
+// Location: FF_X107_Y7_N25
 dffeas \BOTAO_MENU|counter[7] (
 	.clk(\clock_50~inputclkctrl_outclk ),
 	.d(\BOTAO_MENU|counter[7]~37_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
-	.sclr(\BOTAO_MENU|counter[11]~65_combout ),
+	.sclr(\BOTAO_MENU|counter[22]~65_combout ),
 	.sload(gnd),
-	.ena(\BOTAO_MENU|counter[11]~66_combout ),
+	.ena(\BOTAO_MENU|counter[22]~66_combout ),
 	.devclrn(devclrn),
 	.devpor(devpor),
 	.q(\BOTAO_MENU|counter [7]),
@@ -3241,7 +2733,7 @@ defparam \BOTAO_MENU|counter[7] .is_wysiwyg = "true";
 defparam \BOTAO_MENU|counter[7] .power_up = "low";
 // synopsys translate_on
 
-// Location: LCCOMB_X103_Y4_N26
+// Location: LCCOMB_X107_Y7_N26
 cycloneive_lcell_comb \BOTAO_MENU|counter[8]~39 (
 // Equation(s):
 // \BOTAO_MENU|counter[8]~39_combout  = (\BOTAO_MENU|counter [8] & (\BOTAO_MENU|counter[7]~38  $ (GND))) # (!\BOTAO_MENU|counter [8] & (!\BOTAO_MENU|counter[7]~38  & VCC))
@@ -3259,16 +2751,16 @@ defparam \BOTAO_MENU|counter[8]~39 .lut_mask = 16'hA50A;
 defparam \BOTAO_MENU|counter[8]~39 .sum_lutc_input = "cin";
 // synopsys translate_on
 
-// Location: FF_X103_Y4_N27
+// Location: FF_X107_Y7_N27
 dffeas \BOTAO_MENU|counter[8] (
 	.clk(\clock_50~inputclkctrl_outclk ),
 	.d(\BOTAO_MENU|counter[8]~39_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
-	.sclr(\BOTAO_MENU|counter[11]~65_combout ),
+	.sclr(\BOTAO_MENU|counter[22]~65_combout ),
 	.sload(gnd),
-	.ena(\BOTAO_MENU|counter[11]~66_combout ),
+	.ena(\BOTAO_MENU|counter[22]~66_combout ),
 	.devclrn(devclrn),
 	.devpor(devpor),
 	.q(\BOTAO_MENU|counter [8]),
@@ -3278,7 +2770,7 @@ defparam \BOTAO_MENU|counter[8] .is_wysiwyg = "true";
 defparam \BOTAO_MENU|counter[8] .power_up = "low";
 // synopsys translate_on
 
-// Location: LCCOMB_X103_Y4_N28
+// Location: LCCOMB_X107_Y7_N28
 cycloneive_lcell_comb \BOTAO_MENU|counter[9]~41 (
 // Equation(s):
 // \BOTAO_MENU|counter[9]~41_combout  = (\BOTAO_MENU|counter [9] & (!\BOTAO_MENU|counter[8]~40 )) # (!\BOTAO_MENU|counter [9] & ((\BOTAO_MENU|counter[8]~40 ) # (GND)))
@@ -3296,16 +2788,16 @@ defparam \BOTAO_MENU|counter[9]~41 .lut_mask = 16'h3C3F;
 defparam \BOTAO_MENU|counter[9]~41 .sum_lutc_input = "cin";
 // synopsys translate_on
 
-// Location: FF_X103_Y4_N29
+// Location: FF_X107_Y7_N29
 dffeas \BOTAO_MENU|counter[9] (
 	.clk(\clock_50~inputclkctrl_outclk ),
 	.d(\BOTAO_MENU|counter[9]~41_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
-	.sclr(\BOTAO_MENU|counter[11]~65_combout ),
+	.sclr(\BOTAO_MENU|counter[22]~65_combout ),
 	.sload(gnd),
-	.ena(\BOTAO_MENU|counter[11]~66_combout ),
+	.ena(\BOTAO_MENU|counter[22]~66_combout ),
 	.devclrn(devclrn),
 	.devpor(devpor),
 	.q(\BOTAO_MENU|counter [9]),
@@ -3315,34 +2807,34 @@ defparam \BOTAO_MENU|counter[9] .is_wysiwyg = "true";
 defparam \BOTAO_MENU|counter[9] .power_up = "low";
 // synopsys translate_on
 
-// Location: LCCOMB_X103_Y4_N30
+// Location: LCCOMB_X107_Y7_N30
 cycloneive_lcell_comb \BOTAO_MENU|counter[10]~43 (
 // Equation(s):
 // \BOTAO_MENU|counter[10]~43_combout  = (\BOTAO_MENU|counter [10] & (\BOTAO_MENU|counter[9]~42  $ (GND))) # (!\BOTAO_MENU|counter [10] & (!\BOTAO_MENU|counter[9]~42  & VCC))
 // \BOTAO_MENU|counter[10]~44  = CARRY((\BOTAO_MENU|counter [10] & !\BOTAO_MENU|counter[9]~42 ))
 
-	.dataa(\BOTAO_MENU|counter [10]),
-	.datab(gnd),
+	.dataa(gnd),
+	.datab(\BOTAO_MENU|counter [10]),
 	.datac(gnd),
 	.datad(vcc),
 	.cin(\BOTAO_MENU|counter[9]~42 ),
 	.combout(\BOTAO_MENU|counter[10]~43_combout ),
 	.cout(\BOTAO_MENU|counter[10]~44 ));
 // synopsys translate_off
-defparam \BOTAO_MENU|counter[10]~43 .lut_mask = 16'hA50A;
+defparam \BOTAO_MENU|counter[10]~43 .lut_mask = 16'hC30C;
 defparam \BOTAO_MENU|counter[10]~43 .sum_lutc_input = "cin";
 // synopsys translate_on
 
-// Location: FF_X103_Y4_N31
+// Location: FF_X107_Y7_N31
 dffeas \BOTAO_MENU|counter[10] (
 	.clk(\clock_50~inputclkctrl_outclk ),
 	.d(\BOTAO_MENU|counter[10]~43_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
-	.sclr(\BOTAO_MENU|counter[11]~65_combout ),
+	.sclr(\BOTAO_MENU|counter[22]~65_combout ),
 	.sload(gnd),
-	.ena(\BOTAO_MENU|counter[11]~66_combout ),
+	.ena(\BOTAO_MENU|counter[22]~66_combout ),
 	.devclrn(devclrn),
 	.devpor(devpor),
 	.q(\BOTAO_MENU|counter [10]),
@@ -3352,7 +2844,7 @@ defparam \BOTAO_MENU|counter[10] .is_wysiwyg = "true";
 defparam \BOTAO_MENU|counter[10] .power_up = "low";
 // synopsys translate_on
 
-// Location: LCCOMB_X103_Y3_N0
+// Location: LCCOMB_X107_Y6_N0
 cycloneive_lcell_comb \BOTAO_MENU|counter[11]~45 (
 // Equation(s):
 // \BOTAO_MENU|counter[11]~45_combout  = (\BOTAO_MENU|counter [11] & (!\BOTAO_MENU|counter[10]~44 )) # (!\BOTAO_MENU|counter [11] & ((\BOTAO_MENU|counter[10]~44 ) # (GND)))
@@ -3370,16 +2862,16 @@ defparam \BOTAO_MENU|counter[11]~45 .lut_mask = 16'h3C3F;
 defparam \BOTAO_MENU|counter[11]~45 .sum_lutc_input = "cin";
 // synopsys translate_on
 
-// Location: FF_X102_Y4_N23
+// Location: FF_X106_Y7_N31
 dffeas \BOTAO_MENU|counter[11] (
 	.clk(\clock_50~inputclkctrl_outclk ),
 	.d(gnd),
 	.asdata(\BOTAO_MENU|counter[11]~45_combout ),
 	.clrn(vcc),
 	.aload(gnd),
-	.sclr(\BOTAO_MENU|counter[11]~65_combout ),
+	.sclr(\BOTAO_MENU|counter[22]~65_combout ),
 	.sload(vcc),
-	.ena(\BOTAO_MENU|counter[11]~66_combout ),
+	.ena(\BOTAO_MENU|counter[22]~66_combout ),
 	.devclrn(devclrn),
 	.devpor(devpor),
 	.q(\BOTAO_MENU|counter [11]),
@@ -3389,7 +2881,7 @@ defparam \BOTAO_MENU|counter[11] .is_wysiwyg = "true";
 defparam \BOTAO_MENU|counter[11] .power_up = "low";
 // synopsys translate_on
 
-// Location: LCCOMB_X103_Y3_N2
+// Location: LCCOMB_X107_Y6_N2
 cycloneive_lcell_comb \BOTAO_MENU|counter[12]~47 (
 // Equation(s):
 // \BOTAO_MENU|counter[12]~47_combout  = (\BOTAO_MENU|counter [12] & (\BOTAO_MENU|counter[11]~46  $ (GND))) # (!\BOTAO_MENU|counter [12] & (!\BOTAO_MENU|counter[11]~46  & VCC))
@@ -3407,16 +2899,16 @@ defparam \BOTAO_MENU|counter[12]~47 .lut_mask = 16'hC30C;
 defparam \BOTAO_MENU|counter[12]~47 .sum_lutc_input = "cin";
 // synopsys translate_on
 
-// Location: FF_X102_Y4_N17
+// Location: FF_X106_Y7_N29
 dffeas \BOTAO_MENU|counter[12] (
 	.clk(\clock_50~inputclkctrl_outclk ),
 	.d(gnd),
 	.asdata(\BOTAO_MENU|counter[12]~47_combout ),
 	.clrn(vcc),
 	.aload(gnd),
-	.sclr(\BOTAO_MENU|counter[11]~65_combout ),
+	.sclr(\BOTAO_MENU|counter[22]~65_combout ),
 	.sload(vcc),
-	.ena(\BOTAO_MENU|counter[11]~66_combout ),
+	.ena(\BOTAO_MENU|counter[22]~66_combout ),
 	.devclrn(devclrn),
 	.devpor(devpor),
 	.q(\BOTAO_MENU|counter [12]),
@@ -3426,7 +2918,7 @@ defparam \BOTAO_MENU|counter[12] .is_wysiwyg = "true";
 defparam \BOTAO_MENU|counter[12] .power_up = "low";
 // synopsys translate_on
 
-// Location: LCCOMB_X103_Y3_N4
+// Location: LCCOMB_X107_Y6_N4
 cycloneive_lcell_comb \BOTAO_MENU|counter[13]~49 (
 // Equation(s):
 // \BOTAO_MENU|counter[13]~49_combout  = (\BOTAO_MENU|counter [13] & (!\BOTAO_MENU|counter[12]~48 )) # (!\BOTAO_MENU|counter [13] & ((\BOTAO_MENU|counter[12]~48 ) # (GND)))
@@ -3444,16 +2936,16 @@ defparam \BOTAO_MENU|counter[13]~49 .lut_mask = 16'h3C3F;
 defparam \BOTAO_MENU|counter[13]~49 .sum_lutc_input = "cin";
 // synopsys translate_on
 
-// Location: FF_X102_Y4_N31
+// Location: FF_X106_Y7_N23
 dffeas \BOTAO_MENU|counter[13] (
 	.clk(\clock_50~inputclkctrl_outclk ),
 	.d(gnd),
 	.asdata(\BOTAO_MENU|counter[13]~49_combout ),
 	.clrn(vcc),
 	.aload(gnd),
-	.sclr(\BOTAO_MENU|counter[11]~65_combout ),
+	.sclr(\BOTAO_MENU|counter[22]~65_combout ),
 	.sload(vcc),
-	.ena(\BOTAO_MENU|counter[11]~66_combout ),
+	.ena(\BOTAO_MENU|counter[22]~66_combout ),
 	.devclrn(devclrn),
 	.devpor(devpor),
 	.q(\BOTAO_MENU|counter [13]),
@@ -3463,7 +2955,7 @@ defparam \BOTAO_MENU|counter[13] .is_wysiwyg = "true";
 defparam \BOTAO_MENU|counter[13] .power_up = "low";
 // synopsys translate_on
 
-// Location: LCCOMB_X103_Y3_N6
+// Location: LCCOMB_X107_Y6_N6
 cycloneive_lcell_comb \BOTAO_MENU|counter[14]~51 (
 // Equation(s):
 // \BOTAO_MENU|counter[14]~51_combout  = (\BOTAO_MENU|counter [14] & (\BOTAO_MENU|counter[13]~50  $ (GND))) # (!\BOTAO_MENU|counter [14] & (!\BOTAO_MENU|counter[13]~50  & VCC))
@@ -3481,16 +2973,16 @@ defparam \BOTAO_MENU|counter[14]~51 .lut_mask = 16'hA50A;
 defparam \BOTAO_MENU|counter[14]~51 .sum_lutc_input = "cin";
 // synopsys translate_on
 
-// Location: FF_X102_Y4_N9
+// Location: FF_X106_Y7_N9
 dffeas \BOTAO_MENU|counter[14] (
 	.clk(\clock_50~inputclkctrl_outclk ),
 	.d(gnd),
 	.asdata(\BOTAO_MENU|counter[14]~51_combout ),
 	.clrn(vcc),
 	.aload(gnd),
-	.sclr(\BOTAO_MENU|counter[11]~65_combout ),
+	.sclr(\BOTAO_MENU|counter[22]~65_combout ),
 	.sload(vcc),
-	.ena(\BOTAO_MENU|counter[11]~66_combout ),
+	.ena(\BOTAO_MENU|counter[22]~66_combout ),
 	.devclrn(devclrn),
 	.devpor(devpor),
 	.q(\BOTAO_MENU|counter [14]),
@@ -3500,7 +2992,7 @@ defparam \BOTAO_MENU|counter[14] .is_wysiwyg = "true";
 defparam \BOTAO_MENU|counter[14] .power_up = "low";
 // synopsys translate_on
 
-// Location: LCCOMB_X103_Y3_N8
+// Location: LCCOMB_X107_Y6_N8
 cycloneive_lcell_comb \BOTAO_MENU|counter[15]~53 (
 // Equation(s):
 // \BOTAO_MENU|counter[15]~53_combout  = (\BOTAO_MENU|counter [15] & (!\BOTAO_MENU|counter[14]~52 )) # (!\BOTAO_MENU|counter [15] & ((\BOTAO_MENU|counter[14]~52 ) # (GND)))
@@ -3518,16 +3010,16 @@ defparam \BOTAO_MENU|counter[15]~53 .lut_mask = 16'h3C3F;
 defparam \BOTAO_MENU|counter[15]~53 .sum_lutc_input = "cin";
 // synopsys translate_on
 
-// Location: FF_X103_Y3_N9
+// Location: FF_X107_Y6_N9
 dffeas \BOTAO_MENU|counter[15] (
 	.clk(\clock_50~inputclkctrl_outclk ),
 	.d(\BOTAO_MENU|counter[15]~53_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
-	.sclr(\BOTAO_MENU|counter[11]~65_combout ),
+	.sclr(\BOTAO_MENU|counter[22]~65_combout ),
 	.sload(gnd),
-	.ena(\BOTAO_MENU|counter[11]~66_combout ),
+	.ena(\BOTAO_MENU|counter[22]~66_combout ),
 	.devclrn(devclrn),
 	.devpor(devpor),
 	.q(\BOTAO_MENU|counter [15]),
@@ -3537,7 +3029,7 @@ defparam \BOTAO_MENU|counter[15] .is_wysiwyg = "true";
 defparam \BOTAO_MENU|counter[15] .power_up = "low";
 // synopsys translate_on
 
-// Location: LCCOMB_X103_Y3_N10
+// Location: LCCOMB_X107_Y6_N10
 cycloneive_lcell_comb \BOTAO_MENU|counter[16]~55 (
 // Equation(s):
 // \BOTAO_MENU|counter[16]~55_combout  = (\BOTAO_MENU|counter [16] & (\BOTAO_MENU|counter[15]~54  $ (GND))) # (!\BOTAO_MENU|counter [16] & (!\BOTAO_MENU|counter[15]~54  & VCC))
@@ -3555,16 +3047,16 @@ defparam \BOTAO_MENU|counter[16]~55 .lut_mask = 16'hA50A;
 defparam \BOTAO_MENU|counter[16]~55 .sum_lutc_input = "cin";
 // synopsys translate_on
 
-// Location: FF_X103_Y3_N11
+// Location: FF_X107_Y6_N11
 dffeas \BOTAO_MENU|counter[16] (
 	.clk(\clock_50~inputclkctrl_outclk ),
 	.d(\BOTAO_MENU|counter[16]~55_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
-	.sclr(\BOTAO_MENU|counter[11]~65_combout ),
+	.sclr(\BOTAO_MENU|counter[22]~65_combout ),
 	.sload(gnd),
-	.ena(\BOTAO_MENU|counter[11]~66_combout ),
+	.ena(\BOTAO_MENU|counter[22]~66_combout ),
 	.devclrn(devclrn),
 	.devpor(devpor),
 	.q(\BOTAO_MENU|counter [16]),
@@ -3574,34 +3066,34 @@ defparam \BOTAO_MENU|counter[16] .is_wysiwyg = "true";
 defparam \BOTAO_MENU|counter[16] .power_up = "low";
 // synopsys translate_on
 
-// Location: LCCOMB_X103_Y3_N12
+// Location: LCCOMB_X107_Y6_N12
 cycloneive_lcell_comb \BOTAO_MENU|counter[17]~57 (
 // Equation(s):
 // \BOTAO_MENU|counter[17]~57_combout  = (\BOTAO_MENU|counter [17] & (!\BOTAO_MENU|counter[16]~56 )) # (!\BOTAO_MENU|counter [17] & ((\BOTAO_MENU|counter[16]~56 ) # (GND)))
 // \BOTAO_MENU|counter[17]~58  = CARRY((!\BOTAO_MENU|counter[16]~56 ) # (!\BOTAO_MENU|counter [17]))
 
-	.dataa(\BOTAO_MENU|counter [17]),
-	.datab(gnd),
+	.dataa(gnd),
+	.datab(\BOTAO_MENU|counter [17]),
 	.datac(gnd),
 	.datad(vcc),
 	.cin(\BOTAO_MENU|counter[16]~56 ),
 	.combout(\BOTAO_MENU|counter[17]~57_combout ),
 	.cout(\BOTAO_MENU|counter[17]~58 ));
 // synopsys translate_off
-defparam \BOTAO_MENU|counter[17]~57 .lut_mask = 16'h5A5F;
+defparam \BOTAO_MENU|counter[17]~57 .lut_mask = 16'h3C3F;
 defparam \BOTAO_MENU|counter[17]~57 .sum_lutc_input = "cin";
 // synopsys translate_on
 
-// Location: FF_X103_Y3_N13
+// Location: FF_X107_Y6_N13
 dffeas \BOTAO_MENU|counter[17] (
 	.clk(\clock_50~inputclkctrl_outclk ),
 	.d(\BOTAO_MENU|counter[17]~57_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
-	.sclr(\BOTAO_MENU|counter[11]~65_combout ),
+	.sclr(\BOTAO_MENU|counter[22]~65_combout ),
 	.sload(gnd),
-	.ena(\BOTAO_MENU|counter[11]~66_combout ),
+	.ena(\BOTAO_MENU|counter[22]~66_combout ),
 	.devclrn(devclrn),
 	.devpor(devpor),
 	.q(\BOTAO_MENU|counter [17]),
@@ -3611,7 +3103,7 @@ defparam \BOTAO_MENU|counter[17] .is_wysiwyg = "true";
 defparam \BOTAO_MENU|counter[17] .power_up = "low";
 // synopsys translate_on
 
-// Location: LCCOMB_X103_Y3_N14
+// Location: LCCOMB_X107_Y6_N14
 cycloneive_lcell_comb \BOTAO_MENU|counter[18]~59 (
 // Equation(s):
 // \BOTAO_MENU|counter[18]~59_combout  = (\BOTAO_MENU|counter [18] & (\BOTAO_MENU|counter[17]~58  $ (GND))) # (!\BOTAO_MENU|counter [18] & (!\BOTAO_MENU|counter[17]~58  & VCC))
@@ -3629,16 +3121,16 @@ defparam \BOTAO_MENU|counter[18]~59 .lut_mask = 16'hC30C;
 defparam \BOTAO_MENU|counter[18]~59 .sum_lutc_input = "cin";
 // synopsys translate_on
 
-// Location: FF_X103_Y3_N15
+// Location: FF_X107_Y6_N15
 dffeas \BOTAO_MENU|counter[18] (
 	.clk(\clock_50~inputclkctrl_outclk ),
 	.d(\BOTAO_MENU|counter[18]~59_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
-	.sclr(\BOTAO_MENU|counter[11]~65_combout ),
+	.sclr(\BOTAO_MENU|counter[22]~65_combout ),
 	.sload(gnd),
-	.ena(\BOTAO_MENU|counter[11]~66_combout ),
+	.ena(\BOTAO_MENU|counter[22]~66_combout ),
 	.devclrn(devclrn),
 	.devpor(devpor),
 	.q(\BOTAO_MENU|counter [18]),
@@ -3648,7 +3140,7 @@ defparam \BOTAO_MENU|counter[18] .is_wysiwyg = "true";
 defparam \BOTAO_MENU|counter[18] .power_up = "low";
 // synopsys translate_on
 
-// Location: LCCOMB_X103_Y3_N16
+// Location: LCCOMB_X107_Y6_N16
 cycloneive_lcell_comb \BOTAO_MENU|counter[19]~61 (
 // Equation(s):
 // \BOTAO_MENU|counter[19]~61_combout  = (\BOTAO_MENU|counter [19] & (!\BOTAO_MENU|counter[18]~60 )) # (!\BOTAO_MENU|counter [19] & ((\BOTAO_MENU|counter[18]~60 ) # (GND)))
@@ -3666,16 +3158,16 @@ defparam \BOTAO_MENU|counter[19]~61 .lut_mask = 16'h3C3F;
 defparam \BOTAO_MENU|counter[19]~61 .sum_lutc_input = "cin";
 // synopsys translate_on
 
-// Location: FF_X103_Y3_N17
+// Location: FF_X107_Y6_N17
 dffeas \BOTAO_MENU|counter[19] (
 	.clk(\clock_50~inputclkctrl_outclk ),
 	.d(\BOTAO_MENU|counter[19]~61_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
-	.sclr(\BOTAO_MENU|counter[11]~65_combout ),
+	.sclr(\BOTAO_MENU|counter[22]~65_combout ),
 	.sload(gnd),
-	.ena(\BOTAO_MENU|counter[11]~66_combout ),
+	.ena(\BOTAO_MENU|counter[22]~66_combout ),
 	.devclrn(devclrn),
 	.devpor(devpor),
 	.q(\BOTAO_MENU|counter [19]),
@@ -3685,34 +3177,34 @@ defparam \BOTAO_MENU|counter[19] .is_wysiwyg = "true";
 defparam \BOTAO_MENU|counter[19] .power_up = "low";
 // synopsys translate_on
 
-// Location: LCCOMB_X103_Y3_N18
+// Location: LCCOMB_X107_Y6_N18
 cycloneive_lcell_comb \BOTAO_MENU|counter[20]~63 (
 // Equation(s):
 // \BOTAO_MENU|counter[20]~63_combout  = (\BOTAO_MENU|counter [20] & (\BOTAO_MENU|counter[19]~62  $ (GND))) # (!\BOTAO_MENU|counter [20] & (!\BOTAO_MENU|counter[19]~62  & VCC))
 // \BOTAO_MENU|counter[20]~64  = CARRY((\BOTAO_MENU|counter [20] & !\BOTAO_MENU|counter[19]~62 ))
 
-	.dataa(gnd),
-	.datab(\BOTAO_MENU|counter [20]),
+	.dataa(\BOTAO_MENU|counter [20]),
+	.datab(gnd),
 	.datac(gnd),
 	.datad(vcc),
 	.cin(\BOTAO_MENU|counter[19]~62 ),
 	.combout(\BOTAO_MENU|counter[20]~63_combout ),
 	.cout(\BOTAO_MENU|counter[20]~64 ));
 // synopsys translate_off
-defparam \BOTAO_MENU|counter[20]~63 .lut_mask = 16'hC30C;
+defparam \BOTAO_MENU|counter[20]~63 .lut_mask = 16'hA50A;
 defparam \BOTAO_MENU|counter[20]~63 .sum_lutc_input = "cin";
 // synopsys translate_on
 
-// Location: FF_X103_Y3_N19
+// Location: FF_X107_Y6_N19
 dffeas \BOTAO_MENU|counter[20] (
 	.clk(\clock_50~inputclkctrl_outclk ),
 	.d(\BOTAO_MENU|counter[20]~63_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
-	.sclr(\BOTAO_MENU|counter[11]~65_combout ),
+	.sclr(\BOTAO_MENU|counter[22]~65_combout ),
 	.sload(gnd),
-	.ena(\BOTAO_MENU|counter[11]~66_combout ),
+	.ena(\BOTAO_MENU|counter[22]~66_combout ),
 	.devclrn(devclrn),
 	.devpor(devpor),
 	.q(\BOTAO_MENU|counter [20]),
@@ -3722,34 +3214,34 @@ defparam \BOTAO_MENU|counter[20] .is_wysiwyg = "true";
 defparam \BOTAO_MENU|counter[20] .power_up = "low";
 // synopsys translate_on
 
-// Location: LCCOMB_X103_Y3_N20
+// Location: LCCOMB_X107_Y6_N20
 cycloneive_lcell_comb \BOTAO_MENU|counter[21]~67 (
 // Equation(s):
 // \BOTAO_MENU|counter[21]~67_combout  = (\BOTAO_MENU|counter [21] & (!\BOTAO_MENU|counter[20]~64 )) # (!\BOTAO_MENU|counter [21] & ((\BOTAO_MENU|counter[20]~64 ) # (GND)))
 // \BOTAO_MENU|counter[21]~68  = CARRY((!\BOTAO_MENU|counter[20]~64 ) # (!\BOTAO_MENU|counter [21]))
 
-	.dataa(gnd),
-	.datab(\BOTAO_MENU|counter [21]),
+	.dataa(\BOTAO_MENU|counter [21]),
+	.datab(gnd),
 	.datac(gnd),
 	.datad(vcc),
 	.cin(\BOTAO_MENU|counter[20]~64 ),
 	.combout(\BOTAO_MENU|counter[21]~67_combout ),
 	.cout(\BOTAO_MENU|counter[21]~68 ));
 // synopsys translate_off
-defparam \BOTAO_MENU|counter[21]~67 .lut_mask = 16'h3C3F;
+defparam \BOTAO_MENU|counter[21]~67 .lut_mask = 16'h5A5F;
 defparam \BOTAO_MENU|counter[21]~67 .sum_lutc_input = "cin";
 // synopsys translate_on
 
-// Location: FF_X103_Y3_N21
+// Location: FF_X107_Y6_N21
 dffeas \BOTAO_MENU|counter[21] (
 	.clk(\clock_50~inputclkctrl_outclk ),
 	.d(\BOTAO_MENU|counter[21]~67_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
-	.sclr(\BOTAO_MENU|counter[11]~65_combout ),
+	.sclr(\BOTAO_MENU|counter[22]~65_combout ),
 	.sload(gnd),
-	.ena(\BOTAO_MENU|counter[11]~66_combout ),
+	.ena(\BOTAO_MENU|counter[22]~66_combout ),
 	.devclrn(devclrn),
 	.devpor(devpor),
 	.q(\BOTAO_MENU|counter [21]),
@@ -3759,15 +3251,15 @@ defparam \BOTAO_MENU|counter[21] .is_wysiwyg = "true";
 defparam \BOTAO_MENU|counter[21] .power_up = "low";
 // synopsys translate_on
 
-// Location: LCCOMB_X103_Y3_N28
+// Location: LCCOMB_X107_Y6_N24
 cycloneive_lcell_comb \BOTAO_MENU|LessThan0~0 (
 // Equation(s):
-// \BOTAO_MENU|LessThan0~0_combout  = (!\BOTAO_MENU|counter [20] & !\BOTAO_MENU|counter [21])
+// \BOTAO_MENU|LessThan0~0_combout  = (!\BOTAO_MENU|counter [21] & !\BOTAO_MENU|counter [20])
 
 	.dataa(gnd),
-	.datab(\BOTAO_MENU|counter [20]),
+	.datab(\BOTAO_MENU|counter [21]),
 	.datac(gnd),
-	.datad(\BOTAO_MENU|counter [21]),
+	.datad(\BOTAO_MENU|counter [20]),
 	.cin(gnd),
 	.combout(\BOTAO_MENU|LessThan0~0_combout ),
 	.cout());
@@ -3776,14 +3268,14 @@ defparam \BOTAO_MENU|LessThan0~0 .lut_mask = 16'h0033;
 defparam \BOTAO_MENU|LessThan0~0 .sum_lutc_input = "datac";
 // synopsys translate_on
 
-// Location: LCCOMB_X103_Y3_N24
+// Location: LCCOMB_X107_Y6_N28
 cycloneive_lcell_comb \BOTAO_MENU|LessThan0~2 (
 // Equation(s):
-// \BOTAO_MENU|LessThan0~2_combout  = (!\BOTAO_MENU|counter [17] & (!\BOTAO_MENU|counter [16] & (!\BOTAO_MENU|counter [15] & \BOTAO_MENU|LessThan0~0_combout )))
+// \BOTAO_MENU|LessThan0~2_combout  = (!\BOTAO_MENU|counter [16] & (!\BOTAO_MENU|counter [15] & (!\BOTAO_MENU|counter [17] & \BOTAO_MENU|LessThan0~0_combout )))
 
-	.dataa(\BOTAO_MENU|counter [17]),
-	.datab(\BOTAO_MENU|counter [16]),
-	.datac(\BOTAO_MENU|counter [15]),
+	.dataa(\BOTAO_MENU|counter [16]),
+	.datab(\BOTAO_MENU|counter [15]),
+	.datac(\BOTAO_MENU|counter [17]),
 	.datad(\BOTAO_MENU|LessThan0~0_combout ),
 	.cin(gnd),
 	.combout(\BOTAO_MENU|LessThan0~2_combout ),
@@ -3793,7 +3285,7 @@ defparam \BOTAO_MENU|LessThan0~2 .lut_mask = 16'h0100;
 defparam \BOTAO_MENU|LessThan0~2 .sum_lutc_input = "datac";
 // synopsys translate_on
 
-// Location: LCCOMB_X103_Y3_N22
+// Location: LCCOMB_X107_Y6_N22
 cycloneive_lcell_comb \BOTAO_MENU|counter[22]~69 (
 // Equation(s):
 // \BOTAO_MENU|counter[22]~69_combout  = \BOTAO_MENU|counter [22] $ (!\BOTAO_MENU|counter[21]~68 )
@@ -3810,16 +3302,16 @@ defparam \BOTAO_MENU|counter[22]~69 .lut_mask = 16'hA5A5;
 defparam \BOTAO_MENU|counter[22]~69 .sum_lutc_input = "cin";
 // synopsys translate_on
 
-// Location: FF_X103_Y3_N23
+// Location: FF_X107_Y6_N23
 dffeas \BOTAO_MENU|counter[22] (
 	.clk(\clock_50~inputclkctrl_outclk ),
 	.d(\BOTAO_MENU|counter[22]~69_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
-	.sclr(\BOTAO_MENU|counter[11]~65_combout ),
+	.sclr(\BOTAO_MENU|counter[22]~65_combout ),
 	.sload(gnd),
-	.ena(\BOTAO_MENU|counter[11]~66_combout ),
+	.ena(\BOTAO_MENU|counter[22]~66_combout ),
 	.devclrn(devclrn),
 	.devpor(devpor),
 	.q(\BOTAO_MENU|counter [22]),
@@ -3829,7 +3321,7 @@ defparam \BOTAO_MENU|counter[22] .is_wysiwyg = "true";
 defparam \BOTAO_MENU|counter[22] .power_up = "low";
 // synopsys translate_on
 
-// Location: LCCOMB_X103_Y3_N26
+// Location: LCCOMB_X107_Y6_N30
 cycloneive_lcell_comb \BOTAO_MENU|LessThan0~1 (
 // Equation(s):
 // \BOTAO_MENU|LessThan0~1_combout  = ((\BOTAO_MENU|LessThan0~0_combout  & ((!\BOTAO_MENU|counter [18]) # (!\BOTAO_MENU|counter [19])))) # (!\BOTAO_MENU|counter [22])
@@ -3846,24 +3338,24 @@ defparam \BOTAO_MENU|LessThan0~1 .lut_mask = 16'h7F55;
 defparam \BOTAO_MENU|LessThan0~1 .sum_lutc_input = "datac";
 // synopsys translate_on
 
-// Location: LCCOMB_X102_Y4_N18
+// Location: LCCOMB_X106_Y7_N18
 cycloneive_lcell_comb \BOTAO_MENU|LessThan0~7 (
 // Equation(s):
 // \BOTAO_MENU|LessThan0~7_combout  = (\BOTAO_MENU|counter [11] & ((\BOTAO_MENU|counter [10]) # ((\BOTAO_MENU|counter [9] & \BOTAO_MENU|counter [8]))))
 
 	.dataa(\BOTAO_MENU|counter [11]),
 	.datab(\BOTAO_MENU|counter [9]),
-	.datac(\BOTAO_MENU|counter [8]),
-	.datad(\BOTAO_MENU|counter [10]),
+	.datac(\BOTAO_MENU|counter [10]),
+	.datad(\BOTAO_MENU|counter [8]),
 	.cin(gnd),
 	.combout(\BOTAO_MENU|LessThan0~7_combout ),
 	.cout());
 // synopsys translate_off
-defparam \BOTAO_MENU|LessThan0~7 .lut_mask = 16'hAA80;
+defparam \BOTAO_MENU|LessThan0~7 .lut_mask = 16'hA8A0;
 defparam \BOTAO_MENU|LessThan0~7 .sum_lutc_input = "datac";
 // synopsys translate_on
 
-// Location: LCCOMB_X102_Y4_N4
+// Location: LCCOMB_X106_Y7_N16
 cycloneive_lcell_comb \BOTAO_MENU|LessThan0~8 (
 // Equation(s):
 // \BOTAO_MENU|LessThan0~8_combout  = ((!\BOTAO_MENU|counter [13] & (!\BOTAO_MENU|counter [12] & !\BOTAO_MENU|LessThan0~7_combout ))) # (!\BOTAO_MENU|counter [14])
@@ -3880,7 +3372,41 @@ defparam \BOTAO_MENU|LessThan0~8 .lut_mask = 16'h0F1F;
 defparam \BOTAO_MENU|LessThan0~8 .sum_lutc_input = "datac";
 // synopsys translate_on
 
-// Location: LCCOMB_X102_Y4_N14
+// Location: LCCOMB_X107_Y7_N8
+cycloneive_lcell_comb \BOTAO_MENU|LessThan0~3 (
+// Equation(s):
+// \BOTAO_MENU|LessThan0~3_combout  = (((!\BOTAO_MENU|counter [3]) # (!\BOTAO_MENU|counter [1])) # (!\BOTAO_MENU|counter [2])) # (!\BOTAO_MENU|counter [0])
+
+	.dataa(\BOTAO_MENU|counter [0]),
+	.datab(\BOTAO_MENU|counter [2]),
+	.datac(\BOTAO_MENU|counter [1]),
+	.datad(\BOTAO_MENU|counter [3]),
+	.cin(gnd),
+	.combout(\BOTAO_MENU|LessThan0~3_combout ),
+	.cout());
+// synopsys translate_off
+defparam \BOTAO_MENU|LessThan0~3 .lut_mask = 16'h7FFF;
+defparam \BOTAO_MENU|LessThan0~3 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X107_Y7_N6
+cycloneive_lcell_comb \BOTAO_MENU|LessThan0~4 (
+// Equation(s):
+// \BOTAO_MENU|LessThan0~4_combout  = ((\BOTAO_MENU|LessThan0~3_combout ) # (!\BOTAO_MENU|counter [5])) # (!\BOTAO_MENU|counter [4])
+
+	.dataa(gnd),
+	.datab(\BOTAO_MENU|counter [4]),
+	.datac(\BOTAO_MENU|LessThan0~3_combout ),
+	.datad(\BOTAO_MENU|counter [5]),
+	.cin(gnd),
+	.combout(\BOTAO_MENU|LessThan0~4_combout ),
+	.cout());
+// synopsys translate_off
+defparam \BOTAO_MENU|LessThan0~4 .lut_mask = 16'hF3FF;
+defparam \BOTAO_MENU|LessThan0~4 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X106_Y7_N24
 cycloneive_lcell_comb \BOTAO_MENU|LessThan0~5 (
 // Equation(s):
 // \BOTAO_MENU|LessThan0~5_combout  = (!\BOTAO_MENU|counter [13] & (!\BOTAO_MENU|counter [10] & !\BOTAO_MENU|counter [12]))
@@ -3897,58 +3423,24 @@ defparam \BOTAO_MENU|LessThan0~5 .lut_mask = 16'h0005;
 defparam \BOTAO_MENU|LessThan0~5 .sum_lutc_input = "datac";
 // synopsys translate_on
 
-// Location: LCCOMB_X102_Y4_N10
-cycloneive_lcell_comb \BOTAO_MENU|LessThan0~3 (
-// Equation(s):
-// \BOTAO_MENU|LessThan0~3_combout  = (((!\BOTAO_MENU|counter [3]) # (!\BOTAO_MENU|counter [1])) # (!\BOTAO_MENU|counter [0])) # (!\BOTAO_MENU|counter [2])
-
-	.dataa(\BOTAO_MENU|counter [2]),
-	.datab(\BOTAO_MENU|counter [0]),
-	.datac(\BOTAO_MENU|counter [1]),
-	.datad(\BOTAO_MENU|counter [3]),
-	.cin(gnd),
-	.combout(\BOTAO_MENU|LessThan0~3_combout ),
-	.cout());
-// synopsys translate_off
-defparam \BOTAO_MENU|LessThan0~3 .lut_mask = 16'h7FFF;
-defparam \BOTAO_MENU|LessThan0~3 .sum_lutc_input = "datac";
-// synopsys translate_on
-
-// Location: LCCOMB_X102_Y4_N20
-cycloneive_lcell_comb \BOTAO_MENU|LessThan0~4 (
-// Equation(s):
-// \BOTAO_MENU|LessThan0~4_combout  = ((\BOTAO_MENU|LessThan0~3_combout ) # (!\BOTAO_MENU|counter [5])) # (!\BOTAO_MENU|counter [4])
-
-	.dataa(gnd),
-	.datab(\BOTAO_MENU|counter [4]),
-	.datac(\BOTAO_MENU|counter [5]),
-	.datad(\BOTAO_MENU|LessThan0~3_combout ),
-	.cin(gnd),
-	.combout(\BOTAO_MENU|LessThan0~4_combout ),
-	.cout());
-// synopsys translate_off
-defparam \BOTAO_MENU|LessThan0~4 .lut_mask = 16'hFF3F;
-defparam \BOTAO_MENU|LessThan0~4 .sum_lutc_input = "datac";
-// synopsys translate_on
-
-// Location: LCCOMB_X102_Y4_N12
+// Location: LCCOMB_X107_Y7_N0
 cycloneive_lcell_comb \BOTAO_MENU|LessThan0~6 (
 // Equation(s):
-// \BOTAO_MENU|LessThan0~6_combout  = (!\BOTAO_MENU|counter [7] & (!\BOTAO_MENU|counter [6] & (\BOTAO_MENU|LessThan0~5_combout  & \BOTAO_MENU|LessThan0~4_combout )))
+// \BOTAO_MENU|LessThan0~6_combout  = (\BOTAO_MENU|LessThan0~4_combout  & (!\BOTAO_MENU|counter [7] & (!\BOTAO_MENU|counter [6] & \BOTAO_MENU|LessThan0~5_combout )))
 
-	.dataa(\BOTAO_MENU|counter [7]),
-	.datab(\BOTAO_MENU|counter [6]),
-	.datac(\BOTAO_MENU|LessThan0~5_combout ),
-	.datad(\BOTAO_MENU|LessThan0~4_combout ),
+	.dataa(\BOTAO_MENU|LessThan0~4_combout ),
+	.datab(\BOTAO_MENU|counter [7]),
+	.datac(\BOTAO_MENU|counter [6]),
+	.datad(\BOTAO_MENU|LessThan0~5_combout ),
 	.cin(gnd),
 	.combout(\BOTAO_MENU|LessThan0~6_combout ),
 	.cout());
 // synopsys translate_off
-defparam \BOTAO_MENU|LessThan0~6 .lut_mask = 16'h1000;
+defparam \BOTAO_MENU|LessThan0~6 .lut_mask = 16'h0200;
 defparam \BOTAO_MENU|LessThan0~6 .sum_lutc_input = "datac";
 // synopsys translate_on
 
-// Location: LCCOMB_X103_Y4_N0
+// Location: LCCOMB_X107_Y7_N2
 cycloneive_lcell_comb \BOTAO_MENU|LessThan0~9 (
 // Equation(s):
 // \BOTAO_MENU|LessThan0~9_combout  = (\BOTAO_MENU|LessThan0~1_combout ) # ((\BOTAO_MENU|LessThan0~2_combout  & ((\BOTAO_MENU|LessThan0~8_combout ) # (\BOTAO_MENU|LessThan0~6_combout ))))
@@ -3965,24 +3457,24 @@ defparam \BOTAO_MENU|LessThan0~9 .lut_mask = 16'hEEEC;
 defparam \BOTAO_MENU|LessThan0~9 .sum_lutc_input = "datac";
 // synopsys translate_on
 
-// Location: LCCOMB_X103_Y4_N6
+// Location: LCCOMB_X108_Y7_N18
 cycloneive_lcell_comb \BOTAO_MENU|buttonPressed~0 (
 // Equation(s):
 // \BOTAO_MENU|buttonPressed~0_combout  = (\KEY[0]~input_o ) # ((\BOTAO_MENU|buttonPressed~q  & \BOTAO_MENU|LessThan0~9_combout ))
 
 	.dataa(gnd),
-	.datab(\KEY[0]~input_o ),
-	.datac(\BOTAO_MENU|buttonPressed~q ),
+	.datab(\BOTAO_MENU|buttonPressed~q ),
+	.datac(\KEY[0]~input_o ),
 	.datad(\BOTAO_MENU|LessThan0~9_combout ),
 	.cin(gnd),
 	.combout(\BOTAO_MENU|buttonPressed~0_combout ),
 	.cout());
 // synopsys translate_off
-defparam \BOTAO_MENU|buttonPressed~0 .lut_mask = 16'hFCCC;
+defparam \BOTAO_MENU|buttonPressed~0 .lut_mask = 16'hFCF0;
 defparam \BOTAO_MENU|buttonPressed~0 .sum_lutc_input = "datac";
 // synopsys translate_on
 
-// Location: LCCOMB_X103_Y4_N2
+// Location: LCCOMB_X108_Y7_N28
 cycloneive_lcell_comb \BOTAO_MENU|buttonPressed~feeder (
 // Equation(s):
 // \BOTAO_MENU|buttonPressed~feeder_combout  = \BOTAO_MENU|buttonPressed~0_combout 
@@ -3999,7 +3491,7 @@ defparam \BOTAO_MENU|buttonPressed~feeder .lut_mask = 16'hCCCC;
 defparam \BOTAO_MENU|buttonPressed~feeder .sum_lutc_input = "datac";
 // synopsys translate_on
 
-// Location: FF_X103_Y4_N3
+// Location: FF_X108_Y7_N29
 dffeas \BOTAO_MENU|buttonPressed (
 	.clk(\clock_50~inputclkctrl_outclk ),
 	.d(\BOTAO_MENU|buttonPressed~feeder_combout ),
@@ -4018,7 +3510,7 @@ defparam \BOTAO_MENU|buttonPressed .is_wysiwyg = "true";
 defparam \BOTAO_MENU|buttonPressed .power_up = "low";
 // synopsys translate_on
 
-// Location: LCCOMB_X102_Y4_N24
+// Location: LCCOMB_X108_Y7_N0
 cycloneive_lcell_comb \selecao~0 (
 // Equation(s):
 // \selecao~0_combout  = !\selecao~q 
@@ -4035,7 +3527,7 @@ defparam \selecao~0 .lut_mask = 16'h0F0F;
 defparam \selecao~0 .sum_lutc_input = "datac";
 // synopsys translate_on
 
-// Location: FF_X102_Y4_N25
+// Location: FF_X108_Y7_N1
 dffeas selecao(
 	.clk(\BOTAO_MENU|buttonPressed~q ),
 	.d(\selecao~0_combout ),
@@ -4062,1096 +3554,6 @@ cycloneive_io_ibuf \KEY[1]~input (
 // synopsys translate_off
 defparam \KEY[1]~input .bus_hold = "false";
 defparam \KEY[1]~input .simulate_z_as = "z";
-// synopsys translate_on
-
-// Location: LCCOMB_X103_Y55_N10
-cycloneive_lcell_comb \BOTAO_ALTURA|counter[0]~23 (
-// Equation(s):
-// \BOTAO_ALTURA|counter[0]~23_combout  = \BOTAO_ALTURA|counter [0] $ (VCC)
-// \BOTAO_ALTURA|counter[0]~24  = CARRY(\BOTAO_ALTURA|counter [0])
-
-	.dataa(\BOTAO_ALTURA|counter [0]),
-	.datab(gnd),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(gnd),
-	.combout(\BOTAO_ALTURA|counter[0]~23_combout ),
-	.cout(\BOTAO_ALTURA|counter[0]~24 ));
-// synopsys translate_off
-defparam \BOTAO_ALTURA|counter[0]~23 .lut_mask = 16'h55AA;
-defparam \BOTAO_ALTURA|counter[0]~23 .sum_lutc_input = "datac";
-// synopsys translate_on
-
-// Location: LCCOMB_X103_Y55_N0
-cycloneive_lcell_comb \BOTAO_ALTURA|counter[2]~65 (
-// Equation(s):
-// \BOTAO_ALTURA|counter[2]~65_combout  = (\KEY[1]~input_o ) # (!\BOTAO_ALTURA|LessThan0~9_combout )
-
-	.dataa(gnd),
-	.datab(gnd),
-	.datac(\KEY[1]~input_o ),
-	.datad(\BOTAO_ALTURA|LessThan0~9_combout ),
-	.cin(gnd),
-	.combout(\BOTAO_ALTURA|counter[2]~65_combout ),
-	.cout());
-// synopsys translate_off
-defparam \BOTAO_ALTURA|counter[2]~65 .lut_mask = 16'hF0FF;
-defparam \BOTAO_ALTURA|counter[2]~65 .sum_lutc_input = "datac";
-// synopsys translate_on
-
-// Location: LCCOMB_X102_Y55_N14
-cycloneive_lcell_comb \BOTAO_ALTURA|counter[2]~66 (
-// Equation(s):
-// \BOTAO_ALTURA|counter[2]~66_combout  = (\KEY[1]~input_o ) # (\BOTAO_ALTURA|buttonPressed~q )
-
-	.dataa(\KEY[1]~input_o ),
-	.datab(gnd),
-	.datac(gnd),
-	.datad(\BOTAO_ALTURA|buttonPressed~q ),
-	.cin(gnd),
-	.combout(\BOTAO_ALTURA|counter[2]~66_combout ),
-	.cout());
-// synopsys translate_off
-defparam \BOTAO_ALTURA|counter[2]~66 .lut_mask = 16'hFFAA;
-defparam \BOTAO_ALTURA|counter[2]~66 .sum_lutc_input = "datac";
-// synopsys translate_on
-
-// Location: FF_X103_Y55_N11
-dffeas \BOTAO_ALTURA|counter[0] (
-	.clk(\clock_50~inputclkctrl_outclk ),
-	.d(\BOTAO_ALTURA|counter[0]~23_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\BOTAO_ALTURA|counter[2]~65_combout ),
-	.sload(gnd),
-	.ena(\BOTAO_ALTURA|counter[2]~66_combout ),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(\BOTAO_ALTURA|counter [0]),
-	.prn(vcc));
-// synopsys translate_off
-defparam \BOTAO_ALTURA|counter[0] .is_wysiwyg = "true";
-defparam \BOTAO_ALTURA|counter[0] .power_up = "low";
-// synopsys translate_on
-
-// Location: LCCOMB_X103_Y55_N12
-cycloneive_lcell_comb \BOTAO_ALTURA|counter[1]~25 (
-// Equation(s):
-// \BOTAO_ALTURA|counter[1]~25_combout  = (\BOTAO_ALTURA|counter [1] & (!\BOTAO_ALTURA|counter[0]~24 )) # (!\BOTAO_ALTURA|counter [1] & ((\BOTAO_ALTURA|counter[0]~24 ) # (GND)))
-// \BOTAO_ALTURA|counter[1]~26  = CARRY((!\BOTAO_ALTURA|counter[0]~24 ) # (!\BOTAO_ALTURA|counter [1]))
-
-	.dataa(\BOTAO_ALTURA|counter [1]),
-	.datab(gnd),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\BOTAO_ALTURA|counter[0]~24 ),
-	.combout(\BOTAO_ALTURA|counter[1]~25_combout ),
-	.cout(\BOTAO_ALTURA|counter[1]~26 ));
-// synopsys translate_off
-defparam \BOTAO_ALTURA|counter[1]~25 .lut_mask = 16'h5A5F;
-defparam \BOTAO_ALTURA|counter[1]~25 .sum_lutc_input = "cin";
-// synopsys translate_on
-
-// Location: FF_X103_Y55_N13
-dffeas \BOTAO_ALTURA|counter[1] (
-	.clk(\clock_50~inputclkctrl_outclk ),
-	.d(\BOTAO_ALTURA|counter[1]~25_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\BOTAO_ALTURA|counter[2]~65_combout ),
-	.sload(gnd),
-	.ena(\BOTAO_ALTURA|counter[2]~66_combout ),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(\BOTAO_ALTURA|counter [1]),
-	.prn(vcc));
-// synopsys translate_off
-defparam \BOTAO_ALTURA|counter[1] .is_wysiwyg = "true";
-defparam \BOTAO_ALTURA|counter[1] .power_up = "low";
-// synopsys translate_on
-
-// Location: LCCOMB_X103_Y55_N14
-cycloneive_lcell_comb \BOTAO_ALTURA|counter[2]~27 (
-// Equation(s):
-// \BOTAO_ALTURA|counter[2]~27_combout  = (\BOTAO_ALTURA|counter [2] & (\BOTAO_ALTURA|counter[1]~26  $ (GND))) # (!\BOTAO_ALTURA|counter [2] & (!\BOTAO_ALTURA|counter[1]~26  & VCC))
-// \BOTAO_ALTURA|counter[2]~28  = CARRY((\BOTAO_ALTURA|counter [2] & !\BOTAO_ALTURA|counter[1]~26 ))
-
-	.dataa(gnd),
-	.datab(\BOTAO_ALTURA|counter [2]),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\BOTAO_ALTURA|counter[1]~26 ),
-	.combout(\BOTAO_ALTURA|counter[2]~27_combout ),
-	.cout(\BOTAO_ALTURA|counter[2]~28 ));
-// synopsys translate_off
-defparam \BOTAO_ALTURA|counter[2]~27 .lut_mask = 16'hC30C;
-defparam \BOTAO_ALTURA|counter[2]~27 .sum_lutc_input = "cin";
-// synopsys translate_on
-
-// Location: FF_X103_Y55_N15
-dffeas \BOTAO_ALTURA|counter[2] (
-	.clk(\clock_50~inputclkctrl_outclk ),
-	.d(\BOTAO_ALTURA|counter[2]~27_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\BOTAO_ALTURA|counter[2]~65_combout ),
-	.sload(gnd),
-	.ena(\BOTAO_ALTURA|counter[2]~66_combout ),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(\BOTAO_ALTURA|counter [2]),
-	.prn(vcc));
-// synopsys translate_off
-defparam \BOTAO_ALTURA|counter[2] .is_wysiwyg = "true";
-defparam \BOTAO_ALTURA|counter[2] .power_up = "low";
-// synopsys translate_on
-
-// Location: LCCOMB_X103_Y55_N16
-cycloneive_lcell_comb \BOTAO_ALTURA|counter[3]~29 (
-// Equation(s):
-// \BOTAO_ALTURA|counter[3]~29_combout  = (\BOTAO_ALTURA|counter [3] & (!\BOTAO_ALTURA|counter[2]~28 )) # (!\BOTAO_ALTURA|counter [3] & ((\BOTAO_ALTURA|counter[2]~28 ) # (GND)))
-// \BOTAO_ALTURA|counter[3]~30  = CARRY((!\BOTAO_ALTURA|counter[2]~28 ) # (!\BOTAO_ALTURA|counter [3]))
-
-	.dataa(gnd),
-	.datab(\BOTAO_ALTURA|counter [3]),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\BOTAO_ALTURA|counter[2]~28 ),
-	.combout(\BOTAO_ALTURA|counter[3]~29_combout ),
-	.cout(\BOTAO_ALTURA|counter[3]~30 ));
-// synopsys translate_off
-defparam \BOTAO_ALTURA|counter[3]~29 .lut_mask = 16'h3C3F;
-defparam \BOTAO_ALTURA|counter[3]~29 .sum_lutc_input = "cin";
-// synopsys translate_on
-
-// Location: FF_X103_Y55_N17
-dffeas \BOTAO_ALTURA|counter[3] (
-	.clk(\clock_50~inputclkctrl_outclk ),
-	.d(\BOTAO_ALTURA|counter[3]~29_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\BOTAO_ALTURA|counter[2]~65_combout ),
-	.sload(gnd),
-	.ena(\BOTAO_ALTURA|counter[2]~66_combout ),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(\BOTAO_ALTURA|counter [3]),
-	.prn(vcc));
-// synopsys translate_off
-defparam \BOTAO_ALTURA|counter[3] .is_wysiwyg = "true";
-defparam \BOTAO_ALTURA|counter[3] .power_up = "low";
-// synopsys translate_on
-
-// Location: LCCOMB_X103_Y55_N18
-cycloneive_lcell_comb \BOTAO_ALTURA|counter[4]~31 (
-// Equation(s):
-// \BOTAO_ALTURA|counter[4]~31_combout  = (\BOTAO_ALTURA|counter [4] & (\BOTAO_ALTURA|counter[3]~30  $ (GND))) # (!\BOTAO_ALTURA|counter [4] & (!\BOTAO_ALTURA|counter[3]~30  & VCC))
-// \BOTAO_ALTURA|counter[4]~32  = CARRY((\BOTAO_ALTURA|counter [4] & !\BOTAO_ALTURA|counter[3]~30 ))
-
-	.dataa(gnd),
-	.datab(\BOTAO_ALTURA|counter [4]),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\BOTAO_ALTURA|counter[3]~30 ),
-	.combout(\BOTAO_ALTURA|counter[4]~31_combout ),
-	.cout(\BOTAO_ALTURA|counter[4]~32 ));
-// synopsys translate_off
-defparam \BOTAO_ALTURA|counter[4]~31 .lut_mask = 16'hC30C;
-defparam \BOTAO_ALTURA|counter[4]~31 .sum_lutc_input = "cin";
-// synopsys translate_on
-
-// Location: FF_X103_Y55_N19
-dffeas \BOTAO_ALTURA|counter[4] (
-	.clk(\clock_50~inputclkctrl_outclk ),
-	.d(\BOTAO_ALTURA|counter[4]~31_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\BOTAO_ALTURA|counter[2]~65_combout ),
-	.sload(gnd),
-	.ena(\BOTAO_ALTURA|counter[2]~66_combout ),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(\BOTAO_ALTURA|counter [4]),
-	.prn(vcc));
-// synopsys translate_off
-defparam \BOTAO_ALTURA|counter[4] .is_wysiwyg = "true";
-defparam \BOTAO_ALTURA|counter[4] .power_up = "low";
-// synopsys translate_on
-
-// Location: LCCOMB_X103_Y55_N20
-cycloneive_lcell_comb \BOTAO_ALTURA|counter[5]~33 (
-// Equation(s):
-// \BOTAO_ALTURA|counter[5]~33_combout  = (\BOTAO_ALTURA|counter [5] & (!\BOTAO_ALTURA|counter[4]~32 )) # (!\BOTAO_ALTURA|counter [5] & ((\BOTAO_ALTURA|counter[4]~32 ) # (GND)))
-// \BOTAO_ALTURA|counter[5]~34  = CARRY((!\BOTAO_ALTURA|counter[4]~32 ) # (!\BOTAO_ALTURA|counter [5]))
-
-	.dataa(gnd),
-	.datab(\BOTAO_ALTURA|counter [5]),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\BOTAO_ALTURA|counter[4]~32 ),
-	.combout(\BOTAO_ALTURA|counter[5]~33_combout ),
-	.cout(\BOTAO_ALTURA|counter[5]~34 ));
-// synopsys translate_off
-defparam \BOTAO_ALTURA|counter[5]~33 .lut_mask = 16'h3C3F;
-defparam \BOTAO_ALTURA|counter[5]~33 .sum_lutc_input = "cin";
-// synopsys translate_on
-
-// Location: FF_X103_Y55_N21
-dffeas \BOTAO_ALTURA|counter[5] (
-	.clk(\clock_50~inputclkctrl_outclk ),
-	.d(\BOTAO_ALTURA|counter[5]~33_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\BOTAO_ALTURA|counter[2]~65_combout ),
-	.sload(gnd),
-	.ena(\BOTAO_ALTURA|counter[2]~66_combout ),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(\BOTAO_ALTURA|counter [5]),
-	.prn(vcc));
-// synopsys translate_off
-defparam \BOTAO_ALTURA|counter[5] .is_wysiwyg = "true";
-defparam \BOTAO_ALTURA|counter[5] .power_up = "low";
-// synopsys translate_on
-
-// Location: LCCOMB_X103_Y55_N22
-cycloneive_lcell_comb \BOTAO_ALTURA|counter[6]~35 (
-// Equation(s):
-// \BOTAO_ALTURA|counter[6]~35_combout  = (\BOTAO_ALTURA|counter [6] & (\BOTAO_ALTURA|counter[5]~34  $ (GND))) # (!\BOTAO_ALTURA|counter [6] & (!\BOTAO_ALTURA|counter[5]~34  & VCC))
-// \BOTAO_ALTURA|counter[6]~36  = CARRY((\BOTAO_ALTURA|counter [6] & !\BOTAO_ALTURA|counter[5]~34 ))
-
-	.dataa(\BOTAO_ALTURA|counter [6]),
-	.datab(gnd),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\BOTAO_ALTURA|counter[5]~34 ),
-	.combout(\BOTAO_ALTURA|counter[6]~35_combout ),
-	.cout(\BOTAO_ALTURA|counter[6]~36 ));
-// synopsys translate_off
-defparam \BOTAO_ALTURA|counter[6]~35 .lut_mask = 16'hA50A;
-defparam \BOTAO_ALTURA|counter[6]~35 .sum_lutc_input = "cin";
-// synopsys translate_on
-
-// Location: FF_X103_Y55_N23
-dffeas \BOTAO_ALTURA|counter[6] (
-	.clk(\clock_50~inputclkctrl_outclk ),
-	.d(\BOTAO_ALTURA|counter[6]~35_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\BOTAO_ALTURA|counter[2]~65_combout ),
-	.sload(gnd),
-	.ena(\BOTAO_ALTURA|counter[2]~66_combout ),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(\BOTAO_ALTURA|counter [6]),
-	.prn(vcc));
-// synopsys translate_off
-defparam \BOTAO_ALTURA|counter[6] .is_wysiwyg = "true";
-defparam \BOTAO_ALTURA|counter[6] .power_up = "low";
-// synopsys translate_on
-
-// Location: LCCOMB_X103_Y55_N24
-cycloneive_lcell_comb \BOTAO_ALTURA|counter[7]~37 (
-// Equation(s):
-// \BOTAO_ALTURA|counter[7]~37_combout  = (\BOTAO_ALTURA|counter [7] & (!\BOTAO_ALTURA|counter[6]~36 )) # (!\BOTAO_ALTURA|counter [7] & ((\BOTAO_ALTURA|counter[6]~36 ) # (GND)))
-// \BOTAO_ALTURA|counter[7]~38  = CARRY((!\BOTAO_ALTURA|counter[6]~36 ) # (!\BOTAO_ALTURA|counter [7]))
-
-	.dataa(gnd),
-	.datab(\BOTAO_ALTURA|counter [7]),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\BOTAO_ALTURA|counter[6]~36 ),
-	.combout(\BOTAO_ALTURA|counter[7]~37_combout ),
-	.cout(\BOTAO_ALTURA|counter[7]~38 ));
-// synopsys translate_off
-defparam \BOTAO_ALTURA|counter[7]~37 .lut_mask = 16'h3C3F;
-defparam \BOTAO_ALTURA|counter[7]~37 .sum_lutc_input = "cin";
-// synopsys translate_on
-
-// Location: FF_X103_Y55_N25
-dffeas \BOTAO_ALTURA|counter[7] (
-	.clk(\clock_50~inputclkctrl_outclk ),
-	.d(\BOTAO_ALTURA|counter[7]~37_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\BOTAO_ALTURA|counter[2]~65_combout ),
-	.sload(gnd),
-	.ena(\BOTAO_ALTURA|counter[2]~66_combout ),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(\BOTAO_ALTURA|counter [7]),
-	.prn(vcc));
-// synopsys translate_off
-defparam \BOTAO_ALTURA|counter[7] .is_wysiwyg = "true";
-defparam \BOTAO_ALTURA|counter[7] .power_up = "low";
-// synopsys translate_on
-
-// Location: LCCOMB_X103_Y55_N26
-cycloneive_lcell_comb \BOTAO_ALTURA|counter[8]~39 (
-// Equation(s):
-// \BOTAO_ALTURA|counter[8]~39_combout  = (\BOTAO_ALTURA|counter [8] & (\BOTAO_ALTURA|counter[7]~38  $ (GND))) # (!\BOTAO_ALTURA|counter [8] & (!\BOTAO_ALTURA|counter[7]~38  & VCC))
-// \BOTAO_ALTURA|counter[8]~40  = CARRY((\BOTAO_ALTURA|counter [8] & !\BOTAO_ALTURA|counter[7]~38 ))
-
-	.dataa(\BOTAO_ALTURA|counter [8]),
-	.datab(gnd),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\BOTAO_ALTURA|counter[7]~38 ),
-	.combout(\BOTAO_ALTURA|counter[8]~39_combout ),
-	.cout(\BOTAO_ALTURA|counter[8]~40 ));
-// synopsys translate_off
-defparam \BOTAO_ALTURA|counter[8]~39 .lut_mask = 16'hA50A;
-defparam \BOTAO_ALTURA|counter[8]~39 .sum_lutc_input = "cin";
-// synopsys translate_on
-
-// Location: FF_X103_Y55_N27
-dffeas \BOTAO_ALTURA|counter[8] (
-	.clk(\clock_50~inputclkctrl_outclk ),
-	.d(\BOTAO_ALTURA|counter[8]~39_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\BOTAO_ALTURA|counter[2]~65_combout ),
-	.sload(gnd),
-	.ena(\BOTAO_ALTURA|counter[2]~66_combout ),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(\BOTAO_ALTURA|counter [8]),
-	.prn(vcc));
-// synopsys translate_off
-defparam \BOTAO_ALTURA|counter[8] .is_wysiwyg = "true";
-defparam \BOTAO_ALTURA|counter[8] .power_up = "low";
-// synopsys translate_on
-
-// Location: LCCOMB_X103_Y55_N28
-cycloneive_lcell_comb \BOTAO_ALTURA|counter[9]~41 (
-// Equation(s):
-// \BOTAO_ALTURA|counter[9]~41_combout  = (\BOTAO_ALTURA|counter [9] & (!\BOTAO_ALTURA|counter[8]~40 )) # (!\BOTAO_ALTURA|counter [9] & ((\BOTAO_ALTURA|counter[8]~40 ) # (GND)))
-// \BOTAO_ALTURA|counter[9]~42  = CARRY((!\BOTAO_ALTURA|counter[8]~40 ) # (!\BOTAO_ALTURA|counter [9]))
-
-	.dataa(gnd),
-	.datab(\BOTAO_ALTURA|counter [9]),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\BOTAO_ALTURA|counter[8]~40 ),
-	.combout(\BOTAO_ALTURA|counter[9]~41_combout ),
-	.cout(\BOTAO_ALTURA|counter[9]~42 ));
-// synopsys translate_off
-defparam \BOTAO_ALTURA|counter[9]~41 .lut_mask = 16'h3C3F;
-defparam \BOTAO_ALTURA|counter[9]~41 .sum_lutc_input = "cin";
-// synopsys translate_on
-
-// Location: FF_X103_Y55_N29
-dffeas \BOTAO_ALTURA|counter[9] (
-	.clk(\clock_50~inputclkctrl_outclk ),
-	.d(\BOTAO_ALTURA|counter[9]~41_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\BOTAO_ALTURA|counter[2]~65_combout ),
-	.sload(gnd),
-	.ena(\BOTAO_ALTURA|counter[2]~66_combout ),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(\BOTAO_ALTURA|counter [9]),
-	.prn(vcc));
-// synopsys translate_off
-defparam \BOTAO_ALTURA|counter[9] .is_wysiwyg = "true";
-defparam \BOTAO_ALTURA|counter[9] .power_up = "low";
-// synopsys translate_on
-
-// Location: LCCOMB_X103_Y55_N30
-cycloneive_lcell_comb \BOTAO_ALTURA|counter[10]~43 (
-// Equation(s):
-// \BOTAO_ALTURA|counter[10]~43_combout  = (\BOTAO_ALTURA|counter [10] & (\BOTAO_ALTURA|counter[9]~42  $ (GND))) # (!\BOTAO_ALTURA|counter [10] & (!\BOTAO_ALTURA|counter[9]~42  & VCC))
-// \BOTAO_ALTURA|counter[10]~44  = CARRY((\BOTAO_ALTURA|counter [10] & !\BOTAO_ALTURA|counter[9]~42 ))
-
-	.dataa(\BOTAO_ALTURA|counter [10]),
-	.datab(gnd),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\BOTAO_ALTURA|counter[9]~42 ),
-	.combout(\BOTAO_ALTURA|counter[10]~43_combout ),
-	.cout(\BOTAO_ALTURA|counter[10]~44 ));
-// synopsys translate_off
-defparam \BOTAO_ALTURA|counter[10]~43 .lut_mask = 16'hA50A;
-defparam \BOTAO_ALTURA|counter[10]~43 .sum_lutc_input = "cin";
-// synopsys translate_on
-
-// Location: FF_X103_Y55_N31
-dffeas \BOTAO_ALTURA|counter[10] (
-	.clk(\clock_50~inputclkctrl_outclk ),
-	.d(\BOTAO_ALTURA|counter[10]~43_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\BOTAO_ALTURA|counter[2]~65_combout ),
-	.sload(gnd),
-	.ena(\BOTAO_ALTURA|counter[2]~66_combout ),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(\BOTAO_ALTURA|counter [10]),
-	.prn(vcc));
-// synopsys translate_off
-defparam \BOTAO_ALTURA|counter[10] .is_wysiwyg = "true";
-defparam \BOTAO_ALTURA|counter[10] .power_up = "low";
-// synopsys translate_on
-
-// Location: LCCOMB_X103_Y54_N0
-cycloneive_lcell_comb \BOTAO_ALTURA|counter[11]~45 (
-// Equation(s):
-// \BOTAO_ALTURA|counter[11]~45_combout  = (\BOTAO_ALTURA|counter [11] & (!\BOTAO_ALTURA|counter[10]~44 )) # (!\BOTAO_ALTURA|counter [11] & ((\BOTAO_ALTURA|counter[10]~44 ) # (GND)))
-// \BOTAO_ALTURA|counter[11]~46  = CARRY((!\BOTAO_ALTURA|counter[10]~44 ) # (!\BOTAO_ALTURA|counter [11]))
-
-	.dataa(gnd),
-	.datab(\BOTAO_ALTURA|counter [11]),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\BOTAO_ALTURA|counter[10]~44 ),
-	.combout(\BOTAO_ALTURA|counter[11]~45_combout ),
-	.cout(\BOTAO_ALTURA|counter[11]~46 ));
-// synopsys translate_off
-defparam \BOTAO_ALTURA|counter[11]~45 .lut_mask = 16'h3C3F;
-defparam \BOTAO_ALTURA|counter[11]~45 .sum_lutc_input = "cin";
-// synopsys translate_on
-
-// Location: FF_X102_Y55_N9
-dffeas \BOTAO_ALTURA|counter[11] (
-	.clk(\clock_50~inputclkctrl_outclk ),
-	.d(gnd),
-	.asdata(\BOTAO_ALTURA|counter[11]~45_combout ),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\BOTAO_ALTURA|counter[2]~65_combout ),
-	.sload(vcc),
-	.ena(\BOTAO_ALTURA|counter[2]~66_combout ),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(\BOTAO_ALTURA|counter [11]),
-	.prn(vcc));
-// synopsys translate_off
-defparam \BOTAO_ALTURA|counter[11] .is_wysiwyg = "true";
-defparam \BOTAO_ALTURA|counter[11] .power_up = "low";
-// synopsys translate_on
-
-// Location: LCCOMB_X103_Y54_N2
-cycloneive_lcell_comb \BOTAO_ALTURA|counter[12]~47 (
-// Equation(s):
-// \BOTAO_ALTURA|counter[12]~47_combout  = (\BOTAO_ALTURA|counter [12] & (\BOTAO_ALTURA|counter[11]~46  $ (GND))) # (!\BOTAO_ALTURA|counter [12] & (!\BOTAO_ALTURA|counter[11]~46  & VCC))
-// \BOTAO_ALTURA|counter[12]~48  = CARRY((\BOTAO_ALTURA|counter [12] & !\BOTAO_ALTURA|counter[11]~46 ))
-
-	.dataa(gnd),
-	.datab(\BOTAO_ALTURA|counter [12]),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\BOTAO_ALTURA|counter[11]~46 ),
-	.combout(\BOTAO_ALTURA|counter[12]~47_combout ),
-	.cout(\BOTAO_ALTURA|counter[12]~48 ));
-// synopsys translate_off
-defparam \BOTAO_ALTURA|counter[12]~47 .lut_mask = 16'hC30C;
-defparam \BOTAO_ALTURA|counter[12]~47 .sum_lutc_input = "cin";
-// synopsys translate_on
-
-// Location: FF_X102_Y55_N21
-dffeas \BOTAO_ALTURA|counter[12] (
-	.clk(\clock_50~inputclkctrl_outclk ),
-	.d(gnd),
-	.asdata(\BOTAO_ALTURA|counter[12]~47_combout ),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\BOTAO_ALTURA|counter[2]~65_combout ),
-	.sload(vcc),
-	.ena(\BOTAO_ALTURA|counter[2]~66_combout ),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(\BOTAO_ALTURA|counter [12]),
-	.prn(vcc));
-// synopsys translate_off
-defparam \BOTAO_ALTURA|counter[12] .is_wysiwyg = "true";
-defparam \BOTAO_ALTURA|counter[12] .power_up = "low";
-// synopsys translate_on
-
-// Location: LCCOMB_X103_Y54_N4
-cycloneive_lcell_comb \BOTAO_ALTURA|counter[13]~49 (
-// Equation(s):
-// \BOTAO_ALTURA|counter[13]~49_combout  = (\BOTAO_ALTURA|counter [13] & (!\BOTAO_ALTURA|counter[12]~48 )) # (!\BOTAO_ALTURA|counter [13] & ((\BOTAO_ALTURA|counter[12]~48 ) # (GND)))
-// \BOTAO_ALTURA|counter[13]~50  = CARRY((!\BOTAO_ALTURA|counter[12]~48 ) # (!\BOTAO_ALTURA|counter [13]))
-
-	.dataa(\BOTAO_ALTURA|counter [13]),
-	.datab(gnd),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\BOTAO_ALTURA|counter[12]~48 ),
-	.combout(\BOTAO_ALTURA|counter[13]~49_combout ),
-	.cout(\BOTAO_ALTURA|counter[13]~50 ));
-// synopsys translate_off
-defparam \BOTAO_ALTURA|counter[13]~49 .lut_mask = 16'h5A5F;
-defparam \BOTAO_ALTURA|counter[13]~49 .sum_lutc_input = "cin";
-// synopsys translate_on
-
-// Location: FF_X102_Y55_N7
-dffeas \BOTAO_ALTURA|counter[13] (
-	.clk(\clock_50~inputclkctrl_outclk ),
-	.d(gnd),
-	.asdata(\BOTAO_ALTURA|counter[13]~49_combout ),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\BOTAO_ALTURA|counter[2]~65_combout ),
-	.sload(vcc),
-	.ena(\BOTAO_ALTURA|counter[2]~66_combout ),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(\BOTAO_ALTURA|counter [13]),
-	.prn(vcc));
-// synopsys translate_off
-defparam \BOTAO_ALTURA|counter[13] .is_wysiwyg = "true";
-defparam \BOTAO_ALTURA|counter[13] .power_up = "low";
-// synopsys translate_on
-
-// Location: LCCOMB_X103_Y54_N6
-cycloneive_lcell_comb \BOTAO_ALTURA|counter[14]~51 (
-// Equation(s):
-// \BOTAO_ALTURA|counter[14]~51_combout  = (\BOTAO_ALTURA|counter [14] & (\BOTAO_ALTURA|counter[13]~50  $ (GND))) # (!\BOTAO_ALTURA|counter [14] & (!\BOTAO_ALTURA|counter[13]~50  & VCC))
-// \BOTAO_ALTURA|counter[14]~52  = CARRY((\BOTAO_ALTURA|counter [14] & !\BOTAO_ALTURA|counter[13]~50 ))
-
-	.dataa(\BOTAO_ALTURA|counter [14]),
-	.datab(gnd),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\BOTAO_ALTURA|counter[13]~50 ),
-	.combout(\BOTAO_ALTURA|counter[14]~51_combout ),
-	.cout(\BOTAO_ALTURA|counter[14]~52 ));
-// synopsys translate_off
-defparam \BOTAO_ALTURA|counter[14]~51 .lut_mask = 16'hA50A;
-defparam \BOTAO_ALTURA|counter[14]~51 .sum_lutc_input = "cin";
-// synopsys translate_on
-
-// Location: FF_X103_Y54_N7
-dffeas \BOTAO_ALTURA|counter[14] (
-	.clk(\clock_50~inputclkctrl_outclk ),
-	.d(\BOTAO_ALTURA|counter[14]~51_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\BOTAO_ALTURA|counter[2]~65_combout ),
-	.sload(gnd),
-	.ena(\BOTAO_ALTURA|counter[2]~66_combout ),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(\BOTAO_ALTURA|counter [14]),
-	.prn(vcc));
-// synopsys translate_off
-defparam \BOTAO_ALTURA|counter[14] .is_wysiwyg = "true";
-defparam \BOTAO_ALTURA|counter[14] .power_up = "low";
-// synopsys translate_on
-
-// Location: LCCOMB_X103_Y54_N8
-cycloneive_lcell_comb \BOTAO_ALTURA|counter[15]~53 (
-// Equation(s):
-// \BOTAO_ALTURA|counter[15]~53_combout  = (\BOTAO_ALTURA|counter [15] & (!\BOTAO_ALTURA|counter[14]~52 )) # (!\BOTAO_ALTURA|counter [15] & ((\BOTAO_ALTURA|counter[14]~52 ) # (GND)))
-// \BOTAO_ALTURA|counter[15]~54  = CARRY((!\BOTAO_ALTURA|counter[14]~52 ) # (!\BOTAO_ALTURA|counter [15]))
-
-	.dataa(gnd),
-	.datab(\BOTAO_ALTURA|counter [15]),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\BOTAO_ALTURA|counter[14]~52 ),
-	.combout(\BOTAO_ALTURA|counter[15]~53_combout ),
-	.cout(\BOTAO_ALTURA|counter[15]~54 ));
-// synopsys translate_off
-defparam \BOTAO_ALTURA|counter[15]~53 .lut_mask = 16'h3C3F;
-defparam \BOTAO_ALTURA|counter[15]~53 .sum_lutc_input = "cin";
-// synopsys translate_on
-
-// Location: FF_X103_Y54_N9
-dffeas \BOTAO_ALTURA|counter[15] (
-	.clk(\clock_50~inputclkctrl_outclk ),
-	.d(\BOTAO_ALTURA|counter[15]~53_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\BOTAO_ALTURA|counter[2]~65_combout ),
-	.sload(gnd),
-	.ena(\BOTAO_ALTURA|counter[2]~66_combout ),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(\BOTAO_ALTURA|counter [15]),
-	.prn(vcc));
-// synopsys translate_off
-defparam \BOTAO_ALTURA|counter[15] .is_wysiwyg = "true";
-defparam \BOTAO_ALTURA|counter[15] .power_up = "low";
-// synopsys translate_on
-
-// Location: LCCOMB_X103_Y54_N10
-cycloneive_lcell_comb \BOTAO_ALTURA|counter[16]~55 (
-// Equation(s):
-// \BOTAO_ALTURA|counter[16]~55_combout  = (\BOTAO_ALTURA|counter [16] & (\BOTAO_ALTURA|counter[15]~54  $ (GND))) # (!\BOTAO_ALTURA|counter [16] & (!\BOTAO_ALTURA|counter[15]~54  & VCC))
-// \BOTAO_ALTURA|counter[16]~56  = CARRY((\BOTAO_ALTURA|counter [16] & !\BOTAO_ALTURA|counter[15]~54 ))
-
-	.dataa(\BOTAO_ALTURA|counter [16]),
-	.datab(gnd),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\BOTAO_ALTURA|counter[15]~54 ),
-	.combout(\BOTAO_ALTURA|counter[16]~55_combout ),
-	.cout(\BOTAO_ALTURA|counter[16]~56 ));
-// synopsys translate_off
-defparam \BOTAO_ALTURA|counter[16]~55 .lut_mask = 16'hA50A;
-defparam \BOTAO_ALTURA|counter[16]~55 .sum_lutc_input = "cin";
-// synopsys translate_on
-
-// Location: FF_X103_Y54_N11
-dffeas \BOTAO_ALTURA|counter[16] (
-	.clk(\clock_50~inputclkctrl_outclk ),
-	.d(\BOTAO_ALTURA|counter[16]~55_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\BOTAO_ALTURA|counter[2]~65_combout ),
-	.sload(gnd),
-	.ena(\BOTAO_ALTURA|counter[2]~66_combout ),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(\BOTAO_ALTURA|counter [16]),
-	.prn(vcc));
-// synopsys translate_off
-defparam \BOTAO_ALTURA|counter[16] .is_wysiwyg = "true";
-defparam \BOTAO_ALTURA|counter[16] .power_up = "low";
-// synopsys translate_on
-
-// Location: LCCOMB_X103_Y54_N12
-cycloneive_lcell_comb \BOTAO_ALTURA|counter[17]~57 (
-// Equation(s):
-// \BOTAO_ALTURA|counter[17]~57_combout  = (\BOTAO_ALTURA|counter [17] & (!\BOTAO_ALTURA|counter[16]~56 )) # (!\BOTAO_ALTURA|counter [17] & ((\BOTAO_ALTURA|counter[16]~56 ) # (GND)))
-// \BOTAO_ALTURA|counter[17]~58  = CARRY((!\BOTAO_ALTURA|counter[16]~56 ) # (!\BOTAO_ALTURA|counter [17]))
-
-	.dataa(\BOTAO_ALTURA|counter [17]),
-	.datab(gnd),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\BOTAO_ALTURA|counter[16]~56 ),
-	.combout(\BOTAO_ALTURA|counter[17]~57_combout ),
-	.cout(\BOTAO_ALTURA|counter[17]~58 ));
-// synopsys translate_off
-defparam \BOTAO_ALTURA|counter[17]~57 .lut_mask = 16'h5A5F;
-defparam \BOTAO_ALTURA|counter[17]~57 .sum_lutc_input = "cin";
-// synopsys translate_on
-
-// Location: FF_X103_Y54_N13
-dffeas \BOTAO_ALTURA|counter[17] (
-	.clk(\clock_50~inputclkctrl_outclk ),
-	.d(\BOTAO_ALTURA|counter[17]~57_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\BOTAO_ALTURA|counter[2]~65_combout ),
-	.sload(gnd),
-	.ena(\BOTAO_ALTURA|counter[2]~66_combout ),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(\BOTAO_ALTURA|counter [17]),
-	.prn(vcc));
-// synopsys translate_off
-defparam \BOTAO_ALTURA|counter[17] .is_wysiwyg = "true";
-defparam \BOTAO_ALTURA|counter[17] .power_up = "low";
-// synopsys translate_on
-
-// Location: LCCOMB_X103_Y54_N14
-cycloneive_lcell_comb \BOTAO_ALTURA|counter[18]~59 (
-// Equation(s):
-// \BOTAO_ALTURA|counter[18]~59_combout  = (\BOTAO_ALTURA|counter [18] & (\BOTAO_ALTURA|counter[17]~58  $ (GND))) # (!\BOTAO_ALTURA|counter [18] & (!\BOTAO_ALTURA|counter[17]~58  & VCC))
-// \BOTAO_ALTURA|counter[18]~60  = CARRY((\BOTAO_ALTURA|counter [18] & !\BOTAO_ALTURA|counter[17]~58 ))
-
-	.dataa(gnd),
-	.datab(\BOTAO_ALTURA|counter [18]),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\BOTAO_ALTURA|counter[17]~58 ),
-	.combout(\BOTAO_ALTURA|counter[18]~59_combout ),
-	.cout(\BOTAO_ALTURA|counter[18]~60 ));
-// synopsys translate_off
-defparam \BOTAO_ALTURA|counter[18]~59 .lut_mask = 16'hC30C;
-defparam \BOTAO_ALTURA|counter[18]~59 .sum_lutc_input = "cin";
-// synopsys translate_on
-
-// Location: FF_X103_Y54_N15
-dffeas \BOTAO_ALTURA|counter[18] (
-	.clk(\clock_50~inputclkctrl_outclk ),
-	.d(\BOTAO_ALTURA|counter[18]~59_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\BOTAO_ALTURA|counter[2]~65_combout ),
-	.sload(gnd),
-	.ena(\BOTAO_ALTURA|counter[2]~66_combout ),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(\BOTAO_ALTURA|counter [18]),
-	.prn(vcc));
-// synopsys translate_off
-defparam \BOTAO_ALTURA|counter[18] .is_wysiwyg = "true";
-defparam \BOTAO_ALTURA|counter[18] .power_up = "low";
-// synopsys translate_on
-
-// Location: LCCOMB_X103_Y54_N16
-cycloneive_lcell_comb \BOTAO_ALTURA|counter[19]~61 (
-// Equation(s):
-// \BOTAO_ALTURA|counter[19]~61_combout  = (\BOTAO_ALTURA|counter [19] & (!\BOTAO_ALTURA|counter[18]~60 )) # (!\BOTAO_ALTURA|counter [19] & ((\BOTAO_ALTURA|counter[18]~60 ) # (GND)))
-// \BOTAO_ALTURA|counter[19]~62  = CARRY((!\BOTAO_ALTURA|counter[18]~60 ) # (!\BOTAO_ALTURA|counter [19]))
-
-	.dataa(gnd),
-	.datab(\BOTAO_ALTURA|counter [19]),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\BOTAO_ALTURA|counter[18]~60 ),
-	.combout(\BOTAO_ALTURA|counter[19]~61_combout ),
-	.cout(\BOTAO_ALTURA|counter[19]~62 ));
-// synopsys translate_off
-defparam \BOTAO_ALTURA|counter[19]~61 .lut_mask = 16'h3C3F;
-defparam \BOTAO_ALTURA|counter[19]~61 .sum_lutc_input = "cin";
-// synopsys translate_on
-
-// Location: FF_X103_Y54_N17
-dffeas \BOTAO_ALTURA|counter[19] (
-	.clk(\clock_50~inputclkctrl_outclk ),
-	.d(\BOTAO_ALTURA|counter[19]~61_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\BOTAO_ALTURA|counter[2]~65_combout ),
-	.sload(gnd),
-	.ena(\BOTAO_ALTURA|counter[2]~66_combout ),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(\BOTAO_ALTURA|counter [19]),
-	.prn(vcc));
-// synopsys translate_off
-defparam \BOTAO_ALTURA|counter[19] .is_wysiwyg = "true";
-defparam \BOTAO_ALTURA|counter[19] .power_up = "low";
-// synopsys translate_on
-
-// Location: LCCOMB_X103_Y54_N18
-cycloneive_lcell_comb \BOTAO_ALTURA|counter[20]~63 (
-// Equation(s):
-// \BOTAO_ALTURA|counter[20]~63_combout  = (\BOTAO_ALTURA|counter [20] & (\BOTAO_ALTURA|counter[19]~62  $ (GND))) # (!\BOTAO_ALTURA|counter [20] & (!\BOTAO_ALTURA|counter[19]~62  & VCC))
-// \BOTAO_ALTURA|counter[20]~64  = CARRY((\BOTAO_ALTURA|counter [20] & !\BOTAO_ALTURA|counter[19]~62 ))
-
-	.dataa(gnd),
-	.datab(\BOTAO_ALTURA|counter [20]),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\BOTAO_ALTURA|counter[19]~62 ),
-	.combout(\BOTAO_ALTURA|counter[20]~63_combout ),
-	.cout(\BOTAO_ALTURA|counter[20]~64 ));
-// synopsys translate_off
-defparam \BOTAO_ALTURA|counter[20]~63 .lut_mask = 16'hC30C;
-defparam \BOTAO_ALTURA|counter[20]~63 .sum_lutc_input = "cin";
-// synopsys translate_on
-
-// Location: FF_X103_Y54_N19
-dffeas \BOTAO_ALTURA|counter[20] (
-	.clk(\clock_50~inputclkctrl_outclk ),
-	.d(\BOTAO_ALTURA|counter[20]~63_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\BOTAO_ALTURA|counter[2]~65_combout ),
-	.sload(gnd),
-	.ena(\BOTAO_ALTURA|counter[2]~66_combout ),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(\BOTAO_ALTURA|counter [20]),
-	.prn(vcc));
-// synopsys translate_off
-defparam \BOTAO_ALTURA|counter[20] .is_wysiwyg = "true";
-defparam \BOTAO_ALTURA|counter[20] .power_up = "low";
-// synopsys translate_on
-
-// Location: LCCOMB_X103_Y54_N20
-cycloneive_lcell_comb \BOTAO_ALTURA|counter[21]~67 (
-// Equation(s):
-// \BOTAO_ALTURA|counter[21]~67_combout  = (\BOTAO_ALTURA|counter [21] & (!\BOTAO_ALTURA|counter[20]~64 )) # (!\BOTAO_ALTURA|counter [21] & ((\BOTAO_ALTURA|counter[20]~64 ) # (GND)))
-// \BOTAO_ALTURA|counter[21]~68  = CARRY((!\BOTAO_ALTURA|counter[20]~64 ) # (!\BOTAO_ALTURA|counter [21]))
-
-	.dataa(gnd),
-	.datab(\BOTAO_ALTURA|counter [21]),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\BOTAO_ALTURA|counter[20]~64 ),
-	.combout(\BOTAO_ALTURA|counter[21]~67_combout ),
-	.cout(\BOTAO_ALTURA|counter[21]~68 ));
-// synopsys translate_off
-defparam \BOTAO_ALTURA|counter[21]~67 .lut_mask = 16'h3C3F;
-defparam \BOTAO_ALTURA|counter[21]~67 .sum_lutc_input = "cin";
-// synopsys translate_on
-
-// Location: FF_X103_Y54_N21
-dffeas \BOTAO_ALTURA|counter[21] (
-	.clk(\clock_50~inputclkctrl_outclk ),
-	.d(\BOTAO_ALTURA|counter[21]~67_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\BOTAO_ALTURA|counter[2]~65_combout ),
-	.sload(gnd),
-	.ena(\BOTAO_ALTURA|counter[2]~66_combout ),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(\BOTAO_ALTURA|counter [21]),
-	.prn(vcc));
-// synopsys translate_off
-defparam \BOTAO_ALTURA|counter[21] .is_wysiwyg = "true";
-defparam \BOTAO_ALTURA|counter[21] .power_up = "low";
-// synopsys translate_on
-
-// Location: LCCOMB_X103_Y54_N22
-cycloneive_lcell_comb \BOTAO_ALTURA|counter[22]~69 (
-// Equation(s):
-// \BOTAO_ALTURA|counter[22]~69_combout  = \BOTAO_ALTURA|counter [22] $ (!\BOTAO_ALTURA|counter[21]~68 )
-
-	.dataa(\BOTAO_ALTURA|counter [22]),
-	.datab(gnd),
-	.datac(gnd),
-	.datad(gnd),
-	.cin(\BOTAO_ALTURA|counter[21]~68 ),
-	.combout(\BOTAO_ALTURA|counter[22]~69_combout ),
-	.cout());
-// synopsys translate_off
-defparam \BOTAO_ALTURA|counter[22]~69 .lut_mask = 16'hA5A5;
-defparam \BOTAO_ALTURA|counter[22]~69 .sum_lutc_input = "cin";
-// synopsys translate_on
-
-// Location: FF_X103_Y54_N23
-dffeas \BOTAO_ALTURA|counter[22] (
-	.clk(\clock_50~inputclkctrl_outclk ),
-	.d(\BOTAO_ALTURA|counter[22]~69_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\BOTAO_ALTURA|counter[2]~65_combout ),
-	.sload(gnd),
-	.ena(\BOTAO_ALTURA|counter[2]~66_combout ),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(\BOTAO_ALTURA|counter [22]),
-	.prn(vcc));
-// synopsys translate_off
-defparam \BOTAO_ALTURA|counter[22] .is_wysiwyg = "true";
-defparam \BOTAO_ALTURA|counter[22] .power_up = "low";
-// synopsys translate_on
-
-// Location: LCCOMB_X103_Y54_N28
-cycloneive_lcell_comb \BOTAO_ALTURA|LessThan0~0 (
-// Equation(s):
-// \BOTAO_ALTURA|LessThan0~0_combout  = (!\BOTAO_ALTURA|counter [20] & !\BOTAO_ALTURA|counter [21])
-
-	.dataa(gnd),
-	.datab(\BOTAO_ALTURA|counter [20]),
-	.datac(gnd),
-	.datad(\BOTAO_ALTURA|counter [21]),
-	.cin(gnd),
-	.combout(\BOTAO_ALTURA|LessThan0~0_combout ),
-	.cout());
-// synopsys translate_off
-defparam \BOTAO_ALTURA|LessThan0~0 .lut_mask = 16'h0033;
-defparam \BOTAO_ALTURA|LessThan0~0 .sum_lutc_input = "datac";
-// synopsys translate_on
-
-// Location: LCCOMB_X103_Y54_N30
-cycloneive_lcell_comb \BOTAO_ALTURA|LessThan0~1 (
-// Equation(s):
-// \BOTAO_ALTURA|LessThan0~1_combout  = ((\BOTAO_ALTURA|LessThan0~0_combout  & ((!\BOTAO_ALTURA|counter [18]) # (!\BOTAO_ALTURA|counter [19])))) # (!\BOTAO_ALTURA|counter [22])
-
-	.dataa(\BOTAO_ALTURA|counter [22]),
-	.datab(\BOTAO_ALTURA|counter [19]),
-	.datac(\BOTAO_ALTURA|counter [18]),
-	.datad(\BOTAO_ALTURA|LessThan0~0_combout ),
-	.cin(gnd),
-	.combout(\BOTAO_ALTURA|LessThan0~1_combout ),
-	.cout());
-// synopsys translate_off
-defparam \BOTAO_ALTURA|LessThan0~1 .lut_mask = 16'h7F55;
-defparam \BOTAO_ALTURA|LessThan0~1 .sum_lutc_input = "datac";
-// synopsys translate_on
-
-// Location: LCCOMB_X103_Y55_N6
-cycloneive_lcell_comb \BOTAO_ALTURA|LessThan0~7 (
-// Equation(s):
-// \BOTAO_ALTURA|LessThan0~7_combout  = (\BOTAO_ALTURA|counter [11] & ((\BOTAO_ALTURA|counter [10]) # ((\BOTAO_ALTURA|counter [9] & \BOTAO_ALTURA|counter [8]))))
-
-	.dataa(\BOTAO_ALTURA|counter [10]),
-	.datab(\BOTAO_ALTURA|counter [9]),
-	.datac(\BOTAO_ALTURA|counter [8]),
-	.datad(\BOTAO_ALTURA|counter [11]),
-	.cin(gnd),
-	.combout(\BOTAO_ALTURA|LessThan0~7_combout ),
-	.cout());
-// synopsys translate_off
-defparam \BOTAO_ALTURA|LessThan0~7 .lut_mask = 16'hEA00;
-defparam \BOTAO_ALTURA|LessThan0~7 .sum_lutc_input = "datac";
-// synopsys translate_on
-
-// Location: LCCOMB_X103_Y55_N8
-cycloneive_lcell_comb \BOTAO_ALTURA|LessThan0~8 (
-// Equation(s):
-// \BOTAO_ALTURA|LessThan0~8_combout  = ((!\BOTAO_ALTURA|counter [13] & (!\BOTAO_ALTURA|counter [12] & !\BOTAO_ALTURA|LessThan0~7_combout ))) # (!\BOTAO_ALTURA|counter [14])
-
-	.dataa(\BOTAO_ALTURA|counter [13]),
-	.datab(\BOTAO_ALTURA|counter [12]),
-	.datac(\BOTAO_ALTURA|counter [14]),
-	.datad(\BOTAO_ALTURA|LessThan0~7_combout ),
-	.cin(gnd),
-	.combout(\BOTAO_ALTURA|LessThan0~8_combout ),
-	.cout());
-// synopsys translate_off
-defparam \BOTAO_ALTURA|LessThan0~8 .lut_mask = 16'h0F1F;
-defparam \BOTAO_ALTURA|LessThan0~8 .sum_lutc_input = "datac";
-// synopsys translate_on
-
-// Location: LCCOMB_X102_Y55_N30
-cycloneive_lcell_comb \BOTAO_ALTURA|LessThan0~5 (
-// Equation(s):
-// \BOTAO_ALTURA|LessThan0~5_combout  = (!\BOTAO_ALTURA|counter [13] & (!\BOTAO_ALTURA|counter [10] & !\BOTAO_ALTURA|counter [12]))
-
-	.dataa(\BOTAO_ALTURA|counter [13]),
-	.datab(gnd),
-	.datac(\BOTAO_ALTURA|counter [10]),
-	.datad(\BOTAO_ALTURA|counter [12]),
-	.cin(gnd),
-	.combout(\BOTAO_ALTURA|LessThan0~5_combout ),
-	.cout());
-// synopsys translate_off
-defparam \BOTAO_ALTURA|LessThan0~5 .lut_mask = 16'h0005;
-defparam \BOTAO_ALTURA|LessThan0~5 .sum_lutc_input = "datac";
-// synopsys translate_on
-
-// Location: LCCOMB_X102_Y55_N10
-cycloneive_lcell_comb \BOTAO_ALTURA|LessThan0~3 (
-// Equation(s):
-// \BOTAO_ALTURA|LessThan0~3_combout  = (((!\BOTAO_ALTURA|counter [1]) # (!\BOTAO_ALTURA|counter [2])) # (!\BOTAO_ALTURA|counter [0])) # (!\BOTAO_ALTURA|counter [3])
-
-	.dataa(\BOTAO_ALTURA|counter [3]),
-	.datab(\BOTAO_ALTURA|counter [0]),
-	.datac(\BOTAO_ALTURA|counter [2]),
-	.datad(\BOTAO_ALTURA|counter [1]),
-	.cin(gnd),
-	.combout(\BOTAO_ALTURA|LessThan0~3_combout ),
-	.cout());
-// synopsys translate_off
-defparam \BOTAO_ALTURA|LessThan0~3 .lut_mask = 16'h7FFF;
-defparam \BOTAO_ALTURA|LessThan0~3 .sum_lutc_input = "datac";
-// synopsys translate_on
-
-// Location: LCCOMB_X102_Y55_N28
-cycloneive_lcell_comb \BOTAO_ALTURA|LessThan0~4 (
-// Equation(s):
-// \BOTAO_ALTURA|LessThan0~4_combout  = ((\BOTAO_ALTURA|LessThan0~3_combout ) # (!\BOTAO_ALTURA|counter [5])) # (!\BOTAO_ALTURA|counter [4])
-
-	.dataa(gnd),
-	.datab(\BOTAO_ALTURA|counter [4]),
-	.datac(\BOTAO_ALTURA|counter [5]),
-	.datad(\BOTAO_ALTURA|LessThan0~3_combout ),
-	.cin(gnd),
-	.combout(\BOTAO_ALTURA|LessThan0~4_combout ),
-	.cout());
-// synopsys translate_off
-defparam \BOTAO_ALTURA|LessThan0~4 .lut_mask = 16'hFF3F;
-defparam \BOTAO_ALTURA|LessThan0~4 .sum_lutc_input = "datac";
-// synopsys translate_on
-
-// Location: LCCOMB_X102_Y55_N16
-cycloneive_lcell_comb \BOTAO_ALTURA|LessThan0~6 (
-// Equation(s):
-// \BOTAO_ALTURA|LessThan0~6_combout  = (!\BOTAO_ALTURA|counter [6] & (!\BOTAO_ALTURA|counter [7] & (\BOTAO_ALTURA|LessThan0~5_combout  & \BOTAO_ALTURA|LessThan0~4_combout )))
-
-	.dataa(\BOTAO_ALTURA|counter [6]),
-	.datab(\BOTAO_ALTURA|counter [7]),
-	.datac(\BOTAO_ALTURA|LessThan0~5_combout ),
-	.datad(\BOTAO_ALTURA|LessThan0~4_combout ),
-	.cin(gnd),
-	.combout(\BOTAO_ALTURA|LessThan0~6_combout ),
-	.cout());
-// synopsys translate_off
-defparam \BOTAO_ALTURA|LessThan0~6 .lut_mask = 16'h1000;
-defparam \BOTAO_ALTURA|LessThan0~6 .sum_lutc_input = "datac";
-// synopsys translate_on
-
-// Location: LCCOMB_X103_Y54_N24
-cycloneive_lcell_comb \BOTAO_ALTURA|LessThan0~2 (
-// Equation(s):
-// \BOTAO_ALTURA|LessThan0~2_combout  = (!\BOTAO_ALTURA|counter [17] & (!\BOTAO_ALTURA|counter [16] & (!\BOTAO_ALTURA|counter [15] & \BOTAO_ALTURA|LessThan0~0_combout )))
-
-	.dataa(\BOTAO_ALTURA|counter [17]),
-	.datab(\BOTAO_ALTURA|counter [16]),
-	.datac(\BOTAO_ALTURA|counter [15]),
-	.datad(\BOTAO_ALTURA|LessThan0~0_combout ),
-	.cin(gnd),
-	.combout(\BOTAO_ALTURA|LessThan0~2_combout ),
-	.cout());
-// synopsys translate_off
-defparam \BOTAO_ALTURA|LessThan0~2 .lut_mask = 16'h0100;
-defparam \BOTAO_ALTURA|LessThan0~2 .sum_lutc_input = "datac";
-// synopsys translate_on
-
-// Location: LCCOMB_X103_Y55_N2
-cycloneive_lcell_comb \BOTAO_ALTURA|LessThan0~9 (
-// Equation(s):
-// \BOTAO_ALTURA|LessThan0~9_combout  = (\BOTAO_ALTURA|LessThan0~1_combout ) # ((\BOTAO_ALTURA|LessThan0~2_combout  & ((\BOTAO_ALTURA|LessThan0~8_combout ) # (\BOTAO_ALTURA|LessThan0~6_combout ))))
-
-	.dataa(\BOTAO_ALTURA|LessThan0~1_combout ),
-	.datab(\BOTAO_ALTURA|LessThan0~8_combout ),
-	.datac(\BOTAO_ALTURA|LessThan0~6_combout ),
-	.datad(\BOTAO_ALTURA|LessThan0~2_combout ),
-	.cin(gnd),
-	.combout(\BOTAO_ALTURA|LessThan0~9_combout ),
-	.cout());
-// synopsys translate_off
-defparam \BOTAO_ALTURA|LessThan0~9 .lut_mask = 16'hFEAA;
-defparam \BOTAO_ALTURA|LessThan0~9 .sum_lutc_input = "datac";
-// synopsys translate_on
-
-// Location: LCCOMB_X103_Y55_N4
-cycloneive_lcell_comb \BOTAO_ALTURA|buttonPressed~0 (
-// Equation(s):
-// \BOTAO_ALTURA|buttonPressed~0_combout  = (\KEY[1]~input_o ) # ((\BOTAO_ALTURA|buttonPressed~q  & \BOTAO_ALTURA|LessThan0~9_combout ))
-
-	.dataa(gnd),
-	.datab(\KEY[1]~input_o ),
-	.datac(\BOTAO_ALTURA|buttonPressed~q ),
-	.datad(\BOTAO_ALTURA|LessThan0~9_combout ),
-	.cin(gnd),
-	.combout(\BOTAO_ALTURA|buttonPressed~0_combout ),
-	.cout());
-// synopsys translate_off
-defparam \BOTAO_ALTURA|buttonPressed~0 .lut_mask = 16'hFCCC;
-defparam \BOTAO_ALTURA|buttonPressed~0 .sum_lutc_input = "datac";
-// synopsys translate_on
-
-// Location: FF_X103_Y55_N5
-dffeas \BOTAO_ALTURA|buttonPressed (
-	.clk(\clock_50~inputclkctrl_outclk ),
-	.d(\BOTAO_ALTURA|buttonPressed~0_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(gnd),
-	.sload(gnd),
-	.ena(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(\BOTAO_ALTURA|buttonPressed~q ),
-	.prn(vcc));
-// synopsys translate_off
-defparam \BOTAO_ALTURA|buttonPressed .is_wysiwyg = "true";
-defparam \BOTAO_ALTURA|buttonPressed .power_up = "low";
 // synopsys translate_on
 
 // Location: IOIBUF_X115_Y42_N15
@@ -5829,6 +4231,8 @@ assign HEX7[1] = \HEX7[1]~output_o ;
 assign HEX7[0] = \HEX7[0]~output_o ;
 
 assign buttonOut = \buttonOut~output_o ;
+
+assign END_TRIGGER = \END_TRIGGER~output_o ;
 
 assign HC_ENABLE = \HC_ENABLE~output_o ;
 

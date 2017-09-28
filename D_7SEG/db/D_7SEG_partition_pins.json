@@ -100,10 +100,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "HC_ENABLE",
-					"strict" : false
-				},
-				{
 					"name" : "GPIO[0]",
 					"strict" : false
 				},
@@ -113,10 +109,6 @@
 				},
 				{
 					"name" : "clock_50",
-					"strict" : false
-				},
-				{
-					"name" : "KEY[1]",
 					"strict" : false
 				}
 			]

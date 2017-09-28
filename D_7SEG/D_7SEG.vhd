@@ -32,7 +32,8 @@ ENTITY D_7SEG IS
 			CLOCKOUT			: OUT STD_LOGIC; --POSSIVEL SAIDA DO DIVISOR DE CLOCK
 		
 			-- Sensor de distância
-			GPIO					:INOUT STD_LOGIC_VECTOR (35 DOWNTO 0);	-- Declara um Buffer para que possamos utilizar com I/O				  
+			GPIO					:inout  STD_LOGIC_VECTOR (35 DOWNTO 0);	-- Declara um Buffer para que possamos utilizar com I/O
+			--GPIO					:OUT STD_LOGIC_VECTOR (35 DOWNTO 18);
 			--GPIO(1) = echo
 			--GPIO(0) = trigger	
 	
@@ -45,7 +46,8 @@ ENTITY D_7SEG IS
 
 			--Definição da saida do "botão virtual" de antitrepidação
 			buttonOut			: BUFFER STD_LOGIC;
-			HC_ENABLE			: BUFFER STD_LOGIC; -- habilitador de leitura do sensor de altura
+			END_TRIGGER			: BUFFER STD_LOGIC := '1';
+			HC_ENABLE			: BUFFER STD_LOGIC := '0'; -- habilitador de leitura do sensor de altura
 			
 			--DECLARAÇÂO DE LED para testes
 			LEDR					: OUT STD_LOGIC_VECTOR(17 DOWNTO 0)
@@ -119,21 +121,37 @@ DISPLAY_MENU:WORK.display
 		);
 
 
-BOTAO_ALTURA: WORK.debouncer_pi
-
-	PORT MAP(
-		CLOCK_50,
-		KEY(1),
-		HC_ENABLE
-		);
+--	PROCESS(CLOCK_50)
+--			
+----		CONSTANT COUNT_MAX	: INTEGER 	:= 1000000;
+----		VARIABLE counter 		: INTEGER RANGE 0 TO COUNT_MAX := 0;
+--	
+--	BEGIN
+--			
+--		IF(SW(0) = '1') THEN
+--		
+--			HC_ENABLE <= '1';
+--		
+--		ELSE
+--		
+--			HC_ENABLE <= '0';
+--			
+--		END IF;	
+--		
+--	END PROCESS;
 		
 SENSOR_ALTURA: WORK.hc_sr04
 	
 	PORT MAP(
 	CLOCK_50,
 	HC_ENABLE,
+	END_TRIGGER,
 	GPIO(1),		--echo
 	GPIO(0)		--trigger
 	);
+
+	HC_ENABLE <= END_TRIGGER WHEN END_TRIGGER = '0' ELSE
+				    '1' WHEN SW(0) = '1'ELSE
+				    '0' WHEN SW(0) = '0';
 		
 END display;
