@@ -1,8 +1,9 @@
 |D_7SEG
 clock_50 => debouncer_pi:BOTAO_MENU.clockIn
+clock_50 => debouncer_pi:BOTAO_ALTURA.clockIn
+clock_50 => hc_sr04:SENSOR_ALTURA.CLOCK_CORE
 CLOCKOUT <= CLOCKOUT.DB_MAX_OUTPUT_PORT_TYPE
-GPIO[0] <> <UNC>
-GPIO[1] <> <UNC>
+GPIO[0] <> GPIO[0]
 GPIO[2] <> <UNC>
 GPIO[3] <> <UNC>
 GPIO[4] <> <UNC>
@@ -38,7 +39,7 @@ GPIO[33] <> <UNC>
 GPIO[34] <> <UNC>
 GPIO[35] <> <UNC>
 KEY[0] => debouncer_pi:BOTAO_MENU.buttonIn
-KEY[1] => ~NO_FANOUT~
+KEY[1] => debouncer_pi:BOTAO_ALTURA.buttonIn
 KEY[2] => ~NO_FANOUT~
 KEY[3] => ~NO_FANOUT~
 SW[0] => ~NO_FANOUT~
@@ -116,6 +117,7 @@ HEX7[2] <= display:DISPLAY_MENU.DISPLAY7[4]
 HEX7[1] <= display:DISPLAY_MENU.DISPLAY7[5]
 HEX7[0] <= display:DISPLAY_MENU.DISPLAY7[6]
 buttonOut << debouncer_pi:BOTAO_MENU.buttonOut
+HC_ENABLE << debouncer_pi:BOTAO_ALTURA.buttonOut
 LEDR[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 LEDR[1] <= LEDR[1].DB_MAX_OUTPUT_PORT_TYPE
 LEDR[2] <= LEDR[2].DB_MAX_OUTPUT_PORT_TYPE
@@ -1022,5 +1024,133 @@ SEG7_DATA[3] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
 SEG7_DATA[4] <= SEG7_DATA.DB_MAX_OUTPUT_PORT_TYPE
 SEG7_DATA[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 SEG7_DATA[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|D_7SEG|debouncer_pi:BOTAO_ALTURA
+clockIn => buttonPressed.CLK
+clockIn => counter[0].CLK
+clockIn => counter[1].CLK
+clockIn => counter[2].CLK
+clockIn => counter[3].CLK
+clockIn => counter[4].CLK
+clockIn => counter[5].CLK
+clockIn => counter[6].CLK
+clockIn => counter[7].CLK
+clockIn => counter[8].CLK
+clockIn => counter[9].CLK
+clockIn => counter[10].CLK
+clockIn => counter[11].CLK
+clockIn => counter[12].CLK
+clockIn => counter[13].CLK
+clockIn => counter[14].CLK
+clockIn => counter[15].CLK
+clockIn => counter[16].CLK
+clockIn => counter[17].CLK
+clockIn => counter[18].CLK
+clockIn => counter[19].CLK
+clockIn => counter[20].CLK
+clockIn => counter[21].CLK
+clockIn => counter[22].CLK
+buttonIn => process_0.IN1
+buttonIn => process_0.IN1
+buttonIn => process_0.IN1
+buttonOut <= buttonPressed.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|D_7SEG|hc_sr04:SENSOR_ALTURA
+CLOCK_CORE => clockdivider:HC_SR04_CLOCK.CLOCKIN
+CLOCK_CORE => TRIGGER~reg0.CLK
+CLOCK_CORE => counter[0].CLK
+CLOCK_CORE => counter[1].CLK
+CLOCK_CORE => counter[2].CLK
+CLOCK_CORE => counter[3].CLK
+CLOCK_CORE => counter[4].CLK
+CLOCK_CORE => counter[5].CLK
+CLOCK_CORE => counter[6].CLK
+CLOCK_CORE => counter[7].CLK
+CLOCK_CORE => counter[8].CLK
+CLOCK_CORE => counter[9].CLK
+CLOCK_CORE => counter[10].CLK
+CLOCK_CORE => counter[11].CLK
+CLOCK_CORE => counter[12].CLK
+CLOCK_CORE => counter[13].CLK
+CLOCK_CORE => counter[14].CLK
+CLOCK_CORE => counter[15].CLK
+CLOCK_CORE => counter[16].CLK
+CLOCK_CORE => counter[17].CLK
+CLOCK_CORE => counter[18].CLK
+CLOCK_CORE => counter[19].CLK
+ENABLE => ~NO_FANOUT~
+ECHO => ~NO_FANOUT~
+TRIGGER <= TRIGGER~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|D_7SEG|hc_sr04:SENSOR_ALTURA|clockDivider:HC_SR04_CLOCK
+CLOCKIN => ~NO_FANOUT~
+FreqIn[0] => ~NO_FANOUT~
+FreqIn[1] => ~NO_FANOUT~
+FreqIn[2] => ~NO_FANOUT~
+FreqIn[3] => ~NO_FANOUT~
+FreqIn[4] => ~NO_FANOUT~
+FreqIn[5] => ~NO_FANOUT~
+FreqIn[6] => ~NO_FANOUT~
+FreqIn[7] => ~NO_FANOUT~
+FreqIn[8] => ~NO_FANOUT~
+FreqIn[9] => ~NO_FANOUT~
+FreqIn[10] => ~NO_FANOUT~
+FreqIn[11] => ~NO_FANOUT~
+FreqIn[12] => ~NO_FANOUT~
+FreqIn[13] => ~NO_FANOUT~
+FreqIn[14] => ~NO_FANOUT~
+FreqIn[15] => ~NO_FANOUT~
+FreqIn[16] => ~NO_FANOUT~
+FreqIn[17] => ~NO_FANOUT~
+FreqIn[18] => ~NO_FANOUT~
+FreqIn[19] => ~NO_FANOUT~
+FreqIn[20] => ~NO_FANOUT~
+FreqIn[21] => ~NO_FANOUT~
+FreqIn[22] => ~NO_FANOUT~
+FreqIn[23] => ~NO_FANOUT~
+FreqIn[24] => ~NO_FANOUT~
+FreqIn[25] => ~NO_FANOUT~
+FreqIn[26] => ~NO_FANOUT~
+FreqIn[27] => ~NO_FANOUT~
+FreqIn[28] => ~NO_FANOUT~
+FreqIn[29] => ~NO_FANOUT~
+FreqIn[30] => ~NO_FANOUT~
+FreqIn[31] => ~NO_FANOUT~
+freqOut[0] => ~NO_FANOUT~
+freqOut[1] => ~NO_FANOUT~
+freqOut[2] => ~NO_FANOUT~
+freqOut[3] => ~NO_FANOUT~
+freqOut[4] => ~NO_FANOUT~
+freqOut[5] => ~NO_FANOUT~
+freqOut[6] => ~NO_FANOUT~
+freqOut[7] => ~NO_FANOUT~
+freqOut[8] => ~NO_FANOUT~
+freqOut[9] => ~NO_FANOUT~
+freqOut[10] => ~NO_FANOUT~
+freqOut[11] => ~NO_FANOUT~
+freqOut[12] => ~NO_FANOUT~
+freqOut[13] => ~NO_FANOUT~
+freqOut[14] => ~NO_FANOUT~
+freqOut[15] => ~NO_FANOUT~
+freqOut[16] => ~NO_FANOUT~
+freqOut[17] => ~NO_FANOUT~
+freqOut[18] => ~NO_FANOUT~
+freqOut[19] => ~NO_FANOUT~
+freqOut[20] => ~NO_FANOUT~
+freqOut[21] => ~NO_FANOUT~
+freqOut[22] => ~NO_FANOUT~
+freqOut[23] => ~NO_FANOUT~
+freqOut[24] => ~NO_FANOUT~
+freqOut[25] => ~NO_FANOUT~
+freqOut[26] => ~NO_FANOUT~
+freqOut[27] => ~NO_FANOUT~
+freqOut[28] => ~NO_FANOUT~
+freqOut[29] => ~NO_FANOUT~
+freqOut[30] => ~NO_FANOUT~
+freqOut[31] => ~NO_FANOUT~
+CLOCKOUT <= <GND>
 
 

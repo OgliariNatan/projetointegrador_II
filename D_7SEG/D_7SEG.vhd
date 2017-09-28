@@ -130,9 +130,10 @@ BOTAO_ALTURA: WORK.debouncer_pi
 SENSOR_ALTURA: WORK.hc_sr04
 	
 	PORT MAP(
+	CLOCK_50,
 	HC_ENABLE,
-	GPIO(1),
-	GPIO(0)
+	GPIO(1),		--echo
+	GPIO(0)		--trigger
 	);
 		
 END display;

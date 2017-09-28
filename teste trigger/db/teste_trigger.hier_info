@@ -1,0 +1,19 @@
+|teste_trigger
+CLOCK_50 => ~NO_FANOUT~
+SW[0] => GPIO[0].DATAIN
+SW[0] => LEDG[0].DATAIN
+SW[1] => ~NO_FANOUT~
+SW[2] => ~NO_FANOUT~
+SW[3] => ~NO_FANOUT~
+GPIO[0] <= SW[0].DB_MAX_OUTPUT_PORT_TYPE
+GPIO[1] <= <GND>
+LEDG[0] <= SW[0].DB_MAX_OUTPUT_PORT_TYPE
+LEDG[1] <= <GND>
+LEDG[2] <= <GND>
+LEDG[3] <= <GND>
+LEDG[4] <= <GND>
+LEDG[5] <= <GND>
+LEDG[6] <= <GND>
+LEDG[7] <= <GND>
+
+
