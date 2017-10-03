@@ -9,8 +9,6 @@ Resumindo, uma esteira com sensor de altura e cor com um seletor de para selecio
 	<ul>
 		<li>Placa de desenvolvimento <a href="https://drive.google.com/open?id=0BzUZsr8WwPNLbmZDWnhsazVjMEE
 ">KIT DE2-115</a>.</li>
-		<li>Sensor de distância <a href="https://cdn.sparkfun.com/datasheets/Sensors/Proximity/HCSR04.pdf
-">HCSR04</a>.</li>
 		<li>Linguagem VHDL ou Diagrama de Blocos.</li>
 		<li>Sensor de distância <a href="https://cdn.sparkfun.com/datasheets/Sensors/Proximity/HCSR04.pdf">HCSR04</a>.</li>
 		<li>Módulo de reconhecimento de cores <a href="http://www.mouser.com/catalog/specsheets/TCS3200-E11.pdf">TCS3200</a>.</li>
