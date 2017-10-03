@@ -1,9 +1,5 @@
-Analysis & Synthesis report for D_7SEG
-<<<<<<< HEAD
-Wed Sep 27 19:35:19 2017
-=======
-Wed Sep 27 11:20:51 2017
->>>>>>> 8d7571be3bae389559aba5b62a7ab576b51c6074
+Analysis & Elaboration report for D_7SEG
+Tue Oct 03 20:33:27 2017
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -11,21 +7,10 @@ Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Synthesis Summary
-  3. Analysis & Synthesis Settings
-  4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. User-Specified and Inferred Latches
-  9. General Register Statistics
- 10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Parameter Settings for User Entity Instance: Top-level Entity: |D_7SEG
- 12. Parameter Settings for User Entity Instance: debouncer_pi:BOTAO_MENU
- 13. Port Connectivity Checks: "display:DISPLAY_MENU"
- 14. Post-Synthesis Netlist Statistics for Top Partition
- 15. Elapsed Time Per Partition
- 16. Analysis & Synthesis Messages
+  2. Analysis & Elaboration Summary
+  3. Parallel Compilation
+  4. Analysis & Elaboration Settings
+  5. Analysis & Elaboration Messages
 
 
 
@@ -50,39 +35,43 @@ agreement for further details.
 
 
 +----------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                     ;
+; Analysis & Elaboration Summary                                                   ;
 +------------------------------------+---------------------------------------------+
-<<<<<<< HEAD
-; Analysis & Synthesis Status        ; Successful - Wed Sep 27 19:35:19 2017       ;
-=======
-; Analysis & Synthesis Status        ; Successful - Wed Sep 27 11:20:51 2017       ;
->>>>>>> 8d7571be3bae389559aba5b62a7ab576b51c6074
+; Analysis & Elaboration Status      ; Failed - Tue Oct 03 20:33:27 2017           ;
 ; Quartus Prime Version              ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                      ; D_7SEG                                      ;
 ; Top-level Entity Name              ; D_7SEG                                      ;
 ; Family                             ; Cyclone IV E                                ;
-<<<<<<< HEAD
-; Total logic elements               ; 37                                          ;
-;     Total combinational functions  ; 37                                          ;
-;     Dedicated logic registers      ; 25                                          ;
-; Total registers                    ; 25                                          ;
-; Total pins                         ; 119                                         ;
-=======
-; Total logic elements               ; 75                                          ;
-;     Total combinational functions  ; 75                                          ;
-;     Dedicated logic registers      ; 51                                          ;
-; Total registers                    ; 51                                          ;
-; Total pins                         ; 142                                         ;
->>>>>>> 8d7571be3bae389559aba5b62a7ab576b51c6074
-; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0                                           ;
-; Embedded Multiplier 9-bit elements ; 0                                           ;
-; Total PLLs                         ; 0                                           ;
+; Total logic elements               ; N/A until Partition Merge                   ;
+;     Total combinational functions  ; N/A until Partition Merge                   ;
+;     Dedicated logic registers      ; N/A until Partition Merge                   ;
+; Total registers                    ; N/A until Partition Merge                   ;
+; Total pins                         ; N/A until Partition Merge                   ;
+; Total virtual pins                 ; N/A until Partition Merge                   ;
+; Total memory bits                  ; N/A until Partition Merge                   ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
+; Total PLLs                         ; N/A until Partition Merge                   ;
 +------------------------------------+---------------------------------------------+
 
 
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
 +----------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Settings                                                                                        ;
+; Analysis & Elaboration Settings                                                                                      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
@@ -167,300 +156,14 @@ agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 
 
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 4           ;
-; Maximum allowed            ; 2           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 2           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-+----------------------------+-------------+
-
-
-<<<<<<< HEAD
-+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                     ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                              ; Library ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------+---------+
-; sevenSeg_decoder.vhd             ; yes             ; User VHDL File  ; C:/Users/augus/Documents/projetointegrador_II/D_7SEG/sevenSeg_decoder.vhd ;         ;
-; display.vhd                      ; yes             ; User VHDL File  ; C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd          ;         ;
-; debouncer_pi.vhd                 ; yes             ; User VHDL File  ; C:/Users/augus/Documents/projetointegrador_II/D_7SEG/debouncer_pi.vhd     ;         ;
-; D_7SEG.vhd                       ; yes             ; User VHDL File  ; C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd           ;         ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------+---------+
-
-
-+-------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary           ;
-+---------------------------------------------+---------+
-; Resource                                    ; Usage   ;
-+---------------------------------------------+---------+
-; Estimated Total logic elements              ; 37      ;
-;                                             ;         ;
-; Total combinational functions               ; 37      ;
-; Logic element usage by number of LUT inputs ;         ;
-;     -- 4 input functions                    ; 7       ;
-;     -- 3 input functions                    ; 3       ;
-;     -- <=2 input functions                  ; 27      ;
-;                                             ;         ;
-; Logic elements by mode                      ;         ;
-;     -- normal mode                          ; 15      ;
-;     -- arithmetic mode                      ; 22      ;
-;                                             ;         ;
-; Total registers                             ; 25      ;
-;     -- Dedicated logic registers            ; 25      ;
-;     -- I/O registers                        ; 0       ;
-;                                             ;         ;
-; I/O pins                                    ; 119     ;
-;                                             ;         ;
-; Embedded Multiplier 9-bit elements          ; 0       ;
-;                                             ;         ;
-; Maximum fan-out node                        ; selecao ;
-; Maximum fan-out                             ; 24      ;
-; Total fan-out                               ; 364     ;
-; Average fan-out                             ; 1.08    ;
-+---------------------------------------------+---------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                     ;
-+------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------+--------------+--------------+
-; Compilation Hierarchy Node   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name             ; Entity Name  ; Library Name ;
-+------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------+--------------+--------------+
-; |D_7SEG                      ; 37 (1)              ; 25 (1)                    ; 0           ; 0            ; 0       ; 0         ; 119  ; 0            ; |D_7SEG                         ; D_7SEG       ; work         ;
-;    |debouncer_pi:BOTAO_MENU| ; 36 (36)             ; 24 (24)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |D_7SEG|debouncer_pi:BOTAO_MENU ; debouncer_pi ; work         ;
-+------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------+--------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+---------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                               ;
-+----------------------------------------------------+---------------------+------------------------+
-; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
-+----------------------------------------------------+---------------------+------------------------+
-; display:DISPLAY_MENU|DISPLAY2[2]                   ; VCC                 ; yes                    ;
-; display:DISPLAY_MENU|DISPLAY2[4]                   ; VCC                 ; yes                    ;
-; display:DISPLAY_MENU|DISPLAY2[5]                   ; VCC                 ; yes                    ;
-; display:DISPLAY_MENU|DISPLAY3[2]                   ; VCC                 ; yes                    ;
-; display:DISPLAY_MENU|DISPLAY3[5]                   ; VCC                 ; yes                    ;
-; Number of user-specified and inferred latches = 5  ;                     ;                        ;
-+----------------------------------------------------+---------------------+------------------------+
-=======
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                         ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                  ; Library ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------+---------+
-; D_7SEG.vhd                       ; yes             ; User VHDL File  ; C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd ;         ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------+---------+
-
-
-+--------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                  ;
-+---------------------------------------------+----------------+
-; Resource                                    ; Usage          ;
-+---------------------------------------------+----------------+
-; Estimated Total logic elements              ; 75             ;
-;                                             ;                ;
-; Total combinational functions               ; 75             ;
-; Logic element usage by number of LUT inputs ;                ;
-;     -- 4 input functions                    ; 14             ;
-;     -- 3 input functions                    ; 7              ;
-;     -- <=2 input functions                  ; 54             ;
-;                                             ;                ;
-; Logic elements by mode                      ;                ;
-;     -- normal mode                          ; 29             ;
-;     -- arithmetic mode                      ; 46             ;
-;                                             ;                ;
-; Total registers                             ; 51             ;
-;     -- Dedicated logic registers            ; 51             ;
-;     -- I/O registers                        ; 0              ;
-;                                             ;                ;
-; I/O pins                                    ; 142            ;
-;                                             ;                ;
-; Embedded Multiplier 9-bit elements          ; 0              ;
-;                                             ;                ;
-; Maximum fan-out node                        ; clock_50~input ;
-; Maximum fan-out                             ; 50             ;
-; Total fan-out                               ; 557            ;
-; Average fan-out                             ; 1.25           ;
-+---------------------------------------------+----------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                      ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; |D_7SEG                    ; 75 (75)             ; 51 (51)                   ; 0           ; 0            ; 0       ; 0         ; 142  ; 0            ; |D_7SEG             ; D_7SEG      ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+----------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                ;
-+-----------------------------------------------------+---------------------+------------------------+
-; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
-+-----------------------------------------------------+---------------------+------------------------+
-; HEX0[6]$latch                                       ; VCC                 ; yes                    ;
-; HEX0[2]$latch                                       ; VCC                 ; yes                    ;
-; HEX0[1]$latch                                       ; VCC                 ; yes                    ;
-; HEX1[0]$latch                                       ; VCC                 ; yes                    ;
-; HEX2[2]$latch                                       ; VCC                 ; yes                    ;
-; HEX2[1]$latch                                       ; VCC                 ; yes                    ;
-; HEX2[0]$latch                                       ; VCC                 ; yes                    ;
-; HEX3[6]$latch                                       ; VCC                 ; yes                    ;
-; HEX3[1]$latch                                       ; VCC                 ; yes                    ;
-; HEX3[0]$latch                                       ; VCC                 ; yes                    ;
-; LEDR[9]$latch                                       ; GND                 ; yes                    ;
-; LEDR[10]$latch                                      ; GND                 ; yes                    ;
-; Number of user-specified and inferred latches = 12  ;                     ;                        ;
-+-----------------------------------------------------+---------------------+------------------------+
->>>>>>> 8d7571be3bae389559aba5b62a7ab576b51c6074
-Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-<<<<<<< HEAD
-; Total registers                              ; 25    ;
-; Number of registers using Synchronous Clear  ; 23    ;
-=======
-; Total registers                              ; 51    ;
-; Number of registers using Synchronous Clear  ; 48    ;
->>>>>>> 8d7571be3bae389559aba5b62a7ab576b51c6074
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 23    ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                            ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
-; 5:1                ; 23 bits   ; 69 LEs        ; 23 LEs               ; 46 LEs                 ; Yes        ; |D_7SEG|debouncer_pi:BOTAO_MENU|counter[22] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
-
-
-+------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |D_7SEG ;
-+----------------+----------+--------------------------------------------+
-; Parameter Name ; Value    ; Type                                       ;
-+----------------+----------+--------------------------------------------+
-; freqIn         ; 50000000 ; Signed Integer                             ;
-; defaultState   ; '0'      ; Enumerated                                 ;
-; freqOut        ; 1        ; Signed Integer                             ;
-+----------------+----------+--------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: debouncer_pi:BOTAO_MENU ;
-+----------------+----------+------------------------------------------+
-; Parameter Name ; Value    ; Type                                     ;
-+----------------+----------+------------------------------------------+
-; freqin         ; 50000000 ; Signed Integer                           ;
-; delay          ; 100      ; Signed Integer                           ;
-; defaultstate   ; '0'      ; Enumerated                               ;
-+----------------+----------+------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+--------------------------------------------------+
-; Port Connectivity Checks: "display:DISPLAY_MENU" ;
-+----------------+-------+----------+--------------+
-; Port           ; Type  ; Severity ; Details      ;
-+----------------+-------+----------+--------------+
-; cor            ; Input ; Info     ; Stuck at GND ;
-; altura[6..5]   ; Input ; Info     ; Stuck at VCC ;
-; altura[1..0]   ; Input ; Info     ; Stuck at VCC ;
-; altura[31..7]  ; Input ; Info     ; Stuck at GND ;
-; altura[4..2]   ; Input ; Info     ; Stuck at GND ;
-; selecao[31..1] ; Input ; Info     ; Stuck at GND ;
-+----------------+-------+----------+--------------+
-
-
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-<<<<<<< HEAD
-; boundary_port         ; 119                         ;
-; cycloneiii_ff         ; 25                          ;
-;     ENA SCLR          ; 23                          ;
-;     plain             ; 2                           ;
-; cycloneiii_io_obuf    ; 36                          ;
-; cycloneiii_lcell_comb ; 40                          ;
-;     arith             ; 22                          ;
-;         2 data inputs ; 22                          ;
-;     normal            ; 18                          ;
-;         0 data inputs ; 2                           ;
-;         1 data inputs ; 3                           ;
-;         2 data inputs ; 3                           ;
-;         3 data inputs ; 3                           ;
-;         4 data inputs ; 7                           ;
-;                       ;                             ;
-; Max LUT depth         ; 5.00                        ;
-; Average LUT depth     ; 2.13                        ;
-=======
-; boundary_port         ; 142                         ;
-; cycloneiii_ff         ; 51                          ;
-;     ENA SCLR          ; 23                          ;
-;     SCLR              ; 25                          ;
-;     plain             ; 3                           ;
-; cycloneiii_io_obuf    ; 36                          ;
-; cycloneiii_lcell_comb ; 78                          ;
-;     arith             ; 46                          ;
-;         2 data inputs ; 46                          ;
-;     normal            ; 32                          ;
-;         0 data inputs ; 2                           ;
-;         1 data inputs ; 4                           ;
-;         2 data inputs ; 5                           ;
-;         3 data inputs ; 7                           ;
-;         4 data inputs ; 14                          ;
-;                       ;                             ;
-; Max LUT depth         ; 6.00                        ;
-; Average LUT depth     ; 2.66                        ;
->>>>>>> 8d7571be3bae389559aba5b62a7ab576b51c6074
-+-----------------------+-----------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:00     ;
-+----------------+--------------+
-
-
-+-------------------------------+
-; Analysis & Synthesis Messages ;
-+-------------------------------+
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Synthesis
+Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
-<<<<<<< HEAD
-    Info: Processing started: Wed Sep 27 19:35:04 2017
-=======
-    Info: Processing started: Wed Sep 27 11:20:24 2017
->>>>>>> 8d7571be3bae389559aba5b62a7ab576b51c6074
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off D_7SEG -c D_7SEG
+    Info: Processing started: Tue Oct 03 20:33:12 2017
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off D_7SEG -c D_7SEG --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file sevenseg_decoder.vhd
@@ -475,400 +178,12 @@ Info (12021): Found 2 design units, including 1 entities, in source file debounc
 Info (12021): Found 2 design units, including 1 entities, in source file d_7seg.vhd
     Info (12022): Found design unit 1: D_7SEG-display File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 55
     Info (12023): Found entity 1: D_7SEG File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 23
-Info (12127): Elaborating entity "D_7SEG" for the top level hierarchy
-<<<<<<< HEAD
-Warning (10541): VHDL Signal Declaration warning at D_7SEG.vhd(32): used implicit default value for signal "CLOCKOUT" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 32
-Warning (10541): VHDL Signal Declaration warning at D_7SEG.vhd(50): used implicit default value for signal "LEDR" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 50
-Warning (10540): VHDL Signal Declaration warning at D_7SEG.vhd(74): used explicit default value for signal "color" because signal was never assigned a value File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 74
-Warning (10540): VHDL Signal Declaration warning at D_7SEG.vhd(75): used explicit default value for signal "altura" because signal was never assigned a value File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 75
-Info (12128): Elaborating entity "debouncer_pi" for hierarchy "debouncer_pi:BOTAO_MENU" File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 100
-Info (12128): Elaborating entity "display" for hierarchy "display:DISPLAY_MENU" File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 123
-Warning (10492): VHDL Process Statement warning at display.vhd(66): signal "conv_ten" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 66
-Warning (10492): VHDL Process Statement warning at display.vhd(67): signal "conv_unit" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 67
-Warning (10631): VHDL Process Statement warning at display.vhd(52): inferring latch(es) for signal or variable "DISPLAY7", which holds its previous value in one or more paths through the process File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Warning (10631): VHDL Process Statement warning at display.vhd(52): inferring latch(es) for signal or variable "DISPLAY6", which holds its previous value in one or more paths through the process File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Warning (10631): VHDL Process Statement warning at display.vhd(52): inferring latch(es) for signal or variable "DISPLAY5", which holds its previous value in one or more paths through the process File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Warning (10631): VHDL Process Statement warning at display.vhd(52): inferring latch(es) for signal or variable "DISPLAY4", which holds its previous value in one or more paths through the process File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Warning (10631): VHDL Process Statement warning at display.vhd(52): inferring latch(es) for signal or variable "DISPLAY3", which holds its previous value in one or more paths through the process File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Warning (10631): VHDL Process Statement warning at display.vhd(52): inferring latch(es) for signal or variable "DISPLAY2", which holds its previous value in one or more paths through the process File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Warning (10631): VHDL Process Statement warning at display.vhd(52): inferring latch(es) for signal or variable "DISPLAY1", which holds its previous value in one or more paths through the process File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Warning (10631): VHDL Process Statement warning at display.vhd(52): inferring latch(es) for signal or variable "DISPLAY0", which holds its previous value in one or more paths through the process File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Info (10041): Inferred latch for "DISPLAY0[0]" at display.vhd(52) File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Info (10041): Inferred latch for "DISPLAY0[1]" at display.vhd(52) File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Info (10041): Inferred latch for "DISPLAY0[2]" at display.vhd(52) File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Info (10041): Inferred latch for "DISPLAY0[3]" at display.vhd(52) File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Info (10041): Inferred latch for "DISPLAY0[4]" at display.vhd(52) File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Info (10041): Inferred latch for "DISPLAY0[5]" at display.vhd(52) File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Info (10041): Inferred latch for "DISPLAY0[6]" at display.vhd(52) File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Info (10041): Inferred latch for "DISPLAY1[0]" at display.vhd(52) File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Info (10041): Inferred latch for "DISPLAY1[1]" at display.vhd(52) File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Info (10041): Inferred latch for "DISPLAY1[2]" at display.vhd(52) File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Info (10041): Inferred latch for "DISPLAY1[3]" at display.vhd(52) File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Info (10041): Inferred latch for "DISPLAY1[4]" at display.vhd(52) File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Info (10041): Inferred latch for "DISPLAY1[5]" at display.vhd(52) File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Info (10041): Inferred latch for "DISPLAY1[6]" at display.vhd(52) File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Info (10041): Inferred latch for "DISPLAY2[0]" at display.vhd(52) File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Info (10041): Inferred latch for "DISPLAY2[1]" at display.vhd(52) File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Info (10041): Inferred latch for "DISPLAY2[2]" at display.vhd(52) File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Info (10041): Inferred latch for "DISPLAY2[3]" at display.vhd(52) File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Info (10041): Inferred latch for "DISPLAY2[4]" at display.vhd(52) File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Info (10041): Inferred latch for "DISPLAY2[5]" at display.vhd(52) File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Info (10041): Inferred latch for "DISPLAY2[6]" at display.vhd(52) File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Info (10041): Inferred latch for "DISPLAY3[0]" at display.vhd(52) File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Info (10041): Inferred latch for "DISPLAY3[1]" at display.vhd(52) File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Info (10041): Inferred latch for "DISPLAY3[2]" at display.vhd(52) File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Info (10041): Inferred latch for "DISPLAY3[3]" at display.vhd(52) File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Info (10041): Inferred latch for "DISPLAY3[4]" at display.vhd(52) File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Info (10041): Inferred latch for "DISPLAY3[5]" at display.vhd(52) File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Info (10041): Inferred latch for "DISPLAY3[6]" at display.vhd(52) File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Info (10041): Inferred latch for "DISPLAY4[0]" at display.vhd(52) File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Info (10041): Inferred latch for "DISPLAY4[1]" at display.vhd(52) File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Info (10041): Inferred latch for "DISPLAY4[2]" at display.vhd(52) File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Info (10041): Inferred latch for "DISPLAY4[3]" at display.vhd(52) File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Info (10041): Inferred latch for "DISPLAY4[4]" at display.vhd(52) File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Info (10041): Inferred latch for "DISPLAY4[5]" at display.vhd(52) File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Info (10041): Inferred latch for "DISPLAY4[6]" at display.vhd(52) File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Info (10041): Inferred latch for "DISPLAY5[0]" at display.vhd(52) File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Info (10041): Inferred latch for "DISPLAY5[1]" at display.vhd(52) File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Info (10041): Inferred latch for "DISPLAY5[2]" at display.vhd(52) File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Info (10041): Inferred latch for "DISPLAY5[3]" at display.vhd(52) File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Info (10041): Inferred latch for "DISPLAY5[4]" at display.vhd(52) File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Info (10041): Inferred latch for "DISPLAY5[5]" at display.vhd(52) File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Info (10041): Inferred latch for "DISPLAY5[6]" at display.vhd(52) File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Info (10041): Inferred latch for "DISPLAY6[0]" at display.vhd(52) File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Info (10041): Inferred latch for "DISPLAY6[1]" at display.vhd(52) File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Info (10041): Inferred latch for "DISPLAY6[2]" at display.vhd(52) File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Info (10041): Inferred latch for "DISPLAY6[3]" at display.vhd(52) File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Info (10041): Inferred latch for "DISPLAY6[4]" at display.vhd(52) File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Info (10041): Inferred latch for "DISPLAY6[5]" at display.vhd(52) File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Info (10041): Inferred latch for "DISPLAY6[6]" at display.vhd(52) File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Info (10041): Inferred latch for "DISPLAY7[0]" at display.vhd(52) File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Info (10041): Inferred latch for "DISPLAY7[1]" at display.vhd(52) File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Info (10041): Inferred latch for "DISPLAY7[2]" at display.vhd(52) File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Info (10041): Inferred latch for "DISPLAY7[3]" at display.vhd(52) File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Info (10041): Inferred latch for "DISPLAY7[4]" at display.vhd(52) File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Info (10041): Inferred latch for "DISPLAY7[5]" at display.vhd(52) File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Info (10041): Inferred latch for "DISPLAY7[6]" at display.vhd(52) File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Info (12128): Elaborating entity "sevenSeg_decoder" for hierarchy "display:DISPLAY_MENU|sevenSeg_decoder:DECODE_UNIT" File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 38
-Warning (14026): LATCH primitive "display:DISPLAY_MENU|DISPLAY1[3]" is permanently enabled File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Warning (14026): LATCH primitive "display:DISPLAY_MENU|DISPLAY1[5]" is permanently enabled File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Warning (14026): LATCH primitive "display:DISPLAY_MENU|DISPLAY2[0]" is permanently enabled File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Warning (14026): LATCH primitive "display:DISPLAY_MENU|DISPLAY2[1]" is permanently enabled File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Warning (14026): LATCH primitive "display:DISPLAY_MENU|DISPLAY2[3]" is permanently enabled File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Warning (14026): LATCH primitive "display:DISPLAY_MENU|DISPLAY2[6]" is permanently enabled File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Warning (14026): LATCH primitive "display:DISPLAY_MENU|DISPLAY3[1]" is permanently enabled File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Warning (14026): LATCH primitive "display:DISPLAY_MENU|DISPLAY3[3]" is permanently enabled File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Warning (14026): LATCH primitive "display:DISPLAY_MENU|DISPLAY3[4]" is permanently enabled File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Warning (14026): LATCH primitive "display:DISPLAY_MENU|DISPLAY3[6]" is permanently enabled File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Warning (14026): LATCH primitive "display:DISPLAY_MENU|DISPLAY0[0]" is permanently enabled File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Warning (14026): LATCH primitive "display:DISPLAY_MENU|DISPLAY0[2]" is permanently enabled File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Warning (14026): LATCH primitive "display:DISPLAY_MENU|DISPLAY0[4]" is permanently enabled File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Warning (14026): LATCH primitive "display:DISPLAY_MENU|DISPLAY1[3]" is permanently enabled File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Warning (14026): LATCH primitive "display:DISPLAY_MENU|DISPLAY1[5]" is permanently enabled File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Warning (14026): LATCH primitive "display:DISPLAY_MENU|DISPLAY2[0]" is permanently enabled File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Warning (14026): LATCH primitive "display:DISPLAY_MENU|DISPLAY2[1]" is permanently enabled File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Warning (14026): LATCH primitive "display:DISPLAY_MENU|DISPLAY2[3]" is permanently enabled File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Warning (14026): LATCH primitive "display:DISPLAY_MENU|DISPLAY2[6]" is permanently enabled File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Warning (14026): LATCH primitive "display:DISPLAY_MENU|DISPLAY3[1]" is permanently enabled File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Warning (14026): LATCH primitive "display:DISPLAY_MENU|DISPLAY3[3]" is permanently enabled File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Warning (14026): LATCH primitive "display:DISPLAY_MENU|DISPLAY3[4]" is permanently enabled File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Warning (14026): LATCH primitive "display:DISPLAY_MENU|DISPLAY3[6]" is permanently enabled File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Warning (14026): LATCH primitive "display:DISPLAY_MENU|DISPLAY0[0]" is permanently enabled File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Warning (14026): LATCH primitive "display:DISPLAY_MENU|DISPLAY0[2]" is permanently enabled File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Warning (14026): LATCH primitive "display:DISPLAY_MENU|DISPLAY0[4]" is permanently enabled File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd Line: 52
-Warning (13039): The following bidirectional pins have no drivers
-    Warning (13040): bidirectional pin "GPIO[0]" has no driver File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[1]" has no driver File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[2]" has no driver File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[3]" has no driver File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[4]" has no driver File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[5]" has no driver File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[6]" has no driver File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[7]" has no driver File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[8]" has no driver File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[9]" has no driver File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[10]" has no driver File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[11]" has no driver File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[12]" has no driver File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[13]" has no driver File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[14]" has no driver File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[15]" has no driver File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[16]" has no driver File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[17]" has no driver File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[18]" has no driver File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[19]" has no driver File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[20]" has no driver File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[21]" has no driver File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[22]" has no driver File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[23]" has no driver File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[24]" has no driver File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[25]" has no driver File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[26]" has no driver File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[27]" has no driver File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[28]" has no driver File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[29]" has no driver File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[30]" has no driver File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[31]" has no driver File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[32]" has no driver File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[33]" has no driver File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[34]" has no driver File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[35]" has no driver File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "CLOCKOUT" is stuck at GND File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 32
-    Warning (13410): Pin "HEX0[5]" is stuck at VCC File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 44
-    Warning (13410): Pin "HEX0[3]" is stuck at VCC File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 44
-    Warning (13410): Pin "HEX0[1]" is stuck at VCC File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 44
-    Warning (13410): Pin "HEX0[0]" is stuck at VCC File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 44
-    Warning (13410): Pin "HEX1[6]" is stuck at GND File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 44
-    Warning (13410): Pin "HEX1[5]" is stuck at VCC File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 44
-    Warning (13410): Pin "HEX1[4]" is stuck at GND File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 44
-    Warning (13410): Pin "HEX1[2]" is stuck at GND File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 44
-    Warning (13410): Pin "HEX1[0]" is stuck at VCC File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 44
-    Warning (13410): Pin "HEX2[6]" is stuck at GND File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 44
-    Warning (13410): Pin "HEX2[5]" is stuck at GND File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 44
-    Warning (13410): Pin "HEX2[3]" is stuck at GND File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 44
-    Warning (13410): Pin "HEX2[0]" is stuck at GND File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 44
-    Warning (13410): Pin "HEX3[6]" is stuck at GND File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 44
-    Warning (13410): Pin "HEX4[6]" is stuck at VCC File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 44
-    Warning (13410): Pin "HEX4[5]" is stuck at VCC File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 44
-    Warning (13410): Pin "HEX4[4]" is stuck at VCC File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 44
-    Warning (13410): Pin "HEX4[3]" is stuck at VCC File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 44
-    Warning (13410): Pin "HEX4[2]" is stuck at VCC File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 44
-    Warning (13410): Pin "HEX4[1]" is stuck at VCC File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 44
-    Warning (13410): Pin "HEX4[0]" is stuck at VCC File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 44
-    Warning (13410): Pin "HEX5[6]" is stuck at GND File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 44
-    Warning (13410): Pin "HEX5[4]" is stuck at GND File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 44
-    Warning (13410): Pin "HEX5[2]" is stuck at VCC File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 44
-    Warning (13410): Pin "HEX5[1]" is stuck at VCC File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 44
-    Warning (13410): Pin "HEX5[0]" is stuck at VCC File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 44
-    Warning (13410): Pin "HEX6[6]" is stuck at VCC File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 44
-    Warning (13410): Pin "HEX6[5]" is stuck at GND File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 44
-    Warning (13410): Pin "HEX6[4]" is stuck at GND File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 44
-    Warning (13410): Pin "HEX6[3]" is stuck at GND File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 44
-    Warning (13410): Pin "HEX7[5]" is stuck at GND File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 44
-    Warning (13410): Pin "HEX7[4]" is stuck at GND File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 44
-    Warning (13410): Pin "HEX7[0]" is stuck at GND File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 44
-    Warning (13410): Pin "LEDR[0]" is stuck at GND File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 50
-    Warning (13410): Pin "LEDR[1]" is stuck at GND File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 50
-    Warning (13410): Pin "LEDR[2]" is stuck at GND File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 50
-    Warning (13410): Pin "LEDR[3]" is stuck at GND File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 50
-    Warning (13410): Pin "LEDR[4]" is stuck at GND File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 50
-    Warning (13410): Pin "LEDR[5]" is stuck at GND File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 50
-    Warning (13410): Pin "LEDR[6]" is stuck at GND File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 50
-    Warning (13410): Pin "LEDR[7]" is stuck at GND File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 50
-    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 50
-    Warning (13410): Pin "LEDR[9]" is stuck at GND File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 50
-    Warning (13410): Pin "LEDR[10]" is stuck at GND File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 50
-    Warning (13410): Pin "LEDR[11]" is stuck at GND File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 50
-    Warning (13410): Pin "LEDR[12]" is stuck at GND File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 50
-    Warning (13410): Pin "LEDR[13]" is stuck at GND File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 50
-    Warning (13410): Pin "LEDR[14]" is stuck at GND File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 50
-    Warning (13410): Pin "LEDR[15]" is stuck at GND File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 50
-    Warning (13410): Pin "LEDR[16]" is stuck at GND File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 50
-    Warning (13410): Pin "LEDR[17]" is stuck at GND File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 50
-Info (286030): Timing-Driven Synthesis is running
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 5 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 40
-    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 40
-    Warning (15610): No output dependent on input pin "SW[0]" File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 41
-    Warning (15610): No output dependent on input pin "SW[1]" File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 41
-    Warning (15610): No output dependent on input pin "SW[2]" File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 41
-Info (21057): Implemented 156 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 7 input pins
-    Info (21059): Implemented 76 output pins
-    Info (21060): Implemented 36 bidirectional pins
-    Info (21061): Implemented 37 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 137 warnings
-    Info: Peak virtual memory: 678 megabytes
-    Info: Processing ended: Wed Sep 27 19:35:19 2017
-    Info: Elapsed time: 00:00:15
-    Info: Total CPU time (on all processors): 00:00:32
-=======
-Warning (10541): VHDL Signal Declaration warning at D_7SEG.vhd(44): used implicit default value for signal "HEX8" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 44
-Warning (10540): VHDL Signal Declaration warning at D_7SEG.vhd(58): used explicit default value for signal "clk_sd" because signal was never assigned a value File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 58
-Warning (10492): VHDL Process Statement warning at D_7SEG.vhd(143): signal "SW" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 143
-Warning (10492): VHDL Process Statement warning at D_7SEG.vhd(150): signal "SW" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 150
-Warning (10631): VHDL Process Statement warning at D_7SEG.vhd(139): inferring latch(es) for signal or variable "LEDR", which holds its previous value in one or more paths through the process File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 139
-Warning (10631): VHDL Process Statement warning at D_7SEG.vhd(139): inferring latch(es) for signal or variable "GPIO", which holds its previous value in one or more paths through the process File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 139
-Warning (10037): Verilog HDL or VHDL warning at D_7SEG.vhd(340): conditional expression evaluates to a constant File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 340
-Warning (10037): Verilog HDL or VHDL warning at D_7SEG.vhd(351): conditional expression evaluates to a constant File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 351
-Warning (10631): VHDL Process Statement warning at D_7SEG.vhd(231): inferring latch(es) for signal or variable "HEX7", which holds its previous value in one or more paths through the process File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 231
-Warning (10631): VHDL Process Statement warning at D_7SEG.vhd(231): inferring latch(es) for signal or variable "HEX6", which holds its previous value in one or more paths through the process File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 231
-Warning (10631): VHDL Process Statement warning at D_7SEG.vhd(231): inferring latch(es) for signal or variable "HEX5", which holds its previous value in one or more paths through the process File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 231
-Warning (10631): VHDL Process Statement warning at D_7SEG.vhd(231): inferring latch(es) for signal or variable "HEX4", which holds its previous value in one or more paths through the process File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 231
-Warning (10631): VHDL Process Statement warning at D_7SEG.vhd(231): inferring latch(es) for signal or variable "HEX3", which holds its previous value in one or more paths through the process File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 231
-Warning (10631): VHDL Process Statement warning at D_7SEG.vhd(231): inferring latch(es) for signal or variable "HEX2", which holds its previous value in one or more paths through the process File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 231
-Warning (10631): VHDL Process Statement warning at D_7SEG.vhd(231): inferring latch(es) for signal or variable "HEX1", which holds its previous value in one or more paths through the process File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 231
-Warning (10631): VHDL Process Statement warning at D_7SEG.vhd(231): inferring latch(es) for signal or variable "HEX0", which holds its previous value in one or more paths through the process File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 231
-Warning (10873): Using initial value X (don't care) for net "LEDR[17..11]" at D_7SEG.vhd(50) File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 50
-Warning (10873): Using initial value X (don't care) for net "LEDR[8..0]" at D_7SEG.vhd(50) File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 50
-Info (10041): Inferred latch for "HEX0[6]" at D_7SEG.vhd(231) File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 231
-Info (10041): Inferred latch for "HEX0[5]" at D_7SEG.vhd(231) File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 231
-Info (10041): Inferred latch for "HEX0[4]" at D_7SEG.vhd(231) File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 231
-Info (10041): Inferred latch for "HEX0[3]" at D_7SEG.vhd(231) File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 231
-Info (10041): Inferred latch for "HEX0[2]" at D_7SEG.vhd(231) File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 231
-Info (10041): Inferred latch for "HEX0[1]" at D_7SEG.vhd(231) File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 231
-Info (10041): Inferred latch for "HEX0[0]" at D_7SEG.vhd(231) File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 231
-Info (10041): Inferred latch for "HEX1[6]" at D_7SEG.vhd(231) File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 231
-Info (10041): Inferred latch for "HEX1[5]" at D_7SEG.vhd(231) File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 231
-Info (10041): Inferred latch for "HEX1[4]" at D_7SEG.vhd(231) File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 231
-Info (10041): Inferred latch for "HEX1[3]" at D_7SEG.vhd(231) File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 231
-Info (10041): Inferred latch for "HEX1[2]" at D_7SEG.vhd(231) File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 231
-Info (10041): Inferred latch for "HEX1[1]" at D_7SEG.vhd(231) File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 231
-Info (10041): Inferred latch for "HEX1[0]" at D_7SEG.vhd(231) File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 231
-Info (10041): Inferred latch for "HEX2[6]" at D_7SEG.vhd(231) File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 231
-Info (10041): Inferred latch for "HEX2[5]" at D_7SEG.vhd(231) File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 231
-Info (10041): Inferred latch for "HEX2[4]" at D_7SEG.vhd(231) File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 231
-Info (10041): Inferred latch for "HEX2[3]" at D_7SEG.vhd(231) File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 231
-Info (10041): Inferred latch for "HEX2[2]" at D_7SEG.vhd(231) File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 231
-Info (10041): Inferred latch for "HEX2[1]" at D_7SEG.vhd(231) File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 231
-Info (10041): Inferred latch for "HEX2[0]" at D_7SEG.vhd(231) File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 231
-Info (10041): Inferred latch for "HEX3[6]" at D_7SEG.vhd(231) File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 231
-Info (10041): Inferred latch for "HEX3[5]" at D_7SEG.vhd(231) File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 231
-Info (10041): Inferred latch for "HEX3[4]" at D_7SEG.vhd(231) File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 231
-Info (10041): Inferred latch for "HEX3[3]" at D_7SEG.vhd(231) File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 231
-Info (10041): Inferred latch for "HEX3[2]" at D_7SEG.vhd(231) File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 231
-Info (10041): Inferred latch for "HEX3[1]" at D_7SEG.vhd(231) File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 231
-Info (10041): Inferred latch for "HEX3[0]" at D_7SEG.vhd(231) File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 231
-Info (10041): Inferred latch for "GPIO[0]" at D_7SEG.vhd(139) File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 139
-Info (10041): Inferred latch for "LEDR[9]" at D_7SEG.vhd(139) File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 139
-Info (10041): Inferred latch for "LEDR[10]" at D_7SEG.vhd(139) File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 139
-Warning (13034): The following nodes have both tri-state and non-tri-state drivers
-    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO[0]" and its non-tri-state driver. File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-Warning (13039): The following bidirectional pins have no drivers
-    Warning (13040): bidirectional pin "GPIO[1]" has no driver File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[2]" has no driver File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[3]" has no driver File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[4]" has no driver File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[5]" has no driver File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[6]" has no driver File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[7]" has no driver File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[8]" has no driver File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[9]" has no driver File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[10]" has no driver File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[11]" has no driver File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[12]" has no driver File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[13]" has no driver File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[14]" has no driver File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[15]" has no driver File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[16]" has no driver File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[17]" has no driver File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[18]" has no driver File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[19]" has no driver File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[20]" has no driver File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[21]" has no driver File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[22]" has no driver File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[23]" has no driver File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[24]" has no driver File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[25]" has no driver File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[26]" has no driver File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[27]" has no driver File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[28]" has no driver File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[29]" has no driver File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[30]" has no driver File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[31]" has no driver File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[32]" has no driver File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[33]" has no driver File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[34]" has no driver File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Warning (13040): bidirectional pin "GPIO[35]" has no driver File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-Warning (13009): TRI or OPNDRN buffers permanently enabled
-    Warning (13010): Node "GPIO[0]~synth" File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX0[5]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 231
-    Warning (13410): Pin "HEX0[4]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 231
-    Warning (13410): Pin "HEX0[3]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 231
-    Warning (13410): Pin "HEX0[0]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 231
-    Warning (13410): Pin "HEX1[6]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 231
-    Warning (13410): Pin "HEX1[5]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 231
-    Warning (13410): Pin "HEX1[4]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 231
-    Warning (13410): Pin "HEX1[3]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 231
-    Warning (13410): Pin "HEX1[2]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 231
-    Warning (13410): Pin "HEX1[1]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 231
-    Warning (13410): Pin "HEX2[6]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 231
-    Warning (13410): Pin "HEX2[5]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 231
-    Warning (13410): Pin "HEX2[4]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 231
-    Warning (13410): Pin "HEX2[3]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 231
-    Warning (13410): Pin "HEX3[5]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 231
-    Warning (13410): Pin "HEX3[4]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 231
-    Warning (13410): Pin "HEX3[3]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 231
-    Warning (13410): Pin "HEX3[2]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 231
-    Warning (13410): Pin "HEX4[6]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 44
-    Warning (13410): Pin "HEX4[5]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 44
-    Warning (13410): Pin "HEX4[4]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 44
-    Warning (13410): Pin "HEX4[3]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 44
-    Warning (13410): Pin "HEX4[2]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 44
-    Warning (13410): Pin "HEX4[1]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 44
-    Warning (13410): Pin "HEX4[0]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 44
-    Warning (13410): Pin "HEX5[6]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 44
-    Warning (13410): Pin "HEX5[4]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 44
-    Warning (13410): Pin "HEX5[2]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 44
-    Warning (13410): Pin "HEX5[1]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 44
-    Warning (13410): Pin "HEX5[0]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 44
-    Warning (13410): Pin "HEX6[6]" is stuck at VCC File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 44
-    Warning (13410): Pin "HEX6[5]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 44
-    Warning (13410): Pin "HEX6[4]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 44
-    Warning (13410): Pin "HEX6[3]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 44
-    Warning (13410): Pin "HEX7[5]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 44
-    Warning (13410): Pin "HEX7[4]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 44
-    Warning (13410): Pin "HEX7[0]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 44
-    Warning (13410): Pin "HEX8[6]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 44
-    Warning (13410): Pin "HEX8[5]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 44
-    Warning (13410): Pin "HEX8[4]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 44
-    Warning (13410): Pin "HEX8[3]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 44
-    Warning (13410): Pin "HEX8[2]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 44
-    Warning (13410): Pin "HEX8[1]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 44
-    Warning (13410): Pin "HEX8[0]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 44
-    Warning (13410): Pin "LEDR[0]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 50
-    Warning (13410): Pin "LEDR[1]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 50
-    Warning (13410): Pin "LEDR[2]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 50
-    Warning (13410): Pin "LEDR[3]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 50
-    Warning (13410): Pin "LEDR[4]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 50
-    Warning (13410): Pin "LEDR[5]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 50
-    Warning (13410): Pin "LEDR[6]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 50
-    Warning (13410): Pin "LEDR[7]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 50
-    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 50
-    Warning (13410): Pin "LEDR[11]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 50
-    Warning (13410): Pin "LEDR[12]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 50
-    Warning (13410): Pin "LEDR[13]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 50
-    Warning (13410): Pin "LEDR[14]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 50
-    Warning (13410): Pin "LEDR[15]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 50
-    Warning (13410): Pin "LEDR[16]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 50
-    Warning (13410): Pin "LEDR[17]" is stuck at GND File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 50
-Info (286030): Timing-Driven Synthesis is running
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 19 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 40
-    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 40
-    Warning (15610): No output dependent on input pin "KEY[3]" File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 40
-    Warning (15610): No output dependent on input pin "SW[2]" File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 41
-    Warning (15610): No output dependent on input pin "SW[3]" File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 41
-    Warning (15610): No output dependent on input pin "SW[4]" File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 41
-    Warning (15610): No output dependent on input pin "SW[5]" File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 41
-    Warning (15610): No output dependent on input pin "SW[6]" File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 41
-    Warning (15610): No output dependent on input pin "SW[7]" File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 41
-    Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 41
-    Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 41
-    Warning (15610): No output dependent on input pin "SW[10]" File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 41
-    Warning (15610): No output dependent on input pin "SW[11]" File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 41
-    Warning (15610): No output dependent on input pin "SW[12]" File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 41
-    Warning (15610): No output dependent on input pin "SW[13]" File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 41
-    Warning (15610): No output dependent on input pin "SW[14]" File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 41
-    Warning (15610): No output dependent on input pin "SW[15]" File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 41
-    Warning (15610): No output dependent on input pin "SW[16]" File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 41
-    Warning (15610): No output dependent on input pin "SW[17]" File: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 41
-Info (21057): Implemented 217 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 23 input pins
-    Info (21059): Implemented 83 output pins
-    Info (21060): Implemented 36 bidirectional pins
-    Info (21061): Implemented 75 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 140 warnings
-    Info: Peak virtual memory: 679 megabytes
-    Info: Processing ended: Wed Sep 27 11:20:51 2017
-    Info: Elapsed time: 00:00:27
-    Info: Total CPU time (on all processors): 00:00:56
->>>>>>> 8d7571be3bae389559aba5b62a7ab576b51c6074
+Error (10482): VHDL error at D_7SEG.vhd(159): object "color" is used but not declared File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 159
+Error (10482): VHDL error at D_7SEG.vhd(160): object "altura" is used but not declared File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 160
+Error: Quartus Prime Analysis & Elaboration was unsuccessful. 2 errors, 1 warning
+    Error: Peak virtual memory: 664 megabytes
+    Error: Processing ended: Tue Oct 03 20:33:27 2017
+    Error: Elapsed time: 00:00:15
+    Error: Total CPU time (on all processors): 00:00:33
 
 
