@@ -32,7 +32,8 @@ ENTITY D_7SEG IS
 			CLOCKOUT			: OUT STD_LOGIC; --POSSIVEL SAIDA DO DIVISOR DE CLOCK
 		
 			-- Sensor de distância
-			GPIO					:INOUT STD_LOGIC_VECTOR (35 DOWNTO 0);	-- Declara um Buffer para que possamos utilizar com I/O				  
+			GPIO					:inout  STD_LOGIC_VECTOR (35 DOWNTO 0);	-- Declara um Buffer para que possamos utilizar com I/O
+			--GPIO					:OUT STD_LOGIC_VECTOR (35 DOWNTO 18);
 			--GPIO(1) = echo
 			--GPIO(0) = trigger	
 	
@@ -45,6 +46,8 @@ ENTITY D_7SEG IS
 
 			--Definição da saida do "botão virtual" de antitrepidação
 			buttonOut			: BUFFER STD_LOGIC;
+			END_TRIGGER			: BUFFER STD_LOGIC := '1';
+			HC_ENABLE			: BUFFER STD_LOGIC := '0'; -- habilitador de leitura do sensor de altura
 			
 			--DECLARAÇÂO DE LED para testes
 			LEDR					: OUT STD_LOGIC_VECTOR(17 DOWNTO 0)
@@ -61,12 +64,18 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 
 	SIGNAL selecao 		: INTEGER RANGE 0 TO 1:= 0; --Numero de seleção
 	
-	--DIVISOR DE CLOCK
-	SIGNAL clock			 : STD_LOGIC :='0';
-	CONSTANT COUNT_MAX1   : INTEGER := ((freqIn/freqOut)/2)-1;
-
-	BEGIN
+	-- Sensor de distância
+	SIGNAL 	distancia     		: INTEGER := 0;			-- Calculo da distância
+	SIGNAL 	cont_sensor 		: INTEGER := 0; 			-- Variavel para calculo
+	SIGNAL 	cont_d				: INTEGER := 0;			-- Variavel para calculo
+	SIGNAL 	tempo_sd 			: INTEGER := 0;			-- Variavel para calculo
+	SIGNAL 	t_caixa 				: INTEGER := 0;			-- Tamanho calculado
+	SIGNAL 	li						: INTEGER;					-- Leitura inicial	
+	SIGNAL	color					: STD_LOGIC := '0';
+	SIGNAL	altura				: INTEGER := 99;
 	
+	BEGIN--Começa a logica do programa
+
 BOTAO_MENU: WORK.debouncer_pi
 
 	PORT MAP(
@@ -74,68 +83,9 @@ BOTAO_MENU: WORK.debouncer_pi
 		KEY(0),
 		buttonOut
 		);
-
-	
-		
-	--DIVISOR DE CLOCK
-	PROCESS(clock_50)
-	
-		VARIABLE counter : INTEGER RANGE 0 TO COUNT_MAX1 := 0;
-	
-	BEGIN
-	
-		IF (clock_50'EVENT AND clock_50 = '1') THEN
-		
-			IF counter < COUNT_MAX1 THEN
-				counter := counter + 1;
-			ELSE
-				counter := 0;
-				clock   <= NOT clock;
-			
-			END IF;
-		END IF;
-	END PROCESS;
-	CLOCKOUT <= clock;
-		
-
-	
-		-- divisor de frequencia
-		PROCESS (clock_50)
-		BEGIN
-			IF (clock_50'EVENT AND clock_50 ='1') THEN
-				count    <= count + 1;
-			END IF;
-			
-		END PROCESS;
-		-- Fim divisor de frequncia
-		
-	PROCESS (buttonOut)
-	
-	BEGIN
-	
-	--APAGAR INICIO
-			IF (SW(1) = '1') THEN
-			LEDR(9) <= '1';
-			LEDR(10) <= '0';
-			GPIO(0) <= '0';
-			END IF;
-			
-			
-			IF (SW(0) = '1') THEN
-							
-			LEDR(10) <= '1';
-			GPIO(0) <= '1';
-		   LEDR(9) <= '0';	
-
-			END IF;		
-			--APAGAR FIM
-	
-	END PROCESS;
-		
 	
 		-- Seleção da interface
 	PROCESS (buttonOut) 
-	
 	BEGIN
 	
 	
@@ -160,7 +110,6 @@ DISPLAY_MENU:WORK.display
 		altura,
 		selecao,
 		
-
 		HEX0,
 		HEX1,
 		HEX2,
@@ -171,5 +120,5 @@ DISPLAY_MENU:WORK.display
 		HEX7
 		);
 
-	
+		
 END display;
