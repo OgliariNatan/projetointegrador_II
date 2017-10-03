@@ -1,5 +1,5 @@
 Fitter report for teste_trigger
-Thu Sep 28 14:59:14 2017
+Thu Sep 28 19:05:29 2017
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -60,7 +60,7 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Thu Sep 28 14:59:14 2017       ;
+; Fitter Status                      ; Successful - Thu Sep 28 19:05:29 2017       ;
 ; Quartus Prime Version              ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                      ; teste_trigger                               ;
 ; Top-level Entity Name              ; teste_trigger                               ;
@@ -2973,9 +2973,9 @@ Warning (169177): 1 pins must meet Intel FPGA requirements for 3.3-, 3.0-, and 2
     Info (169178): Pin CLOCK_50 uses I/O standard 3.3-V LVTTL at Y2 File: C:/Users/augus/Documents/projetointegrador_II/teste trigger/teste_trigger.vhd Line: 8
 Info (144001): Generated suppressed messages file C:/Users/augus/Documents/projetointegrador_II/teste trigger/output_files/teste_trigger.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 518 warnings
-    Info: Peak virtual memory: 1301 megabytes
-    Info: Processing ended: Thu Sep 28 14:59:14 2017
-    Info: Elapsed time: 00:00:13
+    Info: Peak virtual memory: 1303 megabytes
+    Info: Processing ended: Thu Sep 28 19:05:29 2017
+    Info: Elapsed time: 00:00:11
     Info: Total CPU time (on all processors): 00:00:17
 
 

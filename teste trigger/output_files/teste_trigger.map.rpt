@@ -1,5 +1,5 @@
 Analysis & Synthesis report for teste_trigger
-Thu Sep 28 14:59:00 2017
+Thu Sep 28 19:10:09 2017
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -10,13 +10,7 @@ Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Post-Synthesis Netlist Statistics for Top Partition
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Messages
 
 
 
@@ -43,20 +37,20 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Sep 28 14:59:00 2017       ;
+; Analysis & Synthesis Status        ; Failed - Thu Sep 28 19:10:09 2017           ;
 ; Quartus Prime Version              ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                      ; teste_trigger                               ;
 ; Top-level Entity Name              ; teste_trigger                               ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 0                                           ;
-;     Total combinational functions  ; 0                                           ;
-;     Dedicated logic registers      ; 0                                           ;
-; Total registers                    ; 0                                           ;
-; Total pins                         ; 15                                          ;
-; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0                                           ;
-; Embedded Multiplier 9-bit elements ; 0                                           ;
-; Total PLLs                         ; 0                                           ;
+; Total logic elements               ; N/A until Partition Merge                   ;
+;     Total combinational functions  ; N/A until Partition Merge                   ;
+;     Dedicated logic registers      ; N/A until Partition Merge                   ;
+; Total registers                    ; N/A until Partition Merge                   ;
+; Total pins                         ; N/A until Partition Merge                   ;
+; Total virtual pins                 ; N/A until Partition Merge                   ;
+; Total memory bits                  ; N/A until Partition Merge                   ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
+; Total PLLs                         ; N/A until Partition Merge                   ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -162,102 +156,13 @@ agreement for further details.
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                         ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                  ; Library ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------+---------+
-; teste_trigger.vhd                ; yes             ; User VHDL File  ; C:/Users/augus/Documents/projetointegrador_II/teste trigger/teste_trigger.vhd ;         ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------+---------+
-
-
-+-----------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary               ;
-+---------------------------------------------+-------------+
-; Resource                                    ; Usage       ;
-+---------------------------------------------+-------------+
-;                                             ;             ;
-; Total combinational functions               ; 0           ;
-; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 0           ;
-;     -- 3 input functions                    ; 0           ;
-;     -- <=2 input functions                  ; 0           ;
-;                                             ;             ;
-; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 0           ;
-;     -- arithmetic mode                      ; 0           ;
-;                                             ;             ;
-; Total registers                             ; 0           ;
-;     -- Dedicated logic registers            ; 0           ;
-;     -- I/O registers                        ; 0           ;
-;                                             ;             ;
-; I/O pins                                    ; 15          ;
-;                                             ;             ;
-; Embedded Multiplier 9-bit elements          ; 0           ;
-;                                             ;             ;
-; Maximum fan-out node                        ; SW[0]~input ;
-; Maximum fan-out                             ; 2           ;
-; Total fan-out                               ; 17          ;
-; Average fan-out                             ; 0.57        ;
-+---------------------------------------------+-------------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                        ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+---------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name   ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+---------------+--------------+
-; |teste_trigger             ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 15   ; 0            ; |teste_trigger      ; teste_trigger ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+---------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 0     ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; boundary_port         ; 15                          ;
-; cycloneiii_lcell_comb ; 1                           ;
-;     normal            ; 1                           ;
-;         0 data inputs ; 1                           ;
-;                       ;                             ;
-; Max LUT depth         ; 0.00                        ;
-; Average LUT depth     ; 0.00                        ;
-+-----------------------+-----------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:00     ;
-+----------------+--------------+
-
-
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
-    Info: Processing started: Thu Sep 28 14:58:50 2017
+    Info: Processing started: Thu Sep 28 19:09:56 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off teste_trigger -c teste_trigger
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -271,32 +176,16 @@ Info (12021): Found 2 design units, including 1 entities, in source file delay_h
     Info (12022): Found design unit 1: delay_hc-behavior File: C:/Users/augus/Documents/projetointegrador_II/teste trigger/delay_hc.vhd Line: 20
     Info (12023): Found entity 1: delay_hc File: C:/Users/augus/Documents/projetointegrador_II/teste trigger/delay_hc.vhd Line: 7
 Info (12127): Elaborating entity "teste_trigger" for the top level hierarchy
-Warning (10492): VHDL Process Statement warning at teste_trigger.vhd(26): signal "SW" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/augus/Documents/projetointegrador_II/teste trigger/teste_trigger.vhd Line: 26
+Warning (10541): VHDL Signal Declaration warning at teste_trigger.vhd(11): used implicit default value for signal "LEDG" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/augus/Documents/projetointegrador_II/teste trigger/teste_trigger.vhd Line: 11
+Warning (10492): VHDL Process Statement warning at teste_trigger.vhd(31): signal "SW" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/augus/Documents/projetointegrador_II/teste trigger/teste_trigger.vhd Line: 31
 Warning (10873): Using initial value X (don't care) for net "GPIO[1]" at teste_trigger.vhd(10) File: C:/Users/augus/Documents/projetointegrador_II/teste trigger/teste_trigger.vhd Line: 10
-Warning (10873): Using initial value X (don't care) for net "LEDG[7..1]" at teste_trigger.vhd(11) File: C:/Users/augus/Documents/projetointegrador_II/teste trigger/teste_trigger.vhd Line: 11
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "GPIO[1]" is stuck at GND File: C:/Users/augus/Documents/projetointegrador_II/teste trigger/teste_trigger.vhd Line: 10
-    Warning (13410): Pin "LEDG[1]" is stuck at GND File: C:/Users/augus/Documents/projetointegrador_II/teste trigger/teste_trigger.vhd Line: 11
-    Warning (13410): Pin "LEDG[2]" is stuck at GND File: C:/Users/augus/Documents/projetointegrador_II/teste trigger/teste_trigger.vhd Line: 11
-    Warning (13410): Pin "LEDG[3]" is stuck at GND File: C:/Users/augus/Documents/projetointegrador_II/teste trigger/teste_trigger.vhd Line: 11
-    Warning (13410): Pin "LEDG[4]" is stuck at GND File: C:/Users/augus/Documents/projetointegrador_II/teste trigger/teste_trigger.vhd Line: 11
-    Warning (13410): Pin "LEDG[5]" is stuck at GND File: C:/Users/augus/Documents/projetointegrador_II/teste trigger/teste_trigger.vhd Line: 11
-    Warning (13410): Pin "LEDG[6]" is stuck at GND File: C:/Users/augus/Documents/projetointegrador_II/teste trigger/teste_trigger.vhd Line: 11
-    Warning (13410): Pin "LEDG[7]" is stuck at GND File: C:/Users/augus/Documents/projetointegrador_II/teste trigger/teste_trigger.vhd Line: 11
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 4 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "CLOCK_50" File: C:/Users/augus/Documents/projetointegrador_II/teste trigger/teste_trigger.vhd Line: 8
-    Warning (15610): No output dependent on input pin "SW[1]" File: C:/Users/augus/Documents/projetointegrador_II/teste trigger/teste_trigger.vhd Line: 9
-    Warning (15610): No output dependent on input pin "SW[2]" File: C:/Users/augus/Documents/projetointegrador_II/teste trigger/teste_trigger.vhd Line: 9
-    Warning (15610): No output dependent on input pin "SW[3]" File: C:/Users/augus/Documents/projetointegrador_II/teste trigger/teste_trigger.vhd Line: 9
-Info (21057): Implemented 15 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 5 input pins
-    Info (21059): Implemented 10 output pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 18 warnings
-    Info: Peak virtual memory: 677 megabytes
-    Info: Processing ended: Thu Sep 28 14:59:00 2017
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:21
+Error (10818): Can't infer register for "EN_TRIG" at teste_trigger.vhd(40) because it does not hold its value outside the clock edge File: C:/Users/augus/Documents/projetointegrador_II/teste trigger/teste_trigger.vhd Line: 40
+Error (10822): HDL error at teste_trigger.vhd(40): couldn't implement registers for assignments on this clock edge File: C:/Users/augus/Documents/projetointegrador_II/teste trigger/teste_trigger.vhd Line: 40
+Error (12153): Can't elaborate top-level user hierarchy
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 3 errors, 4 warnings
+    Error: Peak virtual memory: 665 megabytes
+    Error: Processing ended: Thu Sep 28 19:10:09 2017
+    Error: Elapsed time: 00:00:13
+    Error: Total CPU time (on all processors): 00:00:32
 
 
