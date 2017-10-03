@@ -1,5 +1,5 @@
 <h1> Projeto Integrador 2 </h1>
-<p>Repositorio criado para a disciplina de PI_2 do curso de engenharia eletronica do IFSC - câmpus Florianópolis. <br/>
+<p>Repositorio criado para a disciplina de Prpjeto Integrador 2 do curso de engenharia eletrônica do IFSC - câmpus Florianópolis. <br/>
 Identificação junto aos mentores: "Equipe 2". <br/>
 </p>
 
@@ -7,7 +7,7 @@ Identificação junto aos mentores: "Equipe 2". <br/>
 O projeto consiste em um sistema integrado com alguns sensores pré estabelecidos. <br/>
 Resumindo, uma esteira com sensor de altura e cor com um seletor de para selecionar entre duas saidas. <br/>
 	<ul>
-		<li>Sensor de distância <a href="https://drive.google.com/open?id=0BzUZsr8WwPNLbmZDWnhsazVjMEE
+		<li>Placa de desenvolvimento <a href="https://drive.google.com/open?id=0BzUZsr8WwPNLbmZDWnhsazVjMEE
 ">KIT DE2-115</a>.</li>
 		<li>Linguagem VHDL ou Diagrama de Blocos.</li>
 		<li>Sensor de distância <a href="https://cdn.sparkfun.com/datasheets/Sensors/Proximity/HCSR04.pdf">HCSR04</a>.</li>
