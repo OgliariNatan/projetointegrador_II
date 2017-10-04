@@ -1,14 +1,37 @@
+<<<<<<< HEAD
 Fitter Status : Successful - Wed Oct 04 11:02:39 2017
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+Fitter Status : Successful - Tue Oct 03 20:37:40 2017
+=======
+Fitter Status : Successful - Thu Sep 28 18:33:10 2017
+>>>>>>> add-sensor-alt
+=======
+Fitter Status : Successful - Tue Oct 03 21:10:47 2017
+>>>>>>> 71dc74f025e99eb43308e880364ba6b9229338fc
+>>>>>>> 5d4424b12a3715d3810e1b07756f907096184e54
 Quartus Prime Version : 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 Revision Name : D_7SEG
 Top-level Entity Name : D_7SEG
 Family : Cyclone IV E
 Device : EP4CE115F29C7
 Timing Models : Final
+<<<<<<< HEAD
+<<<<<<< HEAD
+Total logic elements : 42 / 114,480 ( < 1 % )
+=======
 Total logic elements : 47 / 114,480 ( < 1 % )
+>>>>>>> 71dc74f025e99eb43308e880364ba6b9229338fc
     Total combinational functions : 37 / 114,480 ( < 1 % )
     Dedicated logic registers : 25 / 114,480 ( < 1 % )
 Total registers : 25
+=======
+Total logic elements : 54 / 114,480 ( < 1 % )
+    Total combinational functions : 48 / 114,480 ( < 1 % )
+    Dedicated logic registers : 35 / 114,480 ( < 1 % )
+Total registers : 35
+>>>>>>> add-sensor-alt
 Total pins : 137 / 529 ( 26 % )
 Total virtual pins : 0
 Total memory bits : 0 / 3,981,312 ( 0 % )

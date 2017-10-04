@@ -1,16 +1,28 @@
 vendor_name = ModelSim
+<<<<<<< HEAD
+source_file = 1, C:/Users/augus/Documents/projetointegrador_II/D_7SEG/clockDivider.vhd
+source_file = 1, C:/Users/augus/Documents/projetointegrador_II/D_7SEG/hc_sr04.vhd
+source_file = 1, C:/Users/augus/Documents/projetointegrador_II/D_7SEG/sevenSeg_decoder.vhd
+source_file = 1, C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd
+source_file = 1, C:/Users/augus/Documents/projetointegrador_II/D_7SEG/debouncer_pi.vhd
+source_file = 1, C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd
+=======
 source_file = 1, C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/sevenSeg_decoder.vhd
 source_file = 1, C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/display.vhd
 source_file = 1, C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/debouncer_pi.vhd
 source_file = 1, C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd
+>>>>>>> 71dc74f025e99eb43308e880364ba6b9229338fc
 source_file = 1, c:/intelfpga_lite/16.1/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
 source_file = 1, c:/intelfpga_lite/16.1/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
 source_file = 1, c:/intelfpga_lite/16.1/quartus/libraries/vhdl/ieee/timing_b.vhd
 source_file = 1, c:/intelfpga_lite/16.1/quartus/libraries/vhdl/ieee/timing_p.vhd
 source_file = 1, C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/db/D_7SEG.cbx.xml
 design_name = D_7SEG
+<<<<<<< HEAD
 instance = comp, \GPIO[0]~output , GPIO[0]~output, D_7SEG, 1
 instance = comp, \GPIO[1]~output , GPIO[1]~output, D_7SEG, 1
+=======
+>>>>>>> add-sensor-alt
 instance = comp, \GPIO[2]~output , GPIO[2]~output, D_7SEG, 1
 instance = comp, \GPIO[3]~output , GPIO[3]~output, D_7SEG, 1
 instance = comp, \GPIO[4]~output , GPIO[4]~output, D_7SEG, 1
@@ -45,6 +57,11 @@ instance = comp, \GPIO[32]~output , GPIO[32]~output, D_7SEG, 1
 instance = comp, \GPIO[33]~output , GPIO[33]~output, D_7SEG, 1
 instance = comp, \GPIO[34]~output , GPIO[34]~output, D_7SEG, 1
 instance = comp, \GPIO[35]~output , GPIO[35]~output, D_7SEG, 1
+<<<<<<< HEAD
+=======
+instance = comp, \GPIO[0]~output , GPIO[0]~output, D_7SEG, 1
+instance = comp, \GPIO[1]~output , GPIO[1]~output, D_7SEG, 1
+>>>>>>> add-sensor-alt
 instance = comp, \CLOCKOUT~output , CLOCKOUT~output, D_7SEG, 1
 instance = comp, \HEX0[6]~output , HEX0[6]~output, D_7SEG, 1
 instance = comp, \HEX0[5]~output , HEX0[5]~output, D_7SEG, 1
@@ -125,6 +142,31 @@ instance = comp, \LEDR[16]~output , LEDR[16]~output, D_7SEG, 1
 instance = comp, \LEDR[17]~output , LEDR[17]~output, D_7SEG, 1
 instance = comp, \clock_50~input , clock_50~input, D_7SEG, 1
 instance = comp, \clock_50~inputclkctrl , clock_50~inputclkctrl, D_7SEG, 1
+<<<<<<< HEAD
+=======
+instance = comp, \SENSOR_ALTURA|counter[0]~9 , SENSOR_ALTURA|counter[0]~9, D_7SEG, 1
+instance = comp, \SENSOR_ALTURA|counter[0] , SENSOR_ALTURA|counter[0], D_7SEG, 1
+instance = comp, \SENSOR_ALTURA|counter[1]~11 , SENSOR_ALTURA|counter[1]~11, D_7SEG, 1
+instance = comp, \SENSOR_ALTURA|counter[1] , SENSOR_ALTURA|counter[1], D_7SEG, 1
+instance = comp, \SENSOR_ALTURA|counter[2]~13 , SENSOR_ALTURA|counter[2]~13, D_7SEG, 1
+instance = comp, \SENSOR_ALTURA|counter[2] , SENSOR_ALTURA|counter[2], D_7SEG, 1
+instance = comp, \SENSOR_ALTURA|counter[3]~15 , SENSOR_ALTURA|counter[3]~15, D_7SEG, 1
+instance = comp, \SENSOR_ALTURA|counter[3] , SENSOR_ALTURA|counter[3], D_7SEG, 1
+instance = comp, \SENSOR_ALTURA|counter[4]~17 , SENSOR_ALTURA|counter[4]~17, D_7SEG, 1
+instance = comp, \SENSOR_ALTURA|counter[4] , SENSOR_ALTURA|counter[4], D_7SEG, 1
+instance = comp, \SENSOR_ALTURA|counter[5]~19 , SENSOR_ALTURA|counter[5]~19, D_7SEG, 1
+instance = comp, \SENSOR_ALTURA|counter[5] , SENSOR_ALTURA|counter[5], D_7SEG, 1
+instance = comp, \SENSOR_ALTURA|counter[6]~21 , SENSOR_ALTURA|counter[6]~21, D_7SEG, 1
+instance = comp, \SENSOR_ALTURA|counter[6] , SENSOR_ALTURA|counter[6], D_7SEG, 1
+instance = comp, \SENSOR_ALTURA|counter[7]~23 , SENSOR_ALTURA|counter[7]~23, D_7SEG, 1
+instance = comp, \SENSOR_ALTURA|counter[7] , SENSOR_ALTURA|counter[7], D_7SEG, 1
+instance = comp, \SENSOR_ALTURA|counter[8]~25 , SENSOR_ALTURA|counter[8]~25, D_7SEG, 1
+instance = comp, \SENSOR_ALTURA|counter[8] , SENSOR_ALTURA|counter[8], D_7SEG, 1
+instance = comp, \SENSOR_ALTURA|LessThan0~0 , SENSOR_ALTURA|LessThan0~0, D_7SEG, 1
+instance = comp, \SENSOR_ALTURA|LessThan0~1 , SENSOR_ALTURA|LessThan0~1, D_7SEG, 1
+instance = comp, \SENSOR_ALTURA|TRIGGER~feeder , SENSOR_ALTURA|TRIGGER~feeder, D_7SEG, 1
+instance = comp, \SENSOR_ALTURA|TRIGGER , SENSOR_ALTURA|TRIGGER, D_7SEG, 1
+>>>>>>> add-sensor-alt
 instance = comp, \KEY[0]~input , KEY[0]~input, D_7SEG, 1
 instance = comp, \BOTAO_MENU|counter[0]~23 , BOTAO_MENU|counter[0]~23, D_7SEG, 1
 instance = comp, \BOTAO_MENU|counter[22]~65 , BOTAO_MENU|counter[22]~65, D_7SEG, 1
@@ -163,8 +205,6 @@ instance = comp, \BOTAO_MENU|LessThan0~5 , BOTAO_MENU|LessThan0~5, D_7SEG, 1
 instance = comp, \BOTAO_MENU|LessThan0~6 , BOTAO_MENU|LessThan0~6, D_7SEG, 1
 instance = comp, \BOTAO_MENU|counter[14]~51 , BOTAO_MENU|counter[14]~51, D_7SEG, 1
 instance = comp, \BOTAO_MENU|counter[14] , BOTAO_MENU|counter[14], D_7SEG, 1
-instance = comp, \BOTAO_MENU|LessThan0~7 , BOTAO_MENU|LessThan0~7, D_7SEG, 1
-instance = comp, \BOTAO_MENU|LessThan0~8 , BOTAO_MENU|LessThan0~8, D_7SEG, 1
 instance = comp, \BOTAO_MENU|counter[15]~53 , BOTAO_MENU|counter[15]~53, D_7SEG, 1
 instance = comp, \BOTAO_MENU|counter[15] , BOTAO_MENU|counter[15], D_7SEG, 1
 instance = comp, \BOTAO_MENU|counter[16]~55 , BOTAO_MENU|counter[16]~55, D_7SEG, 1
@@ -184,6 +224,15 @@ instance = comp, \BOTAO_MENU|LessThan0~2 , BOTAO_MENU|LessThan0~2, D_7SEG, 1
 instance = comp, \BOTAO_MENU|counter[22]~69 , BOTAO_MENU|counter[22]~69, D_7SEG, 1
 instance = comp, \BOTAO_MENU|counter[22] , BOTAO_MENU|counter[22], D_7SEG, 1
 instance = comp, \BOTAO_MENU|LessThan0~1 , BOTAO_MENU|LessThan0~1, D_7SEG, 1
+<<<<<<< HEAD
+instance = comp, \BOTAO_MENU|LessThan0~7 , BOTAO_MENU|LessThan0~7, D_7SEG, 1
+instance = comp, \BOTAO_MENU|LessThan0~8 , BOTAO_MENU|LessThan0~8, D_7SEG, 1
+instance = comp, \BOTAO_MENU|LessThan0~3 , BOTAO_MENU|LessThan0~3, D_7SEG, 1
+instance = comp, \BOTAO_MENU|LessThan0~4 , BOTAO_MENU|LessThan0~4, D_7SEG, 1
+instance = comp, \BOTAO_MENU|LessThan0~5 , BOTAO_MENU|LessThan0~5, D_7SEG, 1
+instance = comp, \BOTAO_MENU|LessThan0~6 , BOTAO_MENU|LessThan0~6, D_7SEG, 1
+=======
+>>>>>>> 71dc74f025e99eb43308e880364ba6b9229338fc
 instance = comp, \BOTAO_MENU|LessThan0~9 , BOTAO_MENU|LessThan0~9, D_7SEG, 1
 instance = comp, \BOTAO_MENU|buttonPressed~0 , BOTAO_MENU|buttonPressed~0, D_7SEG, 1
 instance = comp, \BOTAO_MENU|buttonPressed~feeder , BOTAO_MENU|buttonPressed~feeder, D_7SEG, 1
@@ -210,8 +259,11 @@ instance = comp, \SW[14]~input , SW[14]~input, D_7SEG, 1
 instance = comp, \SW[15]~input , SW[15]~input, D_7SEG, 1
 instance = comp, \SW[16]~input , SW[16]~input, D_7SEG, 1
 instance = comp, \SW[17]~input , SW[17]~input, D_7SEG, 1
+<<<<<<< HEAD
 instance = comp, \GPIO[0]~input , GPIO[0]~input, D_7SEG, 1
 instance = comp, \GPIO[1]~input , GPIO[1]~input, D_7SEG, 1
+=======
+>>>>>>> add-sensor-alt
 instance = comp, \GPIO[2]~input , GPIO[2]~input, D_7SEG, 1
 instance = comp, \GPIO[3]~input , GPIO[3]~input, D_7SEG, 1
 instance = comp, \GPIO[4]~input , GPIO[4]~input, D_7SEG, 1
@@ -246,6 +298,11 @@ instance = comp, \GPIO[32]~input , GPIO[32]~input, D_7SEG, 1
 instance = comp, \GPIO[33]~input , GPIO[33]~input, D_7SEG, 1
 instance = comp, \GPIO[34]~input , GPIO[34]~input, D_7SEG, 1
 instance = comp, \GPIO[35]~input , GPIO[35]~input, D_7SEG, 1
+<<<<<<< HEAD
+=======
+instance = comp, \GPIO[0]~input , GPIO[0]~input, D_7SEG, 1
+instance = comp, \GPIO[1]~input , GPIO[1]~input, D_7SEG, 1
+>>>>>>> add-sensor-alt
 design_name = hard_block
 instance = comp, \~ALTERA_ASDO_DATA1~~ibuf , ~ALTERA_ASDO_DATA1~~ibuf, hard_block, 1
 instance = comp, \~ALTERA_FLASH_nCE_nCSO~~ibuf , ~ALTERA_FLASH_nCE_nCSO~~ibuf, hard_block, 1

@@ -1,5 +1,17 @@
 Assembler report for D_7SEG
+<<<<<<< HEAD
 Wed Oct 04 11:02:54 2017
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+Tue Oct 03 20:37:48 2017
+=======
+Thu Sep 28 18:33:16 2017
+>>>>>>> add-sensor-alt
+=======
+Tue Oct 03 21:11:06 2017
+>>>>>>> 71dc74f025e99eb43308e880364ba6b9229338fc
+>>>>>>> 5d4424b12a3715d3810e1b07756f907096184e54
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -38,7 +50,19 @@ agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
+<<<<<<< HEAD
 ; Assembler Status      ; Successful - Wed Oct 04 11:02:54 2017 ;
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+; Assembler Status      ; Successful - Tue Oct 03 20:37:48 2017 ;
+=======
+; Assembler Status      ; Successful - Thu Sep 28 18:33:16 2017 ;
+>>>>>>> add-sensor-alt
+=======
+; Assembler Status      ; Successful - Tue Oct 03 21:11:06 2017 ;
+>>>>>>> 71dc74f025e99eb43308e880364ba6b9229338fc
+>>>>>>> 5d4424b12a3715d3810e1b07756f907096184e54
 ; Revision Name         ; D_7SEG                                ;
 ; Top-level Entity Name ; D_7SEG                                ;
 ; Family                ; Cyclone IV E                          ;
@@ -62,6 +86,22 @@ agreement for further details.
 +------------------------------------------------------------------------------------------------------------+
 
 
+<<<<<<< HEAD
++--------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/output_files/D_7SEG.sof ;
++----------------+---------------------------------------------------------------------------------------+
+; Option         ; Setting                                                                               ;
++----------------+---------------------------------------------------------------------------------------+
+; Device         ; EP4CE115F29C7                                                                         ;
+<<<<<<< HEAD
+; JTAG usercode  ; 0x0056CE5B                                                                            ;
+; Checksum       ; 0x0056CE5B                                                                            ;
+=======
+; JTAG usercode  ; 0x0056FE76                                                                            ;
+; Checksum       ; 0x0056FE76                                                                            ;
+>>>>>>> add-sensor-alt
++----------------+---------------------------------------------------------------------------------------+
+=======
 +--------------------------------------------------------------------------------------------------------------------------------------+
 ; Assembler Device Options: C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/output_files/D_7SEG.sof ;
 +----------------+---------------------------------------------------------------------------------------------------------------------+
@@ -71,6 +111,7 @@ agreement for further details.
 ; JTAG usercode  ; 0x0056EE0C                                                                                                          ;
 ; Checksum       ; 0x0056EE0C                                                                                                          ;
 +----------------+---------------------------------------------------------------------------------------------------------------------+
+>>>>>>> 71dc74f025e99eb43308e880364ba6b9229338fc
 
 
 +--------------------+
@@ -79,15 +120,46 @@ agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
+<<<<<<< HEAD
     Info: Processing started: Wed Oct 04 11:02:47 2017
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+    Info: Processing started: Tue Oct 03 20:37:42 2017
+=======
+    Info: Processing started: Thu Sep 28 18:33:12 2017
+>>>>>>> add-sensor-alt
+=======
+    Info: Processing started: Tue Oct 03 21:10:58 2017
+>>>>>>> 71dc74f025e99eb43308e880364ba6b9229338fc
+>>>>>>> 5d4424b12a3715d3810e1b07756f907096184e54
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off D_7SEG -c D_7SEG
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
+<<<<<<< HEAD
+<<<<<<< HEAD
+    Info: Peak virtual memory: 573 megabytes
+    Info: Processing ended: Tue Oct 03 20:37:48 2017
+    Info: Elapsed time: 00:00:06
+=======
+    Info: Peak virtual memory: 569 megabytes
+    Info: Processing ended: Thu Sep 28 18:33:16 2017
+    Info: Elapsed time: 00:00:04
+>>>>>>> add-sensor-alt
+    Info: Total CPU time (on all processors): 00:00:04
+=======
     Info: Peak virtual memory: 571 megabytes
+<<<<<<< HEAD
     Info: Processing ended: Wed Oct 04 11:02:54 2017
     Info: Elapsed time: 00:00:07
     Info: Total CPU time (on all processors): 00:00:06
+=======
+    Info: Processing ended: Tue Oct 03 21:11:06 2017
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:07
+>>>>>>> 71dc74f025e99eb43308e880364ba6b9229338fc
+>>>>>>> 5d4424b12a3715d3810e1b07756f907096184e54
 
 

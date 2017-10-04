@@ -31,9 +31,15 @@ IO_RULES,SINGLE_ENDED_OUTPUTS_LAB_ROWS_FROM_DIFF_IO,INAPPLICABLE,IO_000034,SI Re
 IO_RULES,MAX_20_OUTPUTS_ALLOWED_IN_VREFGROUP,INAPPLICABLE,IO_000042,SI Related SSO Limit Checks,No more than 20 outputs are allowed in a VREF group when VREF is being read from.,High,No VREF I/O Standard assignments found.,,I/O,,
 IO_RULES,DEV_IO_RULE_OCT_DISCLAIMER,,,,,,,,,,
 IO_RULES_MATRIX,Pin/Rules,IO_000001;IO_000002;IO_000003;IO_000004;IO_000005;IO_000006;IO_000007;IO_000008;IO_000009;IO_000010;IO_000011;IO_000012;IO_000013;IO_000014;IO_000015;IO_000018;IO_000019;IO_000020;IO_000021;IO_000022;IO_000023;IO_000024;IO_000026;IO_000027;IO_000045;IO_000046;IO_000047;IO_000033;IO_000034;IO_000042,
+<<<<<<< HEAD
 IO_RULES_MATRIX,Total Pass,133;0;133;0;0;137;133;0;137;137;0;45;0;0;59;0;45;59;0;0;36;45;0;0;0;0;0;137;0;0,
 IO_RULES_MATRIX,Total Unchecked,0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0,
 IO_RULES_MATRIX,Total Inapplicable,4;137;4;137;137;0;4;137;0;0;137;92;137;137;78;137;92;78;137;137;101;92;137;137;137;137;137;0;137;137,
+=======
+IO_RULES_MATRIX,Total Pass,133;0;133;0;0;137;133;0;137;137;0;45;0;0;59;0;45;59;0;0;35;45;0;0;0;0;0;137;0;0,
+IO_RULES_MATRIX,Total Unchecked,0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0,
+IO_RULES_MATRIX,Total Inapplicable,4;137;4;137;137;0;4;137;0;0;137;92;137;137;78;137;92;78;137;137;102;92;137;137;137;137;137;0;137;137,
+>>>>>>> add-sensor-alt
 IO_RULES_MATRIX,Total Fail,0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0,
 IO_RULES_MATRIX,CLOCKOUT,Inapplicable;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable;Pass;Pass;Inapplicable;Pass;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable,
 IO_RULES_MATRIX,KEY[1],Pass;Inapplicable;Pass;Inapplicable;Inapplicable;Pass;Pass;Inapplicable;Pass;Pass;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable,
@@ -134,8 +140,11 @@ IO_RULES_MATRIX,LEDR[14],Pass;Inapplicable;Pass;Inapplicable;Inapplicable;Pass;P
 IO_RULES_MATRIX,LEDR[15],Pass;Inapplicable;Pass;Inapplicable;Inapplicable;Pass;Pass;Inapplicable;Pass;Pass;Inapplicable;Pass;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable,
 IO_RULES_MATRIX,LEDR[16],Pass;Inapplicable;Pass;Inapplicable;Inapplicable;Pass;Pass;Inapplicable;Pass;Pass;Inapplicable;Pass;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable,
 IO_RULES_MATRIX,LEDR[17],Pass;Inapplicable;Pass;Inapplicable;Inapplicable;Pass;Pass;Inapplicable;Pass;Pass;Inapplicable;Pass;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable,
+<<<<<<< HEAD
 IO_RULES_MATRIX,GPIO[0],Pass;Inapplicable;Pass;Inapplicable;Inapplicable;Pass;Pass;Inapplicable;Pass;Pass;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable,
 IO_RULES_MATRIX,GPIO[1],Pass;Inapplicable;Pass;Inapplicable;Inapplicable;Pass;Pass;Inapplicable;Pass;Pass;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable,
+=======
+>>>>>>> add-sensor-alt
 IO_RULES_MATRIX,GPIO[2],Pass;Inapplicable;Pass;Inapplicable;Inapplicable;Pass;Pass;Inapplicable;Pass;Pass;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable,
 IO_RULES_MATRIX,GPIO[3],Pass;Inapplicable;Pass;Inapplicable;Inapplicable;Pass;Pass;Inapplicable;Pass;Pass;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable,
 IO_RULES_MATRIX,GPIO[4],Pass;Inapplicable;Pass;Inapplicable;Inapplicable;Pass;Pass;Inapplicable;Pass;Pass;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable,
@@ -170,6 +179,11 @@ IO_RULES_MATRIX,GPIO[32],Pass;Inapplicable;Pass;Inapplicable;Inapplicable;Pass;P
 IO_RULES_MATRIX,GPIO[33],Pass;Inapplicable;Pass;Inapplicable;Inapplicable;Pass;Pass;Inapplicable;Pass;Pass;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable,
 IO_RULES_MATRIX,GPIO[34],Pass;Inapplicable;Pass;Inapplicable;Inapplicable;Pass;Pass;Inapplicable;Pass;Pass;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable,
 IO_RULES_MATRIX,GPIO[35],Pass;Inapplicable;Pass;Inapplicable;Inapplicable;Pass;Pass;Inapplicable;Pass;Pass;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable,
+<<<<<<< HEAD
+=======
+IO_RULES_MATRIX,GPIO[0],Pass;Inapplicable;Pass;Inapplicable;Inapplicable;Pass;Pass;Inapplicable;Pass;Pass;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable,
+IO_RULES_MATRIX,GPIO[1],Pass;Inapplicable;Pass;Inapplicable;Inapplicable;Pass;Pass;Inapplicable;Pass;Pass;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable,
+>>>>>>> add-sensor-alt
 IO_RULES_MATRIX,KEY[0],Pass;Inapplicable;Pass;Inapplicable;Inapplicable;Pass;Pass;Inapplicable;Pass;Pass;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable,
 IO_RULES_MATRIX,clock_50,Pass;Inapplicable;Pass;Inapplicable;Inapplicable;Pass;Pass;Inapplicable;Pass;Pass;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Inapplicable;Pass;Inapplicable;Inapplicable,
 IO_RULES_SUMMARY,Total I/O Rules,30,

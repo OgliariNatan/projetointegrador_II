@@ -120,5 +120,40 @@ DISPLAY_MENU:WORK.display
 		HEX7
 		);
 
+
+
+--	PROCESS(CLOCK_50)
+--			
+----		CONSTANT COUNT_MAX	: INTEGER 	:= 1000000;
+----		VARIABLE counter 		: INTEGER RANGE 0 TO COUNT_MAX := 0;
+--	
+--	BEGIN
+--			
+--		IF(SW(0) = '1') THEN
+--		
+--			HC_ENABLE <= '1';
+--		
+--		ELSE
+--		
+--			HC_ENABLE <= '0';
+--			
+--		END IF;	
+--		
+--	END PROCESS;
+		
+SENSOR_ALTURA: WORK.hc_sr04
+	
+	PORT MAP(
+	CLOCK_50,
+	HC_ENABLE,
+	END_TRIGGER,
+	GPIO(1),		--echo
+	GPIO(0)		--trigger
+	);
+
+	HC_ENABLE <= END_TRIGGER WHEN END_TRIGGER = '0' ELSE
+				    '1' WHEN SW(0) = '1'ELSE
+				    '0' WHEN SW(0) = '0';
+
 		
 END display;
