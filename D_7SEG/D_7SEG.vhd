@@ -32,7 +32,7 @@ ENTITY D_7SEG IS
 			CLOCKOUT			: OUT STD_LOGIC; --POSSIVEL SAIDA DO DIVISOR DE CLOCK
 		
 			-- Sensor de distância
-			GPIO					:inout  STD_LOGIC_VECTOR (35 DOWNTO 0);	-- Declara um Buffer para que possamos utilizar com I/O
+			GPIO					: INOUT STD_LOGIC_VECTOR (35 DOWNTO 0);	-- Declara um Buffer para que possamos utilizar com I/O
 			--GPIO(1) = echo
 			--GPIO(0) = trigger	
 	
@@ -83,7 +83,9 @@ BOTAO_MENU: WORK.debouncer_pi
 		buttonOut
 		);
 	
-		-- Seleção da interface
+	
+	
+	-- Seleção da interface
 	PROCESS (buttonOut) 
 	BEGIN
 	

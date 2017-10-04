@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Tue Oct 03 21:09:50 2017
+Analysis & Elaboration Status : Successful - Wed Oct 04 11:14:14 2017
 Quartus Prime Version : 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 Revision Name : D_7SEG
 Top-level Entity Name : D_7SEG
 Family : Cyclone IV E
-Total logic elements : 37
-    Total combinational functions : 36
-    Dedicated logic registers : 25
-Total registers : 25
-Total pins : 137
-Total virtual pins : 0
-Total memory bits : 0
-Embedded Multiplier 9-bit elements : 0
-Total PLLs : 0
+Total logic elements : N/A until Partition Merge
+    Total combinational functions : N/A until Partition Merge
+    Dedicated logic registers : N/A until Partition Merge
+Total registers : N/A until Partition Merge
+Total pins : N/A until Partition Merge
+Total virtual pins : N/A until Partition Merge
+Total memory bits : N/A until Partition Merge
+Embedded Multiplier 9-bit elements : N/A until Partition Merge
+Total PLLs : N/A until Partition Merge

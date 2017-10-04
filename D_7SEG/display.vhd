@@ -102,12 +102,8 @@ ARCHITECTURE behavior OF display IS
 				DISPLAY0 <= "0110000"; -- E
 			END IF;
  
-		
 		END IF;
-		
 		
 	END PROCESS;
 	
-
-		
 END behavior;

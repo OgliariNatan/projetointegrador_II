@@ -1,0 +1,16 @@
+#ignore everything
+*
+#but not these files
+#!project/
+!.gitignore
+!README.md
+!D_7SEG/*.vhd
+!Contador/*.vhdl
+!ENG PI-1/*.vhdl
+!selecao_cor/*.vhdl
+!Antitrepidação/*.vhdl
+!01_seletor/*.vhdl
+!01_projeto/*.vhdl
+!*.pdf
+
+!DE2_115_pin_assignments.csv
