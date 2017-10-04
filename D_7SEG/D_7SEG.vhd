@@ -74,6 +74,7 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 	SIGNAL	color					: STD_LOGIC := '0';
 	SIGNAL	altura				: INTEGER := 99;
 	
+	
 	BEGIN--Começa a logica do programa
 
 BOTAO_MENU: WORK.debouncer_pi
@@ -84,7 +85,14 @@ BOTAO_MENU: WORK.debouncer_pi
 		buttonOut
 		);
 	
-	
+CLOCK_1Hz:WORK.clockDivider
+		
+			PORT MAP(
+			CLOCK_50,
+			freqIn,
+			freqOut,
+			GPIO(3)
+			);
 	
 	-- Seleção da interface
 	PROCESS (buttonOut) 
@@ -95,6 +103,7 @@ BOTAO_MENU: WORK.debouncer_pi
 		IF (buttonOut'EVENT AND buttonOut='1') THEN
 
 			IF (selecao = 1) THEN
+				selecao <= 0;
 			ELSE
 				selecao <= selecao + 1;
 			END IF;
@@ -121,43 +130,16 @@ DISPLAY_MENU:WORK.display
 		HEX7
 		);
 
-
-
-	PROCESS(CLOCK_50)
-			
---		CONSTANT COUNT_MAX	: INTEGER 	:= 1000000;
---		VARIABLE counter 		: INTEGER RANGE 0 TO COUNT_MAX := 0;
-	
-	BEGIN
-			
-		IF(SW(0) = '1') THEN
-		
-			HC_ENABLE <= '1';
-		
-		ELSE
-		
-			HC_ENABLE <= '0';
-			
-		END IF;	
-		
-		--new_enable <= HC_ENABLE; --APAGAR
-		
-	END PROCESS;
 		
 SENSOR_ALTURA: WORK.hc_sr04
 	
 	PORT MAP(
 	CLOCK_50,
-	HC_ENABLE
-	--new_enable, --HC_ENABLE --APAGAR
-	END_TRIGGER,
-	GPIO(1),		--echo
-	GPIO(0)		--trigger
+	SW(0),
+	GPIO(1),
+	GPIO(0),
+	altura
 	);
-
-	HC_ENABLE <= END_TRIGGER WHEN END_TRIGGER = '0' ELSE
-				    '1' WHEN SW(0) = '1'ELSE
-				    '0' WHEN SW(0) = '0';
 
 		
 END display;
