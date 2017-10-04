@@ -5,6 +5,7 @@
 !.gitignore
 !README.md
 !D_7SEG/*.vhd
+!D_7SEG/*.txt
 !Contador/*.vhdl
 !ENG PI-1/*.vhdl
 !selecao_cor/*.vhdl
