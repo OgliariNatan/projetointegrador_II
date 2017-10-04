@@ -100,6 +100,13 @@
 					"strict" : false
 				},
 				{
+<<<<<<< HEAD
+=======
+					"name" : "GPIO[0]",
+					"strict" : false
+				},
+				{
+>>>>>>> add-sensor-alt
 					"name" : "KEY[0]",
 					"strict" : false
 				},

@@ -3,8 +3,13 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'clock_50'
+<<<<<<< HEAD
 Slack : -4.132
 TNS   : -74.500
+=======
+Slack : -4.126
+TNS   : -87.521
+>>>>>>> add-sensor-alt
 
 Type  : Slow 1200mV 85C Model Setup 'debouncer_pi:BOTAO_MENU|buttonPressed'
 Slack : 0.210
@@ -15,20 +20,29 @@ Slack : 0.445
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'clock_50'
+<<<<<<< HEAD
 Slack : 0.640
+=======
+Slack : 0.636
+>>>>>>> add-sensor-alt
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clock_50'
 Slack : -3.000
-TNS   : -33.840
+TNS   : -46.690
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'debouncer_pi:BOTAO_MENU|buttonPressed'
 Slack : -1.285
 TNS   : -1.285
 
 Type  : Slow 1200mV 0C Model Setup 'clock_50'
+<<<<<<< HEAD
 Slack : -3.754
 TNS   : -66.491
+=======
+Slack : -3.734
+TNS   : -77.324
+>>>>>>> add-sensor-alt
 
 Type  : Slow 1200mV 0C Model Setup 'debouncer_pi:BOTAO_MENU|buttonPressed'
 Slack : 0.297
@@ -39,20 +53,29 @@ Slack : 0.398
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'clock_50'
+<<<<<<< HEAD
 Slack : 0.587
+=======
+Slack : 0.582
+>>>>>>> add-sensor-alt
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clock_50'
 Slack : -3.000
-TNS   : -33.840
+TNS   : -46.690
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'debouncer_pi:BOTAO_MENU|buttonPressed'
 Slack : -1.285
 TNS   : -1.285
 
 Type  : Fast 1200mV 0C Model Setup 'clock_50'
+<<<<<<< HEAD
 Slack : -1.557
 TNS   : -23.165
+=======
+Slack : -1.542
+TNS   : -23.960
+>>>>>>> add-sensor-alt
 
 Type  : Fast 1200mV 0C Model Setup 'debouncer_pi:BOTAO_MENU|buttonPressed'
 Slack : 0.626
@@ -63,12 +86,20 @@ Slack : 0.208
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'clock_50'
+<<<<<<< HEAD
 Slack : 0.293
+=======
+Slack : 0.289
+>>>>>>> add-sensor-alt
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clock_50'
 Slack : -3.000
+<<<<<<< HEAD
 TNS   : -34.089
+=======
+TNS   : -46.872
+>>>>>>> add-sensor-alt
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'debouncer_pi:BOTAO_MENU|buttonPressed'
 Slack : -1.000

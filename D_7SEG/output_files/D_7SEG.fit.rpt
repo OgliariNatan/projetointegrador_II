@@ -1,5 +1,9 @@
 Fitter report for D_7SEG
+<<<<<<< HEAD
 Tue Oct 03 20:37:40 2017
+=======
+Thu Sep 28 18:33:10 2017
+>>>>>>> add-sensor-alt
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -70,17 +74,28 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
+<<<<<<< HEAD
 ; Fitter Status                      ; Successful - Tue Oct 03 20:37:40 2017       ;
+=======
+; Fitter Status                      ; Successful - Thu Sep 28 18:33:10 2017       ;
+>>>>>>> add-sensor-alt
 ; Quartus Prime Version              ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                      ; D_7SEG                                      ;
 ; Top-level Entity Name              ; D_7SEG                                      ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
+<<<<<<< HEAD
 ; Total logic elements               ; 42 / 114,480 ( < 1 % )                      ;
 ;     Total combinational functions  ; 37 / 114,480 ( < 1 % )                      ;
 ;     Dedicated logic registers      ; 25 / 114,480 ( < 1 % )                      ;
 ; Total registers                    ; 25                                          ;
+=======
+; Total logic elements               ; 54 / 114,480 ( < 1 % )                      ;
+;     Total combinational functions  ; 48 / 114,480 ( < 1 % )                      ;
+;     Dedicated logic registers      ; 35 / 114,480 ( < 1 % )                      ;
+; Total registers                    ; 35                                          ;
+>>>>>>> add-sensor-alt
 ; Total pins                         ; 137 / 529 ( 26 % )                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0 / 3,981,312 ( 0 % )                       ;
@@ -964,8 +979,13 @@ agreement for further details.
 ; Type                ; Total [A + B]      ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+--------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                    ;                            ;                          ;
+<<<<<<< HEAD
 ;     -- Requested    ; 0.00 % ( 0 / 384 ) ; 0.00 % ( 0 / 384 )         ; 0.00 % ( 0 / 384 )       ;
 ;     -- Achieved     ; 0.00 % ( 0 / 384 ) ; 0.00 % ( 0 / 384 )         ; 0.00 % ( 0 / 384 )       ;
+=======
+;     -- Requested    ; 0.00 % ( 0 / 405 ) ; 0.00 % ( 0 / 405 )         ; 0.00 % ( 0 / 405 )       ;
+;     -- Achieved     ; 0.00 % ( 0 / 405 ) ; 0.00 % ( 0 / 405 )         ; 0.00 % ( 0 / 405 )       ;
+>>>>>>> add-sensor-alt
 ;                     ;                    ;                            ;                          ;
 ; Routing (by net)    ;                    ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )   ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -988,7 +1008,11 @@ agreement for further details.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
+<<<<<<< HEAD
 ; Top                            ; 0.00 % ( 0 / 374 )    ; N/A                     ; Source File       ; N/A                 ;       ;
+=======
+; Top                            ; 0.00 % ( 0 / 395 )    ; N/A                     ; Source File       ; N/A                 ;       ;
+>>>>>>> add-sensor-alt
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 10 )     ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -1004,26 +1028,33 @@ The pin-out file can be found in C:/Users/augus/Documents/projetointegrador_II/D
 +---------------------------------------------+------------------------+
 ; Resource                                    ; Usage                  ;
 +---------------------------------------------+------------------------+
+<<<<<<< HEAD
 ; Total logic elements                        ; 42 / 114,480 ( < 1 % ) ;
 ;     -- Combinational with no register       ; 17                     ;
 ;     -- Register only                        ; 5                      ;
 ;     -- Combinational with a register        ; 20                     ;
+=======
+; Total logic elements                        ; 54 / 114,480 ( < 1 % ) ;
+;     -- Combinational with no register       ; 19                     ;
+;     -- Register only                        ; 6                      ;
+;     -- Combinational with a register        ; 29                     ;
+>>>>>>> add-sensor-alt
 ;                                             ;                        ;
 ; Logic element usage by number of LUT inputs ;                        ;
-;     -- 4 input functions                    ; 7                      ;
+;     -- 4 input functions                    ; 9                      ;
 ;     -- 3 input functions                    ; 3                      ;
-;     -- <=2 input functions                  ; 27                     ;
-;     -- Register only                        ; 5                      ;
+;     -- <=2 input functions                  ; 36                     ;
+;     -- Register only                        ; 6                      ;
 ;                                             ;                        ;
 ; Logic elements by mode                      ;                        ;
-;     -- normal mode                          ; 15                     ;
-;     -- arithmetic mode                      ; 22                     ;
+;     -- normal mode                          ; 18                     ;
+;     -- arithmetic mode                      ; 30                     ;
 ;                                             ;                        ;
-; Total registers*                            ; 25 / 117,053 ( < 1 % ) ;
-;     -- Dedicated logic registers            ; 25 / 114,480 ( < 1 % ) ;
+; Total registers*                            ; 35 / 117,053 ( < 1 % ) ;
+;     -- Dedicated logic registers            ; 35 / 114,480 ( < 1 % ) ;
 ;     -- I/O registers                        ; 0 / 2,573 ( 0 % )      ;
 ;                                             ;                        ;
-; Total LABs:  partially or completely used   ; 4 / 7,155 ( < 1 % )    ;
+; Total LABs:  partially or completely used   ; 5 / 7,155 ( < 1 % )    ;
 ; Virtual pins                                ; 0                      ;
 ; I/O pins                                    ; 137 / 529 ( 26 % )     ;
 ;     -- Clock pins                           ; 1 / 7 ( 14 % )         ;
@@ -1042,11 +1073,19 @@ The pin-out file can be found in C:/Users/augus/Documents/projetointegrador_II/D
 ; Oscillator blocks                           ; 0 / 1 ( 0 % )          ;
 ; Impedance control blocks                    ; 0 / 4 ( 0 % )          ;
 ; Average interconnect usage (total/H/V)      ; 0.0% / 0.0% / 0.0%     ;
+<<<<<<< HEAD
 ; Peak interconnect usage (total/H/V)         ; 0.4% / 0.2% / 0.8%     ;
 ; Maximum fan-out                             ; 24                     ;
 ; Highest non-global fan-out                  ; 24                     ;
 ; Total fan-out                               ; 389                    ;
 ; Average fan-out                             ; 1.01                   ;
+=======
+; Peak interconnect usage (total/H/V)         ; 0.5% / 0.3% / 0.9%     ;
+; Maximum fan-out                             ; 34                     ;
+; Highest non-global fan-out                  ; 24                     ;
+; Total fan-out                               ; 445                    ;
+; Average fan-out                             ; 1.10                   ;
+>>>>>>> add-sensor-alt
 +---------------------------------------------+------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -1059,14 +1098,22 @@ The pin-out file can be found in C:/Users/augus/Documents/projetointegrador_II/D
 +---------------------------------------------+-----------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                   ; Low                            ;
 ;                                             ;                       ;                                ;
+<<<<<<< HEAD
 ; Total logic elements                        ; 42 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
 ;     -- Combinational with no register       ; 17                    ; 0                              ;
 ;     -- Register only                        ; 5                     ; 0                              ;
 ;     -- Combinational with a register        ; 20                    ; 0                              ;
+=======
+; Total logic elements                        ; 54 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
+;     -- Combinational with no register       ; 19                    ; 0                              ;
+;     -- Register only                        ; 6                     ; 0                              ;
+;     -- Combinational with a register        ; 29                    ; 0                              ;
+>>>>>>> add-sensor-alt
 ;                                             ;                       ;                                ;
 ; Logic element usage by number of LUT inputs ;                       ;                                ;
-;     -- 4 input functions                    ; 7                     ; 0                              ;
+;     -- 4 input functions                    ; 9                     ; 0                              ;
 ;     -- 3 input functions                    ; 3                     ; 0                              ;
+<<<<<<< HEAD
 ;     -- <=2 input functions                  ; 27                    ; 0                              ;
 ;     -- Register only                        ; 5                     ; 0                              ;
 ;                                             ;                       ;                                ;
@@ -1079,6 +1126,20 @@ The pin-out file can be found in C:/Users/augus/Documents/projetointegrador_II/D
 ;     -- I/O registers                        ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Total LABs:  partially or completely used   ; 4 / 7155 ( < 1 % )    ; 0 / 7155 ( 0 % )               ;
+=======
+;     -- <=2 input functions                  ; 36                    ; 0                              ;
+;     -- Register only                        ; 6                     ; 0                              ;
+;                                             ;                       ;                                ;
+; Logic elements by mode                      ;                       ;                                ;
+;     -- normal mode                          ; 18                    ; 0                              ;
+;     -- arithmetic mode                      ; 30                    ; 0                              ;
+;                                             ;                       ;                                ;
+; Total registers                             ; 35                    ; 0                              ;
+;     -- Dedicated logic registers            ; 35 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
+;     -- I/O registers                        ; 0                     ; 0                              ;
+;                                             ;                       ;                                ;
+; Total LABs:  partially or completely used   ; 5 / 7155 ( < 1 % )    ; 0 / 7155 ( 0 % )               ;
+>>>>>>> add-sensor-alt
 ;                                             ;                       ;                                ;
 ; Virtual pins                                ; 0                     ; 0                              ;
 ; I/O pins                                    ; 137                   ; 0                              ;
@@ -1094,8 +1155,13 @@ The pin-out file can be found in C:/Users/augus/Documents/projetointegrador_II/D
 ;     -- Registered Output Connections        ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Internal Connections                        ;                       ;                                ;
+<<<<<<< HEAD
 ;     -- Total Connections                    ; 384                   ; 5                              ;
 ;     -- Registered Connections               ; 77                    ; 0                              ;
+=======
+;     -- Total Connections                    ; 440                   ; 5                              ;
+;     -- Registered Connections               ; 94                    ; 0                              ;
+>>>>>>> add-sensor-alt
 ;                                             ;                       ;                                ;
 ; External Connections                        ;                       ;                                ;
 ;     -- Top                                  ; 72                    ; 0                              ;
@@ -1149,7 +1215,11 @@ The pin-out file can be found in C:/Users/augus/Documents/projetointegrador_II/D
 ; SW[7]    ; AB26  ; 5        ; 115          ; 15           ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; SW[8]    ; AC25  ; 5        ; 115          ; 4            ; 21           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; SW[9]    ; AB25  ; 5        ; 115          ; 16           ; 7            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
+<<<<<<< HEAD
 ; clock_50 ; Y2    ; 2        ; 0            ; 36           ; 14           ; 24                    ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 3.3-V LVTTL  ; --                        ; User                 ; no        ;
+=======
+; clock_50 ; Y2    ; 2        ; 0            ; 36           ; 14           ; 34                    ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 3.3-V LVTTL  ; --                        ; User                 ; no        ;
+>>>>>>> add-sensor-alt
 +----------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
 
 
@@ -1158,9 +1228,15 @@ The pin-out file can be found in C:/Users/augus/Documents/projetointegrador_II/D
 +-------------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+---------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+----------------------+----------------------+---------------------+
 ; Name        ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Output Register ; Output Enable Register ; Power Up High ; Slew Rate ; PCI I/O Enabled ; Open Drain ; TRI Primitive ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Termination                       ; Termination Control Block ; Output Buffer Pre-emphasis ; Voltage Output Differential ; Location assigned by ; Output Enable Source ; Output Enable Group ;
 +-------------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+---------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+----------------------+----------------------+---------------------+
+<<<<<<< HEAD
 ; CLOCKOUT    ; A4    ; 8        ; 7            ; 73           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
 ; END_TRIGGER ; B8    ; 8        ; 16           ; 73           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
 ; HC_ENABLE   ; AC3   ; 2        ; 0            ; 23           ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+=======
+; CLOCKOUT    ; L27   ; 6        ; 115          ; 48           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; END_TRIGGER ; C13   ; 8        ; 54           ; 73           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; HC_ENABLE   ; V27   ; 5        ; 115          ; 22           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+>>>>>>> add-sensor-alt
 ; HEX0[0]     ; G18   ; 7        ; 69           ; 73           ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; HEX0[1]     ; F22   ; 7        ; 107          ; 73           ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; HEX0[2]     ; E17   ; 7        ; 67           ; 73           ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
@@ -1235,7 +1311,11 @@ The pin-out file can be found in C:/Users/augus/Documents/projetointegrador_II/D
 ; LEDR[7]     ; H19   ; 7        ; 72           ; 73           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; LEDR[8]     ; J17   ; 7        ; 69           ; 73           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; LEDR[9]     ; G17   ; 7        ; 83           ; 73           ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
+<<<<<<< HEAD
 ; buttonOut   ; P25   ; 6        ; 115          ; 41           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+=======
+; buttonOut   ; AE26  ; 5        ; 115          ; 8            ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+>>>>>>> add-sensor-alt
 +-------------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+---------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+----------------------+----------------------+---------------------+
 
 
@@ -1314,10 +1394,17 @@ The pin-out file can be found in C:/Users/augus/Documents/projetointegrador_II/D
 ; 2        ; 2 / 63 ( 3 % )   ; 2.5V          ; --           ;
 ; 3        ; 1 / 73 ( 1 % )   ; 3.3V          ; --           ;
 ; 4        ; 68 / 71 ( 96 % ) ; 3.3V          ; --           ;
+<<<<<<< HEAD
 ; 5        ; 34 / 65 ( 52 % ) ; 2.5V          ; --           ;
 ; 6        ; 10 / 58 ( 17 % ) ; 2.5V          ; --           ;
 ; 7        ; 21 / 72 ( 29 % ) ; 2.5V          ; --           ;
 ; 8        ; 2 / 71 ( 3 % )   ; 2.5V          ; --           ;
+=======
+; 5        ; 36 / 65 ( 55 % ) ; 2.5V          ; --           ;
+; 6        ; 10 / 58 ( 17 % ) ; 2.5V          ; --           ;
+; 7        ; 21 / 72 ( 29 % ) ; 2.5V          ; --           ;
+; 8        ; 1 / 71 ( 1 % )   ; 2.5V          ; --           ;
+>>>>>>> add-sensor-alt
 +----------+------------------+---------------+--------------+
 
 
@@ -1489,7 +1576,11 @@ The pin-out file can be found in C:/Users/augus/Documents/projetointegrador_II/D
 ; AE23     ; 261        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AE24     ; 256        ; 4        ; GPIO[27]                                                  ; bidir  ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; AE25     ; 243        ; 4        ; GPIO[25]                                                  ; bidir  ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
+<<<<<<< HEAD
 ; AE26     ; 278        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+=======
+; AE26     ; 278        ; 5        ; buttonOut                                                 ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+>>>>>>> add-sensor-alt
 ; AE27     ; 284        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; AE28     ; 283        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; AF1      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
@@ -1614,7 +1705,11 @@ The pin-out file can be found in C:/Users/augus/Documents/projetointegrador_II/D
 ; C10      ; 495        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; C11      ; 508        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; C12      ; 478        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+<<<<<<< HEAD
 ; C13      ; 474        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+=======
+; C13      ; 474        ; 8        ; END_TRIGGER                                               ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+>>>>>>> add-sensor-alt
 ; C14      ; 476        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; C15      ; 468        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; C16      ; 460        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -1852,7 +1947,7 @@ The pin-out file can be found in C:/Users/augus/Documents/projetointegrador_II/D
 ; L24      ; 359        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; L25      ; 369        ; 6        ; HEX0[4]                                                   ; output ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; L26      ; 363        ; 6        ; HEX0[3]                                                   ; output ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
-; L27      ; 358        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+; L27      ; 358        ; 6        ; CLOCKOUT                                                  ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; L28      ; 357        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; M1       ; 51         ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; M2       ; 50         ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -2048,7 +2143,11 @@ The pin-out file can be found in C:/Users/augus/Documents/projetointegrador_II/D
 ; V24      ; 308        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; V25      ; 307        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; V26      ; 306        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+<<<<<<< HEAD
 ; V27      ; 304        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+=======
+; V27      ; 304        ; 5        ; HC_ENABLE                                                 ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+>>>>>>> add-sensor-alt
 ; V28      ; 303        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; W1       ; 88         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; W2       ; 87         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -2193,8 +2292,11 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ; LEDR[15]    ; Missing drive strength and slew rate ;
 ; LEDR[16]    ; Missing drive strength and slew rate ;
 ; LEDR[17]    ; Missing drive strength and slew rate ;
+<<<<<<< HEAD
 ; GPIO[0]     ; Missing drive strength               ;
 ; GPIO[1]     ; Missing drive strength               ;
+=======
+>>>>>>> add-sensor-alt
 ; GPIO[2]     ; Missing drive strength               ;
 ; GPIO[3]     ; Missing drive strength               ;
 ; GPIO[4]     ; Missing drive strength               ;
@@ -2229,6 +2331,11 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ; GPIO[33]    ; Missing drive strength               ;
 ; GPIO[34]    ; Missing drive strength               ;
 ; GPIO[35]    ; Missing drive strength               ;
+<<<<<<< HEAD
+=======
+; GPIO[0]     ; Missing drive strength               ;
+; GPIO[1]     ; Missing drive strength               ;
+>>>>>>> add-sensor-alt
 ; CLOCKOUT    ; Missing location assignment          ;
 ; buttonOut   ; Missing location assignment          ;
 ; END_TRIGGER ; Missing location assignment          ;
@@ -2241,8 +2348,13 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------------+--------------+--------------+
 ; Compilation Hierarchy Node   ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name             ; Entity Name  ; Library Name ;
 +------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------------+--------------+--------------+
+<<<<<<< HEAD
 ; |D_7SEG                      ; 42 (1)      ; 25 (1)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 137  ; 0            ; 17 (0)       ; 5 (0)             ; 20 (1)           ; |D_7SEG                         ; D_7SEG       ; work         ;
+=======
+; |D_7SEG                      ; 54 (1)      ; 35 (1)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 137  ; 0            ; 19 (0)       ; 6 (0)             ; 29 (1)           ; |D_7SEG                         ; D_7SEG       ; work         ;
+>>>>>>> add-sensor-alt
 ;    |debouncer_pi:BOTAO_MENU| ; 41 (41)     ; 24 (24)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 17 (17)      ; 5 (5)             ; 19 (19)          ; |D_7SEG|debouncer_pi:BOTAO_MENU ; debouncer_pi ; work         ;
+;    |hc_sr04:SENSOR_ALTURA|   ; 12 (12)     ; 10 (10)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 1 (1)             ; 9 (9)            ; |D_7SEG|hc_sr04:SENSOR_ALTURA   ; hc_sr04      ; work         ;
 +------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------------+--------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -2351,8 +2463,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; LEDR[15]    ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; LEDR[16]    ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; LEDR[17]    ; Output   ; --            ; --            ; --                    ; --  ; --   ;
+<<<<<<< HEAD
 ; GPIO[0]     ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
 ; GPIO[1]     ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
+=======
+>>>>>>> add-sensor-alt
 ; GPIO[2]     ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
 ; GPIO[3]     ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
 ; GPIO[4]     ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
@@ -2387,7 +2502,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; GPIO[33]    ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
 ; GPIO[34]    ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
 ; GPIO[35]    ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
+<<<<<<< HEAD
 ; KEY[0]      ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+=======
+; GPIO[0]     ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
+; GPIO[1]     ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
+; KEY[0]      ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+>>>>>>> add-sensor-alt
 ; clock_50    ; Input    ; (0) 0 ps      ; --            ; --                    ; --  ; --   ;
 +-------------+----------+---------------+---------------+-----------------------+-----+------+
 
@@ -2418,8 +2539,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; SW[15]                                         ;                   ;         ;
 ; SW[16]                                         ;                   ;         ;
 ; SW[17]                                         ;                   ;         ;
+<<<<<<< HEAD
 ; GPIO[0]                                        ;                   ;         ;
 ; GPIO[1]                                        ;                   ;         ;
+=======
+>>>>>>> add-sensor-alt
 ; GPIO[2]                                        ;                   ;         ;
 ; GPIO[3]                                        ;                   ;         ;
 ; GPIO[4]                                        ;                   ;         ;
@@ -2454,6 +2578,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; GPIO[33]                                       ;                   ;         ;
 ; GPIO[34]                                       ;                   ;         ;
 ; GPIO[35]                                       ;                   ;         ;
+; GPIO[0]                                        ;                   ;         ;
+; GPIO[1]                                        ;                   ;         ;
 ; KEY[0]                                         ;                   ;         ;
 ;      - debouncer_pi:BOTAO_MENU|buttonPressed~0 ; 0                 ; 6       ;
 ;      - debouncer_pi:BOTAO_MENU|counter[22]~65  ; 0                 ; 6       ;
@@ -2462,6 +2588,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------------+-------------------+---------+
 
 
+<<<<<<< HEAD
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Control Signals                                                                                                                                                      ;
 +----------------------------------------+---------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
@@ -2472,6 +2599,19 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; debouncer_pi:BOTAO_MENU|counter[22]~65 ; LCCOMB_X114_Y41_N8  ; 23      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
 ; debouncer_pi:BOTAO_MENU|counter[22]~66 ; LCCOMB_X114_Y40_N24 ; 23      ; Clock enable ; no     ; --                   ; --               ; --                        ;
 +----------------------------------------+---------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
+=======
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                                                                     ;
++----------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
+; Name                                   ; Location           ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++----------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
+; clock_50                               ; PIN_Y2             ; 34      ; Clock        ; yes    ; Global Clock         ; GCLK4            ; --                        ;
+; debouncer_pi:BOTAO_MENU|buttonPressed  ; FF_X108_Y7_N29     ; 4       ; Clock        ; no     ; --                   ; --               ; --                        ;
+; debouncer_pi:BOTAO_MENU|counter[22]~65 ; LCCOMB_X107_Y7_N4  ; 23      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
+; debouncer_pi:BOTAO_MENU|counter[22]~66 ; LCCOMB_X108_Y7_N12 ; 23      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; hc_sr04:SENSOR_ALTURA|LessThan0~1      ; LCCOMB_X108_Y1_N24 ; 10      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
++----------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
+>>>>>>> add-sensor-alt
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------+
@@ -2479,7 +2619,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 ; Name     ; Location ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +----------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
+<<<<<<< HEAD
 ; clock_50 ; PIN_Y2   ; 24      ; 0                                    ; Global Clock         ; GCLK4            ; --                        ;
+=======
+; clock_50 ; PIN_Y2   ; 34      ; 0                                    ; Global Clock         ; GCLK4            ; --                        ;
+>>>>>>> add-sensor-alt
 +----------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 
 
@@ -2488,6 +2632,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+------------------------+
 ; Routing Resource Type ; Usage                  ;
 +-----------------------+------------------------+
+<<<<<<< HEAD
 ; Block interconnects   ; 58 / 342,891 ( < 1 % ) ;
 ; C16 interconnects     ; 9 / 10,120 ( < 1 % )   ;
 ; C4 interconnects      ; 42 / 209,544 ( < 1 % ) ;
@@ -2496,40 +2641,50 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Local interconnects   ; 27 / 119,088 ( < 1 % ) ;
 ; R24 interconnects     ; 9 / 9,963 ( < 1 % )    ;
 ; R4 interconnects      ; 17 / 289,782 ( < 1 % ) ;
+=======
+; Block interconnects   ; 55 / 342,891 ( < 1 % ) ;
+; C16 interconnects     ; 7 / 10,120 ( < 1 % )   ;
+; C4 interconnects      ; 55 / 209,544 ( < 1 % ) ;
+; Direct links          ; 13 / 342,891 ( < 1 % ) ;
+; Global clocks         ; 1 / 20 ( 5 % )         ;
+; Local interconnects   ; 40 / 119,088 ( < 1 % ) ;
+; R24 interconnects     ; 6 / 9,963 ( < 1 % )    ;
+; R4 interconnects      ; 39 / 289,782 ( < 1 % ) ;
+>>>>>>> add-sensor-alt
 +-----------------------+------------------------+
 
 
 +---------------------------------------------------------------------------+
 ; LAB Logic Elements                                                        ;
 +---------------------------------------------+-----------------------------+
-; Number of Logic Elements  (Average = 10.50) ; Number of LABs  (Total = 4) ;
+; Number of Logic Elements  (Average = 10.80) ; Number of LABs  (Total = 5) ;
 +---------------------------------------------+-----------------------------+
-; 1                                           ; 1                           ;
+; 1                                           ; 0                           ;
 ; 2                                           ; 0                           ;
 ; 3                                           ; 0                           ;
-; 4                                           ; 0                           ;
+; 4                                           ; 1                           ;
 ; 5                                           ; 0                           ;
 ; 6                                           ; 0                           ;
-; 7                                           ; 0                           ;
+; 7                                           ; 1                           ;
 ; 8                                           ; 0                           ;
-; 9                                           ; 1                           ;
+; 9                                           ; 0                           ;
 ; 10                                          ; 0                           ;
 ; 11                                          ; 0                           ;
-; 12                                          ; 0                           ;
+; 12                                          ; 1                           ;
 ; 13                                          ; 0                           ;
 ; 14                                          ; 0                           ;
-; 15                                          ; 0                           ;
-; 16                                          ; 2                           ;
+; 15                                          ; 1                           ;
+; 16                                          ; 1                           ;
 +---------------------------------------------+-----------------------------+
 
 
 +------------------------------------------------------------------+
 ; LAB-wide Signals                                                 ;
 +------------------------------------+-----------------------------+
-; LAB-wide Signals  (Average = 2.00) ; Number of LABs  (Total = 4) ;
+; LAB-wide Signals  (Average = 2.00) ; Number of LABs  (Total = 5) ;
 +------------------------------------+-----------------------------+
-; 1 Clock                            ; 4                           ;
-; 1 Clock enable                     ; 2                           ;
+; 1 Clock                            ; 5                           ;
+; 1 Clock enable                     ; 3                           ;
 ; 1 Sync. clear                      ; 2                           ;
 +------------------------------------+-----------------------------+
 
@@ -2537,18 +2692,18 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                        ;
 +----------------------------------------------+-----------------------------+
-; Number of Signals Sourced  (Average = 15.75) ; Number of LABs  (Total = 4) ;
+; Number of Signals Sourced  (Average = 17.00) ; Number of LABs  (Total = 5) ;
 +----------------------------------------------+-----------------------------+
 ; 0                                            ; 0                           ;
 ; 1                                            ; 0                           ;
-; 2                                            ; 1                           ;
+; 2                                            ; 0                           ;
 ; 3                                            ; 0                           ;
 ; 4                                            ; 0                           ;
 ; 5                                            ; 0                           ;
-; 6                                            ; 0                           ;
-; 7                                            ; 0                           ;
+; 6                                            ; 1                           ;
+; 7                                            ; 1                           ;
 ; 8                                            ; 0                           ;
-; 9                                            ; 1                           ;
+; 9                                            ; 0                           ;
 ; 10                                           ; 0                           ;
 ; 11                                           ; 0                           ;
 ; 12                                           ; 0                           ;
@@ -2561,10 +2716,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 19                                           ; 0                           ;
 ; 20                                           ; 0                           ;
 ; 21                                           ; 0                           ;
-; 22                                           ; 0                           ;
-; 23                                           ; 0                           ;
+; 22                                           ; 1                           ;
+; 23                                           ; 1                           ;
 ; 24                                           ; 0                           ;
-; 25                                           ; 1                           ;
+; 25                                           ; 0                           ;
 ; 26                                           ; 0                           ;
 ; 27                                           ; 1                           ;
 +----------------------------------------------+-----------------------------+
@@ -2573,31 +2728,27 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                       ;
 +-------------------------------------------------+-----------------------------+
-; Number of Signals Sourced Out  (Average = 7.00) ; Number of LABs  (Total = 4) ;
+; Number of Signals Sourced Out  (Average = 4.20) ; Number of LABs  (Total = 5) ;
 +-------------------------------------------------+-----------------------------+
 ; 0                                               ; 0                           ;
 ; 1                                               ; 1                           ;
 ; 2                                               ; 0                           ;
-; 3                                               ; 0                           ;
+; 3                                               ; 1                           ;
 ; 4                                               ; 0                           ;
-; 5                                               ; 0                           ;
-; 6                                               ; 1                           ;
-; 7                                               ; 0                           ;
-; 8                                               ; 0                           ;
-; 9                                               ; 0                           ;
-; 10                                              ; 1                           ;
-; 11                                              ; 1                           ;
+; 5                                               ; 1                           ;
+; 6                                               ; 2                           ;
 +-------------------------------------------------+-----------------------------+
 
 
 +---------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                       ;
 +---------------------------------------------+-----------------------------+
-; Number of Distinct Inputs  (Average = 9.00) ; Number of LABs  (Total = 4) ;
+; Number of Distinct Inputs  (Average = 5.80) ; Number of LABs  (Total = 5) ;
 +---------------------------------------------+-----------------------------+
 ; 0                                           ; 0                           ;
 ; 1                                           ; 1                           ;
 ; 2                                           ; 0                           ;
+<<<<<<< HEAD
 ; 3                                           ; 0                           ;
 ; 4                                           ; 0                           ;
 ; 5                                           ; 0                           ;
@@ -2611,6 +2762,16 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 13                                          ; 0                           ;
 ; 14                                          ; 0                           ;
 ; 15                                          ; 1                           ;
+=======
+; 3                                           ; 1                           ;
+; 4                                           ; 0                           ;
+; 5                                           ; 0                           ;
+; 6                                           ; 0                           ;
+; 7                                           ; 1                           ;
+; 8                                           ; 1                           ;
+; 9                                           ; 0                           ;
+; 10                                          ; 1                           ;
+>>>>>>> add-sensor-alt
 +---------------------------------------------+-----------------------------+
 
 
@@ -2671,9 +2832,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+
 ; Pin/Rules          ; IO_000001    ; IO_000002    ; IO_000003    ; IO_000004    ; IO_000005    ; IO_000006 ; IO_000007    ; IO_000008    ; IO_000009 ; IO_000010 ; IO_000011    ; IO_000012    ; IO_000013    ; IO_000014    ; IO_000015    ; IO_000018    ; IO_000019    ; IO_000020    ; IO_000021    ; IO_000022    ; IO_000023    ; IO_000024    ; IO_000026    ; IO_000027    ; IO_000045    ; IO_000046    ; IO_000047    ; IO_000033 ; IO_000034    ; IO_000042    ;
 +--------------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+
+<<<<<<< HEAD
 ; Total Pass         ; 133          ; 0            ; 133          ; 0            ; 0            ; 137       ; 133          ; 0            ; 137       ; 137       ; 0            ; 45           ; 0            ; 0            ; 59           ; 0            ; 45           ; 59           ; 0            ; 0            ; 36           ; 45           ; 0            ; 0            ; 0            ; 0            ; 0            ; 137       ; 0            ; 0            ;
 ; Total Unchecked    ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0            ;
 ; Total Inapplicable ; 4            ; 137          ; 4            ; 137          ; 137          ; 0         ; 4            ; 137          ; 0         ; 0         ; 137          ; 92           ; 137          ; 137          ; 78           ; 137          ; 92           ; 78           ; 137          ; 137          ; 101          ; 92           ; 137          ; 137          ; 137          ; 137          ; 137          ; 0         ; 137          ; 137          ;
+=======
+; Total Pass         ; 133          ; 0            ; 133          ; 0            ; 0            ; 137       ; 133          ; 0            ; 137       ; 137       ; 0            ; 45           ; 0            ; 0            ; 59           ; 0            ; 45           ; 59           ; 0            ; 0            ; 35           ; 45           ; 0            ; 0            ; 0            ; 0            ; 0            ; 137       ; 0            ; 0            ;
+; Total Unchecked    ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0            ;
+; Total Inapplicable ; 4            ; 137          ; 4            ; 137          ; 137          ; 0         ; 4            ; 137          ; 0         ; 0         ; 137          ; 92           ; 137          ; 137          ; 78           ; 137          ; 92           ; 78           ; 137          ; 137          ; 102          ; 92           ; 137          ; 137          ; 137          ; 137          ; 137          ; 0         ; 137          ; 137          ;
+>>>>>>> add-sensor-alt
 ; Total Fail         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0            ;
 ; CLOCKOUT           ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; KEY[1]             ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
@@ -2774,8 +2941,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; LEDR[15]           ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; LEDR[16]           ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; LEDR[17]           ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+<<<<<<< HEAD
 ; GPIO[0]            ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; GPIO[1]            ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+=======
+>>>>>>> add-sensor-alt
 ; GPIO[2]            ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; GPIO[3]            ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; GPIO[4]            ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
@@ -2810,6 +2980,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; GPIO[33]           ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; GPIO[34]           ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; GPIO[35]           ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+<<<<<<< HEAD
+=======
+; GPIO[0]            ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; GPIO[1]            ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+>>>>>>> add-sensor-alt
 ; KEY[0]             ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; clock_50           ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 +--------------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+
@@ -2856,8 +3031,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------+----------------------+-------------------+
 ; Source Clock(s) ; Destination Clock(s) ; Delay Added in ns ;
 +-----------------+----------------------+-------------------+
+<<<<<<< HEAD
 ; clock_50,I/O    ; clock_50             ; 9.3               ;
 ; clock_50        ; clock_50             ; 3.4               ;
+=======
+; clock_50,I/O    ; clock_50             ; 10.6              ;
+; clock_50        ; clock_50             ; 3.8               ;
+>>>>>>> add-sensor-alt
 +-----------------+----------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
 This will disable optimization of problematic paths and expose them for further analysis using the TimeQuest Timing Analyzer.
@@ -2868,6 +3048,7 @@ This will disable optimization of problematic paths and expose them for further 
 +---------------------------------------+---------------------------------------+-------------------+
 ; Source Register                       ; Destination Register                  ; Delay Added in ns ;
 +---------------------------------------+---------------------------------------+-------------------+
+<<<<<<< HEAD
 ; debouncer_pi:BOTAO_MENU|buttonPressed ; debouncer_pi:BOTAO_MENU|buttonPressed ; 3.311             ;
 ; KEY[0]                                ; debouncer_pi:BOTAO_MENU|counter[20]   ; 1.821             ;
 ; debouncer_pi:BOTAO_MENU|counter[22]   ; debouncer_pi:BOTAO_MENU|buttonPressed ; 1.350             ;
@@ -2893,6 +3074,33 @@ This will disable optimization of problematic paths and expose them for further 
 ; debouncer_pi:BOTAO_MENU|counter[0]    ; debouncer_pi:BOTAO_MENU|buttonPressed ; 1.350             ;
 ; debouncer_pi:BOTAO_MENU|counter[9]    ; debouncer_pi:BOTAO_MENU|buttonPressed ; 1.350             ;
 ; debouncer_pi:BOTAO_MENU|counter[20]   ; debouncer_pi:BOTAO_MENU|buttonPressed ; 1.350             ;
+=======
+; debouncer_pi:BOTAO_MENU|buttonPressed ; debouncer_pi:BOTAO_MENU|buttonPressed ; 3.804             ;
+; KEY[0]                                ; debouncer_pi:BOTAO_MENU|counter[0]    ; 1.657             ;
+; debouncer_pi:BOTAO_MENU|counter[22]   ; debouncer_pi:BOTAO_MENU|buttonPressed ; 1.406             ;
+; debouncer_pi:BOTAO_MENU|counter[19]   ; debouncer_pi:BOTAO_MENU|buttonPressed ; 1.406             ;
+; debouncer_pi:BOTAO_MENU|counter[18]   ; debouncer_pi:BOTAO_MENU|buttonPressed ; 1.406             ;
+; debouncer_pi:BOTAO_MENU|counter[21]   ; debouncer_pi:BOTAO_MENU|buttonPressed ; 1.406             ;
+; debouncer_pi:BOTAO_MENU|counter[17]   ; debouncer_pi:BOTAO_MENU|buttonPressed ; 1.406             ;
+; debouncer_pi:BOTAO_MENU|counter[15]   ; debouncer_pi:BOTAO_MENU|buttonPressed ; 1.406             ;
+; debouncer_pi:BOTAO_MENU|counter[16]   ; debouncer_pi:BOTAO_MENU|buttonPressed ; 1.406             ;
+; debouncer_pi:BOTAO_MENU|counter[13]   ; debouncer_pi:BOTAO_MENU|buttonPressed ; 1.406             ;
+; debouncer_pi:BOTAO_MENU|counter[12]   ; debouncer_pi:BOTAO_MENU|buttonPressed ; 1.406             ;
+; debouncer_pi:BOTAO_MENU|counter[14]   ; debouncer_pi:BOTAO_MENU|buttonPressed ; 1.406             ;
+; debouncer_pi:BOTAO_MENU|counter[11]   ; debouncer_pi:BOTAO_MENU|buttonPressed ; 1.406             ;
+; debouncer_pi:BOTAO_MENU|counter[10]   ; debouncer_pi:BOTAO_MENU|buttonPressed ; 1.406             ;
+; debouncer_pi:BOTAO_MENU|counter[8]    ; debouncer_pi:BOTAO_MENU|buttonPressed ; 1.406             ;
+; debouncer_pi:BOTAO_MENU|counter[7]    ; debouncer_pi:BOTAO_MENU|buttonPressed ; 1.406             ;
+; debouncer_pi:BOTAO_MENU|counter[6]    ; debouncer_pi:BOTAO_MENU|buttonPressed ; 1.406             ;
+; debouncer_pi:BOTAO_MENU|counter[5]    ; debouncer_pi:BOTAO_MENU|buttonPressed ; 1.406             ;
+; debouncer_pi:BOTAO_MENU|counter[4]    ; debouncer_pi:BOTAO_MENU|buttonPressed ; 1.406             ;
+; debouncer_pi:BOTAO_MENU|counter[3]    ; debouncer_pi:BOTAO_MENU|buttonPressed ; 1.406             ;
+; debouncer_pi:BOTAO_MENU|counter[2]    ; debouncer_pi:BOTAO_MENU|buttonPressed ; 1.406             ;
+; debouncer_pi:BOTAO_MENU|counter[1]    ; debouncer_pi:BOTAO_MENU|buttonPressed ; 1.406             ;
+; debouncer_pi:BOTAO_MENU|counter[0]    ; debouncer_pi:BOTAO_MENU|buttonPressed ; 1.406             ;
+; debouncer_pi:BOTAO_MENU|counter[9]    ; debouncer_pi:BOTAO_MENU|buttonPressed ; 1.406             ;
+; debouncer_pi:BOTAO_MENU|counter[20]   ; debouncer_pi:BOTAO_MENU|buttonPressed ; 1.406             ;
+>>>>>>> add-sensor-alt
 +---------------------------------------+---------------------------------------+-------------------+
 Note: This table only shows the top 25 path(s) that have the largest delay added for hold.
 
@@ -3347,6 +3555,7 @@ Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
+<<<<<<< HEAD
 Info (170192): Fitter placement operations ending: elapsed time is 00:00:08
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
@@ -3355,6 +3564,16 @@ Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were
     Info (170201): Optimizations that may affect the design's routability were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
 Info (11888): Total time spent on timing analysis during the Fitter is 0.20 seconds.
+=======
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:05
+Info (170193): Fitter routing operations beginning
+Info (170195): Router estimated average interconnect usage is 0% of the available device resources
+    Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X104_Y0 to location X115_Y11
+Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
+    Info (170201): Optimizations that may affect the design's routability were skipped
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
+Info (11888): Total time spent on timing analysis during the Fitter is 0.15 seconds.
+>>>>>>> add-sensor-alt
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -3362,8 +3581,11 @@ Info (334004): Delay annotation completed successfully
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Warning (169177): 37 pins must meet Intel FPGA requirements for 3.3-, 3.0-, and 2.5-V interfaces. For more information, refer to AN 447: Interfacing Cyclone IV E Devices with 3.3/3.0/2.5-V LVTTL/LVCMOS I/O Systems.
+<<<<<<< HEAD
     Info (169178): Pin GPIO[0] uses I/O standard 3.3-V LVTTL at AB22 File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
     Info (169178): Pin GPIO[1] uses I/O standard 3.3-V LVTTL at AC15 File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
+=======
+>>>>>>> add-sensor-alt
     Info (169178): Pin GPIO[2] uses I/O standard 3.3-V LVTTL at AB21 File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
     Info (169178): Pin GPIO[3] uses I/O standard 3.3-V LVTTL at Y17 File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
     Info (169178): Pin GPIO[4] uses I/O standard 3.3-V LVTTL at AC21 File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
@@ -3398,10 +3620,10 @@ Warning (169177): 37 pins must meet Intel FPGA requirements for 3.3-, 3.0-, and 
     Info (169178): Pin GPIO[33] uses I/O standard 3.3-V LVTTL at AH26 File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
     Info (169178): Pin GPIO[34] uses I/O standard 3.3-V LVTTL at AH23 File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
     Info (169178): Pin GPIO[35] uses I/O standard 3.3-V LVTTL at AG26 File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
+    Info (169178): Pin GPIO[0] uses I/O standard 3.3-V LVTTL at AB22 File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
+    Info (169178): Pin GPIO[1] uses I/O standard 3.3-V LVTTL at AC15 File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
     Info (169178): Pin clock_50 uses I/O standard 3.3-V LVTTL at Y2 File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 31
 Warning (169064): Following 36 pins have no output enable or a GND or VCC output enable - later changes to this connectivity may change fitting results
-    Info (169065): Pin GPIO[0] has a permanently disabled output enable File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
-    Info (169065): Pin GPIO[1] has a permanently disabled output enable File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
     Info (169065): Pin GPIO[2] has a permanently disabled output enable File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
     Info (169065): Pin GPIO[3] has a permanently disabled output enable File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
     Info (169065): Pin GPIO[4] has a permanently disabled output enable File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
@@ -3436,12 +3658,21 @@ Warning (169064): Following 36 pins have no output enable or a GND or VCC output
     Info (169065): Pin GPIO[33] has a permanently disabled output enable File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
     Info (169065): Pin GPIO[34] has a permanently disabled output enable File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
     Info (169065): Pin GPIO[35] has a permanently disabled output enable File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
+    Info (169065): Pin GPIO[0] has a permanently enabled output enable File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
+    Info (169065): Pin GPIO[1] has a permanently enabled output enable File: C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd Line: 35
 Info (144001): Generated suppressed messages file C:/Users/augus/Documents/projetointegrador_II/D_7SEG/output_files/D_7SEG.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 401 warnings
+<<<<<<< HEAD
     Info: Peak virtual memory: 1314 megabytes
     Info: Processing ended: Tue Oct 03 20:37:41 2017
     Info: Elapsed time: 00:00:31
     Info: Total CPU time (on all processors): 00:00:30
+=======
+    Info: Peak virtual memory: 1311 megabytes
+    Info: Processing ended: Thu Sep 28 18:33:11 2017
+    Info: Elapsed time: 00:00:19
+    Info: Total CPU time (on all processors): 00:00:26
+>>>>>>> add-sensor-alt
 
 
 +----------------------------+
