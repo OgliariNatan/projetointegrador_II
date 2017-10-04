@@ -1,0 +1,815 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ro-ro" lang="ro-ro" dir="ltr" >
+        <head>
+                  <base href="http://www.bobtech.ro/tutoriale/componente-electronice/57-lcd-16x2-simulator" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="robots" content="index,follow,noodp,noydir" />
+  <meta name="keywords" content="LCD, 16x2, simulator, simulator LCD, CGRAM, LCD alfanumeric, HD44780" />
+  <meta name="rights" content="Copyright (C) 2001-2014 Radu Igret. Toate drepturile rezervate" />
+  <meta name="author" content="Radu" />
+  <meta name="description" content="Simulator JavaScript afisaj LCD alfanumeric cu 16x2 caractere si controler HD44780 sau compatibil. Control manual sau prin script-uri, foarte util pentru depanarea softului in sisteme cu microcontroler si LCD" />
+  <meta name="generator" content="BobTech" />
+  <title>Simulator LCD 16x2</title>
+  <link href="/templates/bobtech/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+  <link rel="stylesheet" href="/media/system/css/modal.css" type="text/css" />
+  <link rel="stylesheet" href="/plugins/content/phocadownload/assets/css/phocadownload.css" type="text/css" />
+  <link rel="stylesheet" href="/plugins/content/codehighlighter/syntaxhighlighter2/styles/shCore.css" type="text/css" />
+  <link rel="stylesheet" href="/plugins/content/codehighlighter/syntaxhighlighter2/styles/shThemeRDark.css" type="text/css" />
+  <link rel="stylesheet" href="/plugins/content/extravote/scripts/extravote.css" type="text/css" />
+  <script src="/media/system/js/core.js" type="text/javascript"></script>
+  <script src="/media/system/js/mootools-core.js" type="text/javascript"></script>
+  <script src="/media/system/js/caption.js" type="text/javascript"></script>
+  <script src="/media/system/js/modal.js" type="text/javascript"></script>
+  <script src="/plugins/content/codehighlighter/syntaxhighlighter2/scripts/shCore.js" type="text/javascript"></script>
+  <script src="/plugins/content/codehighlighter/syntaxhighlighter2/scripts/shBrushBash.js" type="text/javascript"></script>
+  <script src="/plugins/content/codehighlighter/syntaxhighlighter2/scripts/shBrushCpp.js" type="text/javascript"></script>
+  <script src="/plugins/content/codehighlighter/syntaxhighlighter2/scripts/shBrushCSharp.js" type="text/javascript"></script>
+  <script src="/plugins/content/codehighlighter/syntaxhighlighter2/scripts/shBrushCss.js" type="text/javascript"></script>
+  <script src="/plugins/content/codehighlighter/syntaxhighlighter2/scripts/shBrushJava.js" type="text/javascript"></script>
+  <script src="/plugins/content/codehighlighter/syntaxhighlighter2/scripts/shBrushJScript.js" type="text/javascript"></script>
+  <script src="/plugins/content/codehighlighter/syntaxhighlighter2/scripts/shBrushPhp.js" type="text/javascript"></script>
+  <script src="/plugins/content/codehighlighter/syntaxhighlighter2/scripts/shBrushPlain.js" type="text/javascript"></script>
+  <script src="/plugins/content/codehighlighter/syntaxhighlighter2/scripts/shBrushPython.js" type="text/javascript"></script>
+  <script src="/plugins/content/codehighlighter/syntaxhighlighter2/scripts/shBrushRuby.js" type="text/javascript"></script>
+  <script src="/plugins/content/codehighlighter/syntaxhighlighter2/scripts/shBrushSql.js" type="text/javascript"></script>
+  <script src="/plugins/content/codehighlighter/syntaxhighlighter2/scripts/shBrushXml.js" type="text/javascript"></script>
+  <script src="/plugins/content/extravote/scripts/extravote.js" type="text/javascript"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript"></script>
+  <script src="http://www.bobtech.ro/modules/mod_udjacomments/media/js/mod_udjacomments.js" type="text/javascript"></script>
+  <script src="/media/system/js/mootools-more.js" type="text/javascript"></script>
+  <script type="text/javascript">
+
+		window.addEvent('domready', function() {
+
+			SqueezeBox.initialize({});
+			SqueezeBox.assign($$('a.modal'), {
+				parse: 'rel'
+			});
+		});
+		   SyntaxHighlighter.config.clipboardSwf = "/plugins/content/codehighlighter/syntaxhighlighter2/scripts/clipboard.swf";
+		   SyntaxHighlighter.all();
+		 var sfolder = '';
+var extravote_text=Array('Your browser does not support AJAX!','Se incarca ...','Multumesc pentru vot!','Trebuie <a href=\/login\>sa te autentifici</a> ca sa votezi','Ai votat deja acest articol','voturi','vot');jQuery.TEXT = { REPLY_TO_COMMENT : 'Raspuns la comentariu ...' };var commentPost_text='<h3 class="commentsTitle">Adauga un comentariu ...</h3><fieldset class="commentFields"><p class="textboxWrapper"><label class="commentLabel" for="txtUdjaName">Nume<span class="required">*</span></label><input type="text" class="inputbox mandatory" name="txtUdjaName" id="txtUdjaName" value=""  /></p><div class="clear"></div><p class="textboxWrapper"><label class="commentLabel" for="txtUdjaEmail">Email<span class="required">*</span></label><input type="text" class="inputbox mandatory" name="txtUdjaEmail" id="txtUdjaEmail" value="" /><span> (adresa de email NU va fi facuta publica)</span></p><div class="clear"></div><p class="textboxWrapper"><label class="commentLabel" for="txtUdjaWebsite">Website</label><input type="text" class="inputbox" name="txtUdjaWebsite" id="txtUdjaWebsite" value="" /></p><div class="clear"></div><p class="textareaWrapper"><label class="commentLabel" for="txtUdjaComment">Comentariu<span class="required">*</span></label><div class="clear"></div><textarea rows="10" cols="70"type="text" class="inputbox mandatory" name="txtUdjaComment" id="txtUdjaComment"></textarea></p><div class="clear"></div><p class="checkboxWrapper"><input type="checkbox" class="checkbox" name="txtUdjaNotifications" id="txtUdjaNotifications" value="1" /><label for="txtUdjaNotifications">Vreau sa primesc notificari la comentarii noi pe aceasta pagina</label></p><div class="clear"></div><p class="checkboxWrapper"><input type="checkbox" class="checkbox" name="txtUdjaSignup" id="txtUdjaSignup" value="1" /><label for="txtUdjaSignup">Vreau sa ma inscriu la newsletter</label></p><div class="clear"></div><p class="submitButtonWrapper"><input type="hidden" id="hdnIsReply" name="hdnIsReply" value="0" /><input type="hidden" name="hdnCommentForm" value="1" /><input type="submit" class="button" name="btnUdjaSubmit" id="btnUdjaSubmit" value="Trimite" /></p></fieldset>';var commentForm_text='name="commentsform" id="commentsform" action="http://www.bobtech.ro/tutoriale/componente-electronice/57-lcd-16x2-simulator"';var commentCount_text='1 comentariu';
+		   SyntaxHighlighter.config.clipboardSwf = "/plugins/content/codehighlighter/syntaxhighlighter2/scripts/clipboard.swf";
+		   SyntaxHighlighter.all();
+		 var sfolder = '';
+var extravote_text=Array('Your browser does not support AJAX!','Se incarca ...','Multumesc pentru vot!','Trebuie <a href=\/login\>sa te autentifici</a> ca sa votezi','Ai votat deja acest articol','voturi','vot');
+		window.addEvent('domready', function() {
+			$$('.hasTip').each(function(el) {
+				var title = el.get('title');
+				if (title) {
+					var parts = title.split('::', 2);
+					el.store('tip:title', parts[0]);
+					el.store('tip:text', parts[1]);
+				}
+			});
+			var JTooltips = new Tips($$('.hasTip'), { maxTitleChars: 50, fixed: false});
+		});
+		window.addEvent('domready', function() {
+
+			SqueezeBox.initialize({});
+			SqueezeBox.assign($$('a.modal'), {
+				parse: 'rel'
+			});
+		});
+		   SyntaxHighlighter.config.clipboardSwf = "/plugins/content/codehighlighter/syntaxhighlighter2/scripts/clipboard.swf";
+		   SyntaxHighlighter.all();
+		 var sfolder = '';
+var extravote_text=Array('Your browser does not support AJAX!','Se incarca ...','Multumesc pentru vot!','Trebuie <a href=\/login\>sa te autentifici</a> ca sa votezi','Ai votat deja acest articol','voturi','vot');jQuery.TEXT = { REPLY_TO_COMMENT : 'Raspuns la comentariu ...' };var commentPost_text='<h3 class="commentsTitle">Adauga un comentariu ...</h3><fieldset class="commentFields"><p class="textboxWrapper"><label class="commentLabel" for="txtUdjaName">Nume<span class="required">*</span></label><input type="text" class="inputbox mandatory" name="txtUdjaName" id="txtUdjaName" value=""  /></p><div class="clear"></div><p class="textboxWrapper"><label class="commentLabel" for="txtUdjaEmail">Email<span class="required">*</span></label><input type="text" class="inputbox mandatory" name="txtUdjaEmail" id="txtUdjaEmail" value="" /><span> (adresa de email NU va fi facuta publica)</span></p><div class="clear"></div><p class="textboxWrapper"><label class="commentLabel" for="txtUdjaWebsite">Website</label><input type="text" class="inputbox" name="txtUdjaWebsite" id="txtUdjaWebsite" value="" /></p><div class="clear"></div><p class="textareaWrapper"><label class="commentLabel" for="txtUdjaComment">Comentariu<span class="required">*</span></label><div class="clear"></div><textarea rows="10" cols="70"type="text" class="inputbox mandatory" name="txtUdjaComment" id="txtUdjaComment"></textarea></p><div class="clear"></div><p class="checkboxWrapper"><input type="checkbox" class="checkbox" name="txtUdjaNotifications" id="txtUdjaNotifications" value="1" /><label for="txtUdjaNotifications">Vreau sa primesc notificari la comentarii noi pe aceasta pagina</label></p><div class="clear"></div><p class="checkboxWrapper"><input type="checkbox" class="checkbox" name="txtUdjaSignup" id="txtUdjaSignup" value="1" /><label for="txtUdjaSignup">Vreau sa ma inscriu la newsletter</label></p><div class="clear"></div><p class="submitButtonWrapper"><input type="hidden" id="hdnIsReply" name="hdnIsReply" value="0" /><input type="hidden" name="hdnCommentForm" value="1" /><input type="submit" class="button" name="btnUdjaSubmit" id="btnUdjaSubmit" value="Trimite" /></p></fieldset>';var commentForm_text='name="commentsform" id="commentsform" action="http://www.bobtech.ro/tutoriale/componente-electronice/45-codculori-calculator-online"';var commentCount_text='3 comentarii';
+		   SyntaxHighlighter.config.clipboardSwf = "/plugins/content/codehighlighter/syntaxhighlighter2/scripts/clipboard.swf";
+		   SyntaxHighlighter.all();
+		 var sfolder = '';
+var extravote_text=Array('Your browser does not support AJAX!','Se incarca ...','Multumesc pentru vot!','Trebuie <a href=\/login\>sa te autentifici</a> ca sa votezi','Ai votat deja acest articol','voturi','vot');
+		window.addEvent('domready', function() {
+			$$('.hasTip').each(function(el) {
+				var title = el.get('title');
+				if (title) {
+					var parts = title.split('::', 2);
+					el.store('tip:title', parts[0]);
+					el.store('tip:text', parts[1]);
+				}
+			});
+			var JTooltips = new Tips($$('.hasTip'), { maxTitleChars: 50, fixed: false});
+		});
+		   SyntaxHighlighter.config.clipboardSwf = "/plugins/content/codehighlighter/syntaxhighlighter2/scripts/clipboard.swf";
+		   SyntaxHighlighter.all();
+		 function keepAlive() {	var myAjax = new Request({method: "get", url: "index.php"}).send();} window.addEvent("domready", function(){ keepAlive.periodical(3540000); });
+  </script>
+  <meta property="fb:admins" content="100002617778195"/>
+<meta property="fb:app_id" content="515802288437599"/>
+
+                <link rel="stylesheet" href="/templates/system/css/system.css" type="text/css" />
+                <link rel="stylesheet" href="/templates/bobtech/css/position.css" type="text/css" media="screen,projection" />
+                <link rel="stylesheet" href="/templates/bobtech/css/layout.css" type="text/css" media="screen,projection" />
+                <link rel="stylesheet" href="/templates/bobtech/css/typo.css" type="text/css" media="screen,projection" />
+                <link rel="stylesheet" href="/templates/bobtech/css/print.css" type="text/css" media="Print" />
+                <link rel="stylesheet" href="/templates/bobtech/css/general.css" type="text/css" />
+                <link rel="stylesheet" href="/templates/bobtech/css/general_mozilla.css" type="text/css" />
+                <link rel="stylesheet" href="/templates/bobtech/css/personal.css" type="text/css" />
+                                <!--[if lte IE 6]>
+                <link href="/templates/bobtech/css/ieonly.css" rel="stylesheet" type="text/css" />
+                <![endif]-->
+                <!--[if IE 7]>
+                <link href="/templates/bobtech/css/ie7only.css" rel="stylesheet" type="text/css" />
+                <![endif]-->
+                <script type="text/javascript" src="/templates/bobtech/javascript/ja.js"></script>
+        <script type="text/javascript">
+          var _gaq = _gaq || [];
+          var visitorID = 0;
+          _gaq.push(['_setAccount', 'UA-3086403-1']);
+          _gaq.push(function() {
+            var tracker = _gat._getTrackers()[0];
+            visitorID = tracker._visitCode();
+            _gaq.push(['_setCustomVar', 1,'Visitor ID', visitorID, 1]);
+            _gaq.push(['_trackPageview']); 
+           });
+       
+         
+        </script>
+        <!-- Google Analytics Social Button Tracking -->
+        <script type="text/javascript" src="/ga_social_tracking.js"></script>
+        <script>
+            (function(f,b,g){
+              var xo=g.prototype.open,xs=g.prototype.send,c;
+              f.hj=f.hj||function(){(f.hj.q=f.hj.q||[]).push(arguments)};
+              f._hjSettings={hjid:1892, hjsv:2};
+              function ls(){f.hj.documentHtml=b.documentElement.outerHTML;c=b.createElement("script");c.async=1;c.src="//static.hotjar.com/c/hotjar-1892.js?sv=2";b.getElementsByTagName("head")[0].appendChild(c);}
+              if(b.readyState==="interactive"||b.readyState==="complete"||b.readyState==="loaded"){ls();}else{if(b.addEventListener){b.addEventListener("DOMContentLoaded",ls,false);}}
+              if(!f._hjPlayback && b.addEventListener){
+                g.prototype.open=function(l,j,m,h,k){this._u=j;xo.call(this,l,j,m,h,k)};
+                g.prototype.send=function(e){var j=this;function h(){if(j.readyState===4){f.hj("_xhr",j._u,j.status,j.response)}}this.addEventListener("readystatechange",h,false);xs.call(this,e)};
+              }
+            })(window,document,window.XMLHttpRequest);
+        </script>
+
+</head>
+
+<body>
+  <!-- Facebook async loading of JSAPI -->
+  <div id="fb-root"></div>
+  <script type="text/javascript">
+    window.fbAsyncInit = function() {
+      FB.init({appId: '515802288437599', status: true, cookie: true, xfbml: true, channelUrl: 'http://www.bobtech.ro/channel.html'});
+      _ga.trackFacebook();
+    };
+
+    // Facebook async loading.
+    (function() {
+      var e = document.createElement('script'); e.async = true;
+      e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+      document.getElementById('fb-root').appendChild(e);
+    }());
+  </script>
+  <div id="all">
+     <div id="back">
+          <div id="logintools" class="wrap">
+                    
+<ul class="menu">
+<li class="item-284"><a onClick="_gaq.push(['_trackEvent', 'Layout', 'MenuClick', 'English']);" class="english-flag" href="http://www.howtoembed.com" target="_blank" >English</a></li></ul>
+<div class="logintext">
+	<a rel="nofollow" class="logintext" href="/contul-meu?view=login" onclick="this.blur();if(showBox('loginbox','modlgn-username',this)) _gaq.push(['_trackEvent', 'Layout', 'LoginOpenClick', 'Simulator LCD 16x2']); return false;" title="">Login</a>
+</div>
+<div id="loginbox">
+<form action="/tutoriale/componente-electronice" method="post" id="login-form" >
+	<div class="pretext">
+		</div>
+	<fieldset class="userdata">
+	<p id="form-login-username">
+		<label for="modlgn-username">Utilizator</label>
+		<input id="modlgn-username" type="text" name="username" class="inputbox"  size="18" />
+	</p>
+	<p id="form-login-password">
+		<label for="modlgn-passwd">Parola</label>
+		<input id="modlgn-passwd" type="password" name="password" class="inputbox" size="18"  />
+	</p>
+		<p id="form-login-remember">
+		<label for="modlgn-remember">Ţine-mă minte</label>
+		<input id="modlgn-remember" type="checkbox" name="remember" class="inputbox" value="yes"/>
+	</p>
+		<input type="submit" name="Submit" class="button" value="Intrare" />
+	<input type="hidden" name="option" value="com_users" />
+	<input type="hidden" name="task" value="user.login" />
+	<input type="hidden" name="return" value="aW5kZXgucGhwP0l0ZW1pZD0xMTI=" />
+	<input type="hidden" name="4d958c2682f523a250764d67cbbc7e5c" value="1" />	</fieldset>
+	<ul>
+		<li>
+			<a rel="nofollow"  href="/contul-meu?view=reset">
+			Ai uitat parola?</a>
+		</li>
+		<li>
+			<a rel="nofollow"  href="/contul-meu?view=remind">
+			Ai uitat utilizatorul?</a>
+		</li>
+			</ul>
+	<div class="posttext">
+		</div>
+</form>
+</div>
+
+          </div>
+          <div id="header" class="wrap">
+               <div id="banners">
+                    <div class="bannergroup">
+
+	<div class="banneritem">
+										<div class="fb-like-box" data-href="http://www.facebook.com/bobtech.ro" data-width="210" data-show-faces="false" data-stream="false" data-header="false"></div>				<div class="clr"></div>
+	</div>
+
+</div>
+
+
+               </div>
+               <a id="logo" title="BobTech - aplicatii cu microcontrolere" href="http://www.bobtech.ro">
+                  <h1 class="logo">BobTech</h1>
+                  <h2 class="logo">aplicatii cu microcontrolere</h2>
+                </a>
+          </div><!-- end header -->
+          <div id="top">
+               <form action="/tutoriale/componente-electronice" method="post">
+	<div class="search">
+		<label for="mod-search-searchword">Căutare...</label><input name="searchword" id="mod-search-searchword" maxlength="20"  class="inputbox" type="text" size="20" value="Căutare..."  onblur="if (this.value=='') this.value='Căutare...';" onfocus="if (this.value=='Căutare...') this.value='';" />	<input type="hidden" name="task" value="search" />
+	<input type="hidden" name="option" value="com_search" />
+	<input type="hidden" name="Itemid" value="111" />
+	</div>
+</form>
+
+<ul class="menu" id="topmenu">
+<li class="item-112"><a onClick="_gaq.push(['_trackEvent', 'Layout', 'MenuClick', 'home']);" href="/" >home</a></li><li class="item-113 parent"><a onClick="_gaq.push(['_trackEvent', 'Layout', 'MenuClick', 'proiecte']);" href="/proiecte" >proiecte</a></li><li class="item-115 active parent"><a onClick="_gaq.push(['_trackEvent', 'Layout', 'MenuClick', 'tutoriale']);" href="/tutoriale" >tutoriale</a></li><li class="item-258 parent"><a onClick="_gaq.push(['_trackEvent', 'Layout', 'MenuClick', 'review']);" href="/review" >review</a></li><li class="item-116 parent"><a onClick="_gaq.push(['_trackEvent', 'Layout', 'MenuClick', 'download']);" href="/download" >download</a></li><li class="item-117"><a onClick="_gaq.push(['_trackEvent', 'Layout', 'MenuClick', 'contact']);" href="/contact" >contact</a></li><li class="item-118"><a onClick="_gaq.push(['_trackEvent', 'Layout', 'MenuClick', 'cauta']);" class="hide" href="/cauta" >cauta</a></li></ul>
+
+          </div>
+
+          <div id="contentarea" class="wrap">
+                                    <div class="left1 leftbigger" id="leftcol">
+                          <div class="moduletable-box-gray">
+ <h3><span
+	class="backh"><span class="backh2"><span class="backh3">Tutoriale</span></span></span></h3>
+ <ul class="categories-module-box-gray">
+	<li >   <h4>
+		<a onClick="_gaq.push(['_trackEvent', 'Layout', 'CategoryClick', 'Raspberry Pi']);" href="/tutoriale/raspberry-pi">
+		Raspberry Pi</a>
+   </h4>
+
+		 </li>
+	<li >   <h4>
+		<a onClick="_gaq.push(['_trackEvent', 'Layout', 'CategoryClick', 'Microcontrolere']);" href="/tutoriale/microcontrolere">
+		Microcontrolere</a>
+   </h4>
+
+		 </li>
+	<li >   <h4>
+		<a onClick="_gaq.push(['_trackEvent', 'Layout', 'CategoryClick', 'Porturi si Interfete']);" href="/tutoriale/porturi-si-interfete">
+		Porturi si Interfete</a>
+   </h4>
+
+		 </li>
+	<li >   <h4>
+		<a onClick="_gaq.push(['_trackEvent', 'Layout', 'CategoryClick', 'Componente Electronice']);" href="/tutoriale/componente-electronice">
+		Componente Electronice</a>
+   </h4>
+
+		 </li>
+	<li >   <h4>
+		<a onClick="_gaq.push(['_trackEvent', 'Layout', 'CategoryClick', 'Utilizare aplicatii']);" href="/tutoriale/utilizare-aplicatii">
+		Utilizare aplicatii</a>
+   </h4>
+
+		 </li>
+</ul>
+</div>
+<div class="moduletable-left">
+ <h3><span
+	class="backh"><span class="backh2"><span class="backh3">Articole similare</span></span></span></h3>
+ 
+<ul class="relatedItems-left">
+<li>
+	<div class="ItemTitle">
+				<a href="/proiecte/scule-de-laborator/13-terminal-lcd" onClick="_gaq.push(['_trackEvent', 'Related', 'TitleClick', 'Terminal LCD RS232 si IR']);">Terminal LCD RS232 si IR</a>
+	</div>
+		<div class="ItemImage"><a href="/proiecte/scule-de-laborator/13-terminal-lcd" onClick="_gaq.push(['_trackEvent', 'Related', 'ImageClick', 'Terminal LCD RS232 si IR']);"><img src="/modules/mod_related_items/timthumb.php?src=images/tlcd.jpg&w=60&zc=1" alt="Terminal LCD RS232 si IR"></a></div>
+	<div class="ItemIntrotext"><span>Sistem cu microcontroler PIC, care primeste caractere pe ser...</span></div>
+	<div class="ItemSeparator"></div>
+</li>
+<li>
+	<div class="ItemTitle">
+				<a href="/tutoriale/microcontrolere/65-cum-comanzi-un-lcd-alfanumeric" onClick="_gaq.push(['_trackEvent', 'Related', 'TitleClick', 'Cum controlezi un LCD alfanumeric - Tutorial']);">Cum controlezi un LCD alfanumeric - Tutorial</a>
+	</div>
+		<div class="ItemImage"><a href="/tutoriale/microcontrolere/65-cum-comanzi-un-lcd-alfanumeric" onClick="_gaq.push(['_trackEvent', 'Related', 'ImageClick', 'Cum controlezi un LCD alfanumeric - Tutorial']);"><img src="/modules/mod_related_items/timthumb.php?src=images/users/admin/lcdtutorial/lcd16x2.jpg&w=60&zc=1" alt="Cum controlezi un LCD alfanumeric - Tutorial"></a></div>
+	<div class="ItemIntrotext"><span>
+Afisajele LCD sunt de doua tipuri: LCD alfanumeric si LCD ...</span></div>
+	<div class="ItemSeparator"></div>
+</li>
+<li>
+	<div class="ItemTitle">
+				<a href="/download/calcule-si-formule/80-simulator-circuite-electronice-online" onClick="_gaq.push(['_trackEvent', 'Related', 'TitleClick', 'Simulator circuite electrice online']);">Simulator circuite electrice online</a>
+	</div>
+		<div class="ItemImage"><a href="/download/calcule-si-formule/80-simulator-circuite-electronice-online" onClick="_gaq.push(['_trackEvent', 'Related', 'ImageClick', 'Simulator circuite electrice online']);"><img src="/modules/mod_related_items/timthumb.php?src=images/users/admin/everycircuit/dcaclab.jpg&w=60&zc=1" alt="Simulator circuite electrice online"></a></div>
+	<div class="ItemIntrotext"><span>DCACLab este un simulator online pentru circuite AC/DC. Cons...</span></div>
+	<div class="ItemSeparator"></div>
+</li>
+</ul>
+
+</div>
+
+                     </div><!-- end navi -->
+               
+               
+               <div id="wrapper2" >
+
+                                        <div id="breadcrumbs">
+                         
+	<div class="breadcrumbs">
+		<a href="/" class="pathway">home</a> &gt; <a href="/tutoriale" class="pathway">tutoriale</a> &gt; <a href="/tutoriale/componente-electronice" class="pathway">Componente Electronice</a> &gt; <span>Codul culorilor rezistente - Calculator online</span>	</div>
+
+
+                    </div>
+                                        
+                    <div id="main">
+                                                                           
+<div id="system-message-container">
+</div>
+                         
+<div class="item-page">
+		<h1 class="title">
+								<a href="/tutoriale/componente-electronice/57-lcd-16x2-simulator">
+						Simulator LCD 16x2</a>
+						</h1>
+
+
+		<ul class="actions">
+					<li class="fbshare-icon"><a target="_blank" href="http://www.facebook.com/sharer.php?u=http://www.bobtech.ro/tutoriale/componente-electronice/57-lcd-16x2-simulator" title="facebook share" onclick="window.open('http://www.facebook.com/sharer.php?u=http://www.bobtech.ro/tutoriale/componente-electronice/57-lcd-16x2-simulator','facebookshare','width=500,height=400,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-200)+'');_gaq.push(['_trackEvent', 'FacebookShare', 'ArticleTopClick', 'Simulator LCD 16x2']);return false;"></a></li>
+			<li class="twittershare-icon"><a target="_blank" href="http://twitter.com/home?status=Simulator LCD 16x2 http://www.bobtech.ro/tutoriale/componente-electronice/57-lcd-16x2-simulator" title="twitter share" onclick="window.open('http://twitter.com/home?status=Simulator LCD 16x2 http://www.bobtech.ro/tutoriale/componente-electronice/57-lcd-16x2-simulator','twittershare','width=500,height=400,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-200)+'');_gaq.push(['_trackEvent', 'TwitterShare', 'ArticleTopClick', 'Simulator LCD 16x2']);return false;"></a></li>
+			<li class="gplusshare-icon"><a target="_blank" href="https://m.google.com/app/plus/x/?v=compose&content=Simulator LCD 16x2 http://www.bobtech.ro/tutoriale/componente-electronice/57-lcd-16x2-simulator" title="google plus share" onclick="window.open('https://m.google.com/app/plus/x/?v=compose&content=Simulator LCD 16x2 http://www.bobtech.ro/tutoriale/componente-electronice/57-lcd-16x2-simulator','gplusshare','width=500,height=400,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-200)+'');_gaq.push(['_trackEvent', 'GooglePlusShare', 'ArticleTopClick', 'Simulator LCD 16x2']);return false;"></a></li>
+			<li class="email-icon"><a href="/component/mailto/?tmpl=component&amp;template=bobtech&amp;link=115ccb8874b753e89404a3d9a7612757315d38aa" title="E-mail" onclick="window.open(this.href,'win2','width=400,height=350,menubar=yes,resizable=yes'); return false;"><img src="/media/system/images/emailButton.png" alt="E-mail"  /></a></li>
+												<li class="print-icon">
+						<a href="/tutoriale/componente-electronice/57-lcd-16x2-simulator?tmpl=component&amp;print=1&amp;layout=default&amp;page=" title="Print" onclick="window.open(this.href,'win2','status=no,toolbar=no,scrollbars=yes,titlebar=no,menubar=no,resizable=yes,width=640,height=480,directories=no,location=no'); return false;" rel="nofollow"><img src="/media/system/images/printButton.png" alt="Print"  /></a>				</li>
+				
+								</ul>
+
+	
+	
+
+ <ul class="article-info">
+	<li class="created">
+		07 Ianuarie 2012	</li>
+	<li class="createdby">
+        ,&nbsp;
+				
+							autor Dincer Aydin				</li>
+	
+    <li class="itemrating"><span class="ratingtext">Rating</span><span class="extravote-container">
+  <ul class="extravote-stars">
+    <li id="rating_57_x" class="current-rating" style="width:81%;"></li>
+    <li><a rel="nofollow" href="javascript:void(null)" onclick="_gaq.push(['_trackEvent', 'Rating', 'Rate1Click', 'Simulator LCD 16x2']); javascript:JVXVote(57,1,98,24,'x',1);" title="1 LED" class="ev-one-star">1</a></li>
+    <li><a rel="nofollow" href="javascript:void(null)" onclick="_gaq.push(['_trackEvent', 'Rating', 'Rate2Click', 'Simulator LCD 16x2']); javascript:JVXVote(57,2,98,24,'x',1);" title="2 LED-uri" class="ev-two-stars">2</a></li>
+    <li><a rel="nofollow" href="javascript:void(null)" onclick="_gaq.push(['_trackEvent', 'Rating', 'Rate3Click', 'Simulator LCD 16x2']); javascript:JVXVote(57,3,98,24,'x',1);" title="3 LED-uri" class="ev-three-stars">3</a></li>
+    <li><a rel="nofollow" href="javascript:void(null)" onclick="_gaq.push(['_trackEvent', 'Rating', 'Rate4Click', 'Simulator LCD 16x2']); javascript:JVXVote(57,4,98,24,'x',1);" title="4 LED-uri" class="ev-four-stars">4</a></li>
+    <li><a rel="nofollow" href="javascript:void(null)" onclick="_gaq.push(['_trackEvent', 'Rating', 'Rate5Click', 'Simulator LCD 16x2']); javascript:JVXVote(57,5,98,24,'x',1);" title="5 LED-uri" class="ev-five-stars">5</a></li>
+  </ul>
+</span>
+  <span id="extravote_57_x" class="extravote-count">24 voturi</span>
+
+<span class="itemcommentscount"><a class="itemcommentslink" href="/tutoriale/componente-electronice/57-lcd-16x2-simulator#comments" title="1 comentariu">1 comentariu</a></span></li>
+	
+ </ul>
+<div class="clr"></div>
+
+
+
+<script src="/templates/bobtech/javascript/chartable.js" type="text/javascript"></script>
+<script src="/templates/bobtech/javascript/lcd.js" type="text/javascript"></script>
+<script src="/templates/bobtech/javascript/misc.js" type="text/javascript"></script>
+<script src="/templates/bobtech/javascript/dispscript.js" type="text/javascript"></script>
+<form action="" name="ctrl">
+    <div align="left">
+        <table style="width: 200px; background-color: #f4f4f4; padding: 10px;" border="0" cellpadding="4" cellspacing="4">
+            <tbody>
+                <tr>
+                    <td>
+                        <div align="center">
+                            <table border="0" cellpadding="3" cellspacing="2" align="center">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <table bgcolor="#00ff63" border="0" cellpadding="0" cellspacing="0">
+                                                <tbody>
+                                                    <tr>
+                                                        <td rowspan="3"><img class="nothumb" src="/images/users/admin/lcdsimulator/left.jpg" height="164" width="32" /></td>
+                                                        <td><img class="nothumb" src="/images/users/admin/lcdsimulator/top.jpg" height="46" width="262" align="top" /></td>
+                                                        <td rowspan="3"><img class="nothumb" src="/images/users/admin/lcdsimulator/right.jpg" height="164" width="29" /></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <table bgcolor="#00ff66" border="0" cellpadding="1" cellspacing="2">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <table border="0" cellpadding="0" cellspacing="0" align="center">
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td colspan="16"><img class="nothumb" name="p0" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p8" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p16" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p24" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p32" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p40" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p48" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p56" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p64" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p72" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p80" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p88" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p96" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p104" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p112" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p120" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /></td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td colspan="16"><img class="nothumb" name="p1" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p9" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p17" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p25" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p33" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p41" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p49" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p57" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p65" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p73" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p81" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p89" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p97" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p105" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p113" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p121" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /></td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td colspan="16"><img class="nothumb" name="p2" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p10" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p18" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p26" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p34" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p42" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p50" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p58" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p66" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p74" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p82" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p90" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p98" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p106" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p114" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p122" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /></td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td colspan="16"><img class="nothumb" name="p3" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p11" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p19" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p27" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p35" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p43" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p51" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p59" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p67" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p75" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p83" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p91" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p99" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p107" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p115" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p123" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /></td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td colspan="16"><img class="nothumb" name="p4" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p12" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p20" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p28" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p36" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p44" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p52" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p60" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p68" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p76" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p84" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p92" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p100" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p108" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p116" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p124" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /></td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td colspan="16"><img class="nothumb" name="p5" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p13" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p21" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p29" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p37" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p45" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p53" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p61" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p69" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p77" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p85" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p93" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p101" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p109" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p117" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p125" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /></td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td colspan="16"><img class="nothumb" name="p6" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p14" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p22" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p30" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p38" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p46" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p54" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p62" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p70" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p78" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p86" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p94" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p102" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p110" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p118" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p126" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /></td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td colspan="16"><img class="nothumb" name="p7" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p15" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p23" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p31" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p39" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p47" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p55" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p63" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p71" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p79" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p87" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p95" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p103" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p111" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p119" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /><img class="nothumb" name="p127" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /></td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td height="4"></td>
+                                                                                        <td height="4"></td>
+                                                                                        <td height="4"></td>
+                                                                                        <td height="4"></td>
+                                                                                        <td height="4"></td>
+                                                                                        <td height="4"></td>
+                                                                                        <td height="4"></td>
+                                                                                        <td height="4"></td>
+                                                                                        <td height="4"></td>
+                                                                                        <td height="4"></td>
+                                                                                        <td height="4"></td>
+                                                                                        <td height="4"></td>
+                                                                                        <td height="4"></td>
+                                                                                        <td height="4"></td>
+                                                                                        <td height="4"></td>
+                                                                                        <td height="4"></td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td colspan="16"><img class="nothumb" name="p128" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p136" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p144" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p152" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p160" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p168" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p176" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p184" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p192" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p200" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p208" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p216" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p224" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p232" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p240" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p248" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /></td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td colspan="16"><img class="nothumb" name="p129" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p137" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p145" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p153" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p161" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p169" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p177" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p185" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p193" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p201" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p209" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p217" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p225" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p233" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p241" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p249" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /></td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td colspan="16"><img class="nothumb" name="p130" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p138" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p146" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p154" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p162" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p170" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p178" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p186" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p194" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p202" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p210" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p218" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p226" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p234" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p242" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p250" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /></td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td colspan="16"><img class="nothumb" name="p131" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p139" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p147" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p155" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p163" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p171" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p179" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p187" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p195" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p203" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p211" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p219" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p227" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p235" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p243" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p251" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /></td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td colspan="16"><img class="nothumb" name="p132" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p140" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p148" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p156" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p164" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p172" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p180" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p188" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p196" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p204" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p212" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p220" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p228" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p236" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p244" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p252" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /></td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td colspan="16"><img class="nothumb" name="p133" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p141" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p149" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p157" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p165" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p173" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p181" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p189" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p197" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p205" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p213" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p221" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p229" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p237" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p245" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p253" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /></td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td colspan="16"><img class="nothumb" name="p134" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p142" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p150" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p158" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p166" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p174" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p182" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p190" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p198" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p206" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p214" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p222" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p230" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p238" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p246" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p254" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /></td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td colspan="16"><img class="nothumb" name="p135" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p143" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p151" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p159" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p167" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p175" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p183" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p191" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p199" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p207" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p215" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p223" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p231" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p239" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p247" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /><img class="nothumb" name="p255" src="/images/users/admin/lcdsimulator/blnk.gif" height="4" width="16" /></td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td valign="top" align="center"><img class="nothumb" src="/images/users/admin/lcdsimulator/bottom.jpg" height="46" vspace="0" width="262" align="bottom" /></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                        <td>
+                                            <table border="0" cellpadding="1" cellspacing="3" align="center">
+                                                <tbody>
+                                                    <tr valign="middle" align="center">
+                                                        <td>
+                                                            <table border="0" cellpadding="3" cellspacing="1" align="center">
+                                                                <tbody>
+                                                                    <tr valign="middle" align="center">
+                                                                        <td colspan="8">
+                                                                            <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1"><b>CGRAM Viewer<br /> </b></font><font face="Verdana, Arial, Helvetica, sans-serif" size="-1"><b><i>ASCII Characters 0-7</i></b></font></div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr valign="bottom" align="center">
+                                                                        <td colspan="8" bgcolor="#00ff66">
+                                                                            <table style="width: 256px; color: #ffffff;" border="0" cellpadding="0" cellspacing="0" hspace="0" vspace="0" align="center">
+                                                                                <tbody>
+                                                                                    <tr bgcolor="gray" valign="middle" align="center">
+                                                                                        <td height="16">
+                                                                                            <div align="center"><font face="Arial, Helvetica, sans-serif" size="2"><b>0</b></font></div>
+                                                                                        </td>
+                                                                                        <td height="16">
+                                                                                            <div align="center"><font face="Arial, Helvetica, sans-serif" size="2"><b>1</b></font></div>
+                                                                                        </td>
+                                                                                        <td height="16">
+                                                                                            <div align="center"><font face="Arial, Helvetica, sans-serif" size="2"><b>2</b></font></div>
+                                                                                        </td>
+                                                                                        <td height="16">
+                                                                                            <div align="center"><font face="Arial, Helvetica, sans-serif" size="2"><b>3</b></font></div>
+                                                                                        </td>
+                                                                                        <td height="16">
+                                                                                            <div align="center"><font face="Arial, Helvetica, sans-serif" size="2"><b>4</b></font></div>
+                                                                                        </td>
+                                                                                        <td height="16">
+                                                                                            <div align="center"><font face="Arial, Helvetica, sans-serif" size="2"><b>5</b></font></div>
+                                                                                        </td>
+                                                                                        <td height="16">
+                                                                                            <div align="center"><font face="Arial, Helvetica, sans-serif" size="2"><b>6</b></font></div>
+                                                                                        </td>
+                                                                                        <td height="16">
+                                                                                            <div align="center"><font face="Arial, Helvetica, sans-serif" size="2"><b>7</b></font></div>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td colspan="8" height="4"></td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td colspan="8"><img class="nothumb" name="cgp0" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /><img class="nothumb" name="cgp8" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /><img class="nothumb" name="cgp16" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /><img class="nothumb" name="cgp24" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /><img class="nothumb" name="cgp32" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /><img class="nothumb" name="cgp40" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /><img class="nothumb" name="cgp48" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /><img class="nothumb" name="cgp56" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /></td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td colspan="8"><img class="nothumb" name="cgp1" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /><img class="nothumb" name="cgp9" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /><img class="nothumb" name="cgp17" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /><img class="nothumb" name="cgp25" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /><img class="nothumb" name="cgp33" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /><img class="nothumb" name="cgp41" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /><img class="nothumb" name="cgp49" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /><img class="nothumb" name="cgp57" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /></td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td colspan="8"><img class="nothumb" name="cgp2" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /><img class="nothumb" name="cgp10" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /><img class="nothumb" name="cgp18" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /><img class="nothumb" name="cgp26" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /><img class="nothumb" name="cgp34" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /><img class="nothumb" name="cgp42" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /><img class="nothumb" name="cgp50" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /><img class="nothumb" name="cgp58" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /></td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td colspan="8"><img class="nothumb" name="cgp3" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /><img class="nothumb" name="cgp11" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /><img class="nothumb" name="cgp19" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /><img class="nothumb" name="cgp27" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /><img class="nothumb" name="cgp35" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /><img class="nothumb" name="cgp43" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /><img class="nothumb" name="cgp51" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /><img class="nothumb" name="cgp59" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /></td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td colspan="8"><img class="nothumb" name="cgp4" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /><img class="nothumb" name="cgp12" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /><img class="nothumb" name="cgp20" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /><img class="nothumb" name="cgp28" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /><img class="nothumb" name="cgp36" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /><img class="nothumb" name="cgp44" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /><img class="nothumb" name="cgp52" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /><img class="nothumb" name="cgp60" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /></td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td colspan="8"><img class="nothumb" name="cgp5" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /><img class="nothumb" name="cgp13" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /><img class="nothumb" name="cgp21" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /><img class="nothumb" name="cgp29" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /><img class="nothumb" name="cgp37" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /><img class="nothumb" name="cgp45" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /><img class="nothumb" name="cgp53" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /><img class="nothumb" name="cgp61" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /></td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td colspan="8"><img class="nothumb" name="cgp6" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /><img class="nothumb" name="cgp14" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /><img class="nothumb" name="cgp22" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /><img class="nothumb" name="cgp30" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /><img class="nothumb" name="cgp38" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /><img class="nothumb" name="cgp46" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /><img class="nothumb" name="cgp54" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /><img class="nothumb" name="cgp62" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /></td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td colspan="8"><img class="nothumb" name="cgp7" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /><img class="nothumb" name="cgp15" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /><img class="nothumb" name="cgp23" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /><img class="nothumb" name="cgp31" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /><img class="nothumb" name="cgp39" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /><img class="nothumb" name="cgp47" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /><img class="nothumb" name="cgp55" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /><img class="nothumb" name="cgp63" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" /></td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <br />
+                            <table border="0" bordercolor="lightgray" cellpadding="1" cellspacing="1" hspace="2" vspace="2">
+                                <tbody>
+                                    <tr>
+                                        <td rowspan="3" bgcolor="lightgray" valign="top" align="left"><font face="Arial, Helvetica, sans-serif" size="1">L<br /> C<br /> D<br /> </font></td>
+                                        <td rowspan="3" bgcolor="lightgray" valign="bottom" align="left"><font face="Arial, Helvetica, sans-serif" size="1">S<br /> T<br /> A<br /> T </font></td>
+                                        <td bgcolor="lightgray" nowrap="nowrap" align="left"><font face="Arial, Helvetica, sans-serif" size="2">&nbsp;Display is <input name="D" size="5" maxlength="5" value="ON" style="border: 0px solid #000000; background-color: lightgray; color: #222;" type="text" /> </font></td>
+                                        <td bgcolor="lightgray" nowrap="nowrap" align="left"><font face="Arial, Helvetica, sans-serif" size="2">&nbsp;Cursor position is <input name="ID" size="11" maxlength="11" value="increasing." style="border: 0px solid #000000; background-color: lightgray; color: #222;" type="text" /> </font></td>
+                                        <td bgcolor="lightgray" nowrap="nowrap" align="left"><font face="Arial, Helvetica, sans-serif" size="2"> &nbsp;Address Counter (AC): <input name="AC" size="5" maxlength="5" style="border: 0px solid #000000; background-color: lightgray; color: #222;" value="0" type="text" /> </font></td>
+                                    </tr>
+                                    <tr>
+                                        <td bgcolor="lightgray" align="left"><font face="Arial, Helvetica, sans-serif" size="2">&nbsp;Cursor is <input name="C" size="14" maxlength="14" style="border: 0px solid #000000; background-color: lightgray; color: #222;" type="text" /> </font></td>
+                                        <td bgcolor="lightgray" align="left"><font face="Arial, Helvetica, sans-serif" size="2">&nbsp;Display scroll is <input name="S" size="5" maxlength="5" value="OFF." style="border: 0px solid #000000; background-color: lightgray; color: #222;" type="text" /> </font></td>
+                                        <td bgcolor="lightgray" align="left"><font face="Arial, Helvetica, sans-serif" size="2">&nbsp;AC points to <input name="lastAdrsSet" size="6" maxlength="6" value="DDRAM." style="border: 0px solid #000000; background-color: lightgray; color: #222;" type="text" /> </font></td>
+                                    </tr>
+                                    <tr>
+                                        <td bgcolor="lightgray" nowrap="nowrap" align="left"><font face="Arial, Helvetica, sans-serif" size="2">&nbsp;Cursor position <input name="cursOutOfDisp" size="13" maxlength="13" value="is visible." style="border: 0px solid #000000; background-color: lightgray; color: #222;" type="text" /> </font></td>
+                                        <td bgcolor="lightgray" nowrap="nowrap" align="left"><font face="Arial, Helvetica, sans-serif" size="2">&nbsp;Line 1 addresses: <input name="ln1adr" size="7" maxlength="7" value="--" style="border: 0px solid #000000; background-color: lightgray; color: #222;" type="text" /> </font></td>
+                                        <td bgcolor="lightgray" nowrap="nowrap" align="left"><font face="Arial, Helvetica, sans-serif" size="2">&nbsp;Line 2 addresses: <input name="ln2adr" size="7" maxlength="7" value="--" style="border: 0px solid #000000; background-color: lightgray; color: #222;" type="text" /> </font></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <br />
+                            <table style="border: 6px solid lightgray;" bgcolor="#cc3333" border="0" cellpadding="2" cellspacing="0" hspace="2" vspace="2">
+                                <tbody>
+                                    <tr style="color: #ffffff;" valign="middle" align="center">
+                                        <td bgcolor="#cc3333">
+                                            <div align="center"><font face="Arial, Helvetica, sans-serif"><b>D7</b></font></div>
+                                        </td>
+                                        <td bgcolor="#cc3333">
+                                            <div align="center"><font face="Arial, Helvetica, sans-serif"><b>D6</b></font></div>
+                                        </td>
+                                        <td bgcolor="#cc3333">
+                                            <div align="center"><font face="Arial, Helvetica, sans-serif"><b>D5</b></font></div>
+                                        </td>
+                                        <td bgcolor="#cc3333">
+                                            <div align="center"><font face="Arial, Helvetica, sans-serif"><b>D4</b></font></div>
+                                        </td>
+                                        <td bgcolor="#cc3333">
+                                            <div align="center"><font face="Arial, Helvetica, sans-serif"><b>D3</b></font></div>
+                                        </td>
+                                        <td bgcolor="#cc3333">
+                                            <div align="center"><font face="Arial, Helvetica, sans-serif"><b>D2</b></font></div>
+                                        </td>
+                                        <td bgcolor="#cc3333">
+                                            <div align="center"><font face="Arial, Helvetica, sans-serif"><b>D1</b></font></div>
+                                        </td>
+                                        <td bgcolor="#cc3333">
+                                            <div align="center"><font face="Arial, Helvetica, sans-serif"><b>D0</b></font></div>
+                                        </td>
+                                        <td bgcolor="#336633">
+                                            <div align="center"><font face="Arial, Helvetica, sans-serif"><b>E</b></font></div>
+                                        </td>
+                                        <td bgcolor="#336633">
+                                            <div align="center"><font face="Arial, Helvetica, sans-serif"><b>R/W</b></font></div>
+                                        </td>
+                                        <td bgcolor="#336633">
+                                            <div align="center"><font face="Arial, Helvetica, sans-serif"><b>RS</b></font></div>
+                                        </td>
+                                    </tr>
+                                    <tr valign="middle" align="center">
+                                        <td bgcolor="#cc3333"><a href="javascript: togImage('d7')"><img class="nothumb" name="d7" src="/images/users/admin/lcdsimulator/b0u.gif" border="0" height="34" width="34" /></a></td>
+                                        <td bgcolor="#cc3333"><a href="javascript: togImage('d6')"><img class="nothumb" name="d6" src="/images/users/admin/lcdsimulator/b0u.gif" border="0" height="34" width="34" /></a></td>
+                                        <td bgcolor="#cc3333"><a href="javascript: togImage('d5')"><img class="nothumb" name="d5" src="/images/users/admin/lcdsimulator/b0u.gif" border="0" height="34" width="34" /></a></td>
+                                        <td bgcolor="#cc3333"><a href="javascript: togImage('d4')"><img class="nothumb" name="d4" src="/images/users/admin/lcdsimulator/b0u.gif" border="0" height="34" width="34" /></a></td>
+                                        <td bgcolor="#cc3333"><a href="javascript: togImage('d3')"><img class="nothumb" name="d3" src="/images/users/admin/lcdsimulator/b0u.gif" border="0" height="34" width="34" /></a></td>
+                                        <td bgcolor="#cc3333"><a href="javascript: togImage('d2')"><img class="nothumb" name="d2" src="/images/users/admin/lcdsimulator/b0u.gif" border="0" height="34" width="34" /></a></td>
+                                        <td bgcolor="#cc3333"><a href="javascript: togImage('d1')"><img class="nothumb" name="d1" src="/images/users/admin/lcdsimulator/b0u.gif" border="0" height="34" width="34" /></a></td>
+                                        <td bgcolor="#cc3333"><a href="javascript: togImage('d0')"><img class="nothumb" name="d0" src="/images/users/admin/lcdsimulator/b0u.gif" border="0" height="34" width="34" /></a></td>
+                                        <td bgcolor="#336633">
+                                            <div align="center"><a href="javascript: togImageC('e')"><img class="nothumb" name="e" src="/images/users/admin/lcdsimulator/b0gu.gif" border="0" height="34" width="34" /></a></div>
+                                        </td>
+                                        <td bgcolor="#336633">
+                                            <div align="center"><a href="javascript: togImageC('rw')"><img class="nothumb" name="rw" src="/images/users/admin/lcdsimulator/b0gu.gif" border="0" height="34" width="34" /></a></div>
+                                        </td>
+                                        <td bgcolor="#336633">
+                                            <div align="center"><a href="javascript: togImageC('rs')"><img class="nothumb" name="rs" src="/images/users/admin/lcdsimulator/b0gu.gif" border="0" height="34" width="34" /></a></div>
+                                        </td>
+                                    </tr>
+                                    <tr bgcolor="lightgray" valign="middle" align="center">
+                                        <td colspan="7" valign="middle" align="left">
+                                            <div align="right"><font face="Arial, Helvetica, sans-serif"><font face="Arial, Helvetica, sans-serif" size="2">Hex: </font> <font face="Arial, Helvetica, sans-serif" size="2"> <input name="lcdpinsHex" size="2" value="0" onkeyup="inpChanged('hex')" onchange="inpChanged('hex')" maxlength="2" style="background-color: gray; color: #ffffff;" type="text" /> </font><font size="2"> Dec: </font><font face="Arial, Helvetica, sans-serif" size="2"> <input name="lcdpinsDec" size="3" value="0" onkeyup="inpChanged('dec')" onchange="inpChanged('hex')" maxlength="3" style="background-color: gray; color: #ffffff;" type="text" /> </font><font size="2"> Pixel: <font face="Verdana, Arial, Helvetica, sans-serif"><img class="nothumb" name="cgpixels" img="" src="/images/users/admin/lcdsimulator/0.gif" height="8" width="32" align="bottom" /> Char:</font> <input name="lcdpinsChar" id="lcdpinsChar" style="background-color: gray; color: #ffffff;" onchange="inpChanged('chr')" onkeyup="inpChanged('chr')" size="1" maxlength="1" type="text" /> </font></font></div>
+                                        </td>
+                                        <td valign="middle" align="left">
+                                            <table border="0" cellpadding="0" cellspacing="0" align="center">
+                                                <tbody>
+                                                    <tr>
+                                                        <td><img class="nothumb" name="cprv0" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><img class="nothumb" name="cprv1" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><img class="nothumb" name="cprv2" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><img class="nothumb" name="cprv3" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><img class="nothumb" name="cprv4" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><img class="nothumb" name="cprv5" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><img class="nothumb" name="cprv6" src="/images/users/admin/lcdsimulator/0.gif" height="4" width="16" /></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                        <td colspan="3" bgcolor="lightgray">
+                                            <div align="center"><font face="Arial, Helvetica, sans-serif" size="-1"> <input name="ctrlpins" size="26" maxlength="26" style="border: 0px solid #000000; background-color: lightgray; color: #000;" type="text" /> </font></div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <textarea style="margin-top: 0; margin-bottom: 10px;" name="outpMsgs" wrap="VIRTUAL" cols="80" rows="4">Info box</textarea></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table cellpadding="1" cellspacing="1" hspace="0" vspace="0">
+                            <tbody>
+                                <tr>
+                                    <td valign="middle" align="center"><select name="scriptSelect" onchange="scripter(this.options[this.selectedIndex].value)"> <option selected="selected" value="bobtech">www.bobtech.ro</option> <option value="defCustChr">Define Custom Characters</option> <option value="odometer">Odometer</option> </select> <input class="button" name="Button3" value="Run script" onclick="evaluator();" type="button" /> <input class="textbutton" name="Button2" value="Clear " onclick="document.ctrl.scriptBox.value = ''" type="button" /></td>
+                                </tr>
+                                <tr>
+                                    <td valign="middle" align="center"><font face="MS Sans Serif"> <textarea name="scriptBox" cols="94" rows="6" wrap="VIRTUAL">//script box, write your own script in JavaScript or select from above
+instr(0x38);
+instr(0x0F);
+instr(0x01);
+instr(0x06);
+putstr('www.bobtech.ro');</textarea> </font></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</form><br /><br />
+<p>DjLCDSIM este un JavaScript care simuleaza un afisaj LCD alfanumeric cu 16x2 caractere, cu controler HD44780 sau compatibil. Suporta toate instructiunile, mai putin read data/busy flag.</p>
+<p>LCD-ul se poate controla si fara butoane, folosind script-uri JavaScript combinate cu urmatoarele functii:</p>
+<ul class="arrow light">
+    <li>instr(instructionCode) // sends instruction</li>
+    <li>data(caharacterCode) // sends data</li>
+    <li>mcl(x_times) // move cusror left</li>
+    <li>mcr(x_times) // move cursor right</li>
+    <li>sdl(x_times) // shift display left</li>
+    <li>sdr(x_times) // shift display right</li>
+    <li>DDRadrs(address) // set DDRAM address</li>
+    <li>CGRadrs(address) // set CGRAM address</li>
+    <li>putstr('string') // print string</li>
+</ul>
+<h2>Exemplu script LCD</h2>
+<p class="code">//initialize LCD 16x2 and print a string on first LCD line<br />instr(0x38);<br />instr(0x0F);<br />instr(0x01);<br />instr(0x06);<br />putstr('www.bobtech.ro');</p>
+<p class="info">Pentru mai multe informatii viziteaza site-ul autorului: <a rel="nofollow" target="_blank" href="http://www.dinceraydin.com/djlcdsim/djlcdsim.html">http://www.dinceraydin.com/djlcdsim/djlcdsim.html</a></p>
+<script language="JavaScript" type="text/javascript">reset();</script>
+<a class="modal thumbnail" style="" href="/images/users/admin/lcdsimulator/qrcode_lcdsimulator.png" rel="{handler: 'image', marginImage: {x: 50, y: 50}}"><img src="/images/thumbnails/images-users-admin-lcdsimulator-qrcode_lcdsimulator-100pxx100.png" alt="QR Code LCD Simulator" style="position: absolute; bottom: 0pt; right: 0pt;" title="QR Code LCD Simulator pentru smartphone. Click pentru marire!" border="0" height="100" width="100px" align="right" /></a>	
+<div class="item-social">
+	<ul>
+		<li class="tweeter">
+			<!-- Load Twitter JS-API asynchronously -->
+		    <script type="text/javascript">
+			 (function(){
+			  var twitterWidgets = document.createElement('script');
+			  twitterWidgets.type = 'text/javascript';
+			  twitterWidgets.async = true;
+			  twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+
+			  // Setup a callback to track once the script loads.
+			  twitterWidgets.onload = _ga.trackTwitter;
+
+			  document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+			 })();
+		    </script>
+			<a rel="nofollow" href="http://twitter.com/share" class="twitter-share-button" data-count="none" data-via="bobtech_ro" title="posteza pe Twitter!">Tweet</a>	
+		</li>
+		<li class="plusone"><div class="g-plusone" data-size="medium" data-annotation="none"></div>
+			<script type="text/javascript">
+				window.___gcfg = {lang: 'ro'};
+
+				(function() {
+					var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+					po.src = 'https://apis.google.com/js/plusone.js';
+					var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+				})();
+			</script>
+		</li>
+		<li class="facebook" title="posteza pe Facebook!"> 
+			<div dir="ltr" style="text-align: left;" trbidi="on">
+				<fb:like layout="standard" show-faces="false" />
+			</div> 
+		</li>
+	</ul>
+</div>
+
+<div style="margin-top: 25px;" class="fb-comments fb_iframe_widget" data-href="http://www.bobtech.ro/tutoriale/componente-electronice/57-lcd-16x2-simulator" data-num-posts="2" data-width="600" fb-xfbml-state="rendered"></div></div>
+
+<noscript>
+	<h4 class="noscriptError">Ai Javascript dezavtivat, comentariile functioneaza doar cu Javascript activat</h4>
+</noscript>
+
+<div id="comments">
+<span class="commentsicon"><h3 id="commentscountpagination">comentarii</h3></span><ul class="parentLayer"><li id="comment285" class="odd"><div class="commentItem"><img src="http://www.gravatar.com/avatar/433ce4d481abf35b62234bc45637dbc6?s=40&d=http%3A%2F%2Fwww.bobtech.ro%2Fimages%2Fdefaultavatar.gif" alt="" width="40px" class="commentAvatar" /><p class="commentName">laurentiu</p><p class="commentContent">imi place foarte mult acest program, si daca cumva ai si programe cu 5 si 6 culori</p><div class="commentFooter"><p class="commentDate"> 2013-09-27 16:50:04</p><p class="commentReply"><a rel="nofollow" href="#" class="commentReplyLink" id="285" title="Raspunde">Raspunde</a></p></div></div></li></ul><div class="clr"></div>	<div id="commentsform"><h3><a rel="nofollow" href="#" class="commentPostLink" title="Adauga un comentariu ...">Adauga un comentariu ...</a></h3></div></div>
+                                             </div><!-- end main -->
+
+               </div><!-- end wrapper -->
+
+               <div class="wrap"></div>
+          </div> <!-- end contentarea -->
+     </div><!-- back -->
+  </div><!-- all -->
+
+  <div id="footer-outer">
+       
+       <div id="footer-sub">
+            <div id="footer">
+                 <div class="footer-smalltext">Copyright &#169; 2001-2017 BobTech. Toate drepturile rezervate.</div>
+<div class="bannergroup">
+
+	<div class="banneritem">
+										<a rel="nofollow" title=" Follow on Tweeter @bobtech_ro " href="/component/banners/click/1" target="_blank" onclick="_gaq.push(['_trackEvent', 'Banners', 'FooterClick', 'Tweeter Follow']);"><img alt="Twitter Button" src="/images/banners/tweeter_follow.gif" /></a>				<div class="clr"></div>
+	</div>
+
+</div>
+
+
+      </div><!-- end footer -->
+       </div>
+  </div>
+  <script type="text/javascript">
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  //ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+</script>
+
+</body>
+</html>

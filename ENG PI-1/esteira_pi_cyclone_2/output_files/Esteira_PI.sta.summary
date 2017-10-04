@@ -1,0 +1,173 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow Model Setup 'CLOCK_50'
+Slack : -54.754
+TNS   : -1427.854
+
+Type  : Slow Model Setup 'clock_10kHz'
+Slack : -19.194
+TNS   : -1549.294
+
+Type  : Slow Model Setup 'clock_100khz'
+Slack : -8.597
+TNS   : -705.774
+
+Type  : Slow Model Setup 'clock_10Hz'
+Slack : -2.966
+TNS   : -18.445
+
+Type  : Slow Model Hold 'CLOCK_50'
+Slack : -2.568
+TNS   : -61.898
+
+Type  : Slow Model Hold 'clock_10Hz'
+Slack : 0.486
+TNS   : 0.000
+
+Type  : Slow Model Hold 'clock_100khz'
+Slack : 0.499
+TNS   : 0.000
+
+Type  : Slow Model Hold 'clock_10kHz'
+Slack : 0.499
+TNS   : 0.000
+
+Type  : Slow Model Recovery 'buttonPressed2'
+Slack : -1.325
+TNS   : -1.325
+
+Type  : Slow Model Recovery 'buttonPressed1'
+Slack : -0.547
+TNS   : -0.547
+
+Type  : Slow Model Recovery 'buttonPressed0'
+Slack : -0.182
+TNS   : -0.182
+
+Type  : Slow Model Removal 'buttonPressed0'
+Slack : 0.916
+TNS   : 0.000
+
+Type  : Slow Model Removal 'buttonPressed1'
+Slack : 1.281
+TNS   : 0.000
+
+Type  : Slow Model Removal 'buttonPressed2'
+Slack : 2.059
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'CLOCK_50'
+Slack : -2.269
+TNS   : -391.243
+
+Type  : Slow Model Minimum Pulse Width 'clock_10kHz'
+Slack : -0.742
+TNS   : -227.052
+
+Type  : Slow Model Minimum Pulse Width 'clock_100khz'
+Slack : -0.742
+TNS   : -186.984
+
+Type  : Slow Model Minimum Pulse Width 'clock_10Hz'
+Slack : -0.742
+TNS   : -14.840
+
+Type  : Slow Model Minimum Pulse Width 'buttonPressed0'
+Slack : -0.742
+TNS   : -1.484
+
+Type  : Slow Model Minimum Pulse Width 'buttonPressed1'
+Slack : -0.742
+TNS   : -1.484
+
+Type  : Slow Model Minimum Pulse Width 'buttonPressed2'
+Slack : -0.742
+TNS   : -1.484
+
+Type  : Fast Model Setup 'CLOCK_50'
+Slack : -16.660
+TNS   : -307.672
+
+Type  : Fast Model Setup 'clock_10kHz'
+Slack : -5.347
+TNS   : -391.445
+
+Type  : Fast Model Setup 'clock_100khz'
+Slack : -2.177
+TNS   : -140.380
+
+Type  : Fast Model Setup 'clock_10Hz'
+Slack : -0.257
+TNS   : -0.783
+
+Type  : Fast Model Hold 'CLOCK_50'
+Slack : -1.371
+TNS   : -58.880
+
+Type  : Fast Model Hold 'clock_10Hz'
+Slack : 0.143
+TNS   : 0.000
+
+Type  : Fast Model Hold 'clock_100khz'
+Slack : 0.215
+TNS   : 0.000
+
+Type  : Fast Model Hold 'clock_10kHz'
+Slack : 0.215
+TNS   : 0.000
+
+Type  : Fast Model Recovery 'buttonPressed2'
+Slack : -0.585
+TNS   : -0.585
+
+Type  : Fast Model Recovery 'buttonPressed1'
+Slack : -0.341
+TNS   : -0.341
+
+Type  : Fast Model Recovery 'buttonPressed0'
+Slack : -0.142
+TNS   : -0.142
+
+Type  : Fast Model Removal 'buttonPressed0'
+Slack : 1.022
+TNS   : 0.000
+
+Type  : Fast Model Removal 'buttonPressed1'
+Slack : 1.221
+TNS   : 0.000
+
+Type  : Fast Model Removal 'buttonPressed2'
+Slack : 1.465
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'CLOCK_50'
+Slack : -1.519
+TNS   : -263.254
+
+Type  : Fast Model Minimum Pulse Width 'clock_10kHz'
+Slack : -0.500
+TNS   : -153.000
+
+Type  : Fast Model Minimum Pulse Width 'clock_100khz'
+Slack : -0.500
+TNS   : -126.000
+
+Type  : Fast Model Minimum Pulse Width 'clock_10Hz'
+Slack : -0.500
+TNS   : -10.000
+
+Type  : Fast Model Minimum Pulse Width 'buttonPressed0'
+Slack : -0.500
+TNS   : -1.000
+
+Type  : Fast Model Minimum Pulse Width 'buttonPressed1'
+Slack : -0.500
+TNS   : -1.000
+
+Type  : Fast Model Minimum Pulse Width 'buttonPressed2'
+Slack : -0.500
+TNS   : -1.000
+
+------------------------------------------------------------

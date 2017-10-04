@@ -33,7 +33,6 @@ ENTITY D_7SEG IS
 		
 			-- Sensor de distância
 			GPIO					:inout  STD_LOGIC_VECTOR (35 DOWNTO 0);	-- Declara um Buffer para que possamos utilizar com I/O
-			--GPIO					:OUT STD_LOGIC_VECTOR (35 DOWNTO 18);
 			--GPIO(1) = echo
 			--GPIO(0) = trigger	
 	
@@ -89,11 +88,10 @@ BOTAO_MENU: WORK.debouncer_pi
 	BEGIN
 	
 	
-	   --selecao <= 0; --APAGAR
+	  
 		IF (buttonOut'EVENT AND buttonOut='1') THEN
 
 			IF (selecao = 1) THEN
-				selecao <= 0;
 			ELSE
 				selecao <= selecao + 1;
 			END IF;
