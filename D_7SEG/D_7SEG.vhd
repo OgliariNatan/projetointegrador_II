@@ -47,6 +47,7 @@ ENTITY D_7SEG IS
 			buttonOut			: BUFFER STD_LOGIC;
 			END_TRIGGER			: BUFFER STD_LOGIC := '1';
 			HC_ENABLE			: BUFFER STD_LOGIC := '0'; -- habilitador de leitura do sensor de altura
+			new_enable			: BUFFER STD_LOGIC; --APAGAR 
 			
 			--DECLARAÇÂO DE LED para testes
 			LEDR					: OUT STD_LOGIC_VECTOR(17 DOWNTO 0)
@@ -122,30 +123,33 @@ DISPLAY_MENU:WORK.display
 
 
 
---	PROCESS(CLOCK_50)
---			
-----		CONSTANT COUNT_MAX	: INTEGER 	:= 1000000;
-----		VARIABLE counter 		: INTEGER RANGE 0 TO COUNT_MAX := 0;
---	
---	BEGIN
---			
---		IF(SW(0) = '1') THEN
---		
---			HC_ENABLE <= '1';
---		
---		ELSE
---		
---			HC_ENABLE <= '0';
---			
---		END IF;	
---		
---	END PROCESS;
+	PROCESS(CLOCK_50)
+			
+--		CONSTANT COUNT_MAX	: INTEGER 	:= 1000000;
+--		VARIABLE counter 		: INTEGER RANGE 0 TO COUNT_MAX := 0;
+	
+	BEGIN
+			
+		IF(SW(0) = '1') THEN
+		
+			HC_ENABLE <= '1';
+		
+		ELSE
+		
+			HC_ENABLE <= '0';
+			
+		END IF;	
+		
+		--new_enable <= HC_ENABLE; --APAGAR
+		
+	END PROCESS;
 		
 SENSOR_ALTURA: WORK.hc_sr04
 	
 	PORT MAP(
 	CLOCK_50,
-	HC_ENABLE,
+	HC_ENABLE
+	--new_enable, --HC_ENABLE --APAGAR
 	END_TRIGGER,
 	GPIO(1),		--echo
 	GPIO(0)		--trigger
