@@ -1,10 +1,10 @@
 #ignore everything
 *
 #but not these files
-#!project/
 !.gitignore
 !README.md
 !D_7SEG/*.vhd
+!D_7SEG/*.qpf
 !D_7SEG/*.txt
 !Contador/*.vhd
 !ENG PI-1/*.vhd
