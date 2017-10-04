@@ -1,6 +1,8 @@
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
 
+--componente para o sensor de altura
+
 ENTITY hc_sr04 IS 
 	GENERIC
 	(
