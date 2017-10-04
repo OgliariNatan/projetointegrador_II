@@ -40,7 +40,7 @@ ARCHITECTURE behavior OF debouncer_pi IS
 						counter := 0;
 					ELSIF buttonPressed = '1' AND buttonAux = '1' THEN	-- Ainda pressionado
 						counter := 0;
-					ELSIF buttonPressed = '1' AND buttonAux = '0' THEN	-- Bot�o � liberado ou uma trepida��o ocorreu
+					ELSIF buttonPressed = '1' AND buttonAux = '0' THEN	-- Botao liberado ou uma trepida��o ocorreu
 						IF counter < CONT_MAX THEN
 							counter := counter + 1;
 						ELSE

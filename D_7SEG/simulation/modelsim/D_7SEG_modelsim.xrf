@@ -1,15 +1,22 @@
 vendor_name = ModelSim
+<<<<<<< HEAD
 source_file = 1, C:/Users/augus/Documents/projetointegrador_II/D_7SEG/clockDivider.vhd
 source_file = 1, C:/Users/augus/Documents/projetointegrador_II/D_7SEG/hc_sr04.vhd
 source_file = 1, C:/Users/augus/Documents/projetointegrador_II/D_7SEG/sevenSeg_decoder.vhd
 source_file = 1, C:/Users/augus/Documents/projetointegrador_II/D_7SEG/display.vhd
 source_file = 1, C:/Users/augus/Documents/projetointegrador_II/D_7SEG/debouncer_pi.vhd
 source_file = 1, C:/Users/augus/Documents/projetointegrador_II/D_7SEG/D_7SEG.vhd
+=======
+source_file = 1, C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/sevenSeg_decoder.vhd
+source_file = 1, C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/display.vhd
+source_file = 1, C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/debouncer_pi.vhd
+source_file = 1, C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/D_7SEG.vhd
+>>>>>>> 71dc74f025e99eb43308e880364ba6b9229338fc
 source_file = 1, c:/intelfpga_lite/16.1/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
 source_file = 1, c:/intelfpga_lite/16.1/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
 source_file = 1, c:/intelfpga_lite/16.1/quartus/libraries/vhdl/ieee/timing_b.vhd
 source_file = 1, c:/intelfpga_lite/16.1/quartus/libraries/vhdl/ieee/timing_p.vhd
-source_file = 1, C:/Users/augus/Documents/projetointegrador_II/D_7SEG/db/D_7SEG.cbx.xml
+source_file = 1, C:/Users/Cliente/Dropbox/Fase_04/Projeto_Integrador_II/projetointegrador_II/D_7SEG/db/D_7SEG.cbx.xml
 design_name = D_7SEG
 <<<<<<< HEAD
 instance = comp, \GPIO[0]~output , GPIO[0]~output, D_7SEG, 1
@@ -179,6 +186,8 @@ instance = comp, \BOTAO_MENU|counter[6]~35 , BOTAO_MENU|counter[6]~35, D_7SEG, 1
 instance = comp, \BOTAO_MENU|counter[6] , BOTAO_MENU|counter[6], D_7SEG, 1
 instance = comp, \BOTAO_MENU|counter[7]~37 , BOTAO_MENU|counter[7]~37, D_7SEG, 1
 instance = comp, \BOTAO_MENU|counter[7] , BOTAO_MENU|counter[7], D_7SEG, 1
+instance = comp, \BOTAO_MENU|LessThan0~3 , BOTAO_MENU|LessThan0~3, D_7SEG, 1
+instance = comp, \BOTAO_MENU|LessThan0~4 , BOTAO_MENU|LessThan0~4, D_7SEG, 1
 instance = comp, \BOTAO_MENU|counter[8]~39 , BOTAO_MENU|counter[8]~39, D_7SEG, 1
 instance = comp, \BOTAO_MENU|counter[8] , BOTAO_MENU|counter[8], D_7SEG, 1
 instance = comp, \BOTAO_MENU|counter[9]~41 , BOTAO_MENU|counter[9]~41, D_7SEG, 1
@@ -188,9 +197,12 @@ instance = comp, \BOTAO_MENU|counter[10] , BOTAO_MENU|counter[10], D_7SEG, 1
 instance = comp, \BOTAO_MENU|counter[11]~45 , BOTAO_MENU|counter[11]~45, D_7SEG, 1
 instance = comp, \BOTAO_MENU|counter[11] , BOTAO_MENU|counter[11], D_7SEG, 1
 instance = comp, \BOTAO_MENU|counter[12]~47 , BOTAO_MENU|counter[12]~47, D_7SEG, 1
+instance = comp, \BOTAO_MENU|counter[12]~feeder , BOTAO_MENU|counter[12]~feeder, D_7SEG, 1
 instance = comp, \BOTAO_MENU|counter[12] , BOTAO_MENU|counter[12], D_7SEG, 1
 instance = comp, \BOTAO_MENU|counter[13]~49 , BOTAO_MENU|counter[13]~49, D_7SEG, 1
 instance = comp, \BOTAO_MENU|counter[13] , BOTAO_MENU|counter[13], D_7SEG, 1
+instance = comp, \BOTAO_MENU|LessThan0~5 , BOTAO_MENU|LessThan0~5, D_7SEG, 1
+instance = comp, \BOTAO_MENU|LessThan0~6 , BOTAO_MENU|LessThan0~6, D_7SEG, 1
 instance = comp, \BOTAO_MENU|counter[14]~51 , BOTAO_MENU|counter[14]~51, D_7SEG, 1
 instance = comp, \BOTAO_MENU|counter[14] , BOTAO_MENU|counter[14], D_7SEG, 1
 instance = comp, \BOTAO_MENU|counter[15]~53 , BOTAO_MENU|counter[15]~53, D_7SEG, 1
@@ -212,17 +224,20 @@ instance = comp, \BOTAO_MENU|LessThan0~2 , BOTAO_MENU|LessThan0~2, D_7SEG, 1
 instance = comp, \BOTAO_MENU|counter[22]~69 , BOTAO_MENU|counter[22]~69, D_7SEG, 1
 instance = comp, \BOTAO_MENU|counter[22] , BOTAO_MENU|counter[22], D_7SEG, 1
 instance = comp, \BOTAO_MENU|LessThan0~1 , BOTAO_MENU|LessThan0~1, D_7SEG, 1
+<<<<<<< HEAD
 instance = comp, \BOTAO_MENU|LessThan0~7 , BOTAO_MENU|LessThan0~7, D_7SEG, 1
 instance = comp, \BOTAO_MENU|LessThan0~8 , BOTAO_MENU|LessThan0~8, D_7SEG, 1
 instance = comp, \BOTAO_MENU|LessThan0~3 , BOTAO_MENU|LessThan0~3, D_7SEG, 1
 instance = comp, \BOTAO_MENU|LessThan0~4 , BOTAO_MENU|LessThan0~4, D_7SEG, 1
 instance = comp, \BOTAO_MENU|LessThan0~5 , BOTAO_MENU|LessThan0~5, D_7SEG, 1
 instance = comp, \BOTAO_MENU|LessThan0~6 , BOTAO_MENU|LessThan0~6, D_7SEG, 1
+=======
+>>>>>>> 71dc74f025e99eb43308e880364ba6b9229338fc
 instance = comp, \BOTAO_MENU|LessThan0~9 , BOTAO_MENU|LessThan0~9, D_7SEG, 1
 instance = comp, \BOTAO_MENU|buttonPressed~0 , BOTAO_MENU|buttonPressed~0, D_7SEG, 1
 instance = comp, \BOTAO_MENU|buttonPressed~feeder , BOTAO_MENU|buttonPressed~feeder, D_7SEG, 1
 instance = comp, \BOTAO_MENU|buttonPressed , BOTAO_MENU|buttonPressed, D_7SEG, 1
-instance = comp, \selecao~0 , selecao~0, D_7SEG, 1
+instance = comp, \selecao~feeder , selecao~feeder, D_7SEG, 1
 instance = comp, \KEY[1]~input , KEY[1]~input, D_7SEG, 1
 instance = comp, \KEY[2]~input , KEY[2]~input, D_7SEG, 1
 instance = comp, \KEY[3]~input , KEY[3]~input, D_7SEG, 1

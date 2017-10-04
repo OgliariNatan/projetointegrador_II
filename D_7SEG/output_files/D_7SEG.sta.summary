@@ -4,6 +4,7 @@ TimeQuest Timing Analyzer Summary
 
 Type  : Slow 1200mV 85C Model Setup 'clock_50'
 <<<<<<< HEAD
+<<<<<<< HEAD
 Slack : -4.132
 TNS   : -74.500
 =======
@@ -25,6 +26,13 @@ Slack : 0.640
 =======
 Slack : 0.636
 >>>>>>> add-sensor-alt
+=======
+Slack : -4.597
+TNS   : -77.786
+
+Type  : Slow 1200mV 85C Model Hold 'clock_50'
+Slack : 0.641
+>>>>>>> 71dc74f025e99eb43308e880364ba6b9229338fc
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clock_50'
@@ -36,6 +44,7 @@ Slack : -1.285
 TNS   : -1.285
 
 Type  : Slow 1200mV 0C Model Setup 'clock_50'
+<<<<<<< HEAD
 <<<<<<< HEAD
 Slack : -3.754
 TNS   : -66.491
@@ -58,6 +67,13 @@ Slack : 0.587
 =======
 Slack : 0.582
 >>>>>>> add-sensor-alt
+=======
+Slack : -4.194
+TNS   : -69.217
+
+Type  : Slow 1200mV 0C Model Hold 'clock_50'
+Slack : 0.586
+>>>>>>> 71dc74f025e99eb43308e880364ba6b9229338fc
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clock_50'
@@ -69,6 +85,7 @@ Slack : -1.285
 TNS   : -1.285
 
 Type  : Fast 1200mV 0C Model Setup 'clock_50'
+<<<<<<< HEAD
 <<<<<<< HEAD
 Slack : -1.557
 TNS   : -23.165
@@ -91,15 +108,26 @@ Slack : 0.293
 =======
 Slack : 0.289
 >>>>>>> add-sensor-alt
+=======
+Slack : -1.749
+TNS   : -24.355
+
+Type  : Fast 1200mV 0C Model Hold 'clock_50'
+Slack : 0.292
+>>>>>>> 71dc74f025e99eb43308e880364ba6b9229338fc
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clock_50'
 Slack : -3.000
 <<<<<<< HEAD
+<<<<<<< HEAD
 TNS   : -34.089
 =======
 TNS   : -46.872
 >>>>>>> add-sensor-alt
+=======
+TNS   : -33.994
+>>>>>>> 71dc74f025e99eb43308e880364ba6b9229338fc
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'debouncer_pi:BOTAO_MENU|buttonPressed'
 Slack : -1.000
