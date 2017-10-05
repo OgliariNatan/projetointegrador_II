@@ -28,8 +28,8 @@ ENTITY D_7SEG IS
 	);
 	
 	PORT(	--Definições dos sinais de entrada
-			clock_50			: IN STD_LOGIC;--Entrada do clock da placa
-			CLOCKOUT			: OUT STD_LOGIC; --POSSIVEL SAIDA DO DIVISOR DE CLOCK
+			CLOCK_50			: IN STD_LOGIC;--Entrada do clock da placa
+			--CLOCKOUT			: OUT STD_LOGIC; --POSSIVEL SAIDA DO DIVISOR DE CLOCK
 		
 			-- Sensor de distância
 			GPIO					: INOUT STD_LOGIC_VECTOR (35 DOWNTO 0);	-- Declara um Buffer para que possamos utilizar com I/O
@@ -45,9 +45,9 @@ ENTITY D_7SEG IS
 
 			--Definição da saida do "botão virtual" de antitrepidação
 			buttonOut			: BUFFER STD_LOGIC;
-			END_TRIGGER			: BUFFER STD_LOGIC := '1';
-			HC_ENABLE			: BUFFER STD_LOGIC := '0'; -- habilitador de leitura do sensor de altura
-			new_enable			: BUFFER STD_LOGIC; --APAGAR 
+			--END_TRIGGER			: BUFFER STD_LOGIC := '1';
+			--HC_ENABLE			: BUFFER STD_LOGIC := '0'; -- habilitador de leitura do sensor de altura
+			--new_enable			: BUFFER STD_LOGIC; --APAGAR 
 			
 			--DECLARAÇÂO DE LED para testes
 			LEDR					: OUT STD_LOGIC_VECTOR(17 DOWNTO 0)
@@ -58,7 +58,7 @@ END D_7SEG;
 ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 	--Divisor de frequencia
 	SIGNAL count 					: INTEGER :=1; --divisão do clock
-	SIGNAL clk_sd	  		  	   : STD_LOGIC :='0';	-- Clock para sensor de distancia
+	--SIGNAL clk_sd	  		  	   : STD_LOGIC :='0';	-- Clock para sensor de distancia
 	
 	--seleção de interface
 
@@ -74,72 +74,99 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 	SIGNAL	color					: STD_LOGIC := '0';
 	SIGNAL	altura				: INTEGER := 99;
 	
+	SIGNAL   clock			: STD_LOGIC := '0';
+	CONSTANT COUNT_MAX	: INTEGER 	:= ((freqIn / freqOut) / 2)-1;
 	
 	BEGIN--Começa a logica do programa
 
-BOTAO_MENU: WORK.debouncer_pi
+--BOTAO_MENU: WORK.debouncer_pi
+--
+--	PORT MAP(
+--		CLOCK_50,
+--		KEY(0),
+--		buttonOut
+--		);
+	GPIO(1) <= '1';
 
-	PORT MAP(
-		CLOCK_50,
-		KEY(0),
-		buttonOut
-		);
 	
-CLOCK_1Hz:WORK.clockDivider
+
+
+	PROCESS(CLOCK_50)
 		
-			PORT MAP(
-			CLOCK_50,
-			freqIn,
-			freqOut,
-			GPIO(3)
+			VARIABLE counter : INTEGER RANGE 0 TO COUNT_MAX := 0;
+		
+		BEGIN
+		
+			IF (CLOCK_50'EVENT AND CLOCK_50 = '1') THEN
+			
+				IF counter < COUNT_MAX THEN
+					counter := counter + 1;
+				ELSE
+					counter := 0;
+					clock   <= NOT clock;
+				
+				END IF;
+			END IF;
+		END PROCESS;
+		GPIO(0) <= clock;
+	
+	
+CLOCK_2Hz:WORK.clockDivider
+		
+			PORT MAP
+			(
+				CLOCK_50,
+				freqIn,
+				freqOut,
+				GPIO(2)
 			);
 	
 	-- Seleção da interface
-	PROCESS (buttonOut) 
-	BEGIN
-	
-	
-	  
-		IF (buttonOut'EVENT AND buttonOut='1') THEN
-
-			IF (selecao = 1) THEN
-				selecao <= 0;
-			ELSE
-				selecao <= selecao + 1;
-			END IF;
-		END IF;
-		
-	END PROCESS;
-	-- Fim seleção interface
-	
-	
-DISPLAY_MENU:WORK.display
-	
-	PORT MAP(
-		color,
-		altura,
-		selecao,
-		
-		HEX0,
-		HEX1,
-		HEX2,
-		HEX3,
-		HEX4,
-		HEX5,
-		HEX6,
-		HEX7
-		);
-
-		
-SENSOR_ALTURA: WORK.hc_sr04
-	
-	PORT MAP(
-	CLOCK_50,
-	SW(0),
-	GPIO(1),
-	GPIO(0),
-	altura
-	);
+--	PROCESS (buttonOut) 
+--	BEGIN
+--	
+--	
+--	  
+--		IF (buttonOut'EVENT AND buttonOut='1') THEN
+--
+--			IF (selecao = 1) THEN
+--				selecao <= 0;
+--			ELSE
+--				selecao <= selecao + 1;
+--			END IF;
+--		END IF;
+--		
+--	END PROCESS;
+--	-- Fim seleção interface
+--	
+--	
+--DISPLAY_MENU:WORK.display
+--	
+--	PORT MAP(
+--		color,
+--		altura,
+--		selecao,
+--		
+--		HEX0,
+--		HEX1,
+--		HEX2,
+--		HEX3,
+--		HEX4,
+--		HEX5,
+--		HEX6,
+--		HEX7
+--		);
+--
+--		
+--SENSOR_ALTURA: WORK.hc_sr04
+--	
+--	PORT MAP(
+--	CLOCK_50,
+--	SW(0),
+--	GPIO(1),
+--	GPIO(0),
+--	altura
+--	);
 
 		
 END display;

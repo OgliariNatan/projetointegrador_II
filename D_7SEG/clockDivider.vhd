@@ -6,7 +6,7 @@ USE IEEE.STD_LOGIC_1164.ALL;
 
 ENTITY clockDivider IS
 
-	PORT	 ( CLOCKIN	: IN 	STD_LOGIC;
+	PORT	 ( CLOCKIN	: IN STD_LOGIC;
 				FreqIn	: IN INTEGER;
 				freqOut	: IN INTEGER;
 				
