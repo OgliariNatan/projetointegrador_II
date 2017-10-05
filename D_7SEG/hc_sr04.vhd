@@ -40,14 +40,33 @@ ARCHITECTURE behavior OF hc_sr04 IS
 	
 	BEGIN
 	
-		HC_SR04_CLOCK:WORK.clockDivider
+		PROCESS(CLOCK_CORE)
 		
-			PORT MAP(
-			CLOCK_CORE,
-			freqIn,
-			count_out,
-			count_clock
-			);
+		VARIABLE counter : INTEGER RANGE 0 TO COUNT_MAX := 0;
+		
+		BEGIN
+		
+			IF (CLOCK_CORE'EVENT AND CLOCK_CORE = '1') THEN
+			
+				IF counter < COUNT_MAX THEN
+					counter := counter + 1;
+				ELSE
+					counter := 0;
+					hc_clock   <= NOT hc_clock;
+				
+				END IF;
+			END IF;
+		END PROCESS;
+		count_clock <= hc_clock;
+		
+--		HC_SR04_CLOCK:WORK.clockDivider
+--		
+--			PORT MAP(
+--			CLOCK_CORE,
+--			freqIn,
+--			count_out,
+--			count_clock
+--			);
 		
 		PROCESS(count_clock, echo)
 	
