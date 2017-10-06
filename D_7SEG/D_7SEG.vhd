@@ -29,7 +29,7 @@ ENTITY D_7SEG IS
 	
 	PORT(	--Definições dos sinais de entrada
 			CLOCK_50			: IN STD_LOGIC;--Entrada do clock da placa
-			CLOCKOUT			: BUFFER STD_LOGIC; --POSSIVEL SAIDA DO DIVISOR DE CLOCK
+		
 		
 			-- Sensor de distância
 			GPIO					: INOUT STD_LOGIC_VECTOR (35 DOWNTO 0);	-- Declara um Buffer para que possamos utilizar com I/O
@@ -78,6 +78,8 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 	SIGNAL   clock			: STD_LOGIC := '0';
 	CONSTANT COUNT_MAX	: INTEGER 	:= ((freqIn / freqOut) / 2)-1;
 	
+	signal	CLOCKOUT			: STD_LOGIC; --POSSIVEL SAIDA DO DIVISOR DE CLOCK
+	
 	BEGIN--Começa a logica do programa
 
 BOTAO_MENU: WORK.debouncer_pi
@@ -110,67 +112,78 @@ BOTAO_MENU: WORK.debouncer_pi
 		CLOCKOUT <= clock;	
 
 
-PROCESS(CLOCKOUT)
+	PROCESS(CLOCKOUT, SW)
+		
+		TYPE State_type IS (STANDBY, DISP_TRIGGER, WAIT_ECHO, MEASURE);  -- Define the states
+		
+		variable NEXT_STATE : State_Type;    -- Create a signal that uses 
 	
-		VARIABLE STATE			:	INTEGER RANGE 0 TO 2 := 0;
-		VARIABLE NEXT_STATE	:	INTEGER RANGE 0 TO 2 := 0;
+		
+		--VARIABLE STATE			:	INTEGER RANGE 0 TO 3 := 0;
+		--VARIABLE NEXT_STATE	:	INTEGER RANGE 0 TO 3 := 0;
 		
 		VARIABLE	counter 		: INTEGER RANGE 0 TO 500 := 0;
 		
 		CONSTANT	COUNT_MAX		: INTEGER 	:= 500; --10us
 		CONSTANT MAX_DIST			: INTEGER	:= 200;
-		CONSTANT DISP_TRIGGER 	: integer := 0;
-		CONSTANT WAIT_ECHO  		: integer := 1;
-		CONSTANT STANDBY			: integer := 2;
+		--CONSTANT IDLE				: integer := 0
+		--CONSTANT STANDBY			: integer := 0;
+		--CONSTANT DISP_TRIGGER 	: integer := 1;
+		--CONSTANT WAIT_ECHO  		: integer := 2;
+		--constant MEASURE			: integer := 3;	
 		
 		BEGIN
-	
-			IF(sw(0) = '1') THEN
-				
-				CASE STATE IS
-				
-					WHEN DISP_TRIGGER =>
-					
-						GPIO(2) <= '1';
-						counter := counter + 1;
-						
-						
-						IF (counter = 10) THEN
-							GPIO(0) <= CLOCKOUT;
-							counter := 0;
-							GPIO(2) <= '0';
-							NEXT_STATE := WAIT_ECHO;
-						END IF;
-					
-					WHEN WAIT_ECHO =>
-						IF(GPIO(1) = '1' ) THEN
-						
-							counter := counter + 1;
-						
-						END IF;
-						
-						IF(GPIO(1) = '0' AND counter>0) THEN
-							dist_mm <= MAX_DIST - (counter*10)/58;
-							NEXT_STATE := STANDBY;
-						END IF;
-						
-					WHEN STANDBY =>
-						
-				
-				STATE := NEXT_STATE;
-				
-				END CASE;
-				
-			END IF;
+		
+			if SW(17) = '1' then
+				NEXT_STATE := STANDBY;
+			else		
+				if rising_edge(CLOCKOUT) then
+						--NEXT_STATE := STANDBY;			
+						CASE NEXT_STATE IS
+							
+							when STANDBY => 
+								IF(sw(0) = '0') then
+									NEXT_STATE := STANDBY;
+								else
+									NEXT_STATE := DISP_TRIGGER;
+								end if;
+											
+							WHEN DISP_TRIGGER =>														
+								IF (counter <= 10) THEN
+									GPIO(2) <= '1';								
+									NEXT_STATE := DISP_TRIGGER;
 			
-			IF(SW(0) = '0') THEN
-			
-				STATE := DISP_TRIGGER;
-				counter := 0;
-				GPIO(2) <= '0';
-				
-			END IF;
-						
+									counter := counter + 1;		
+								else
+									counter := 0;
+									GPIO(2) <= '0';
+									NEXT_STATE := WAIT_ECHO;							
+								END IF;
+							
+							WHEN WAIT_ECHO =>
+								if GPIO(1) = '0' then
+									NEXT_STATE := WAIT_ECHO;
+								else
+									NEXT_STATE := MEASURE;
+								end if;
+								
+							when MEASURE =>
+								if GPIO(1) = '1' then						
+									counter := counter + 1;
+									NEXT_STATE := MEASURE;
+								else
+									dist_mm <= (counter)/58;
+									--dist_mm <= MAX_DIST - (counter*10)/58;
+									
+									--if (SW(0) = '1') then								
+										--NEXT_STATE := MEASURE;
+									--else
+										NEXT_STATE := STANDBY;
+									--end if;
+								end if;
+						END CASE;
+				end if;
+			end if;
 		END PROCESS;
 	
 
@@ -178,8 +191,6 @@ PROCESS(CLOCKOUT)
 	-- Seleção da interface
 	PROCESS (buttonOut) 
 	BEGIN
-	
-	
 	  
 		IF (buttonOut'EVENT AND buttonOut='1') THEN
 
@@ -198,7 +209,7 @@ DISPLAY_MENU:WORK.display
 	
 	PORT MAP(
 		color,
-		altura,
+		dist_mm,
 		selecao,
 		
 		HEX0,
