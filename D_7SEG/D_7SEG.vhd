@@ -22,9 +22,10 @@ USE ieee.std_logic_unsigned.all;
 
 ENTITY D_7SEG IS
 	--Defenições genericas
-	GENERIC(	freqIn		: INTEGER := 50000000;  --Frequencia da placa
-				defaultState : STD_LOGIC := '0'; 	--Define dois estados "1" "0"
-				freqOut 		: INTEGER :=1000000 		--Saida do divisor de clock
+	GENERIC(	freqIn			: INTEGER := 50000000;  	--Frequencia da placa
+				defaultState 	: STD_LOGIC := '0'; 		--Define dois estados "1" "0"
+				freqOut1 		: INTEGER :=1000000;	 	--Saida do divisor de clock
+				freqOut2 		: INTEGER :=17000 		--Saida do divisor de clock
 	);
 	
 	PORT(	--Definições dos sinais de entrada
@@ -44,13 +45,13 @@ ENTITY D_7SEG IS
 			  HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6, HEX7: OUT STD_LOGIC_VECTOR (0 TO 6);
 
 			--Definição da saida do "botão virtual" de antitrepidação
-			buttonOut			: BUFFER STD_LOGIC;
+			buttonOut			: BUFFER STD_LOGIC
 			--END_GPIO(2)			: BUFFER STD_LOGIC := '1';
 			--HC_ENABLE			: BUFFER STD_LOGIC := '0'; -- habilitador de leitura do sensor de altura
 			--new_enable			: BUFFER STD_LOGIC; --APAGAR 
 			
 			--DECLARAÇÂO DE LED para testes
-			LEDR					: OUT STD_LOGIC_VECTOR(17 DOWNTO 0)
+			--LEDR					: OUT STD_LOGIC_VECTOR(17 DOWNTO 0)
 		);
 	
 END D_7SEG;
@@ -73,12 +74,15 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 	SIGNAL 	li						: INTEGER;					-- Leitura inicial	
 	SIGNAL	color					: STD_LOGIC := '0';
 	SIGNAL	altura				: INTEGER := 99;
-	SIGNAL	dist_mm		: INTEGER;
+	SIGNAL	dist_mm				: INTEGER;
 	
-	SIGNAL   clock			: STD_LOGIC := '0';
-	CONSTANT COUNT_MAX	: INTEGER 	:= ((freqIn / freqOut) / 2)-1;
+	SIGNAL   clock1			: STD_LOGIC := '0';
+	SIGNAL   clock2			: STD_LOGIC := '0';
+	CONSTANT COUNT_MAX1	: INTEGER 	:= ((freqIn / freqOut1) / 2)-1;
+	CONSTANT COUNT_MAX2	: INTEGER 	:= ((freqIn / freqOut2) / 2)-1;
 	
-	signal	CLOCKOUT			: STD_LOGIC; --POSSIVEL SAIDA DO DIVISOR DE CLOCK
+	signal	CLOCKOUT1			: STD_LOGIC; --POSSIVEL SAIDA DO DIVISOR DE CLOCK
+	signal	CLOCKOUT2			: STD_LOGIC; --POSSIVEL SAIDA DO DIVISOR DE CLOCK
 	
 	BEGIN--Começa a logica do programa
 
@@ -94,30 +98,58 @@ BOTAO_MENU: WORK.debouncer_pi
 
 		PROCESS(CLOCK_50)
 		
-		VARIABLE counter : INTEGER RANGE 0 TO COUNT_MAX := 0;
+		VARIABLE counter : INTEGER RANGE 0 TO COUNT_MAX2 := 0;
 		
 		BEGIN
 		
 			IF (CLOCK_50'EVENT AND CLOCK_50 = '1') THEN
 			
-				IF counter < COUNT_MAX THEN
+				IF counter < COUNT_MAX1 THEN
 					counter := counter + 1;
 				ELSE
 					counter := 0;
-					clock   <= NOT clock;
+					clock1   <= NOT clock1;
+				
+				END IF;
+				
+				IF counter < COUNT_MAX2 THEN
+					counter := counter + 1;
+				ELSE
+					counter := 0;
+					clock2   <= NOT clock2;
 				
 				END IF;
 			END IF;
 		END PROCESS;
-		CLOCKOUT <= clock;	
+		CLOCKOUT1 <= clock1;
+		CLOCKOUT2 <= clock2;	
+		
 
+--CLOCK_1MHz:WORK.clockDivider
+--	PORT MAP
+--	(
+--		CLOCK_50,
+--		freqIn,
+--		freqOut1,
+--		CLOCKOUT2
+--	);
+--
+--	
+--CLOCK_17kHz:WORK.clockDivider
+--	PORT MAP
+--	(
+--		CLOCK_50,
+--		freqIn,
+--		freqOut2,
+--		CLOCKOUT1
+--	);
 
-	PROCESS(CLOCKOUT, SW)
+	PROCESS(CLOCKOUT2, CLOCKOUT1, SW)
 		
 		TYPE State_type IS (STANDBY, DISP_TRIGGER, WAIT_ECHO, MEASURE);  -- Define the states
 		
 		variable NEXT_STATE : State_Type;    -- Create a signal that uses 
-	
+		
 		
 		--VARIABLE STATE			:	INTEGER RANGE 0 TO 3 := 0;
 		--VARIABLE NEXT_STATE	:	INTEGER RANGE 0 TO 3 := 0;
@@ -136,16 +168,17 @@ BOTAO_MENU: WORK.debouncer_pi
 		
 			if SW(17) = '1' then
 				NEXT_STATE := STANDBY;
-			else		
-				if rising_edge(CLOCKOUT) then
-						--NEXT_STATE := STANDBY;			
-						CASE NEXT_STATE IS
+			else
+				if rising_edge(CLOCKOUT2) then
+					if rising_edge(CLOCKOUT1) then
+										
+							CASE NEXT_STATE IS
 							
 							when STANDBY => 
-								IF(sw(0) = '0') then
-									NEXT_STATE := STANDBY;
-								else
+								IF sw(0) = '1' then
 									NEXT_STATE := DISP_TRIGGER;
+								else
+									NEXT_STATE := STANDBY;
 								end if;
 											
 							WHEN DISP_TRIGGER =>														
@@ -172,7 +205,8 @@ BOTAO_MENU: WORK.debouncer_pi
 									counter := counter + 1;
 									NEXT_STATE := MEASURE;
 								else
-									dist_mm <= (counter)/58;
+									dist_mm <= counter*10/58;
+									counter := 0;
 									--dist_mm <= MAX_DIST - (counter*10)/58;
 									
 									--if (SW(0) = '1') then								
@@ -181,7 +215,12 @@ BOTAO_MENU: WORK.debouncer_pi
 										NEXT_STATE := STANDBY;
 									--end if;
 								end if;
-						END CASE;
+							WHEN OTHERS =>
+									counter := 0;
+									GPIO(2) <= '0';
+									NEXT_STATE := STANDBY;
+							END CASE;
+					end if;
 				end if;
 			end if;
 		END PROCESS;
