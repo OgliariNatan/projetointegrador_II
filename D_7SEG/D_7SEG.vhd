@@ -73,10 +73,10 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 	SIGNAL 	li						: INTEGER;					-- Leitura inicial	
 	SIGNAL	color					: STD_LOGIC := '0';
 	SIGNAL	altura				: INTEGER := 99;
-	SIGNAL	dist_mm		: INTEGER;
-	
-	SIGNAL   clock			: STD_LOGIC := '0';
-	CONSTANT COUNT_MAX	: INTEGER 	:= ((freqIn / freqOut) / 2)-1;
+	--SIGNAL	dist_mm				: INTEGER;
+	SIGNAL	dist_cm				: INTEGER;
+	SIGNAL   clock					: STD_LOGIC := '0';
+	CONSTANT COUNT_MAX			: INTEGER 	:= ((freqIn / freqOut) / 2)-1;
 	
 	signal	CLOCKOUT			: STD_LOGIC; --POSSIVEL SAIDA DO DIVISOR DE CLOCK
 	
@@ -116,16 +116,16 @@ BOTAO_MENU: WORK.debouncer_pi
 		
 		TYPE State_type IS (STANDBY, DISP_TRIGGER, WAIT_ECHO, MEASURE);  -- Define the states
 		
-		variable NEXT_STATE : State_Type;    -- Create a signal that uses 
+		variable NEXT_STATE : State_Type;    -- Create a variable that uses 
 	
 		
 		--VARIABLE STATE			:	INTEGER RANGE 0 TO 3 := 0;
 		--VARIABLE NEXT_STATE	:	INTEGER RANGE 0 TO 3 := 0;
 		
-		VARIABLE	counter 		: INTEGER RANGE 0 TO 500 := 0;
+		VARIABLE	counter 		: INTEGER := 0;
 		
 		CONSTANT	COUNT_MAX		: INTEGER 	:= 500; --10us
-		CONSTANT MAX_DIST			: INTEGER	:= 200;
+		CONSTANT MAX_DIST			: INTEGER	:= 13;
 		--CONSTANT IDLE				: integer := 0
 		--CONSTANT STANDBY			: integer := 0;
 		--CONSTANT DISP_TRIGGER 	: integer := 1;
@@ -136,12 +136,16 @@ BOTAO_MENU: WORK.debouncer_pi
 		
 			if SW(17) = '1' then
 				NEXT_STATE := STANDBY;
+				LEDR(17 DOWNTO 14) <= "0000";
+				counter := 0;
 			else		
 				if rising_edge(CLOCKOUT) then
 						--NEXT_STATE := STANDBY;			
 						CASE NEXT_STATE IS
 							
 							when STANDBY => 
+								LEDR(17 DOWNTO 14) <= "1000";
+								counter := 0;	
 								IF(sw(0) = '0') then
 									NEXT_STATE := STANDBY;
 								else
@@ -149,6 +153,7 @@ BOTAO_MENU: WORK.debouncer_pi
 								end if;
 											
 							WHEN DISP_TRIGGER =>														
+								LEDR(17 DOWNTO 14) <= "0100";
 								IF (counter <= 10) THEN
 									GPIO(2) <= '1';								
 									NEXT_STATE := DISP_TRIGGER;
@@ -161,24 +166,35 @@ BOTAO_MENU: WORK.debouncer_pi
 								END IF;
 							
 							WHEN WAIT_ECHO =>
+								LEDR(17 DOWNTO 14) <= "0010";
+								counter := counter + 1;
 								if GPIO(1) = '0' then
-									NEXT_STATE := WAIT_ECHO;
+									
+									if counter < 10000 then
+										NEXT_STATE := WAIT_ECHO;
+									else
+										NEXT_STATE := STANDBY;
+									END IF;
+									
 								else
 									NEXT_STATE := MEASURE;
+									counter := 0;	
 								end if;
 								
 							when MEASURE =>
+								LEDR(17 DOWNTO 14) <= "0001";
 								if GPIO(1) = '1' then						
 									counter := counter + 1;
 									NEXT_STATE := MEASURE;
 								else
-									dist_mm <= (counter)/58;
+									dist_cm <= MAX_DIST - (counter)/58;
 									--dist_mm <= MAX_DIST - (counter*10)/58;
 									
 									--if (SW(0) = '1') then								
 										--NEXT_STATE := MEASURE;
 									--else
 										NEXT_STATE := STANDBY;
+										counter := 0;
 									--end if;
 								end if;
 						END CASE;
@@ -209,7 +225,7 @@ DISPLAY_MENU:WORK.display
 	
 	PORT MAP(
 		color,
-		dist_mm,
+		dist_cm,
 		selecao,
 		
 		HEX0,
