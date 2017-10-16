@@ -155,7 +155,7 @@ BOTAO_MENU: WORK.debouncer_pi
 							WHEN DISP_TRIGGER =>														
 								LEDR(17 DOWNTO 14) <= "0100";
 								IF (counter <= 10) THEN
-									GPIO(2) <= '1';								
+									GPIO(2) <= '1';	--TRIGGER							
 									NEXT_STATE := DISP_TRIGGER;
 			
 									counter := counter + 1;		
