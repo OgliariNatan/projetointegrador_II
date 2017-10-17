@@ -49,7 +49,7 @@ ARCHITECTURE behavior OF display IS
 		conv_ten
 		);
 				
-	PROCESS(COR, ALTURA,SELECAO)
+	PROCESS(COR, ALTURA,SELECAO, conv_ten, conv_unit)
 	
 		--VARIABLE size			: INTEGER;
 		--VARIABLE selecao		: INTEGER RANGE 0 TO 1 := 0;

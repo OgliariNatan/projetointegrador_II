@@ -50,7 +50,8 @@ ENTITY D_7SEG IS
 			--new_enable			: BUFFER STD_LOGIC; --APAGAR 
 			
 			--DECLARAÇÂO DE LED para testes
-			LEDR					: OUT STD_LOGIC_VECTOR(17 DOWNTO 0)
+			LEDR					: OUT STD_LOGIC_VECTOR(17 DOWNTO 0);
+			LEDG					: OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
 		);
 	
 END D_7SEG;
@@ -74,13 +75,165 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 	SIGNAL	color					: STD_LOGIC := '0';
 	SIGNAL	altura				: INTEGER := 99;
 	--SIGNAL	dist_mm				: INTEGER;
-	SIGNAL	dist_cm				: INTEGER;
+	SIGNAL	dist_cm				: INTEGER range 0 to 511;
 	SIGNAL   clock					: STD_LOGIC := '0';
 	CONSTANT COUNT_MAX			: INTEGER 	:= ((freqIn / freqOut) / 2)-1;
 	
+	
+	CONSTANT MAX_DIST : INTEGER := 13;
+	
 	signal	CLOCKOUT			: STD_LOGIC; --POSSIVEL SAIDA DO DIVISOR DE CLOCK
 	
+	TYPE State_type IS (STANDBY, DISP_TRIGGER, WAIT_ECHO, MEASURE, END_LOOP, WAITING);  -- Define the states
+		
+	signal state : State_Type;    -- Create a variable that uses 
+	signal timer : integer range 0 to 131071;
+	signal timer_rst : std_logic;
+	signal timer_en : std_logic;
+	signal reg_data_en : std_logic;
+	
 	BEGIN--Começa a logica do programa
+	
+	
+	
+	fsm_state: PROCESS(CLOCKOUT, SW(17))
+	begin
+		
+		if SW(17) = '1' then
+			state <= STANDBY;
+	
+		elsif rising_edge(CLOCKOUT) then
+		
+			case state is
+				when STANDBY =>
+				
+					if (SW(14) = '1') then
+						state <= DISP_TRIGGER;
+					else
+						state <= STANDBY;
+					end if;
+				
+				when DISP_TRIGGER =>
+					
+					if (timer <= 10) then
+						state <= DISP_TRIGGER;
+					else
+						state <= WAIT_ECHO;						
+					end if;
+								
+				when WAIT_ECHO =>
+					
+					if (GPIO(1) = '0') then						
+						if timer > 100000 then
+							state <= STANDBY;
+						else						
+							state <= WAIT_ECHO;
+						end if;
+					else
+						state <= MEASURE;
+					end if;	
+		
+				
+				when MEASURE =>
+				
+					if (GPIO(1) = '1') then
+						state <= MEASURE;
+					else
+						state <= END_LOOP;
+					end if;	 
+				
+				
+				when END_LOOP =>
+					state <= WAITING;
+				
+			
+				when WAITING => 
+				
+					if timer <= 100000 then
+						state <= WAITING;
+					else
+						state <= STANDBY;
+					end if;
+					
+				when others =>
+					
+					state <= STANDBY;
+				
+			end case;	
+		end if;
+	end process;
+	
+	fsm_moore: process(state, timer)
+	begin
+	
+		timer_rst <= '0';
+		timer_en <= '1';
+		reg_data_en <= '0';
+		
+		GPIO(2) <= '0';
+	
+		case state is
+			
+			when STANDBY =>
+				LEDR(17 downto 12) <= "100000";
+				
+				timer_rst <= '1'; 
+				
+			when DISP_TRIGGER =>
+				LEDR(17 downto 12) <= "010000";
+				
+				if (timer <= 10) then
+					GPIO(2) <= '1';
+				else
+					GPIO(2) <= '0';
+				end if;
+								
+			when WAIT_ECHO =>
+				LEDR(17 downto 12) <= "001000";
+				timer_en <= '0';
+				
+			when MEASURE =>
+				LEDR(17 downto 12) <= "000100";				
+				
+			when END_LOOP =>
+				LEDR(17 downto 12) <= "000010";
+		
+				timer_en <= '0';
+				reg_data_en <= '1';
+			
+			when WAITING =>
+				LEDR(17 downto 12) <= "000001";	
+	
+			when others => 
+				LEDR(17 downto 12) <= "111111";	
+				
+		end case;	
+	
+	end process;
+	
+	
+	counter_up: process (CLOCKOUT, SW(17), timer_rst, timer_en)
+	begin
+		if SW(17) = '1' or timer_rst = '1' then
+			timer <= 0;
+		elsif rising_edge(CLOCKOUT) and timer_en = '1' then
+			timer <= timer + 1;
+		end if;
+	end process;
+	
+	
+	reg_data: process (CLOCKOUT, SW(17), reg_data_en)
+	begin	
+		if SW(17) = '1' then
+			dist_cm <= 0;
+		elsif rising_edge(CLOCKOUT) and reg_data_en = '1' then
+			dist_cm <= (timer - 10)/58;
+		end if;
+	end process;
+	
+	
+	---------------------------------------------
+	
 
 BOTAO_MENU: WORK.debouncer_pi
 
@@ -92,13 +245,16 @@ BOTAO_MENU: WORK.debouncer_pi
 		
 	--GPIO(1) <= CLOCKOUT;
 
-		PROCESS(CLOCK_50)
+		PROCESS(CLOCK_50,  SW(17))
 		
 		VARIABLE counter : INTEGER RANGE 0 TO COUNT_MAX := 0;
 		
 		BEGIN
 		
-			IF (CLOCK_50'EVENT AND CLOCK_50 = '1') THEN
+			if SW(17) = '1' then
+				counter := 0;		
+		
+			elsif (CLOCK_50'EVENT AND CLOCK_50 = '1') THEN
 			
 				IF counter < COUNT_MAX THEN
 					counter := counter + 1;
@@ -109,99 +265,10 @@ BOTAO_MENU: WORK.debouncer_pi
 				END IF;
 			END IF;
 		END PROCESS;
+		
+		
 		CLOCKOUT <= clock;	
-
-
-	PROCESS(CLOCKOUT, SW)
 		
-		TYPE State_type IS (STANDBY, DISP_TRIGGER, WAIT_ECHO, MEASURE);  -- Define the states
-		
-		variable NEXT_STATE : State_Type;    -- Create a variable that uses 
-	
-		
-		--VARIABLE STATE			:	INTEGER RANGE 0 TO 3 := 0;
-		--VARIABLE NEXT_STATE	:	INTEGER RANGE 0 TO 3 := 0;
-		
-		VARIABLE	counter 		: INTEGER := 0;
-		
-		CONSTANT	COUNT_MAX		: INTEGER 	:= 500; --10us
-		CONSTANT MAX_DIST			: INTEGER	:= 13;
-		--CONSTANT IDLE				: integer := 0
-		--CONSTANT STANDBY			: integer := 0;
-		--CONSTANT DISP_TRIGGER 	: integer := 1;
-		--CONSTANT WAIT_ECHO  		: integer := 2;
-		--constant MEASURE			: integer := 3;	
-		
-		BEGIN
-		
-			if SW(17) = '1' then
-				NEXT_STATE := STANDBY;
-				LEDR(17 DOWNTO 14) <= "0000";
-				counter := 0;
-			else		
-				if rising_edge(CLOCKOUT) then
-						--NEXT_STATE := STANDBY;			
-						CASE NEXT_STATE IS
-							
-							when STANDBY => 
-								LEDR(17 DOWNTO 14) <= "1000";
-								counter := 0;	
-								IF(sw(0) = '0') then
-									NEXT_STATE := STANDBY;
-								else
-									NEXT_STATE := DISP_TRIGGER;
-								end if;
-											
-							WHEN DISP_TRIGGER =>														
-								LEDR(17 DOWNTO 14) <= "0100";
-								IF (counter <= 10) THEN
-									GPIO(2) <= '1';	--TRIGGER							
-									NEXT_STATE := DISP_TRIGGER;
-			
-									counter := counter + 1;		
-								else
-									counter := 0;
-									GPIO(2) <= '0';
-									NEXT_STATE := WAIT_ECHO;							
-								END IF;
-							
-							WHEN WAIT_ECHO =>
-								LEDR(17 DOWNTO 14) <= "0010";
-								counter := counter + 1;
-								if GPIO(1) = '0' then
-									
-									if counter < 10000 then
-										NEXT_STATE := WAIT_ECHO;
-									else
-										NEXT_STATE := STANDBY;
-									END IF;
-									
-								else
-									NEXT_STATE := MEASURE;
-									counter := 0;	
-								end if;
-								
-							when MEASURE =>
-								LEDR(17 DOWNTO 14) <= "0001";
-								if GPIO(1) = '1' then						
-									counter := counter + 1;
-									NEXT_STATE := MEASURE;
-								else
-									dist_cm <= MAX_DIST - (counter)/58;
-									--dist_mm <= MAX_DIST - (counter*10)/58;
-									
-									--if (SW(0) = '1') then								
-										--NEXT_STATE := MEASURE;
-									--else
-										NEXT_STATE := STANDBY;
-										counter := 0;
-									--end if;
-								end if;
-						END CASE;
-				end if;
-			end if;
-		END PROCESS;
-	
 
 	
 	-- Seleção da interface
