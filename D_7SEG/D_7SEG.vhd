@@ -2,17 +2,7 @@
 --Arquivo para mostrar informações no display de 7 segmentos, no kit DE2-115
 --"correndo os dados"
 --chip: EP4CE115F29C7N
---
---DISPLAY 7SEGMENTOS (Ativo em nivel logico BAIXO "abcdefg")
---Segmentos do  display=Pino do display
---a=0         a
---b=1       ----
---c=2     f|    |b
---d=3      |  g |
---e=4       ----
---f=5     e|    |c
---g=6      |   d|
---ponto=7   ---- .ponto
+--Projeto para a disciplina de Projeto Integrador II
 
 LIBRARY ieee;
 LIBRARY work;
@@ -22,6 +12,7 @@ USE ieee.std_logic_unsigned.all;
 
 ENTITY D_7SEG IS
 	--Defenições genericas
+	
 	GENERIC(	freqIn		: INTEGER := 50000000;  --Frequencia da placa
 				defaultState : STD_LOGIC := '0'; 	--Define dois estados "1" "0"
 				freqOut 		: INTEGER :=1000000 		--Saida do divisor de clock
@@ -32,9 +23,9 @@ ENTITY D_7SEG IS
 		
 		
 			-- Sensor de distância
-			GPIO					: INOUT STD_LOGIC_VECTOR (35 DOWNTO 0);	-- Declara um Buffer para que possamos utilizar com I/O
+			GPIO					: INOUT STD_LOGIC_VECTOR (35 DOWNTO 0);	-- Declara os pinos GPIO como I/O
 			--GPIO(1) = echo
-			--GPIO(2) = GPIO(2)	
+			--GPIO(2) = Trigger	
 	
 			--Definições de botão de ajuste 
 			  KEY					: IN STD_LOGIC_VECTOR (3 DOWNTO 0) := "0000";
@@ -45,9 +36,6 @@ ENTITY D_7SEG IS
 
 			--Definição da saida do "botão virtual" de antitrepidação
 			buttonOut			: BUFFER STD_LOGIC;
-			--END_GPIO(2)			: BUFFER STD_LOGIC := '1';
-			--HC_ENABLE			: BUFFER STD_LOGIC := '0'; -- habilitador de leitura do sensor de altura
-			--new_enable			: BUFFER STD_LOGIC; --APAGAR 
 			
 			--DECLARAÇÂO DE LED para testes
 			LEDR					: OUT STD_LOGIC_VECTOR(17 DOWNTO 0);
@@ -57,13 +45,9 @@ ENTITY D_7SEG IS
 END D_7SEG;
 
 ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
-	--Divisor de frequencia
-	SIGNAL count 					: INTEGER :=1; --divisão do clock
-	--SIGNAL clk_sd	  		  	   : STD_LOGIC :='0';	-- Clock para sensor de distancia
 	
 	--seleção de interface
-
-	SIGNAL selecao 		: INTEGER RANGE 0 TO 1:= 0; --Numero de seleção
+	SIGNAL 	selecao 				: INTEGER RANGE 0 TO 1:= 0; --Numero de seleção
 	
 	-- Sensor de distância
 	SIGNAL 	distancia     		: INTEGER := 0;			-- Calculo da distância
@@ -80,26 +64,24 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 	CONSTANT COUNT_MAX			: INTEGER 	:= ((freqIn / freqOut) / 2)-1;
 	
 	
-	CONSTANT MAX_DIST : INTEGER := 13;
+	CONSTANT MAX_DIST 			: INTEGER := 13; -- Variavel para o fundo de escala do sensor de distancia
+	signal	CLOCKOUT				: STD_LOGIC; --POSSIVEL SAIDA DO DIVISOR DE CLOCK
 	
-	signal	CLOCKOUT			: STD_LOGIC; --POSSIVEL SAIDA DO DIVISOR DE CLOCK
-	
-	TYPE State_type IS (STANDBY, DISP_TRIGGER, WAIT_ECHO, MEASURE, END_LOOP, WAITING);  -- Define the states
+	TYPE State_type IS (STANDBY, DISP_TRIGGER, WAIT_ECHO, MEASURE, END_LOOP, WAITING);  -- Define os estados da maquina de estados
 		
-	signal state : State_Type;    -- Create a variable that uses 
-	signal timer : integer range 0 to 131071;
-	signal timer_rst : std_logic;
-	signal timer_en : std_logic;
-	signal reg_data_en : std_logic;
+	signal state 					: State_Type;    -- Variavell que recebe o proximo estado da maquina de estados 
+	signal timer 					: integer range 0 to 131071;
+	signal timer_rst 				: std_logic;
+	signal timer_en 				: std_logic;
+	signal reg_data_en	  		 : std_logic;
 	
 	BEGIN--Começa a logica do programa
 	
 	
-	
-	fsm_state: PROCESS(CLOCKOUT, SW(17))
+	fsm_state: PROCESS(CLOCKOUT, SW(17)) --SW(17)=RST
 	begin
 		
-		if SW(17) = '1' then
+		if SW(17) = '1' then 
 			state <= STANDBY;
 	
 		elsif rising_edge(CLOCKOUT) then
@@ -113,7 +95,7 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 						state <= STANDBY;
 					end if;
 				
-				when DISP_TRIGGER =>
+				when DISP_TRIGGER => 
 					
 					if (timer <= 10) then
 						state <= DISP_TRIGGER;
@@ -169,8 +151,7 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 		timer_rst <= '0';
 		timer_en <= '1';
 		reg_data_en <= '0';
-		
-		GPIO(2) <= '0';
+		GPIO(2) <= '0'; -- Zera o TRIGGER por padrão.
 	
 		case state is
 			
@@ -208,7 +189,6 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 				LEDR(17 downto 12) <= "111111";	
 				
 		end case;	
-	
 	end process;
 	
 	
@@ -227,7 +207,7 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 		if SW(17) = '1' then
 			dist_cm <= 0;
 		elsif rising_edge(CLOCKOUT) and reg_data_en = '1' then
-			dist_cm <= (timer - 10)/58;
+			dist_cm <= (timer - 10)/58; -- subtrai o off-set do contador 
 		end if;
 	end process;
 	
@@ -242,10 +222,8 @@ BOTAO_MENU: WORK.debouncer_pi
 		KEY(0),
 		buttonOut
 		);
-		
-	--GPIO(1) <= CLOCKOUT;
 
-		PROCESS(CLOCK_50,  SW(17))
+		PROCESS(CLOCK_50, SW(17))
 		
 		VARIABLE counter : INTEGER RANGE 0 TO COUNT_MAX := 0;
 		
@@ -266,13 +244,11 @@ BOTAO_MENU: WORK.debouncer_pi
 			END IF;
 		END PROCESS;
 		
-		
 		CLOCKOUT <= clock;	
 		
-
 	
 	-- Seleção da interface
-	PROCESS (buttonOut) 
+	sel_face: PROCESS (buttonOut) 
 	BEGIN
 	  
 		IF (buttonOut'EVENT AND buttonOut='1') THEN
@@ -283,12 +259,11 @@ BOTAO_MENU: WORK.debouncer_pi
 				selecao <= selecao + 1;
 			END IF;
 		END IF;
-		
 	END PROCESS;
 	-- Fim seleção interface
 	
 	
-DISPLAY_MENU:WORK.display
+DISPLAY_MENU: WORK.display
 	
 	PORT MAP(
 		color,
@@ -304,17 +279,5 @@ DISPLAY_MENU:WORK.display
 		HEX6,
 		HEX7
 		);
-
-		
---SENSOR_ALTURA: WORK.hc_sr04
---	
---	PORT MAP(
---	CLOCK_50,
---	SW(0),
---	GPIO(1),
---	GPIO(2),
---	altura
---	);
-
 		
 END display;
