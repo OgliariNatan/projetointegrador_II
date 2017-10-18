@@ -3,6 +3,7 @@
 #but not these files
 !.gitignore
 !README.md
+!D_7SEG/
 !D_7SEG/*.vhd
 !D_7SEG/*.qpf
 !D_7SEG/*.txt
@@ -18,6 +19,6 @@
 !DE2_115_pin_assignments.csv
 !teste trigger/*.vhd
 !teste trigger/*.qpf
-
+!teste_cor/
 !teste_cor/*.vhd
 !teste_cor/*.qpf
