@@ -6,6 +6,7 @@
 !D_7SEG/*.vhd
 !D_7SEG/*.qpf
 !D_7SEG/*.txt
+!D_7SEG/*.sdc
 !Contador/*.vhd
 !ENG PI-1/*.vhd
 !selecao_cor/*.vhd
