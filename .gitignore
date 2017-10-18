@@ -8,15 +8,18 @@
 !D_7SEG/*.qpf
 !D_7SEG/*.txt
 !D_7SEG/*.sdc
+!Contador/
 !Contador/*.vhd
 !ENG PI-1/*.vhd
 !selecao_cor/*.vhd
 !selecao_cor/*.qpf
+!Antitrepidação/
 !Antitrepidação/*.vhd
 !01_seletor/*.vhd
 !01_projeto/*.vhd
 !*.pdf
 !DE2_115_pin_assignments.csv
+!teste trigger/
 !teste trigger/*.vhd
 !teste trigger/*.qpf
 !teste_cor/
