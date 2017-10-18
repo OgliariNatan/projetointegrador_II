@@ -9,8 +9,11 @@
 !Contador/*.vhd
 !ENG PI-1/*.vhd
 !selecao_cor/*.vhd
+!selecao_cor/*.qpf
 !Antitrepidação/*.vhd
 !01_seletor/*.vhd
 !01_projeto/*.vhd
 !*.pdf
 !DE2_115_pin_assignments.csv
+!teste trigger/*.vhd
+!teste trigger/*.qpf
