@@ -25,3 +25,8 @@
 !teste_cor/
 !teste_cor/*.vhd
 !teste_cor/*.qpf
+
+!relatório_PI_2/
+!relatório_PI_2/*.jpg
+!relatório_PI_2/*.tex
+!relatório_PI_2/*.bib
