@@ -2,7 +2,7 @@ LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
 
 
-<<<<<<< HEAD
+
 ENTITY teste_cor IS
 
 	GENERIC
@@ -27,7 +27,7 @@ ENTITY teste_cor IS
 			  SW				: IN STD_LOGIC_VECTOR (17 DOWNTO 0);
 =======
 --teste 
->>>>>>> be0d8669a3db01a4ad9a929253f110bda338270b
+
 
 			--Definição do display_7Segmentos
 			  HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6, HEX7: OUT STD_LOGIC_VECTOR (0 TO 6);
