@@ -6,16 +6,17 @@
 
 LIBRARY ieee;
 LIBRARY work;
-USE ieee.std_logic_1164.all;
-USE ieee.std_logic_unsigned.all;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+use ieee.numeric_std.all;
 
 
 ENTITY D_7SEG IS
 	--Defenições genericas
 	
-	GENERIC(	freqIn		: INTEGER := 50000000;  --Frequencia da placa
-				defaultState : STD_LOGIC := '0'; 	--Define dois estados "1" "0"
-				freqOut 		: INTEGER :=1000000 		--Saida do divisor de clock
+	GENERIC(	freqIn			: INTEGER := 50000000;  --Frequencia da placa
+				defaultState 	: STD_LOGIC := '0'; 	--Define dois estados "1" "0"
+				freqOut 			: INTEGER :=1000000 		--Saida do divisor de clock
 	);
 	
 	PORT(	--Definições dos sinais de entrada
@@ -39,7 +40,29 @@ ENTITY D_7SEG IS
 			
 			--DECLARAÇÂO DE LED para testes
 			LEDR					: OUT STD_LOGIC_VECTOR(17 DOWNTO 0);
-			LEDG					: OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
+			LEDG					: OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+			
+			---Configurações do sensor de cor  
+			areset		: in std_logic  := '0';
+			inclk0		: in std_logic  := '0';
+			c0				: out std_logic;
+			
+			clk_50Mhz : in std_logic;			-- 50MHz input clock
+			rst : in std_logic;			-- input clock
+		
+			data_in : in std_logic;		-- sensor data input
+		
+			freq_sel : in std_logic_vector(1 downto 0); 
+			-- freq_sel
+			-- "00" Power down
+			-- "10" 002% 	010~012 kHz
+			-- "01" 020%	100~120 kHz
+			-- "11" 100%	500~600 kHz   <--- Validated 		
+		
+			s_out   : out std_logic_vector(3 downto 0);	-- Filter selection
+			red 	: out std_logic;							-- '1' if red is detected
+			blue 	: out std_logic;							-- '1' if blue is detected
+			green	: out std_logic		
 		);
 	
 END D_7SEG;
@@ -212,8 +235,29 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 	end process;
 	
 	
-	---------------------------------------------
+	---------------------------------------------Inicio cor
+	SENSOR_COR: WORK.tcs230
 	
+	PORT MAP(
+		clk_50Mhz,
+		rst,
+		
+		data_in,
+		
+		freq_sel,
+	
+		
+		s_out,
+		red,
+		blue,
+		green		
+		);
+		
+	END SENSOR_COR;
+	
+	
+	
+	--------------------------------------------FIM cor
 
 BOTAO_MENU: WORK.debouncer_pi
 
