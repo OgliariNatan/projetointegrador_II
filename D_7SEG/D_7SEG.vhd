@@ -60,9 +60,9 @@ ENTITY D_7SEG IS
 			-- "11" 100%	500~600 kHz   <--- Validated 		
 		
 			s_out   : out std_logic_vector(3 downto 0);	-- Filter selection
-			red 	: out std_logic;							-- '1' if red is detected
-			blue 	: out std_logic;							-- '1' if blue is detected
-			green	: out std_logic		
+			red 	: buffer std_logic;							-- '1' if red is detected
+			blue 	: buffer std_logic;							-- '1' if blue is detected
+			green	: buffer std_logic		
 		);
 	
 END D_7SEG;
@@ -239,21 +239,21 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 	SENSOR_COR: WORK.tcs230
 	
 	PORT MAP(
-		clk_50Mhz,
-		rst,
+		CLOCK_50,
+		SW(11),				-- iniciador do processo de leitura , RESET
 		
-		data_in,
+		GPIO(15),		-- saida em frequencia do sensor, entrada de dados da maquina de estados 
 		
-		freq_sel,
+		"11",				-- escala máxima de frequência
 	
 		
-		s_out,
+		s_out,			-- seletor do filtro para cor - porque é uma saída? porque tem 4 bits?
 		red,
 		blue,
 		green		
 		);
 		
-	END SENSOR_COR;
+	--END SENSOR_COR;
 	
 	
 	
@@ -310,7 +310,8 @@ BOTAO_MENU: WORK.debouncer_pi
 DISPLAY_MENU: WORK.display
 	
 	PORT MAP(
-		color,
+		red,
+		blue,
 		dist_cm,
 		selecao,
 		
