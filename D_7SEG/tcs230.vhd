@@ -22,7 +22,7 @@ entity tcs230 is
 		clk_50Mhz : in std_logic;			-- 50MHz input clock
 		rst : in std_logic;			-- input clock
 		
-		data_in : in std_logic;		-- sensor data input
+		data_in 	: in std_logic;		-- sensor data input
 		
 		freq_sel : in std_logic_vector(1 downto 0); 
 		-- freq_sel
@@ -31,7 +31,7 @@ entity tcs230 is
 		-- "01" 020%	100~120 kHz
 		-- "11" 100%	500~600 kHz   <--- Validated 		
 		
-		s_out   : out std_logic_vector(3 downto 0);	-- Filter selection
+		s_out : out std_logic_vector(3 downto 0);	-- Filter selection
 		red 	: out std_logic;							-- '1' if red is detected
 		blue 	: out std_logic;							-- '1' if blue is detected
 		green	: out std_logic								-- '1' if green is detected	

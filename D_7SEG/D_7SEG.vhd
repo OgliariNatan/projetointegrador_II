@@ -59,10 +59,16 @@ ENTITY D_7SEG IS
 			-- "01" 020%	100~120 kHz
 			-- "11" 100%	500~600 kHz   <--- Validated 		
 		
-			s_out   : out std_logic_vector(3 downto 0);	-- Filter selection
+			s_out :OUT std_logic_vector(3 downto 0);	-- Filter selection
 			red 	: buffer std_logic;							-- '1' if red is detected
 			blue 	: buffer std_logic;							-- '1' if blue is detected
-			green	: buffer std_logic		
+			green	: buffer std_logic;		
+			--FIM da configuração de cor
+			
+			--Configuração do pwmDC
+			vel 			:OUT std_logic_vector(3 downto 0);
+			onOF		 	:IN std_logic
+			
 		);
 	
 END D_7SEG;
@@ -323,5 +329,19 @@ DISPLAY_MENU: WORK.display
 		HEX6,
 		HEX7
 		);
+		
+CONTROL_PWM: work.pwmDC		
+		
+	PORT MAP(
+		clk_50Mhz, 			-- 50MHz input clock
+		rst, 		 			-- input clock
+		'1',--   sen_prox		--Sensor de proximidade
+		vel, 			--seleciona a velocidade do motor
+			
+		GPIO(8) 				--LIGA/DESLIGA
+		
+	);	
+		
+		
 		
 END display;
