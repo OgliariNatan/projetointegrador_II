@@ -32,8 +32,8 @@ entity tcs230 is
 		-- "11" 100%	500~600 kHz   <--- Validated 		
 		
 		s_out   : out std_logic_vector(3 downto 0);	-- Filter selection
-		red 	: out std_logic;								-- '1' if red is detected
-		blue 	: out std_logic;								-- '1' if blue is detected
+		red 	: out std_logic;							-- '1' if red is detected
+		blue 	: out std_logic;							-- '1' if blue is detected
 		green	: out std_logic								-- '1' if green is detected	
 	);
 end entity tcs230;
@@ -61,6 +61,7 @@ architecture RTL of tcs230 is
 		en : in std_logic;
 		filter_sel : out std_logic_vector(1 downto 0);
 		filter_done : out std_logic;
+		reload_reg : out std_logic;
 		done : out std_logic
 	);
 	end component fsm;
@@ -107,6 +108,7 @@ architecture RTL of tcs230 is
 	signal freq_green_acc :  std_logic_vector(23 downto 0);
 	signal filter_sel	: std_logic_vector(1 downto 0);
 	signal done : std_logic;
+	signal reload : std_logic;
 	
 	signal r,g,b : std_logic;
 	signal clk : std_logic;
@@ -120,6 +122,8 @@ begin
 		c0 => clk
 	);
 	
+	-- clk <= clk_50Mhz;
+
 	-- generate address for debug_ram
 	process(clk, rst)
 	begin
@@ -169,6 +173,7 @@ begin
 			en  => '1',
 			filter_sel => filter_sel,
 			filter_done => filtered,
+			reload_reg => reload,
 			done => done
 		);
 	
@@ -176,30 +181,31 @@ begin
 	
 	
 	-- signal filtering process
-	acc:process (clk, rst)
+	acc:process (clk, rst, reload)
 	begin
-		if rst = '1' then
+		if rst = '1'  then
 			freq_red_acc <= (others => '0');
 			freq_blue_acc <= (others => '0');
 			freq_green_acc <= (others => '0');
 		else
-			if rising_edge(clk) then
-				
-				if filtered = '0' then				
+			if rising_edge(clk) then				
+				if reload = '1' then				
+					freq_red_acc <= (others => '0');
+					freq_blue_acc <= (others => '0');
+					freq_green_acc <= (others => '0');		
+				elsif filtered = '0' then
 					case filter_sel is
 						when RED_FILTER_SEL =>
-							freq_red_acc <= freq_red_acc + freq;
-						
+							freq_red_acc <= freq_red_acc + freq;						
 						when BLUE_FILTER_SEL =>
-							freq_blue_acc <= freq_blue_acc + freq;
-						
+							freq_blue_acc <= freq_blue_acc + freq;						
 						when GREEN_FILTER_SEL =>
 							freq_green_acc <= freq_green_acc + freq;
 						when others =>	
 						
 					end case;
-				else
-					
+							
+				else					
 					if filter_sel = RED_FILTER_SEL then					
 						freq_red_acc <= x"00" & freq_red_acc(23 downto SHIFT_BITS);
 					end if;
@@ -237,7 +243,8 @@ begin
 					b <= '0';
 					g <= '0';
 				elsif ((freq_blue_acc < freq_red_acc) and
-					(freq_blue_acc < freq_green_acc)) then
+					(freq_blue_acc < freq_green_acc)) then 
+					-- (freq_blue_acc < x"80") then
 					r <= '0';
 					b <= '1';
 					g <= '0';

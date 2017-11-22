@@ -4,8 +4,10 @@ USE IEEE.STD_LOGIC_1164.ALL;
 ENTITY display IS 
 	PORT
 	(
-		AZUL				: IN STD_LOGIC;
+		VERDE				: IN STD_LOGIC;
+		AZUL				: IN STD_LOGIC; 
 		VERM				: IN STD_LOGIC;
+		
 		ALTURA			: IN INTEGER;
 		SELECAO			: IN INTEGER;
 		
@@ -52,8 +54,6 @@ ARCHITECTURE behavior OF display IS
 				
 	PROCESS(AZUL, VERM, ALTURA,SELECAO, conv_ten, conv_unit)
 	
-		--VARIABLE size			: INTEGER;
-		--VARIABLE selecao		: INTEGER RANGE 0 TO 1 := 0;
 		
 		BEGIN
 		
@@ -93,7 +93,7 @@ ARCHITECTURE behavior OF display IS
 				DISPLAY1 <= "1000001"; -- U 
 				DISPLAY0 <= "0110000"; -- E
 			
-			ELSE
+			ELSIF(VERDE = '1') THEN
 				DISPLAY7 <= "0110001"; -- C
 				DISPLAY6 <= "0000001"; -- O
 				DISPLAY5 <= "1111010"; -- R 
@@ -102,6 +102,16 @@ ARCHITECTURE behavior OF display IS
 				DISPLAY2 <= "1111010"; -- R 
 				DISPLAY1 <= "1111010"; -- R 
 				DISPLAY0 <= "0110000"; -- E
+			ELSE
+				DISPLAY7 <= "0000000"; -- 
+				DISPLAY6 <= "0000000"; -- 
+				DISPLAY5 <= "0000000"; --  
+				DISPLAY4 <= "0000000"; -- 
+				DISPLAY3 <= "0000000"; --  
+				DISPLAY2 <= "0000000"; --  
+				DISPLAY1 <= "0000000"; --  
+				DISPLAY0 <= "0000000"; -- 
+			
 			END IF;
  
 		END IF;

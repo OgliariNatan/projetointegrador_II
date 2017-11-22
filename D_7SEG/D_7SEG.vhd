@@ -7,7 +7,7 @@
 LIBRARY ieee;
 LIBRARY work;
 use ieee.std_logic_1164.all;
-use ieee.std_logic_unsigned.all;''
+use ieee.std_logic_unsigned.all;
 use ieee.numeric_std.all;
 
 
@@ -252,9 +252,6 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 		blue,
 		green		
 		);
-		
-	--END SENSOR_COR;
-	
 	
 	
 	--------------------------------------------FIM cor
@@ -310,8 +307,10 @@ BOTAO_MENU: WORK.debouncer_pi
 DISPLAY_MENU: WORK.display
 	
 	PORT MAP(
-		red,
+		green,
 		blue,
+		red,
+		
 		dist_cm,
 		selecao,
 		

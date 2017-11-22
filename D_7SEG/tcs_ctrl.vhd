@@ -29,6 +29,7 @@ entity fsm is
 		-- "11" green filter
 		filter_sel : out std_logic_vector(1 downto 0);
 		filter_done : out std_logic;
+		reload_reg : out std_logic;
 		done : out std_logic
 	);
 end entity fsm;
@@ -101,11 +102,11 @@ begin
 					next_state <= GREEN_FILTER;												
 				end if;
 			when READY =>
-				if en = '1' then
-					next_state <= RED_FILTER;
-				else
+				--if en = '1' then
+				--	next_state <= RED_FILTER;
+				--else
 					next_state <= IDLE;					
-				end if;		
+				--end if;		
 		end case;		
 	end process;
 	
@@ -131,10 +132,11 @@ begin
 	begin
 		filter_sel <= NO_FILTER_SEL; 
 		done <= '0';
+		reload_reg <= '0';
 		
 		case current_state is 
 			when IDLE =>
-				
+				reload_reg <= '1';
 			when RED_FILTER =>
 				filter_sel <= RED_FILTER_SEL;
 			when BLUE_FILTER =>
