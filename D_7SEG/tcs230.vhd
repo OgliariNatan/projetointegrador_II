@@ -32,8 +32,8 @@ entity tcs230 is
 		-- "11" 100%	500~600 kHz   <--- Validated 		
 		
 		s_out   : out std_logic_vector(3 downto 0);	-- Filter selection
-		red 	: out std_logic;							-- '1' if red is detected
-		blue 	: out std_logic;							-- '1' if blue is detected
+		red 	: out std_logic;								-- '1' if red is detected
+		blue 	: out std_logic;								-- '1' if blue is detected
 		green	: out std_logic								-- '1' if green is detected	
 	);
 end entity tcs230;
@@ -46,7 +46,7 @@ architecture RTL of tcs230 is
 	(
 		areset		: in std_logic  := '0';
 		inclk0		: in std_logic  := '0';
-		c0				: out std_logic 
+		c0		: out std_logic 
 	);
 	end component;
 	
@@ -68,21 +68,21 @@ architecture RTL of tcs230 is
 	component debug_ram
 	port
 	(
-		address	: in std_logic_vector (4 downto 0);
+		address		: in std_logic_vector (4 downto 0);
 		clock		: in std_logic  := '1';
 		data		: in std_logic_vector (31 downto 0);
 		wren		: in std_logic ;
-		q			: out std_logic_vector (31 downto 0)
+		q		: out std_logic_vector (31 downto 0)
 	);
 	end component;
 	
 	
 	component freq_counter
 	port(
-		clk		: in std_logic;
-		rst 		: in std_logic;
+		clk : in std_logic;
+		rst : in std_logic;
 		
-		pulse		: in std_logic;
+		pulse	: in std_logic;
 		err		: out std_logic;
 		
 		data_out : out std_logic_vector(15 downto 0)
