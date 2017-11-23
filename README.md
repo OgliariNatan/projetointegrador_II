@@ -31,6 +31,7 @@ Resumindo, uma esteira com sensor de altura e cor com um seletor de para selecio
 	</p>
 <h4>Demais Informações relevantes para o projeto:</h4>
 <p> Echo GPIO(1) <br/> Trigger GPIO(0) <br/> </p>
+<p> A Pasta chamada D_7SEG, é o projeto principal. <br/>  </p>
 
 <p>Para a interpretação dos dados mostrados no display de 7 segmentos, utilize a imagem abaixo:<br/>
  <img alt="7SEG." src="http://www.twyman.org.uk/Fonts/7%20Seq-3D.jpg"/> <br/>
