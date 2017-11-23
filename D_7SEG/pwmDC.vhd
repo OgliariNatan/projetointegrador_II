@@ -1,32 +1,36 @@
-library ieee;
-use ieee.std_logic_1164.all;
-use ieee.std_logic_unsigned.all;
-use ieee.numeric_std.all;
+--pwmDC
+
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
 
 entity pwmDC is
-	
-	port(
-		clk_50Mhz 	:in std_logic;			-- 50MHz input clock
-		rst 		 	:in std_logic;			-- input clock
-		sen_prox		:in std_logic;			-- Sensor de presença
-		
-		velocidade 	:out std_logic_vector(3 downto 0); --seleciona a velocidade do motor
-			
-		onOFF 		:in std_logic 				--define liga/desliga
-		
-	);
-end entity pwmDC;
+    Port ( CLK : in  STD_LOGIC;
+           DUTY : in  STD_LOGIC_VECTOR (3 downto 0);
+           PWM_OUT : out  STD_LOGIC);
+end pwmDC;
 
+architecture Behavioral of pwmDC is
 
-ARCHITECTURE behavior OF pwmDC IS
+	signal COUNTER : std_logic_vector (3 downto 0) := "0000";
 
+begin
 
-BEGIN
+	process (CLK)
+	begin
+		if rising_edge(CLK) then
+			if COUNTER="1111" then
+				COUNTER <= "0000";
+			else
+				COUNTER <= COUNTER + '1';
+			end if;
+			if COUNTER>DUTY then
+				PWM_OUT <= '0';
+			elsif DUTY/="0000" then
+				PWM_OUT <= '1';
+			end if;
+		end if;
+	end process;
 
-		
-	
-	
-	
-
-
-END behavior;
+end Behavioral;
