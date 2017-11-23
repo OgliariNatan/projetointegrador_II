@@ -1,8 +1,0 @@
-|trigger
-CLOCK => pulse_value.CLK
-CLOCK => counter.CLK
-ENABLE => counter.OUTPUTSELECT
-ENABLE => pulse_value.OUTPUTSELECT
-PULSE <= pulse_value.DB_MAX_OUTPUT_PORT_TYPE
-
-
