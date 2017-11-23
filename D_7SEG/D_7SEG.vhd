@@ -20,7 +20,7 @@ ENTITY D_7SEG IS
 	);
 
 	PORT(	--Definições dos sinais de entrada
-			CLOCK_50			: IN STD_LOGIC;--Entrada do clock da placa
+			CLOCK_50				: IN STD_LOGIC;--Entrada do clock da placa
 
 
 			-- Sensor de distância
@@ -29,11 +29,11 @@ ENTITY D_7SEG IS
 			--GPIO(2) = Trigger
 
 			--Definições de botão de ajuste
-			  KEY					: IN STD_LOGIC_VECTOR (3 DOWNTO 0) := "0000";
-			  SW					: IN STD_LOGIC_VECTOR (17 DOWNTO 0);
+			KEY					: IN STD_LOGIC_VECTOR (3 DOWNTO 0) := "0000";
+			SW						: IN STD_LOGIC_VECTOR (17 DOWNTO 0);
 
 			--Definição do display_7Segmentos
-			  HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6, HEX7: OUT STD_LOGIC_VECTOR (0 TO 6);
+			HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6, HEX7: OUT STD_LOGIC_VECTOR (0 TO 6);
 
 			--Definição da saida do "botão virtual" de antitrepidação
 			buttonOut			: BUFFER STD_LOGIC;
@@ -47,8 +47,8 @@ ENTITY D_7SEG IS
 			inclk0		: in std_logic  := '0';
 			c0				: out std_logic;
 
-			clk_50Mhz : in std_logic;			-- 50MHz input clock
-			rst : in std_logic;			-- input clock
+			clk_50Mhz 	: in std_logic;			-- 50MHz input clock
+			rst 			: in std_logic;			-- input clock
 
 			data_in : in std_logic;		-- sensor data input
 
@@ -335,11 +335,9 @@ CONTROL_PWM: work.pwmDC
 
 	PORT MAP(
 		clk_50Mhz, 			-- 50MHz input clock
-		--rst, 		 			-- input clock
-		setVel,
-		--'1',--   sen_prox		--Sensor de proximidade
-		onOF 			--seleciona a velocidade do motor
-		--GPIO(8) 				--LIGA/DESLIGA
+		rst, 		 			-- input ENABLE
+		setVel,				-- Seleciona a velocidade com motor comm 4bits
+		LEDG
 	);
 
 
