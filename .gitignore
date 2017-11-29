@@ -19,5 +19,5 @@
 !DE2_115_pin_assignments.csv
 !*.asc
 
-!PCB_drive/*PrjPCB
-!PCB_drive/*SchDoc
+!PCB_drive/*.PrjPCB
+!PCB_drive/*.SchDoc
