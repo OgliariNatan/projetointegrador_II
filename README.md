@@ -25,6 +25,7 @@ Resumindo, uma esteira com sensor de altura e cor com um seletor de para selecio
 <h3>Softwares utilizados:</h3>
 <p>
 	<a href="http://dl.altera.com/16.1/?edition=lite">Quartus Lite Edition V16.1</a> <br/>
+	<a href="http://www.linear.com/designtools/software/#LTspice">LTSpice</a> <br/>
 </p>
 <h4>Contribuinte:</h4> <p>
 		<a href="https://github.com/gutovsk49">Augusto</a>. <br/>
