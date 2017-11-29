@@ -7,7 +7,7 @@ use IEEE.STD_LOGIC_ARITH.ALL;
 
 entity pwmDC is
     Port ( CLK      : in  STD_LOGIC;
-			  ENABLE   : in STD_LOGIC;
+			  ENABLE   : in  STD_LOGIC;
            DUTY     : in  STD_LOGIC_VECTOR (3 downto 0);
            pino     : out STD_LOGIC_VECTOR
 			 );

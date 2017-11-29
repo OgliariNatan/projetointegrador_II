@@ -30,7 +30,14 @@ Resumindo, uma esteira com sensor de altura e cor com um seletor de para selecio
 		<a href="https://github.com/gutovsk49">Augusto</a>. <br/>
 	</p>
 <h4>Demais Informações relevantes para o projeto:</h4>
-<p> Echo GPIO(1) <br/> Trigger GPIO(0) <br/> </p>
+<p>
+	Echo GPIO(1) <br/> Trigger GPIO(2) <br/>
+	SW(17) --Habilita leitura do sensor de altura <br/>
+	KEY(0)	--Seleciona entre leitura de cor e leitura de altura <br/>
+	SW(11)	--Inicia o processo de leitura do sensor (futuro sensor de presença) <br/>
+	GPIO(15)	--Saída em frequência do sensor (OUT)
+	GPIO(35 ao 32)	--Seletor do filtro para cor
+</p>
 <p> A Pasta chamada D_7SEG, é o projeto principal. <br/>  </p>
 
 <p>Para a interpretação dos dados mostrados no display de 7 segmentos, utilize a imagem abaixo:<br/>

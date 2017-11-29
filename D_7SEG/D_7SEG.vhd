@@ -69,7 +69,7 @@ ENTITY D_7SEG IS
 			setVel		:IN std_logic_vector(3 downto 0);
 			vel 			:IN std_logic_vector(3 downto 0);
 			onOF		 	:OUT std_logic
-
+			--FIM da configuração do pwmDC
 		);
 
 END D_7SEG;
