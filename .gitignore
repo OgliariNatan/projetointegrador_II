@@ -20,5 +20,7 @@
 !*.asc
 
 !PCB_drive/
+!PCB_drive/*.pdf
 !PCB_drive/*.PrjPCB
 !PCB_drive/*.SchDoc
+!PCB_drive/*.PcbDoc
