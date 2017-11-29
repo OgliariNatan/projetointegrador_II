@@ -13,7 +13,7 @@ Resumindo, uma esteira com sensor de altura e cor com um seletor de para selecio
 		<li>Sensor de distância <a href="https://cdn.sparkfun.com/datasheets/Sensors/Proximity/HCSR04.pdf">HCSR04</a>.</li>
 		<li>Módulo de reconhecimento de cores <a href="http://www.mouser.com/catalog/specsheets/TCS3200-E11.pdf">TCS3200</a>.</li>
 		<li>Sensor de proximidade infravermelho.</li>
-		<li>Display de 7 segmentos ou LCD.</li>
+		<li>Display de 7 segmentos ou  <strike> LCD  </strike> .</li>
 		<li>Controle de velocidade de um motor DC.</li>
 		<li>Controle do motor de passo.</li>
 		<li>Interface homem-maquina.</li>
