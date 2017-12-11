@@ -62,13 +62,11 @@ ENTITY D_7SEG IS
 			s_out :OUT std_logic_vector(3 downto 0);	-- Filter selection
 			red 	: buffer std_logic;							-- '1' if red is detected
 			blue 	: buffer std_logic;							-- '1' if blue is detected
-			green	: buffer std_logic;
+			green	: buffer std_logic
 			--FIM da configuração de cor
 
 			--Configuração do pwmDC
-			setVel		:IN std_logic_vector(3 downto 0);
-			vel 			:IN std_logic_vector(3 downto 0);
-			onOF		 	:OUT std_logic
+			--onOF_motorDC	:signal std_logic --GPIO(27) <= '1';
 			--FIM da configuração do pwmDC
 		);
 
@@ -103,8 +101,14 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 	signal timer 					: integer range 0 to 131071;
 	signal timer_rst 				: std_logic;
 	signal timer_en 				: std_logic;
-	signal reg_data_en	  		 : std_logic;
+	signal reg_data_en	  		: std_logic;
 
+	
+	
+	
+	
+	
+	
 	BEGIN--Começa a logica do programa
 
 
@@ -182,7 +186,7 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 		timer_en <= '1';
 		reg_data_en <= '0';
 		GPIO(2) <= '0'; -- Zera o TRIGGER por padrão.
-
+		GPIO(27) <= '1'; --MOTOR DC
 		case state is
 
 			when STANDBY =>
@@ -331,14 +335,14 @@ DISPLAY_MENU: WORK.display
 		HEX7
 		);
 
-CONTROL_PWM: work.pwmDC
-
-	PORT MAP(
-		clk_50Mhz, 			-- 50MHz input clock
-		rst, 		 			-- input ENABLE
-		setVel,				-- Seleciona a velocidade com motor comm 4bits
-		LEDG
-	);
+--CONTROL_PWM: work.pwmDC
+--
+--	PORT MAP(
+--		clk_50Mhz, 			-- 50MHz input clock
+--		rst, 		 			-- input ENABLE
+--		setVel,				-- Seleciona a velocidade com motor comm 4bits
+--		LEDG
+--	);
 
 
 
