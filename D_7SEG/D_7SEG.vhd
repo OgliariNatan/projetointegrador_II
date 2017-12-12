@@ -148,7 +148,7 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 	
 	end if;
 	
-	if SW(17) = '1' then
+	if SW(17) = '1' AND GPIO(1) = '1' then
 	
 		GPIO(27) <= '1';
 		LEDG(0) <= '1';
