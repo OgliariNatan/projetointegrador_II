@@ -114,12 +114,14 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 	SIGNAL	altura				: INTEGER := 99;
 	--SIGNAL	dist_mm				: INTEGER;
 	SIGNAL	dist_cm				: INTEGER range 0 to 511;
-	SIGNAL   clock					: STD_LOGIC := '0';
+	SIGNAL   clock_1MHz			: STD_LOGIC := '0';
+	SIGNAL   clock_1Hz			: STD_LOGIC := '0';
 	CONSTANT COUNT_MAX			: INTEGER 	:= ((freqIn / freqOut) / 2)-1;
 
 
 	CONSTANT MAX_DIST 			: INTEGER := 13; -- Variavel para o fundo de escala do sensor de distancia
-	signal	CLOCKOUT				: STD_LOGIC; --POSSIVEL SAIDA DO DIVISOR DE CLOCK
+	signal	CLOCKOUT_1MHz		: STD_LOGIC; --POSSIVEL SAIDA DO DIVISOR DE CLOCK
+	signal	CLOCKOUT_1Hz		: STD_LOGIC; --POSSIVEL SAIDA DO DIVISOR DE CLOCK
 
 	TYPE State_type IS (STANDBY, DISP_TRIGGER, WAIT_ECHO, MEASURE, END_LOOP, WAITING);  -- Define os estados da maquina de estados
 
@@ -134,9 +136,17 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 	
 	
 
-	power_on:	PROCESS(SW(17), CLOCKOUT)
+	power_on:	PROCESS(SW(17), CLOCKOUT_1MHz)
 	
 	begin
+	
+	if GPIO(1) = '0' then
+	
+		GPIO(27) <= '0';
+		LEDG(0) <= '0';
+	else
+	
+	end if;
 	
 	if SW(17) = '1' then
 	
@@ -151,13 +161,13 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 	end if;
 	
 	end process;
-	fsm_state: PROCESS(CLOCKOUT, SW(17)) --SW(17)=RST
+	fsm_state: PROCESS(CLOCKOUT_1MHz, SW(17)) --SW(17)=RST
 	begin
 
 		if SW(17) = '0' then
 			state <= STANDBY;
 
-		elsif rising_edge(CLOCKOUT) then
+		elsif rising_edge(CLOCKOUT_1MHz) then
 
 			case state is
 				when STANDBY =>
@@ -272,7 +282,7 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 		end case;
 	end process;
 
-	CHOOSER:PROCESS(CLOCKOUT)
+	CHOOSER:PROCESS(CLOCKOUT_1MHz)
 	
 	BEGIN
 	
@@ -304,21 +314,21 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 		LEDR(3 DOWNTO 0)
 		);
 
-	counter_up: process (CLOCKOUT, SW(17), timer_rst, timer_en)
+	counter_up: process (CLOCKOUT_1MHz, SW(17), timer_rst, timer_en)
 	begin
 		if SW(17) = '0' or timer_rst = '1' then
 			timer <= 0;
-		elsif rising_edge(CLOCKOUT) and timer_en = '1' then
+		elsif rising_edge(CLOCKOUT_1MHz) and timer_en = '1' then
 			timer <= timer + 1;
 		end if;
 	end process;
 
 
-	reg_data: process (CLOCKOUT, SW(17), reg_data_en)
+	reg_data: process (CLOCKOUT_1MHz, SW(17), reg_data_en)
 	begin
 		if SW(17) = '0' then
 			dist_cm <= 0;
-		elsif rising_edge(CLOCKOUT) and reg_data_en = '1' then
+		elsif rising_edge(CLOCKOUT_1MHz) and reg_data_en = '1' then
 			dist_cm <= (timer - 10)/58; -- subtrai o off-set do contador
 		end if;
 	end process;
@@ -358,7 +368,9 @@ BOTAO_MENU: WORK.debouncer_pi
 		buttonOut
 		);
 
-		PROCESS(CLOCK_50, SW(17))
+		
+		
+divisor50M_1M:PROCESS(CLOCK_50, SW(17))
 
 		VARIABLE counter : INTEGER RANGE 0 TO COUNT_MAX := 0;
 
@@ -373,15 +385,36 @@ BOTAO_MENU: WORK.debouncer_pi
 					counter := counter + 1;
 				ELSE
 					counter := 0;
-					clock   <= NOT clock;
+					clock_1MHz   <= NOT clock_1MHz;
 
 				END IF;
 			END IF;
 		END PROCESS;
 
-		CLOCKOUT <= clock;
+		CLOCKOUT_1MHz <= clock_1MHz;
 
+divisor50M_1:PROCESS(CLOCK_50, SW(17))
 
+		VARIABLE counter : INTEGER RANGE 0 TO COUNT_MAX := 0;
+
+		BEGIN
+
+			if SW(17) = '0' then
+				counter := 0;
+
+			elsif (CLOCK_50'EVENT AND CLOCK_50 = '1') THEN
+
+				IF counter < 25000000 THEN
+					counter := counter + 1;
+				ELSE
+					counter := 0;
+					clock_1Hz   <= NOT clock_1Hz;
+
+				END IF;
+			END IF;
+		END PROCESS;
+
+		CLOCKOUT_1Hz <= clock_1Hz;
 	-- Seleção da interface
 	sel_face: PROCESS (buttonOut)
 	BEGIN
