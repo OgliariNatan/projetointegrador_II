@@ -103,14 +103,14 @@ ARCHITECTURE behavior OF display IS
 				DISPLAY1 <= "1111010"; -- R 
 				DISPLAY0 <= "0110000"; -- E
 			ELSE
-				DISPLAY7 <= "0000000"; -- 
-				DISPLAY6 <= "0000000"; -- 
-				DISPLAY5 <= "0000000"; --  
-				DISPLAY4 <= "0000000"; -- 
-				DISPLAY3 <= "0000000"; --  
-				DISPLAY2 <= "0000000"; --  
-				DISPLAY1 <= "0000000"; --  
-				DISPLAY0 <= "0000000"; -- 
+				DISPLAY7 <= "0100100"; -- s 
+				DISPLAY6 <= "0110000"; -- e
+				DISPLAY5 <= "1101010"; -- m 
+				DISPLAY4 <= "1111111"; -- 
+				DISPLAY3 <= "0110001"; -- c 
+				DISPLAY2 <= "0000001"; -- o
+				DISPLAY1 <= "1111010"; -- r 
+				DISPLAY0 <= "1111111"; -- 
 			
 			END IF;
  

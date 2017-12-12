@@ -25,12 +25,27 @@ ENTITY D_7SEG IS
 
 			-- Sensor de distância
 			GPIO					: INOUT STD_LOGIC_VECTOR (35 DOWNTO 0);	-- Declara os pinos GPIO como I/O
-			--GPIO(1) = echo
-			--GPIO(2) = Trigger
+			-- GPIO(1) - Sensor IR
+			-- GPIO(3) - TRIGGER	[era GPIO(2)]
+			-- GPIO(5) - ECHO		[era GPIO(1)]
+			-- GPIO(7) - OE
+			-- GPIO(9) - OUT
+			-- GPIO(11) - S0
+			-- GPIO(13) - S1
+			-- GPIO(15) - S2
+			-- GPIO(17) - S3
+			-- GPIO(19) - P0
+			-- GPIO(21) - P1
+			-- GPIO(23) - P2
+			-- GPIO(25) - P3
+			-- GPIO(27) - MDC
+			
 
 			--Definições de botão de ajuste
 			KEY					: IN STD_LOGIC_VECTOR (3 DOWNTO 0) := "0000";
 			SW						: IN STD_LOGIC_VECTOR (17 DOWNTO 0);
+			
+			
 
 			--Definição do display_7Segmentos
 			HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6, HEX7: OUT STD_LOGIC_VECTOR (0 TO 6);
@@ -64,10 +79,23 @@ ENTITY D_7SEG IS
 			blue 	: buffer std_logic;							-- '1' if blue is detected
 			green	: buffer std_logic
 			--FIM da configuração de cor
+<<<<<<< HEAD
+			
+			altura_ok		: buffer std_logic := '0';
+			cor_ok			: buffer std_logic := '0';
+			move_dir			: buffer std_logic := '0';
+			move_esq			: buffer std_logic := '0';
+			escolha_feita	: buffer std_logic := '0';
+			MOT_CLK			: buffer std_logic := '0';
+			MOT_RST			: buffer std_logic := '0';
+			MOT_SIDE			: buffer std_logic := '0';
+			MOT_OUT			: buffer std_logic_vector (3 DOWNTO 0) := "0000"
+=======
 
 			--Configuração do pwmDC
 			--onOF_motorDC	:signal std_logic --GPIO(27) <= '1';
 			--FIM da configuração do pwmDC
+>>>>>>> c507f912d40b54a78f1ad4500afffd673d73314a
 		);
 
 END D_7SEG;
@@ -111,11 +139,27 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 	
 	BEGIN--Começa a logica do programa
 
-
+	power_on:	PROCESS(SW(17), CLOCKOUT)
+	
+	begin
+	
+	if SW(17) = '1' then
+	
+		GPIO(27) <= '1';
+		LEDG(0) <= '1';
+	
+	else
+	
+		GPIO(27) <= '0';
+		LEDG(0) <= '0';
+		
+	end if;
+	
+	end process;
 	fsm_state: PROCESS(CLOCKOUT, SW(17)) --SW(17)=RST
 	begin
 
-		if SW(17) = '1' then
+		if SW(17) = '0' then
 			state <= STANDBY;
 
 		elsif rising_edge(CLOCKOUT) then
@@ -123,7 +167,7 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 			case state is
 				when STANDBY =>
 
-					if (SW(14) = '1') then
+					if (GPIO(1) = '0' AND altura_ok = '0') then				-- se o sensor de presença IR detectou o objeto, inicia leitura de altura
 						state <= DISP_TRIGGER;
 					else
 						state <= STANDBY;
@@ -139,7 +183,7 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 
 				when WAIT_ECHO =>
 
-					if (GPIO(1) = '0') then
+					if (GPIO(5) = '0') then				-- se o pino ECHO do HC ainda não acusou leitura da onda de retorno
 						if timer > 100000 then
 							state <= STANDBY;
 						else
@@ -152,7 +196,7 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 
 				when MEASURE =>
 
-					if (GPIO(1) = '1') then
+					if (GPIO(5) = '1') then				-- se o pino ECHO do HC acusou leitura da onda de retorno
 						state <= MEASURE;
 					else
 						state <= END_LOOP;
@@ -169,6 +213,7 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 						state <= WAITING;
 					else
 						state <= STANDBY;
+						
 					end if;
 
 				when others =>
@@ -185,22 +230,32 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 		timer_rst <= '0';
 		timer_en <= '1';
 		reg_data_en <= '0';
+<<<<<<< HEAD
+		GPIO(3) <= '0'; -- Zera o TRIGGER por padrão.
+
+=======
 		GPIO(2) <= '0'; -- Zera o TRIGGER por padrão.
 		GPIO(27) <= '1'; --MOTOR DC
+>>>>>>> c507f912d40b54a78f1ad4500afffd673d73314a
 		case state is
 
 			when STANDBY =>
 				LEDR(17 downto 12) <= "100000";
 
 				timer_rst <= '1';
+				
+				if escolha_feita = '1' then			-- se já foi feita a escolha a partir da altura
+					altura_ok <= '0';
+					
+				end if;
 
 			when DISP_TRIGGER =>
 				LEDR(17 downto 12) <= "010000";
 
 				if (timer <= 10) then
-					GPIO(2) <= '1';
+					GPIO(3) <= '1';
 				else
-					GPIO(2) <= '0';
+					GPIO(3) <= '0';
 				end if;
 
 			when WAIT_ECHO =>
@@ -218,6 +273,7 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 
 			when WAITING =>
 				LEDR(17 downto 12) <= "000001";
+				altura_ok <= '1';
 
 			when others =>
 				LEDR(17 downto 12) <= "111111";
@@ -225,10 +281,41 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 		end case;
 	end process;
 
+	CHOOSER:PROCESS(CLOCKOUT)
+	
+	BEGIN
+	
+	IF altura_ok = '1' THEN
+		escolha_feita <= '1';
+		IF dist_cm > 8 THEN
+			MOT_SIDE <= '1';
+			LEDG(7) <= '1';
+		ELSE
+			MOT_SIDE <= '0';
+			LEDG(5) <= '1';
+			
+		END IF;
+	ELSE
+		escolha_feita <= '0';
+		MOT_SIDE <= '0';
+		LEDG(7) <= '0';
+		LEDG(5) <= '0';
+	END IF;
+	
+	END PROCESS;
+	
+	MOTOR_PASSO: WORK.MotorPasso
+	
+		PORT MAP(
+		MOT_CLK,
+		MOT_RST,
+		MOT_SIDE,
+		LEDR(3 DOWNTO 0)
+		);
 
 	counter_up: process (CLOCKOUT, SW(17), timer_rst, timer_en)
 	begin
-		if SW(17) = '1' or timer_rst = '1' then
+		if SW(17) = '0' or timer_rst = '1' then
 			timer <= 0;
 		elsif rising_edge(CLOCKOUT) and timer_en = '1' then
 			timer <= timer + 1;
@@ -238,7 +325,7 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 
 	reg_data: process (CLOCKOUT, SW(17), reg_data_en)
 	begin
-		if SW(17) = '1' then
+		if SW(17) = '0' then
 			dist_cm <= 0;
 		elsif rising_edge(CLOCKOUT) and reg_data_en = '1' then
 			dist_cm <= (timer - 10)/58; -- subtrai o off-set do contador
@@ -247,22 +334,23 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 
 
 	---------------------------------------------Inicio cor
-	SENSOR_COR: WORK.tcs230
-
-	PORT MAP(
-		CLOCK_50,
-		SW(11),				-- iniciador do processo de leitura , RESET
-
-		GPIO(15),		-- saida em frequencia do sensor, entrada de dados da maquina de estados
-
-		"11",				-- escala máxima de frequência
-
-
-		GPIO(35 DOWNTO 32),			-- seletor do filtro para cor - porque é uma saída? porque tem 4 bits? GPIO(35)=S3
-		red,
-		blue,
-		green
-		);
+--	SENSOR_COR: WORK.tcs230
+--
+--	PORT MAP(
+--		CLOCK_50,
+--		SW(0),				-- iniciador do processo de leitura , RESET
+--
+--		GPIO(9),		-- saida em frequencia do sensor, entrada de dados da maquina de estados
+--
+--		"11",				-- escala máxima de frequência
+--
+--		-- COMO DECLARAR OS PINOS INDIVUDUALMENTE
+--		LEDR(3 DOWNTo 0),--GPIO(35 DOWNTO 32),			-- seletor do filtro para cor - porque é uma saída? porque tem 4 bits? GPIO(35)=S3
+--		red,
+--		blue,
+--		green,
+--		cor_ok
+--		);
 
 
 	--------------------------------------------FIM cor
@@ -281,7 +369,7 @@ BOTAO_MENU: WORK.debouncer_pi
 
 		BEGIN
 
-			if SW(17) = '1' then
+			if SW(17) = '0' then
 				counter := 0;
 
 			elsif (CLOCK_50'EVENT AND CLOCK_50 = '1') THEN
@@ -333,6 +421,9 @@ DISPLAY_MENU: WORK.display
 		HEX5,
 		HEX6,
 		HEX7
+<<<<<<< HEAD
+		);	
+=======
 		);
 
 --CONTROL_PWM: work.pwmDC
@@ -344,6 +435,7 @@ DISPLAY_MENU: WORK.display
 --		LEDG
 --	);
 
+>>>>>>> c507f912d40b54a78f1ad4500afffd673d73314a
 
 
 END display;
