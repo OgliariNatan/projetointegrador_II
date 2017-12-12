@@ -77,9 +77,8 @@ ENTITY D_7SEG IS
 			s_out :OUT std_logic_vector(3 downto 0);	-- Filter selection
 			red 	: buffer std_logic;							-- '1' if red is detected
 			blue 	: buffer std_logic;							-- '1' if blue is detected
-			green	: buffer std_logic
+			green	: buffer std_logic;
 			--FIM da configuração de cor
-<<<<<<< HEAD
 			
 			altura_ok		: buffer std_logic := '0';
 			cor_ok			: buffer std_logic := '0';
@@ -90,12 +89,11 @@ ENTITY D_7SEG IS
 			MOT_RST			: buffer std_logic := '0';
 			MOT_SIDE			: buffer std_logic := '0';
 			MOT_OUT			: buffer std_logic_vector (3 DOWNTO 0) := "0000"
-=======
 
 			--Configuração do pwmDC
 			--onOF_motorDC	:signal std_logic --GPIO(27) <= '1';
 			--FIM da configuração do pwmDC
->>>>>>> c507f912d40b54a78f1ad4500afffd673d73314a
+
 		);
 
 END D_7SEG;
@@ -230,13 +228,13 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 		timer_rst <= '0';
 		timer_en <= '1';
 		reg_data_en <= '0';
-<<<<<<< HEAD
+
 		GPIO(3) <= '0'; -- Zera o TRIGGER por padrão.
 
-=======
+
 		GPIO(2) <= '0'; -- Zera o TRIGGER por padrão.
 		GPIO(27) <= '1'; --MOTOR DC
->>>>>>> c507f912d40b54a78f1ad4500afffd673d73314a
+
 		case state is
 
 			when STANDBY =>
@@ -421,9 +419,7 @@ DISPLAY_MENU: WORK.display
 		HEX5,
 		HEX6,
 		HEX7
-<<<<<<< HEAD
-		);	
-=======
+
 		);
 
 --CONTROL_PWM: work.pwmDC
@@ -435,7 +431,6 @@ DISPLAY_MENU: WORK.display
 --		LEDG
 --	);
 
->>>>>>> c507f912d40b54a78f1ad4500afffd673d73314a
 
 
 END display;
