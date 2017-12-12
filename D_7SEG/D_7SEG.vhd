@@ -128,11 +128,11 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 	signal timer_rst 				: std_logic;
 	signal timer_en 				: std_logic;
 	signal reg_data_en	  		: std_logic;
-
+	signal cor_out 				: std_logic_vector(3 DOWNTO 0);
 	
 	BEGIN--Começa a logica do programa
 	
-	signal	cor_out : std_logic_vector(3 DOWNTO 0);
+	
 
 	power_on:	PROCESS(SW(17), CLOCKOUT)
 	
