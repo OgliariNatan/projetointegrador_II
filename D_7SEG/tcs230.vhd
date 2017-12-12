@@ -34,7 +34,8 @@ entity tcs230 is
 		s_out   : out std_logic_vector(3 downto 0);	-- Filter selection
 		red 	: out std_logic;							-- '1' if red is detected
 		blue 	: out std_logic;							-- '1' if blue is detected
-		green	: out std_logic								-- '1' if green is detected	
+		green	: out std_logic;								-- '1' if green is detected	
+		cor_ok : out std_logic
 	);
 end entity tcs230;
 

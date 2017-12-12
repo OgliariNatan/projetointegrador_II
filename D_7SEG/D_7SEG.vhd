@@ -336,7 +336,7 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 		"11",				-- escala máxima de frequência
 
 		-- COMO DECLARAR OS PINOS INDIVUDUALMENTE
-		LEDR(3 DOWNTo 0),--GPIO(35 DOWNTO 32),			-- seletor do filtro para cor - porque é uma saída? porque tem 4 bits? GPIO(35)=S3
+		GPIO(35 DOWNTO 32),			-- seletor do filtro para cor - porque é uma saída? porque tem 4 bits? GPIO(35)=S3
 		red,
 		blue,
 		green,
