@@ -404,7 +404,7 @@ divisor50M_1:PROCESS(CLOCK_50, SW(17))
 
 			elsif (CLOCK_50'EVENT AND CLOCK_50 = '1') THEN
 
-				IF counter < 25000000 THEN
+				IF counter < 24999999 THEN
 					counter := counter + 1;
 				ELSE
 					counter := 0;
