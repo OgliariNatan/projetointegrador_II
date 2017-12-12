@@ -5,6 +5,8 @@
 !README.md
 
 !D_7SEG/
+!D_7SEG/cris_16x2
+!D_7SEG/cris_16x2/*.vhd
 !D_7SEG/*.vhd
 !D_7SEG/*.qpf
 !D_7SEG/*.txt

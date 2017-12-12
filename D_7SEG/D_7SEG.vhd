@@ -79,6 +79,7 @@ ENTITY D_7SEG IS
 			blue 	: buffer std_logic;							-- '1' if blue is detected
 			green	: buffer std_logic;
 			--FIM da configuração de cor
+
 			
 			altura_ok		: buffer std_logic := '0';
 			cor_ok			: buffer std_logic := '0';
@@ -89,10 +90,6 @@ ENTITY D_7SEG IS
 			MOT_RST			: buffer std_logic := '0';
 			MOT_SIDE			: buffer std_logic := '0';
 			MOT_OUT			: buffer std_logic_vector (3 DOWNTO 0) := "0000"
-
-			--Configuração do pwmDC
-			--onOF_motorDC	:signal std_logic --GPIO(27) <= '1';
-			--FIM da configuração do pwmDC
 
 		);
 
@@ -231,10 +228,6 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 
 		GPIO(3) <= '0'; -- Zera o TRIGGER por padrão.
 
-
-		GPIO(2) <= '0'; -- Zera o TRIGGER por padrão.
-		GPIO(27) <= '1'; --MOTOR DC
-
 		case state is
 
 			when STANDBY =>
@@ -332,23 +325,23 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 
 
 	---------------------------------------------Inicio cor
---	SENSOR_COR: WORK.tcs230
---
---	PORT MAP(
---		CLOCK_50,
---		SW(0),				-- iniciador do processo de leitura , RESET
---
---		GPIO(9),		-- saida em frequencia do sensor, entrada de dados da maquina de estados
---
---		"11",				-- escala máxima de frequência
---
---		-- COMO DECLARAR OS PINOS INDIVUDUALMENTE
---		LEDR(3 DOWNTo 0),--GPIO(35 DOWNTO 32),			-- seletor do filtro para cor - porque é uma saída? porque tem 4 bits? GPIO(35)=S3
---		red,
---		blue,
---		green,
---		cor_ok
---		);
+	SENSOR_COR: WORK.tcs230
+
+	PORT MAP(
+		CLOCK_50,
+		SW(0),				-- iniciador do processo de leitura , RESET
+
+		GPIO(9),		-- saida em frequencia do sensor, entrada de dados da maquina de estados
+
+		"11",				-- escala máxima de frequência
+
+		-- COMO DECLARAR OS PINOS INDIVUDUALMENTE
+		LEDR(3 DOWNTo 0),--GPIO(35 DOWNTO 32),			-- seletor do filtro para cor - porque é uma saída? porque tem 4 bits? GPIO(35)=S3
+		red,
+		blue,
+		green,
+		cor_ok
+		);
 
 
 	--------------------------------------------FIM cor
@@ -419,18 +412,7 @@ DISPLAY_MENU: WORK.display
 		HEX5,
 		HEX6,
 		HEX7
-
 		);
-
---CONTROL_PWM: work.pwmDC
---
---	PORT MAP(
---		clk_50Mhz, 			-- 50MHz input clock
---		rst, 		 			-- input ENABLE
---		setVel,				-- Seleciona a velocidade com motor comm 4bits
---		LEDG
---	);
-
 
 
 END display;
