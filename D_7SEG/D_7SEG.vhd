@@ -90,6 +90,9 @@ ENTITY D_7SEG IS
 			MOT_RST			: buffer std_logic := '0';
 			MOT_SIDE			: buffer std_logic := '0';
 			MOT_OUT			: buffer std_logic_vector (3 DOWNTO 0) := "0000"
+			
+			--Global 
+			--s_cor 			: signal (3 downto 0)
 
 		);
 
@@ -126,11 +129,6 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 	signal timer_en 				: std_logic;
 	signal reg_data_en	  		: std_logic;
 
-	
-	
-	
-	
-	
 	
 	BEGIN--Começa a logica do programa
 
@@ -323,7 +321,6 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 		end if;
 	end process;
 
-
 	---------------------------------------------Inicio cor
 	SENSOR_COR: WORK.tcs230
 
@@ -342,7 +339,6 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 		green,
 		cor_ok
 		);
-
 
 	--------------------------------------------FIM cor
 
