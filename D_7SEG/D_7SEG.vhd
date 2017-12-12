@@ -132,7 +132,10 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 	
 	
 	
+	
 	BEGIN--Começa a logica do programa
+	
+	signal	cor_out : std_logic_vector(3 DOWNTO 0);
 
 	power_on:	PROCESS(SW(17), CLOCKOUT)
 	
@@ -336,13 +339,17 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 		"11",				-- escala máxima de frequência
 
 		-- COMO DECLARAR OS PINOS INDIVUDUALMENTE
-		GPIO(35 DOWNTO 32),			-- seletor do filtro para cor - porque é uma saída? porque tem 4 bits? GPIO(35)=S3
+		cor_out,			-- seletor do filtro para cor - porque é uma saída? porque tem 4 bits? GPIO(35)=S3
 		red,
 		blue,
 		green,
 		cor_ok
 		);
-
+		
+		GPIO(11) <= cor_out(0);
+		GPIO(13) <= cor_out(1);
+		GPIO(15) <= cor_out(2);
+		GPIO(17) <= cor_out(3);
 
 	--------------------------------------------FIM cor
 
