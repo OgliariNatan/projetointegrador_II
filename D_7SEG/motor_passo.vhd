@@ -7,7 +7,8 @@ port(
   clk: in std_logic; ---clock do sistema
   reset: in std_logic; ---volta a posição inicial
   sentido: in std_logic; ---muda o sentido de giro
-  y: out std_logic_vector (3 downto 0)); ---saida
+  y: out std_logic_vector (3 downto 0)
+  ); ---saida
  
 end MotorPasso;
 
@@ -17,7 +18,6 @@ signal anterior,proximo:estado;
 
 begin
 
- 
   sequencial:process(clk)
   begin
     if(clk'event and clk='1') then
