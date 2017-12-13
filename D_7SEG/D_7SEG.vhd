@@ -91,9 +91,6 @@ ENTITY D_7SEG IS
 			MOT_SIDE			: buffer std_logic := '0';
 			MOT_OUT			: buffer std_logic_vector (3 DOWNTO 0) := "0000"
 			
-			--Global 
-			--s_cor 			: signal (3 downto 0)
-
 		);
 
 END D_7SEG;
@@ -130,25 +127,24 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 	signal timer_rst 				: std_logic;
 	signal timer_en 				: std_logic;
 	signal reg_data_en	  		: std_logic;
-	signal cor_out 				: std_logic_vector(3 DOWNTO 0);
+	signal cor_out 				: std_logic_vector(3 DOWNTO 0); --Variavel para aplicar um filtro 
+	
+	signal s_IR						: std_logic; --Variavel para alteração do estado do sensor de IR
+	signal stopTime		 		: integer := 0; --delay do motorDC
+	signal stopTime_OK			: std_logic := '0'; --Nem queira saber o que é
 	
 	BEGIN--Começa a logica do programa
 	
 	
 
-	power_on:	PROCESS(SW(17), CLOCKOUT_1MHz)
+	power_on:	PROCESS(SW(17), CLOCKOUT_1MHz, CLOCKOUT_1Hz)
 	
 	begin
 	
-	if GPIO(1) = '0' then
+	s_IR <= GPIO(1); -- recebe o estado do sensor IR
 	
-		GPIO(27) <= '0';
-		LEDG(0) <= '0';
-	else
 	
-	end if;
-	
-	if SW(17) = '1' AND GPIO(1) = '1' then
+	if (SW(17) = '1' AND s_IR = '1') OR stopTime_OK = '1' then
 	
 		GPIO(27) <= '1';
 		LEDG(0) <= '1';
@@ -157,7 +153,28 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 	
 		GPIO(27) <= '0';
 		LEDG(0) <= '0';
-		
+			
+			if rising_edge(CLOCKOUT_1Hz) AND s_IR='0' then
+				
+				if stopTime <= 10 then
+				
+					stopTime <= stopTime + 1;	
+				else
+					stopTime_OK <= '1';
+					stopTime <= 0;
+				end if;
+				
+			else
+	
+			end if;
+			if stopTime_OK = '1' then
+				GPIO(27) <= '1';
+				LEDG(0) <= '1';
+				stopTime_OK <= '0';
+			else
+			
+			end if;
+			
 	end if;
 	
 	end process;
@@ -329,7 +346,7 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 		if SW(17) = '0' then
 			dist_cm <= 0;
 		elsif rising_edge(CLOCKOUT_1MHz) and reg_data_en = '1' then
-			dist_cm <= (timer - 10)/58; -- subtrai o off-set do contador
+			dist_cm <= 13 - (timer - 10)/58; -- subtrai o off-set do contador
 		end if;
 	end process;
 
@@ -395,7 +412,7 @@ divisor50M_1M:PROCESS(CLOCK_50, SW(17))
 
 divisor50M_1:PROCESS(CLOCK_50, SW(17))
 
-		VARIABLE counter : INTEGER RANGE 0 TO COUNT_MAX := 0;
+		VARIABLE counter : INTEGER RANGE 0 TO 24999999 := 0;
 
 		BEGIN
 
@@ -415,6 +432,7 @@ divisor50M_1:PROCESS(CLOCK_50, SW(17))
 		END PROCESS;
 
 		CLOCKOUT_1Hz <= clock_1Hz;
+		LEDG(1) <= clock_1Hz;
 	-- Seleção da interface
 	sel_face: PROCESS (buttonOut)
 	BEGIN
