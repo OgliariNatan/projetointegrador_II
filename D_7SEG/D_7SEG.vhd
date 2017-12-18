@@ -305,7 +305,7 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 	
 	END PROCESS;
 	
-	MOTOR_PASSO: WORK.MotorPasso
+	MOTOR_PASSO: WORK.StepMotor
 	
 		PORT MAP(
 		MOT_CLK,

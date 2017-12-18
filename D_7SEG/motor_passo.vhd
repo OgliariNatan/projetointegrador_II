@@ -1,292 +1,292 @@
 library IEEE;   
 use IEEE.STD_LOGIC_1164.ALL;
 
-entity MotorPasso is      
+entity StepMotor is      
 port(
 
-  clk: in std_logic; ---clock do sistema
-  reset: in std_logic; ---volta a posição inicial
-  sentido: in std_logic; ---muda o sentido de giro
-  y: out std_logic_vector (3 downto 0)); ---saida
+  MOT_CLK: in std_logic; 										--		Clock dos pulsos do motor
+  MOT_RST: in std_logic; 										--		Retorna a posição central
+  MOT_SIDE: in std_logic; 										--		esquerda/ direita
+  MOT_OUT: out std_logic_vector (3 downto 0)); 			--		bobinas do motor
  
-end MotorPasso;
+end StepMotor;
 
-architecture imp of MotorPasso is
-type estado is (S0,S1,S2,S3,S4,S5,S6,S7,S8,S9,S10,S11,S12,S13,S14,S15,S16,S17,S18,S19,S20,S21,S22,S23,S24);
-signal anterior,proximo:estado;
+architecture workFlow of StepMotor is
+type state is (S0,S1,S2,S3,S4,S5,S6,S7,S8,S9,S10,S11,S12,S13,S14,S15,S16,S17,S18,S19,S20,S21,S22,S23,S24);
+signal prev_state,next_state:state;
 
 begin
 
  
-  sequencial:process(clk)
+  fsm_state:process(MOT_CLK)
   begin
-    if(clk'event and clk='1') then
+    if(MOT_CLK'event and MOT_CLK='1') then
      
-        anterior<=proximo;
+        prev_state<=next_state;
      
     end if;
-  end process sequencial;
+  end process fsm_state;
  
-  combinacional:process(anterior,sentido,reset)
+  fsm_moore:process(prev_state,MOT_SIDE,MOT_RST)
   begin
-    case anterior is
+    case prev_state is
      ----------------------------------- POSIÇÃO INICIAL
          when S0=>
-             Y<="0110";
-                if(reset='1') then
-                proximo <= S0;
-            elsif(sentido='0') then
-             proximo <= S1;
+             MOT_OUT<="0110";
+                if(MOT_RST='1') then
+                next_state <= S0;
+            elsif(MOT_SIDE='0') then
+             next_state <= S1;
             else
-             proximo <= S13;
+             next_state <= S13;
             end if;
     ------------------------------------ LADO DIREITO
          when S1=>
-             Y<="0111";
-                if(reset='1') then
-                proximo <= S0;
-            elsif(sentido='0') then
-             proximo <= S2;
+             MOT_OUT<="0111";
+                if(MOT_RST='1') then
+                next_state <= S0;
+            elsif(MOT_SIDE='0') then
+             next_state <= S2;
             else
-             proximo <= S0;
+             next_state <= S0;
             end if;
                 
          when S2=>
-             Y<="0011";
-                if(reset='1') then
-                proximo <= S1;
-            elsif(sentido='0') then
-             proximo <= S3;
+             MOT_OUT<="0011";
+                if(MOT_RST='1') then
+                next_state <= S1;
+            elsif(MOT_SIDE='0') then
+             next_state <= S3;
             else
-            proximo <= S1;
+            next_state <= S1;
             end if;
                 
             when S3=>
-             Y<="1011";
-                if(reset='1') then
-                proximo <= S2;
-            elsif(sentido='0') then
-             proximo <= S4;
+             MOT_OUT<="1011";
+                if(MOT_RST='1') then
+                next_state <= S2;
+            elsif(MOT_SIDE='0') then
+             next_state <= S4;
             else
-            proximo <= S2;
+            next_state <= S2;
             end if;
                 
             when S4=>
-             Y<="1001";
-                if(reset='1') then
-                proximo <= S3;
-            elsif(sentido='0') then
-             proximo <= S5;
+             MOT_OUT<="1001";
+                if(MOT_RST='1') then
+                next_state <= S3;
+            elsif(MOT_SIDE='0') then
+             next_state <= S5;
             else
-            proximo <= S3;
+            next_state <= S3;
             end if;
                 
             when S5=>
-             Y<="1101";
-                if(reset='1') then
-                proximo <= S4;
-            elsif(sentido='0') then
-             proximo <= S6;
+             MOT_OUT<="1101";
+                if(MOT_RST='1') then
+                next_state <= S4;
+            elsif(MOT_SIDE='0') then
+             next_state <= S6;
             else
-            proximo <= S4;
+            next_state <= S4;
             end if;
                 
             when S6=>
-             Y<="1100";
-                if(reset='1') then
-                proximo <= S5;
-            elsif(sentido='0') then
-             proximo <= S7;
+             MOT_OUT<="1100";
+                if(MOT_RST='1') then
+                next_state <= S5;
+            elsif(MOT_SIDE='0') then
+             next_state <= S7;
             else
-            proximo <= S5;
+            next_state <= S5;
             end if;
             
             when S7=>
-             Y<="1110";
-                if(reset='1') then
-                proximo <= S6;
-            elsif(sentido='0') then
-             proximo <= S8;
+             MOT_OUT<="1110";
+                if(MOT_RST='1') then
+                next_state <= S6;
+            elsif(MOT_SIDE='0') then
+             next_state <= S8;
             else
-            proximo <= S6;
+            next_state <= S6;
             end if;
                 
             when S8=>
-             Y<="0110";
-                if(reset='1') then
-                proximo <= S7;
-            elsif(sentido='0') then
-             proximo <= S9;
+             MOT_OUT<="0110";
+                if(MOT_RST='1') then
+                next_state <= S7;
+            elsif(MOT_SIDE='0') then
+             next_state <= S9;
             else
-            proximo <= S7;
+            next_state <= S7;
             end if;
             
             when S9=>
-             Y<="0111";
-                if(reset='1') then
-                proximo <= S8;
-            elsif(sentido='0') then
-             proximo <= S10;
+             MOT_OUT<="0111";
+                if(MOT_RST='1') then
+                next_state <= S8;
+            elsif(MOT_SIDE='0') then
+             next_state <= S10;
             else
-            proximo <= S8;
+            next_state <= S8;
             end if;
                 
             when S10=>
-             Y<="0011";
-                if(reset='1') then
-                proximo <= S9;
-            elsif(sentido='0') then
-             proximo <= S11;
+             MOT_OUT<="0011";
+                if(MOT_RST='1') then
+                next_state <= S9;
+            elsif(MOT_SIDE='0') then
+             next_state <= S11;
             else
-            proximo <= S9;
+            next_state <= S9;
             end if;
             
             when S11=>
-             Y<="1011";
-                if(reset='1') then
-                proximo <= S10;
-            elsif(sentido='0') then
-             proximo <= S12;
+             MOT_OUT<="1011";
+                if(MOT_RST='1') then
+                next_state <= S10;
+            elsif(MOT_SIDE='0') then
+             next_state <= S12;
             else
-            proximo <= S10;
+            next_state <= S10;
             end if;
             
             when S12=>
-             Y<="1001";
-                if(reset='1') then
-                proximo <= S11;
-            elsif(sentido='0') then
-             proximo <= S12;
+             MOT_OUT<="1001";
+                if(MOT_RST='1') then
+                next_state <= S11;
+            elsif(MOT_SIDE='0') then
+             next_state <= S12;
             else
-            proximo <= S11;
+            next_state <= S11;
             end if;
                 
                 ----------------------- outro ladO
             when S13=>
-             Y<="1110";
-                if(reset='1') then
-                proximo <= S0;
-            elsif(sentido='1') then
-             proximo <= S14;
+             MOT_OUT<="1110";
+                if(MOT_RST='1') then
+                next_state <= S0;
+            elsif(MOT_SIDE='1') then
+             next_state <= S14;
             else
-            proximo <= S0;
+            next_state <= S0;
             end if;
                 
             when S14=>
-             Y<="1100";
-                if(reset='1') then
-                proximo <= S13;
-            elsif(sentido='1') then
-             proximo <= S15;
+             MOT_OUT<="1100";
+                if(MOT_RST='1') then
+                next_state <= S13;
+            elsif(MOT_SIDE='1') then
+             next_state <= S15;
             else
-            proximo <= S13;
+            next_state <= S13;
             end if;
                 
             when S15=>
-             Y<="1101";
-                if(reset='1') then
-                proximo <= S14;
-            elsif(sentido='1') then
-             proximo <= S16;
+             MOT_OUT<="1101";
+                if(MOT_RST='1') then
+                next_state <= S14;
+            elsif(MOT_SIDE='1') then
+             next_state <= S16;
             else
-            proximo <= S14;
+            next_state <= S14;
             end if;
                 
             when S16=>
-             Y<="1001";
-                if(reset='1') then
-                proximo <= S15;
-            elsif(sentido='1') then
-             proximo <= S17;
+             MOT_OUT<="1001";
+                if(MOT_RST='1') then
+                next_state <= S15;
+            elsif(MOT_SIDE='1') then
+             next_state <= S17;
             else
-            proximo <= S15;
+            next_state <= S15;
             end if;
                 
             when S17=>
-             Y<="1011";
-                if(reset='1') then
-                proximo <= S16;
-            elsif(sentido='1') then
-             proximo <= S18;
+             MOT_OUT<="1011";
+                if(MOT_RST='1') then
+                next_state <= S16;
+            elsif(MOT_SIDE='1') then
+             next_state <= S18;
             else
-            proximo <= S16;
+            next_state <= S16;
             end if;
                 
             when S18=>
-             Y<="0011";
-                if(reset='1') then
-                proximo <= S17;
-            elsif(sentido='1') then
-             proximo <= S19;
+             MOT_OUT<="0011";
+                if(MOT_RST='1') then
+                next_state <= S17;
+            elsif(MOT_SIDE='1') then
+             next_state <= S19;
             else
-            proximo <= S17;
+            next_state <= S17;
             end if;
                 
             when S19=>
-             Y<="0111";
-                if(reset='1') then
-                proximo <= S18;
-            elsif(sentido='1') then
-             proximo <= S20;
+             MOT_OUT<="0111";
+                if(MOT_RST='1') then
+                next_state <= S18;
+            elsif(MOT_SIDE='1') then
+             next_state <= S20;
             else
-            proximo <= S18;
+            next_state <= S18;
             end if;
                 
             when S20=>
-             Y<="0110";
-                if(reset='1') then
-                proximo <= S19;
-            elsif(sentido='1') then
-             proximo <= S21;
+             MOT_OUT<="0110";
+                if(MOT_RST='1') then
+                next_state <= S19;
+            elsif(MOT_SIDE='1') then
+             next_state <= S21;
             else
-            proximo <= S19;
+            next_state <= S19;
             end if;
                 
             when S21=>
-             Y<="1110";
-                if(reset='1') then
-                proximo <= S20;
-            elsif(sentido='1') then
-             proximo <= S22;
+             MOT_OUT<="1110";
+                if(MOT_RST='1') then
+                next_state <= S20;
+            elsif(MOT_SIDE='1') then
+             next_state <= S22;
             else
-            proximo <= S20;
+            next_state <= S20;
             end if;
                 
             when S22=>
-             Y<="1100";
-                if(reset='1') then
-                proximo <= S21;
-            elsif(sentido='1') then
-             proximo <= S23;
+             MOT_OUT<="1100";
+                if(MOT_RST='1') then
+                next_state <= S21;
+            elsif(MOT_SIDE='1') then
+             next_state <= S23;
             else
-            proximo <= S21;
+            next_state <= S21;
             end if;
                 
             when S23=>
-             Y<="1101";
-                if(reset='1') then
-                proximo <= S22;
-            elsif(sentido='1') then
-             proximo <= S24;
+             MOT_OUT<="1101";
+                if(MOT_RST='1') then
+                next_state <= S22;
+            elsif(MOT_SIDE='1') then
+             next_state <= S24;
             else
-            proximo <= S22;
+            next_state <= S22;
             end if;
                 
             when S24=>
-             Y<="1001";
-                if(reset='1') then
-                proximo <= S23;
-            elsif(sentido='1') then
-             proximo <= S24;
+             MOT_OUT<="1001";
+                if(MOT_RST='1') then
+                next_state <= S23;
+            elsif(MOT_SIDE='1') then
+             next_state <= S24;
             else
-            proximo <= S23;
+            next_state <= S23;
             end if;
                 
-         when others=> Y <="1111";
+         when others=> MOT_OUT <="1111";
 
     end case;
-  end process combinacional;
+  end process fsm_moore;
 
-end imp;
+end workFlow;
 
 
