@@ -39,13 +39,13 @@ ENTITY D_7SEG IS
 			-- GPIO(23) - P2
 			-- GPIO(25) - P3
 			-- GPIO(27) - MDC
-			
+
 
 			--Definições de botão de ajuste
 			KEY					: IN STD_LOGIC_VECTOR (3 DOWNTO 0) := "0000";
 			SW						: IN STD_LOGIC_VECTOR (17 DOWNTO 0);
-			
-			
+
+
 
 			--Definição do display_7Segmentos
 			HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6, HEX7: OUT STD_LOGIC_VECTOR (0 TO 6);
@@ -80,7 +80,7 @@ ENTITY D_7SEG IS
 			green	: buffer std_logic;
 			--FIM da configuração de cor
 
-			
+
 			altura_ok		: buffer std_logic := '0';
 			cor_ok			: buffer std_logic := '0';
 			move_dir			: buffer std_logic := '0';
@@ -90,9 +90,6 @@ ENTITY D_7SEG IS
 			MOT_RST			: buffer std_logic := '0';
 			MOT_SIDE			: buffer std_logic := '0';
 			MOT_OUT			: buffer std_logic_vector (3 DOWNTO 0) := "0000"
-			
-			--Global 
-			--s_cor 			: signal (3 downto 0)
 
 		);
 
@@ -116,12 +113,15 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 	SIGNAL	dist_cm				: INTEGER range 0 to 511;
 	SIGNAL   clock_1MHz			: STD_LOGIC := '0';
 	SIGNAL   clock_1Hz			: STD_LOGIC := '0';
+	SIGNAL   clock_100Hz			: STD_LOGIC := '0'; -- CLOCK para o motor de passo
 	CONSTANT COUNT_MAX			: INTEGER 	:= ((freqIn / freqOut) / 2)-1;
 
 
 	CONSTANT MAX_DIST 			: INTEGER := 13; -- Variavel para o fundo de escala do sensor de distancia
 	signal	CLOCKOUT_1MHz		: STD_LOGIC; --POSSIVEL SAIDA DO DIVISOR DE CLOCK
-	signal	CLOCKOUT_1Hz		: STD_LOGIC; --POSSIVEL SAIDA DO DIVISOR DE CLOCK
+	signal	CLOCKOUT_1Hz		: STD_LOGIC; --sinal do CLOCK para o delay do motorDC
+	signal	CLOCKOUT_100Hz		: STD_LOGIC; --sinal do CLOCK para o motor de passo
+
 
 	TYPE State_type IS (STANDBY, DISP_TRIGGER, WAIT_ECHO, MEASURE, END_LOOP, WAITING);  -- Define os estados da maquina de estados
 
@@ -130,36 +130,73 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 	signal timer_rst 				: std_logic;
 	signal timer_en 				: std_logic;
 	signal reg_data_en	  		: std_logic;
-	signal cor_out 				: std_logic_vector(3 DOWNTO 0);
-	
-	BEGIN--Começa a logica do programa
-	
-	
+	signal cor_out 				: std_logic_vector(3 DOWNTO 0); --Variavel para aplicar um filtro
 
-	power_on:	PROCESS(SW(17), CLOCKOUT_1MHz)
-	
+	signal s_IR						: std_logic; --Variavel para alteração do estado do sensor de IR
+	signal stopCounter	 		: integer := 0; --delay do motorDC
+	signal stepCounter	 		: integer := 0; --delay do motorDC
+	signal stopTime_OK			: std_logic := '0'; --Nem queira saber o que é
+
+	BEGIN--Começa a logica do programa
+
+
+
+	power_on:	PROCESS(SW(17), CLOCKOUT_1Hz, GPIO(1)) --CLOCKOUT_1MHz
+
 	begin
+
+	s_IR <= GPIO(1);-- OR stopTime_OK; -- recebe o estado do sensor IR
 	
-	if GPIO(1) = '0' then
-	
-		GPIO(27) <= '0';
-		LEDG(0) <= '0';
-	else
-	
-	end if;
-	
-	if SW(17) = '1' AND GPIO(1) = '1' then
-	
+	if (SW(17) = '1' AND s_IR = '1') OR stopTime_OK = '1' then  --OR stopTime_OK = '1'
+
 		GPIO(27) <= '1';
 		LEDG(0) <= '1';
-	
+		stopCounter <= 0;
+		--stopTime_OK <= '0';
+
 	else
-	
+
 		GPIO(27) <= '0';
 		LEDG(0) <= '0';
-		
+
+			if rising_edge(CLOCKOUT_1Hz) AND s_IR='0' then
+
+				if stopCounter <= 5 then
+
+					stopCounter <= stopCounter + 1;
+				else
+					stopTime_OK <= '1';
+					stopCounter <= 0;
+					
+				end if;
+
+			else --rising_edge
+
+			end if;
+
+			if stopTime_OK = '1' then
+				GPIO(27) <= '1';
+				LEDG(0) <= '1';
+				stopTime_OK <= '0';
+					if rising_edge(CLOCKOUT_1Hz) then
+
+						if stepCounter <= 10 then
+
+							stepCounter <= stepCounter + 1;
+						else
+							stepCounter <= 0;
+					end if;
+
+	else --rising_edge
+
 	end if;
-	
+
+				--s_IR <= '1';--
+			else
+			end if;
+
+	end if; --Fim delay do motorDC para leitura
+
 	end process;
 	fsm_state: PROCESS(CLOCKOUT_1MHz, SW(17)) --SW(17)=RST
 	begin
@@ -218,7 +255,7 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 						state <= WAITING;
 					else
 						state <= STANDBY;
-						
+
 					end if;
 
 				when others =>
@@ -244,10 +281,10 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 				LEDR(17 downto 12) <= "100000";
 
 				timer_rst <= '1';
-				
+
 				if escolha_feita = '1' then			-- se já foi feita a escolha a partir da altura
-					altura_ok <= '0';
-					
+					altura_ok <= '0'; --Não completado um ciclo de leitura
+				else
 				end if;
 
 			when DISP_TRIGGER =>
@@ -274,7 +311,7 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 
 			when WAITING =>
 				LEDR(17 downto 12) <= "000001";
-				altura_ok <= '1';
+				altura_ok <= '1';  --ciclo de altura completo e mostrado no display
 
 			when others =>
 				LEDR(17 downto 12) <= "111111";
@@ -282,37 +319,52 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 		end case;
 	end process;
 
-	CHOOSER:PROCESS(CLOCKOUT_1MHz)
-	
+	CHOOSER:PROCESS(CLOCKOUT_1MHz, altura_ok)
+
 	BEGIN
-	
+
 	IF altura_ok = '1' THEN
-		escolha_feita <= '1';
-		IF dist_cm > 8 THEN
-			MOT_SIDE <= '1';
+		escolha_feita <= '1'; --Habilita novo ciclo de leitura de altura
+		IF dist_cm >= 8 THEN
+			MOT_SIDE <= '1'; --direcina o motor de passo para um dos lados
 			LEDG(7) <= '1';
 		ELSE
 			MOT_SIDE <= '0';
 			LEDG(5) <= '1';
-			
+
 		END IF;
 	ELSE
 		escolha_feita <= '0';
-		MOT_SIDE <= '0';
+		MOT_RST <= '1'; -- posiciona o motor de passo na posição inicial
 		LEDG(7) <= '0';
 		LEDG(5) <= '0';
 	END IF;
+
+
 	
 	END PROCESS;
+
 	
 	MOTOR_PASSO: WORK.StepMotor
-	
+
 		PORT MAP(
-		MOT_CLK,
-		MOT_RST,
-		MOT_SIDE,
-		LEDR(3 DOWNTO 0)
+		CLOCKOUT_100Hz,
+		MOT_RST,		--Volta a posição inicial
+		MOT_SIDE,	--Sentido de giro '1' or '0'
+		MOT_OUT(3 DOWNTO 0) --saida para acionar o motordepasso
 		);
+
+		GPIO(19) <= MOT_OUT(0);
+		GPIO(21) <= MOT_OUT(1);
+		GPIO(23) <= MOT_OUT(2);
+		GPIO(25) <= MOT_OUT(3);
+		
+--		LEDR(14) <= MOT_OUT(0);
+--		LEDR(13) <= MOT_OUT(1);
+--		LEDR(12) <= MOT_OUT(2);
+--		LEDR(11) <= MOT_OUT(3);
+
+
 
 	counter_up: process (CLOCKOUT_1MHz, SW(17), timer_rst, timer_en)
 	begin
@@ -329,7 +381,7 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 		if SW(17) = '0' then
 			dist_cm <= 0;
 		elsif rising_edge(CLOCKOUT_1MHz) and reg_data_en = '1' then
-			dist_cm <= (timer - 10)/58; -- subtrai o off-set do contador
+			dist_cm <= 13 - (timer - 10)/58; -- subtrai o off-set do contador
 		end if;
 	end process;
 
@@ -351,7 +403,7 @@ ARCHITECTURE display OF D_7SEG IS --declaração das variaveis
 		green,
 		cor_ok
 		);
-		
+
 		GPIO(11) <= cor_out(0);
 		GPIO(13) <= cor_out(1);
 		GPIO(15) <= cor_out(2);
@@ -368,8 +420,8 @@ BOTAO_MENU: WORK.debouncer_pi
 		buttonOut
 		);
 
-		
-		
+
+
 divisor50M_1M:PROCESS(CLOCK_50, SW(17))
 
 		VARIABLE counter : INTEGER RANGE 0 TO COUNT_MAX := 0;
@@ -393,9 +445,36 @@ divisor50M_1M:PROCESS(CLOCK_50, SW(17))
 
 		CLOCKOUT_1MHz <= clock_1MHz;
 
+
+
+divisor50M_100:PROCESS(CLOCK_50, SW(17))
+
+		VARIABLE counter : INTEGER RANGE 0 TO 249999 := 0;
+
+		BEGIN
+
+			if SW(17) = '0' then
+				counter := 0;
+
+			elsif (CLOCK_50'EVENT AND CLOCK_50 = '1') THEN
+
+				IF counter < 249999 THEN
+					counter := counter + 1;
+				ELSE
+					counter := 0;
+					clock_100Hz   <= NOT clock_100Hz;
+
+				END IF;
+			END IF;
+		END PROCESS;
+
+		CLOCKOUT_100Hz <= clock_100Hz;
+
+
+
 divisor50M_1:PROCESS(CLOCK_50, SW(17))
 
-		VARIABLE counter : INTEGER RANGE 0 TO COUNT_MAX := 0;
+		VARIABLE counter : INTEGER RANGE 0 TO 24999999 := 0;
 
 		BEGIN
 
@@ -415,6 +494,7 @@ divisor50M_1:PROCESS(CLOCK_50, SW(17))
 		END PROCESS;
 
 		CLOCKOUT_1Hz <= clock_1Hz;
+		LEDG(1) <= clock_1Hz;
 	-- Seleção da interface
 	sel_face: PROCESS (buttonOut)
 	BEGIN
