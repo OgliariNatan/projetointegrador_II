@@ -1,7 +1,0 @@
-<?xml version="1.0" ?>
-<LOG_ROOT>
-	<PROJECT NAME="Esteira_PI">
-		<CBX_INST_ENTRY INSTANCE_NAME="|Esteira_PI|lpm_divide:Div0" CBX_FILE_NAME="lpm_divide_0gm.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|Esteira_PI|lpm_mult:Mult1" CBX_FILE_NAME="mult_dct.tdf"/>
-	</PROJECT>
-</LOG_ROOT>
